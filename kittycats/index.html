@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>KittyCats - responsive layout demo</title>
+  <meta name="description" content="KittyCats is a one-page layout demo: a CSS Grid gallery, Flexbox cards, a sticky section and a two-column split, with kittens drawn in SVG.">
+  <meta name="author" content="Iva Tsatskrialashvili">
+  <link rel="canonical" href="https://mrlololi.github.io/Webprojekte/kittycats/">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Iva Tsatskrialashvili">
+  <meta property="og:title" content="KittyCats - responsive layout demo">
+  <meta property="og:description" content="One page, a handful of layout techniques and eight kittens drawn in SVG.">
+  <meta property="og:url" content="https://mrlololi.github.io/Webprojekte/kittycats/">
+  <meta property="og:image" content="https://mrlololi.github.io/Webprojekte/assets/og/og-kittycats.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KittyCats: an illustrated kitten next to the title on a warm orange background">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KittyCats - responsive layout demo">
+  <meta name="twitter:description" content="One page, a handful of layout techniques and eight kittens drawn in SVG.">
+  <meta name="twitter:image" content="https://mrlololi.github.io/Webprojekte/assets/og/og-kittycats.png">
+  <meta name="twitter:image:alt" content="KittyCats: an illustrated kitten next to the title on a warm orange background">
+
+  <link rel="icon" href="../assets/icons/kittycats.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/kittycats-180.png">
+
+  <script>
+    /* Apply the stored theme before the first paint (no flash). */
+    (function (root) {
+      root.classList.add('js');
+      try {
+        var theme = localStorage.getItem('iva-portfolio-theme');
+        if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+      } catch (error) { /* storage blocked - follow the system theme */ }
+    })(document.documentElement);
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="css/kittycats.css">
+
+  <script src="../assets/js/theme.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Drawings, defined once and reused with <use>. Fur = currentColor; the light
+       patches are translucent white, so every fur colour gets matching markings. -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="kitten" viewBox="0 0 200 200">
+      <g stroke="#2b211c" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M146 172c34-2 42-34 22-52" fill="none" stroke-width="22"/>
+        <path d="M146 172c34-2 42-34 22-52" fill="none" stroke="currentColor" stroke-width="13"/>
+        <ellipse cx="100" cy="150" rx="50" ry="42" fill="currentColor" stroke-width="4"/>
+        <ellipse cx="100" cy="158" rx="26" ry="28" fill="#fff" fill-opacity=".5" stroke="none"/>
+        <ellipse cx="78" cy="188" rx="15" ry="9" fill="currentColor" stroke-width="4"/>
+        <ellipse cx="122" cy="188" rx="15" ry="9" fill="currentColor" stroke-width="4"/>
+        <path d="M52 80 46 20l46 32z" fill="currentColor" stroke-width="4"/>
+        <path d="M148 80l6-60-46 32z" fill="currentColor" stroke-width="4"/>
+        <path d="M59 66 56 37l23 16z" fill="#f2a6ad" stroke="none"/>
+        <path d="M141 66l3-29-23 16z" fill="#f2a6ad" stroke="none"/>
+        <circle cx="100" cy="88" r="52" fill="currentColor" stroke-width="4"/>
+        <ellipse cx="100" cy="110" rx="27" ry="18" fill="#fff" fill-opacity=".5" stroke="none"/>
+        <circle cx="64" cy="106" r="7" fill="#f2a6ad" fill-opacity=".7" stroke="none"/>
+        <circle cx="136" cy="106" r="7" fill="#f2a6ad" fill-opacity=".7" stroke="none"/>
+        <ellipse cx="78" cy="86" rx="11.5" ry="13.5" fill="#f3c63f" stroke-width="3"/>
+        <ellipse cx="122" cy="86" rx="11.5" ry="13.5" fill="#f3c63f" stroke-width="3"/>
+        <ellipse cx="78" cy="88" rx="6.5" ry="9.5" fill="#1c1b19" stroke="none"/>
+        <ellipse cx="122" cy="88" rx="6.5" ry="9.5" fill="#1c1b19" stroke="none"/>
+        <circle cx="81.5" cy="82.5" r="3.2" fill="#fff" stroke="none"/>
+        <circle cx="125.5" cy="82.5" r="3.2" fill="#fff" stroke="none"/>
+        <path d="M93 101h14l-7 8z" fill="#e07a8a" stroke-width="2"/>
+        <path d="M100 109v5m0 0c-3 6-10 7-13 1m13-1c3 6 10 7 13 1" fill="none" stroke-width="2.5"/>
+        <path d="M58 104 28 98m30 12-30 6m114-12 30-6m-30 12 30 6" fill="none" stroke-width="2" stroke-opacity=".55"/>
+      </g>
+    </symbol>
+
+    <symbol id="cat" viewBox="0 0 200 200">
+      <g stroke="#2b211c" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M140 186c48 0 52-62 30-88-8-10 2-22 12-16" fill="none" stroke-width="20"/>
+        <path d="M140 186c48 0 52-62 30-88-8-10 2-22 12-16" fill="none" stroke="currentColor" stroke-width="12"/>
+        <path d="M58 192c-8-44 4-86 42-90 38 4 50 46 42 90z" fill="currentColor" stroke-width="4"/>
+        <path d="M100 112c-16 12-18 48 0 72 18-24 16-60 0-72z" fill="#fff" fill-opacity=".5" stroke="none"/>
+        <ellipse cx="80" cy="192" rx="14" ry="7" fill="currentColor" stroke-width="4"/>
+        <ellipse cx="120" cy="192" rx="14" ry="7" fill="currentColor" stroke-width="4"/>
+        <path d="M60 66 56 12l40 30z" fill="currentColor" stroke-width="4"/>
+        <path d="M140 66l4-54-40 30z" fill="currentColor" stroke-width="4"/>
+        <path d="M66 54 64 28l18 14z" fill="#f2a6ad" stroke="none"/>
+        <path d="M134 54l2-26-18 14z" fill="#f2a6ad" stroke="none"/>
+        <ellipse cx="100" cy="72" rx="46" ry="38" fill="currentColor" stroke-width="4"/>
+        <ellipse cx="100" cy="90" rx="21" ry="13" fill="#fff" fill-opacity=".5" stroke="none"/>
+        <ellipse cx="81" cy="70" rx="11" ry="7.5" fill="#b9d46a" stroke-width="3"/>
+        <ellipse cx="119" cy="70" rx="11" ry="7.5" fill="#b9d46a" stroke-width="3"/>
+        <ellipse cx="81" cy="71" rx="2.4" ry="6" fill="#1c1b19" stroke="none"/>
+        <ellipse cx="119" cy="71" rx="2.4" ry="6" fill="#1c1b19" stroke="none"/>
+        <path d="M69 71c4-8 20-8 24 0z" fill="currentColor" stroke-width="3"/>
+        <path d="M107 71c4-8 20-8 24 0z" fill="currentColor" stroke-width="3"/>
+        <path d="M95 83h10l-5 6z" fill="#e07a8a" stroke-width="2"/>
+        <path d="M100 89v4m-9 4c6-2 12-2 18 0" fill="none" stroke-width="2.5"/>
+        <path d="M74 88 36 84m38 9-38 6m90-15 38-4m-38 9 38 6" fill="none" stroke-width="2" stroke-opacity=".55"/>
+      </g>
+    </symbol>
+
+    <symbol id="spider" viewBox="0 0 40 60">
+      <path d="M20 0v34" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M14 40 4 34m10 10H2m12 4-9 8m21-16 10-6m-10 10h12m-12 4 9 8"/>
+      </g>
+      <ellipse cx="20" cy="44" rx="7.5" ry="8.5" fill="currentColor"/>
+      <circle cx="20" cy="34" r="4.5" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="cobweb" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M0 0l100 4M0 0l96 46M0 0l70 84M0 0l34 100M0 0 4 100"/>
+        <path d="M24 1q-2 8 0 11 6 3 9 15-7 2-10 6-6-1-11 1 0-8-12-10"/>
+        <path d="M50 2q-6 12-4 22 10 6 16 31-12 6-18 12-12 0-22 4-2-16-22-20"/>
+        <path d="M76 3q-8 18-6 34 16 10 24 46-18 8-26 18-18 0-34 4-2-24-34-30"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="16" class="brand__mark-bg"/>
+          <circle cx="25" cy="32" r="14" class="brand__mark-a"/>
+          <circle cx="39" cy="32" r="14" class="brand__mark-b"/>
+        </svg>
+        <span class="brand__name brand__name--short">Iva T.</span>
+        <span class="brand__name brand__name--long">Iva Tsatskrialashvili</span>
+        <span class="visually-hidden">, portfolio home</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#cats">Cats</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-pressed="false">
+        <span class="visually-hidden">Dark theme</span>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <p class="demo-note container">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+      <span><strong>Just a demo.</strong> Every section says which layout technique it uses. There are no real kittens for sale, and the form doesn't send anything.</span>
+    </p>
+
+    <!-- ============ Hero ============ -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow">Layout demo with HTML and CSS</p>
+        <h1 id="hero-title">KittyCats</h1>
+        <p class="lead">Kittens grow up, and not always into what you expected. Scroll down to meet them. Each section on the way shows one way to build a responsive layout, no framework needed.</p>
+        <a class="btn btn--primary" href="#gallery">
+          Meet the kittens
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="technique">
+          <span class="technique__label">Technique</span>
+          <span><strong>Fluid layout.</strong> <code>clamp()</code> scales text and spacing with the screen, and <code>aspect-ratio</code> keeps space free for the drawing, so nothing jumps while the page loads.</span>
+        </p>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <svg class="hero__web"><use href="#cobweb"/></svg>
+        <svg class="hero__kitten fur-ginger"><use href="#kitten"/></svg>
+        <svg class="hero__arrow" viewBox="0 0 60 24"><path d="M2 12h52m0 0-9-8m9 8-9 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="hero__cat fur-ginger"><use href="#cat"/></svg>
+        <svg class="hero__spider"><use href="#spider"/></svg>
+      </div>
+    </section>
+
+    <div class="web-divider container" aria-hidden="true"><svg><use href="#spider"/></svg></div>
+
+    <!-- ============ 1. Sticky section ============ -->
+    <section class="questions container" id="questions" aria-labelledby="questions-title">
+      <div class="questions__head">
+        <p class="eyebrow">01. Sticky section</p>
+        <h2 id="questions-title">A few honest questions</h2>
+        <p class="section-text">Keep scrolling. The heading stays where it is and the cards pile up on top of each other.</p>
+        <p class="technique">
+          <span class="technique__label">Technique</span>
+          <span><strong><code>position: sticky</code>.</strong> The heading sticks inside its column. Each card sticks a bit lower than the one before, so they stack like a deck of cards.</span>
+        </p>
+      </div>
+
+      <ol class="questions__cards">
+        <li class="qcard">
+          <span class="qcard__num" aria-hidden="true">01</span>
+          <h3>Are you sure your kitten is cute?</h3>
+          <p>Big eyes, tiny paws, no responsibilities. Fair enough.</p>
+        </li>
+        <li class="qcard">
+          <span class="qcard__num" aria-hidden="true">02</span>
+          <h3>Do you think it will always be the same?</h3>
+          <p>Spoiler: kittens turn into cats. The paws get bigger and the patience gets shorter.</p>
+        </li>
+        <li class="qcard">
+          <span class="qcard__num" aria-hidden="true">03</span>
+          <h3>Let's check what could happen to your kitten!</h3>
+          <p>Pick a kitten in the <a href="#gallery">gallery</a> and find out who it grows into.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="web-divider container" aria-hidden="true"><svg><use href="#spider"/></svg></div>
+
+    <!-- ============ 2. Grid gallery ============ -->
+    <section class="gallery container" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-head">
+        <p class="eyebrow">02. Grid gallery</p>
+        <h2 id="gallery-title">From kitten to cat</h2>
+        <p class="section-text">Point at a kitten, tab to it or tap it to see the grown-up version. Tap again to go back.</p>
+        <p class="technique">
+          <span class="technique__label">Technique</span>
+          <span><strong>CSS Grid.</strong> On phones, <code>repeat(auto-fit, minmax(9.5rem, 1fr))</code> fits in as many tiles as there's room for. From 768px it's a four-column grid, and the first tile takes up two rows and two columns.</span>
+        </p>
+      </div>
+
+      <ul class="gallery__grid">
+        <li class="morph morph--featured tile-ginger">
+          <button type="button" class="morph__btn fur-ginger" aria-pressed="false">
+            <svg class="morph__kitten" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+            <svg class="morph__cat" aria-hidden="true" focusable="false"><use href="#cat"/></svg>
+            <span class="visually-hidden">Show the ginger kitten grown up</span>
+          </button>
+          <p class="morph__caption"><strong>Ginger</strong> <span class="morph__state">kitten</span></p>
+        </li>
+        <li class="morph tile-black">
+          <button type="button" class="morph__btn fur-black" aria-pressed="false">
+            <svg class="morph__kitten" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+            <svg class="morph__cat" aria-hidden="true" focusable="false"><use href="#cat"/></svg>
+            <span class="visually-hidden">Show the black kitten grown up</span>
+          </button>
+          <p class="morph__caption"><strong>Black</strong> <span class="morph__state">kitten</span></p>
+        </li>
+        <li class="morph tile-white">
+          <button type="button" class="morph__btn fur-white" aria-pressed="false">
+            <svg class="morph__kitten" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+            <svg class="morph__cat" aria-hidden="true" focusable="false"><use href="#cat"/></svg>
+            <span class="visually-hidden">Show the white kitten grown up</span>
+          </button>
+          <p class="morph__caption"><strong>White</strong> <span class="morph__state">kitten</span></p>
+        </li>
+        <li class="morph tile-grey">
+          <button type="button" class="morph__btn fur-grey" aria-pressed="false">
+            <svg class="morph__kitten" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+            <svg class="morph__cat" aria-hidden="true" focusable="false"><use href="#cat"/></svg>
+            <span class="visually-hidden">Show the grey kitten grown up</span>
+          </button>
+          <p class="morph__caption"><strong>Grey</strong> <span class="morph__state">kitten</span></p>
+        </li>
+        <li class="morph tile-tabby">
+          <button type="button" class="morph__btn fur-tabby" aria-pressed="false">
+            <svg class="morph__kitten" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+            <svg class="morph__cat" aria-hidden="true" focusable="false"><use href="#cat"/></svg>
+            <span class="visually-hidden">Show the tabby kitten grown up</span>
+          </button>
+          <p class="morph__caption"><strong>Tabby</strong> <span class="morph__state">kitten</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="web-divider container" aria-hidden="true"><svg><use href="#spider"/></svg></div>
+
+    <!-- ============ 3. Flexbox card row ============ -->
+    <section class="cats container" id="cats" aria-labelledby="cats-title">
+      <div class="section-head">
+        <p class="eyebrow">03. Flexbox card row</p>
+        <h2 id="cats-title">More kitties to choose from</h2>
+        <p class="section-text">Eight cats with eight different characters. Some descriptions are longer on purpose, so you can see the buttons still line up.</p>
+        <p class="technique">
+          <span class="technique__label">Technique</span>
+          <span><strong>Flexbox.</strong> The cards wrap with <code>flex-wrap: wrap</code> and keep one width (<code>flex: 0 1 15rem</code>). <code>justify-content: center</code> keeps a short last row in the middle. Inside each card, <code>margin-top: auto</code> pushes the button to the bottom.</span>
+        </p>
+      </div>
+
+      <ul class="cats__row">
+        <li class="cat-card">
+          <svg class="cat-card__img fur-ginger" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Alex</h3>
+          <p class="cat-card__traits"><span>Ginger</span><span>Playful</span></p>
+          <p class="cat-card__text">Sweet ginger kitten, playful and energetic.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Alex">Get a call<span class="visually-hidden"> about Alex</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-grey" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Bob</h3>
+          <p class="cat-card__traits"><span>Grey</span><span>Calm</span></p>
+          <p class="cat-card__text">Calm and affectionate, loves naps in the sun.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Bob">Get a call<span class="visually-hidden"> about Bob</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-tabby" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Nick</h3>
+          <p class="cat-card__traits"><span>Tabby</span><span>Curious</span></p>
+          <p class="cat-card__text">Curious and adventurous, great for active homes.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Nick">Get a call<span class="visually-hidden"> about Nick</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-white" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Leila</h3>
+          <p class="cat-card__traits"><span>White</span><span>Quiet</span></p>
+          <p class="cat-card__text">Quiet and observant, enjoys gentle petting.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Leila">Get a call<span class="visually-hidden"> about Leila</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-black" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Zuriko</h3>
+          <p class="cat-card__traits"><span>Black</span><span>Sociable</span></p>
+          <p class="cat-card__text">Sociable and friendly, good with other pets.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Zuriko">Get a call<span class="visually-hidden"> about Zuriko</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-cream" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Bamby</h3>
+          <p class="cat-card__traits"><span>Cream</span><span>Shy</span></p>
+          <p class="cat-card__text">Gentle and a bit shy at first. One treat is usually enough, and after that you have a friend who follows you everywhere.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Bamby">Get a call<span class="visually-hidden"> about Bamby</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-chocolate" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Kote</h3>
+          <p class="cat-card__traits"><span>Chocolate</span><span>Chatty</span></p>
+          <p class="cat-card__text">Chatty and bold, follows you from room to room.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Kote">Get a call<span class="visually-hidden"> about Kote</span></button>
+        </li>
+        <li class="cat-card">
+          <svg class="cat-card__img fur-blue" aria-hidden="true" focusable="false"><use href="#kitten"/></svg>
+          <h3>Piso</h3>
+          <p class="cat-card__traits"><span>Blue-grey</span><span>Relaxed</span></p>
+          <p class="cat-card__text">Relaxed lap cat, happiest next to a warm radiator.</p>
+          <button type="button" class="btn btn--outline cat-card__btn" data-cat="Piso">Get a call<span class="visually-hidden"> about Piso</span></button>
+        </li>
+      </ul>
+    </section>
+
+    <div class="web-divider container" aria-hidden="true"><svg><use href="#spider"/></svg></div>
+
+    <!-- ============ 4. Two-column split ============ -->
+    <section class="about container" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <p class="eyebrow">04. Two-column split</p>
+        <h2 id="about-title">About KittyCats</h2>
+        <p class="technique">
+          <span class="technique__label">Technique</span>
+          <span><strong>Two-column split.</strong> A grid with two columns, <code>minmax(0, 1.15fr) minmax(0, 1fr)</code>. Below 768px it becomes one column, and the order in the HTML stays the same.</span>
+        </p>
+      </div>
+
+      <div class="split">
+        <div class="split__main">
+          <h3>Our mission</h3>
+          <p>Share adorable kitten stories, let you preview how they grow, and make it fun to explore different personalities - all with a sprinkle of Halloween vibes and cobweb flair.</p>
+          <ul class="checklist">
+            <li>Curated kitty cards with playful micro-interactions</li>
+            <li>Clean, responsive layouts with no stretched images</li>
+            <li>A simple form to get in touch and get a call back</li>
+          </ul>
+        </div>
+
+        <article class="person" aria-labelledby="person-name">
+          <svg class="person__web" aria-hidden="true" focusable="false"><use href="#cobweb"/></svg>
+          <p class="eyebrow">The human behind it</p>
+          <h3 id="person-name">Iva Tsatskrialashvili</h3>
+          <p>Founder, cat enthusiast, and the human behind this cozy gallery. Iva loves building playful web experiences, teaching languages, and matching people with the purrfect kitten.</p>
+          <p>When not coding or cuddling whiskered friends, Iva explores new coffee spots and dreams up fresh features for this site.</p>
+          <ul class="person__links">
+            <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener">LinkedIn</a></li>
+            <li><a href="https://www.malt.com/profile/ivatsatskrialashvili" rel="me noopener">Malt</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="web-divider container" aria-hidden="true"><svg><use href="#spider"/></svg></div>
+
+    <!-- ============ 5. Form ============ -->
+    <section class="contact container" id="contact" aria-labelledby="contact-title">
+      <div class="section-head">
+        <p class="eyebrow">05. Form grid</p>
+        <h2 id="contact-title">Get more information</h2>
+        <p class="section-text">Tell us what you like and we'll find the purrfect match. It's a demo, so nothing leaves your browser.</p>
+        <p class="technique">
+          <span class="technique__label">Technique</span>
+          <span><strong>Form grid.</strong> Two columns from 768px. Fields that need the full width get <code>grid-column: 1 / -1</code>. The checks are the browser's own, and screen readers hear the error messages too.</span>
+        </p>
+      </div>
+
+      <form class="cat-form" id="cat-form" novalidate>
+        <div class="field field--full">
+          <label for="preferences">Preferences <span class="field__optional">(optional)</span></label>
+          <textarea id="preferences" name="preferences" rows="4" placeholder="Tell us what you like..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="colour">Colour</label>
+          <select id="colour" name="colour">
+            <option value="ginger">Ginger</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="grey">Grey</option>
+          </select>
+        </div>
+
+        <fieldset class="field field--radios" aria-describedby="age-error">
+          <legend>Age</legend>
+          <div class="radios">
+            <label class="radio"><input type="radio" name="age" value="adult" required> Adult</label>
+            <label class="radio"><input type="radio" name="age" value="kitten" required> Kitten</label>
+          </div>
+          <p class="field__error" id="age-error"></p>
+        </fieldset>
+
+        <div class="field field--full">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" placeholder="you@example.com">
+          <p class="field__error" id="email-error"></p>
+        </div>
+
+        <div class="field field--full cat-form__actions">
+          <button type="submit" class="btn btn--primary">Send request</button>
+          <p class="cat-form__status" id="form-status" role="status"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ============ 6. Footer ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="technique technique--footer">
+        <span class="technique__label">Technique</span>
+        <span><strong>Footer.</strong> The body is a flex column and <code>main</code> grows (<code>flex: 1 0 auto</code>), so the footer stays at the bottom even on a short page. Inside, <code>flex-wrap</code> lets the two parts move under each other on small screens.</span>
+      </p>
+      <div class="site-footer__inner">
+        <div class="site-footer__who">
+          <span class="site-footer__name">Iva Tsatskrialashvili</span>
+          <span>Marketing Automation Engineer in Graz, Austria</span>
+          <span>KittyCats: first version October 2025, rebuilt 2026.</span>
+        </div>
+        <ul class="site-footer__links">
+          <li><a href="../">Portfolio</a></li>
+          <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://www.malt.com/profile/ivatsatskrialashvili" rel="me noopener">Malt</a></li>
+          <li><a href="https://github.com/mrlololi/Webprojekte" rel="noopener">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

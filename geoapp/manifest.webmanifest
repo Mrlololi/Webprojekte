@@ -1,0 +1,16 @@
+{
+  "name": "GeoAPP - грузинські числа",
+  "short_name": "GeoAPP",
+  "description": "Тренажер грузинських чисел від 0 до 30 українською, німецькою та англійською.",
+  "lang": "uk",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f0",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "../assets/icons/geoapp-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "../assets/icons/geoapp-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "../assets/icons/geoapp-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

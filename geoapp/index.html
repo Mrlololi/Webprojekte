@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="uk" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>GeoAPP - грузинські числа для українців</title>
+  <meta name="description" content="Тренажер грузинських чисел від 0 до 30. Можна обирати відповідь або вписувати її, а помилки потім повторити окремо. Українською, німецькою та англійською.">
+  <meta name="author" content="Iva Tsatskrialashvili">
+  <link rel="canonical" href="https://mrlololi.github.io/Webprojekte/geoapp/">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Iva Tsatskrialashvili, Portfolio">
+  <meta property="og:title" content="GeoAPP - грузинські числа для українців">
+  <meta property="og:description" content="Тренажер грузинських чисел від 0 до 30 для українців. Georgian numbers quiz in Ukrainian, German and English.">
+  <meta property="og:url" content="https://mrlololi.github.io/Webprojekte/geoapp/">
+  <meta property="og:image" content="https://mrlololi.github.io/Webprojekte/assets/og/og-geoapp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GeoAPP: Georgian number words ერთი, ორი, სამი on a teal card">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:locale:alternate" content="de_AT">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeoAPP - грузинські числа для українців">
+  <meta name="twitter:description" content="Тренажер грузинських чисел від 0 до 30. Georgian numbers quiz.">
+  <meta name="twitter:image" content="https://mrlololi.github.io/Webprojekte/assets/og/og-geoapp.png">
+  <meta name="twitter:image:alt" content="GeoAPP: Georgian number words ერთი, ორი, სამი on a teal card">
+
+  <link rel="icon" href="../assets/icons/geoapp.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/geoapp-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <script>
+    /* Runs before first paint: theme without flashing, and hide the page until the strings are in. */
+    (function (root) {
+      root.classList.remove('no-js');
+      root.classList.add('js', 'i18n-pending');
+      try {
+        var theme = localStorage.getItem('iva-portfolio-theme');
+        if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+      } catch (error) { /* storage blocked - follow the system theme */ }
+      setTimeout(function () { root.classList.remove('i18n-pending'); }, 3000);
+    })(document.documentElement);
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="css/geoapp.css">
+
+  <script src="../assets/js/theme.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <noscript>
+    <p class="noscript">GeoAPP потребує JavaScript. GeoAPP benötigt JavaScript. GeoAPP needs JavaScript.</p>
+  </noscript>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip"></a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="16" class="brand__mark-bg"/>
+          <circle cx="25" cy="32" r="14" class="brand__mark-a"/>
+          <circle cx="39" cy="32" r="14" class="brand__mark-b"/>
+        </svg>
+        <span class="brand__name brand__name--short" data-i18n="brand.short"></span>
+        <span class="brand__name brand__name--long" data-i18n="brand.long"></span>
+        <span class="visually-hidden">, <span data-i18n="a11y.home"></span></span>
+      </a>
+
+      <div class="lang-switch" role="group" aria-labelledby="lang-label">
+        <span id="lang-label" class="visually-hidden" data-i18n="lang.label"></span>
+        <div class="lang-switch__buttons" id="lang-buttons"></div>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-pressed="false">
+        <span class="visually-hidden" data-i18n="theme.dark"></span>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero container" aria-labelledby="hero-title">
+      <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+      <h1 id="hero-title" data-i18n="hero.title"></h1>
+      <p class="lead" data-i18n="hero.lead"></p>
+    </section>
+
+    <section class="container quiz-section" aria-labelledby="quiz-label">
+      <h2 id="quiz-label" class="visually-hidden" data-i18n="quiz.label"></h2>
+
+      <div class="quiz-card">
+        <p class="notice" id="storage-notice" hidden data-i18n="storage.off"></p>
+
+        <!-- Loading / error -->
+        <div class="screen screen--loading" id="screen-loading" role="alert" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="loading-text" data-i18n="quiz.loading"></span>
+        </div>
+
+        <!-- Start screen -->
+        <section class="screen" id="screen-start" aria-labelledby="start-title">
+          <h3 class="screen__title" id="start-title" tabindex="-1" data-i18n="start.title"></h3>
+
+          <form class="start-form" id="start-form">
+            <fieldset class="field-group">
+              <legend class="field-group__legend" data-i18n="start.mode"></legend>
+              <div class="mode-options">
+                <label class="mode-option">
+                  <input type="radio" name="mode" value="choice" checked>
+                  <span class="mode-option__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg>
+                  </span>
+                  <span class="mode-option__body">
+                    <span class="mode-option__title" data-i18n="mode.choice.title"></span>
+                    <span class="mode-option__text" data-i18n="mode.choice.text"></span>
+                  </span>
+                </label>
+                <label class="mode-option">
+                  <input type="radio" name="mode" value="typed">
+                  <span class="mode-option__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><path d="M7 10.5h.01M10.5 10.5h.01M14 10.5h.01M17.5 10.5h.01M8 14.5h8"/></svg>
+                  </span>
+                  <span class="mode-option__body">
+                    <span class="mode-option__title" data-i18n="mode.typed.title"></span>
+                    <span class="mode-option__text" data-i18n="mode.typed.text"></span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group">
+              <legend class="field-group__legend" data-i18n="start.range"></legend>
+              <div class="range-options">
+                <label class="pill"><input type="radio" name="range" value="all" checked><span data-i18n="range.all"></span></label>
+                <label class="pill"><input type="radio" name="range" value="a"><span data-i18n="range.a"></span></label>
+                <label class="pill"><input type="radio" name="range" value="b"><span data-i18n="range.b"></span></label>
+                <label class="pill"><input type="radio" name="range" value="c"><span data-i18n="range.c"></span></label>
+              </div>
+            </fieldset>
+
+            <div class="start-actions">
+              <button type="submit" class="btn btn--primary" data-i18n="start.go"></button>
+              <button type="button" class="btn btn--outline" id="resume-btn" hidden></button>
+            </div>
+          </form>
+
+          <section class="stats" aria-labelledby="stats-title">
+            <h4 class="stats__title" id="stats-title" data-i18n="stats.title"></h4>
+            <dl class="stats__list">
+              <div class="stat">
+                <dt data-i18n="stats.known"></dt>
+                <dd id="stat-known"></dd>
+              </div>
+              <div class="stat">
+                <dt data-i18n="stats.best"></dt>
+                <dd id="stat-best"></dd>
+              </div>
+              <div class="stat">
+                <dt data-i18n="stats.rounds"></dt>
+                <dd id="stat-rounds"></dd>
+              </div>
+            </dl>
+            <div class="stats__reset">
+              <button type="button" class="btn btn--quiet" id="reset-btn" data-i18n="stats.reset"></button>
+              <span class="stats__reset-msg" id="reset-msg" role="status"></span>
+            </div>
+          </section>
+        </section>
+
+        <!-- Question screen -->
+        <section class="screen" id="screen-question" hidden aria-labelledby="q-counter">
+          <div class="q-top">
+            <h3 class="q-counter" id="q-counter" tabindex="-1"></h3>
+            <p class="q-score" id="q-score">
+              <span class="visually-hidden" data-i18n="q.scoreLabel"></span>
+              <span class="q-score__item q-score__item--ok">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                <span class="visually-hidden" data-i18n="score.correct"></span>
+                <span id="score-ok">0</span>
+              </span>
+              <span class="q-score__item q-score__item--bad">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg>
+                <span class="visually-hidden" data-i18n="score.wrong"></span>
+                <span id="score-bad">0</span>
+              </span>
+            </p>
+          </div>
+          <progress class="q-progress" id="q-progress" max="1" value="0" aria-labelledby="q-counter"></progress>
+
+          <div class="prompt" id="prompt">
+            <p class="prompt__label" data-i18n="q.prompt"></p>
+            <p class="prompt__word" id="q-word" lang="ka"></p>
+            <p class="prompt__translit" id="q-translit" lang="ka-Latn"></p>
+            <button type="button" class="hint-toggle" id="hint-btn" aria-pressed="false" aria-controls="q-translit"></button>
+          </div>
+
+          <div class="options" id="q-options" role="group" data-i18n-attr="aria-label:q.optionsLabel"></div>
+
+          <form class="typed" id="q-typed" hidden novalidate>
+            <label class="typed__label" for="q-input" data-i18n="q.typedLabel"></label>
+            <div class="typed__row">
+              <input class="typed__input" id="q-input" name="answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-describedby="q-typed-help">
+              <button type="submit" class="btn btn--primary" id="check-btn" data-i18n="q.check"></button>
+            </div>
+            <p class="typed__help" id="q-typed-help" data-i18n="q.typedHelp"></p>
+          </form>
+
+          <div class="feedback" id="q-feedback" role="status"></div>
+
+          <div class="q-actions">
+            <button type="button" class="btn btn--primary btn--next" id="next-btn" hidden></button>
+          </div>
+
+          <div class="q-foot">
+            <p class="kbd-hint" id="kbd-hint"></p>
+            <button type="button" class="btn btn--quiet" id="quit-btn" data-i18n="q.quit"></button>
+          </div>
+        </section>
+
+        <!-- Result screen -->
+        <section class="screen" id="screen-result" hidden aria-labelledby="result-title">
+          <h3 class="screen__title" id="result-title" tabindex="-1" data-i18n="result.title"></h3>
+
+          <div class="result-score">
+            <div class="result-ring" id="result-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120" focusable="false">
+                <circle class="result-ring__track" cx="60" cy="60" r="52"/>
+                <circle class="result-ring__value" id="result-ring-value" cx="60" cy="60" r="52" pathLength="100"/>
+              </svg>
+              <span class="result-ring__label" id="r-percent-short"></span>
+            </div>
+            <div class="result-score__text">
+              <p class="result-score__big"><span id="r-correct"></span> <span class="result-score__of"><span data-i18n="result.of"></span> <span id="r-total"></span></span></p>
+              <p class="result-score__percent" id="r-percent"></p>
+              <p class="result-message" id="r-message"></p>
+            </div>
+          </div>
+
+          <div class="wrong" id="r-wrong-wrap" hidden>
+            <h4 class="wrong__title" data-i18n="result.wrongTitle"></h4>
+            <ul class="wrong__list" id="r-wrong"></ul>
+          </div>
+
+          <div class="result-actions">
+            <button type="button" class="btn btn--primary" id="retry-btn" hidden></button>
+            <button type="button" class="btn btn--outline" id="again-btn" data-i18n="result.again"></button>
+            <button type="button" class="btn btn--quiet" id="settings-btn" data-i18n="result.settings"></button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="container numbers" id="numbers" aria-labelledby="numbers-title">
+      <h2 id="numbers-title" data-i18n="numbers.title"></h2>
+      <p class="section-text" data-i18n="numbers.text"></p>
+      <details class="numbers__details" id="numbers-details">
+        <summary class="numbers__summary">
+          <span data-i18n="numbers.show"></span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="table-wrap" role="region" aria-labelledby="numbers-caption" tabindex="0">
+          <table class="numbers__table">
+            <caption class="visually-hidden" id="numbers-caption" data-i18n="numbers.caption"></caption>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="col.number"></th>
+                <th scope="col" data-i18n="col.georgian"></th>
+                <th scope="col" data-i18n="col.translit"></th>
+                <th scope="col" data-i18n="col.translation"></th>
+                <th scope="col" data-i18n="col.status"></th>
+              </tr>
+            </thead>
+            <tbody id="numbers-body"></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <section class="container about" id="about" aria-labelledby="about-title">
+      <div class="about__text">
+        <h2 id="about-title" data-i18n="about.title"></h2>
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <p data-i18n="about.p3"></p>
+      </div>
+      <div class="tip">
+        <h3 id="tip-title" data-i18n="tip.title"></h3>
+        <p data-i18n="tip.text"></p>
+        <ul class="tip__list">
+          <li class="tip__row">
+            <span class="tip__ka" lang="ka" data-i18n-parts="tip.ex1.ka"></span>
+            <span class="tip__gloss" data-i18n="tip.ex1"></span>
+          </li>
+          <li class="tip__row">
+            <span class="tip__ka" lang="ka" data-i18n-parts="tip.ex2.ka"></span>
+            <span class="tip__gloss" data-i18n="tip.ex2"></span>
+          </li>
+          <li class="tip__row">
+            <span class="tip__ka" lang="ka" data-i18n-parts="tip.ex3.ka"></span>
+            <span class="tip__gloss" data-i18n="tip.ex3"></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__who">
+        <span class="site-footer__name" data-i18n="footer.name"></span>
+        <span data-i18n="footer.role"></span>
+        <span data-i18n="footer.built"></span>
+      </div>
+      <ul class="site-footer__links">
+        <li><a href="../" data-i18n="footer.portfolio"></a></li>
+        <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener" data-i18n="footer.linkedin"></a></li>
+        <li><a href="https://www.malt.com/profile/ivatsatskrialashvili" rel="me noopener" data-i18n="footer.malt"></a></li>
+        <li><a href="https://github.com/mrlololi/Webprojekte" rel="noopener" data-i18n="footer.source"></a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

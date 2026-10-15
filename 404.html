@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Page not found - Iva Tsatskrialashvili</title>
+  <meta name="description" content="This page doesn't exist. Here are the pages that do.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+  <!-- GitHub Pages serves this file for any missing address, at any depth,
+       so every link here starts with /Webprojekte/. Change it if the
+       repository gets a different name. -->
+  <link rel="icon" href="/Webprojekte/assets/favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function (root) {
+      try {
+        var theme = localStorage.getItem('iva-portfolio-theme');
+        if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+      } catch (error) { /* storage blocked - follow the system theme */ }
+    })(document.documentElement);
+  </script>
+
+  <link rel="stylesheet" href="/Webprojekte/assets/css/base.css">
+  <link rel="stylesheet" href="/Webprojekte/assets/css/landing.css">
+  <script src="/Webprojekte/assets/js/theme.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/Webprojekte/">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="16" class="brand__mark-bg"/>
+          <circle cx="25" cy="32" r="14" class="brand__mark-a"/>
+          <circle cx="39" cy="32" r="14" class="brand__mark-b"/>
+        </svg>
+        <span class="brand__name brand__name--short">Iva T.</span>
+        <span class="brand__name brand__name--long">Iva Tsatskrialashvili</span>
+      </a>
+
+      <button class="theme-toggle" type="button" aria-pressed="false">
+        <span class="visually-hidden">Dark theme</span>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="intro container" aria-labelledby="nf-title">
+      <div class="intro__text">
+        <p class="eyebrow">Error 404</p>
+        <h1 id="nf-title">This page doesn't exist</h1>
+        <p class="lead">Maybe the link is old or has a typo. These pages are here:</p>
+        <ul class="intro__links">
+          <li><a class="btn btn--primary" href="/Webprojekte/">Home</a></li>
+          <li><a class="btn btn--outline" href="/Webprojekte/geoapp/">GeoAPP</a></li>
+          <li><a class="btn btn--outline" href="/Webprojekte/kittycats/">KittyCats</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__who">
+        <span class="site-footer__name">Iva Tsatskrialashvili</span>
+        <span>Marketing Automation Engineer in Graz, Austria</span>
+      </div>
+      <ul class="site-footer__links">
+        <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://www.malt.com/profile/ivatsatskrialashvili" rel="me noopener">Malt</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
