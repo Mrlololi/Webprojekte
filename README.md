@@ -2,19 +2,19 @@
 
 Two small web projects I rebuilt from scratch in 2026, plus a landing page that links to both.
 
-Live: <https://mrlololi.github.io/Webprojekte/>
+Live: <https://mrlololi.com/Webprojekte/>
 
 | Project | What it is | What you can see in the code | Live |
 |---|---|---|---|
-| [GeoAPP](geoapp/) | A quiz that helps Ukrainians in Georgia learn the Georgian numbers 0-30 | Plain JavaScript app, data in a JSON file, three interface languages, saved progress, keyboard controls, accessibility | [Open](https://mrlololi.github.io/Webprojekte/geoapp/) |
-| [KittyCats](kittycats/) | A one-page layout demo with kittens drawn in SVG | CSS Grid, Flexbox, `position: sticky`, a two-column split, a form grid, light and dark theme | [Open](https://mrlololi.github.io/Webprojekte/kittycats/) |
+| [GeoAPP](geoapp/) | A quiz that helps Ukrainians in Georgia learn the Georgian numbers 0-30 | Plain JavaScript app, data in a JSON file, three interface languages, saved progress, keyboard controls, accessibility | [Open](https://mrlololi.com/Webprojekte/geoapp/) |
+| [KittyCats](kittycats/) | A one-page layout demo with kittens drawn in SVG | CSS Grid, Flexbox, `position: sticky`, a two-column split, a form grid, light and dark theme | [Open](https://mrlololi.com/Webprojekte/kittycats/) |
 
 ## About me
 
 I'm Iva Tsatskrialashvili, a Marketing Automation Engineer in Graz, Austria. I work with ActiveCampaign, Zapier, Leadpages and Wix. I'm studying Marketing & Sales at FH CAMPUS 02 Graz and come from mobile software development.
 
 - LinkedIn: <https://www.linkedin.com/in/tsatskrialashvili-iva/>
-- Malt: <https://www.malt.com/profile/ivatsatskrialashvili>
+- Malt: <https://www.malt.de/profile/ivatsatskrialashvili>
 
 ## What's in the folder
 
@@ -60,9 +60,9 @@ and open <http://localhost:8000/>.
 
 1. Create a public repository called `Webprojekte` under `mrlololi` and push the contents of this folder to the `main` branch. `index.html` should be at the top level of the repository.
 2. In the repository go to Settings, then Pages. Under "Build and deployment" choose "Deploy from a branch", pick `main` and `/ (root)`, and save.
-3. About a minute later the site is online at `https://mrlololi.github.io/Webprojekte/`.
+3. About a minute later the site is online at `https://mrlololi.com/Webprojekte/`.
 
-The canonical and Open Graph links in the pages point to that address. If you pick a different repository name or a custom domain, replace `https://mrlololi.github.io/Webprojekte/` in the three `index.html` files, and `/Webprojekte/` in `404.html` (that page can show up at any address, so its links start at the root).
+The canonical and Open Graph links in the pages point to that address. If you pick a different repository name or a custom domain, replace `https://mrlololi.com/Webprojekte/` in the three `index.html` files, and `/Webprojekte/` in `404.html` (that page can show up at any address, so its links start at the root).
 
 ### Quick check after uploading
 
@@ -80,11 +80,11 @@ The Malt profile still links to `mrlololi.github.io/GeoAPP` and `mrlololi.github
 <head>
   <meta charset="utf-8">
   <title>GeoAPP has moved</title>
-  <link rel="canonical" href="https://mrlololi.github.io/Webprojekte/geoapp/">
-  <meta http-equiv="refresh" content="0; url=https://mrlololi.github.io/Webprojekte/geoapp/">
+  <link rel="canonical" href="https://mrlololi.com/Webprojekte/geoapp/">
+  <meta http-equiv="refresh" content="0; url=https://mrlololi.com/Webprojekte/geoapp/">
 </head>
 <body>
-  <p>GeoAPP has moved to <a href="https://mrlololi.github.io/Webprojekte/geoapp/">mrlololi.github.io/Webprojekte/geoapp</a>.</p>
+  <p>GeoAPP has moved to <a href="https://mrlololi.com/Webprojekte/geoapp/">mrlololi.com/Webprojekte/geoapp</a>.</p>
 </body>
 </html>
 ```

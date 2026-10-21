@@ -2,7 +2,7 @@
 
 KittyCats is a single page about kittens that grow up into slightly grumpier cats, with a bit of Halloween cobweb on top. The real point is the layout. Every section uses a different technique, and a small note on the page says which one.
 
-Live: <https://mrlololi.github.io/Webprojekte/kittycats/>
+Live: <https://mrlololi.com/Webprojekte/kittycats/>
 
 It's only a demo. No kittens are for sale and the contact form doesn't send anything.
 

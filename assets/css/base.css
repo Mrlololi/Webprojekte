@@ -521,6 +521,15 @@
     font-weight: 600;
     color: var(--c-text);
   }
+
+  /* Impressum and privacy policy of mrlololi.com, reachable from every page (Austrian law). */
+  .site-footer__legal {
+    margin-block: var(--space-4) 0;
+  }
+
+  .site-footer__legal a {
+    color: var(--c-text);
+  }
 }
 
 /* ---------- Unlayered: these must beat every layer ---------- */

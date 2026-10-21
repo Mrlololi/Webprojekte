@@ -2,7 +2,7 @@
 
 GeoAPP is a quiz for Ukrainians who ended up in Georgia after 2022 and want to learn the Georgian numbers from 0 to 30. Numbers come first because you need them right away: prices at the market, the number of your marshrutka, phone numbers, times. The interface is in Ukrainian (the default), German and English.
 
-Live: <https://mrlololi.github.io/Webprojekte/geoapp/>
+Live: <https://mrlololi.com/Webprojekte/geoapp/>
 
 ## What it does
 
