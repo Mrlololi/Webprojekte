@@ -541,12 +541,6 @@
     font-size: 0.75em;
   }
 
-  .gap {
-    padding: 0 0.15em;
-    color: var(--c-text-muted);
-    border-bottom: 2px dotted currentColor;
-  }
-
   .listen {
     display: inline-flex;
     align-items: center;
@@ -1323,11 +1317,6 @@
     font-weight: 400;
     font-style: italic;
     color: #4a4740;
-  }
-
-  .sheet .gap {
-    padding: 0;
-    border: 0;
   }
 
   .sheet__digit {

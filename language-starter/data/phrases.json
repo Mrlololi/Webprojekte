@@ -4294,7 +4294,7 @@
    "id": "project.lunch",
    "group": "project",
    "lang": "de",
-   "text": "Das Mittagessen ist fertig",
+   "text": "Essen ist fertig!",
    "checked": true,
    "note": ""
   },
@@ -13326,8 +13326,8 @@
    "id": "mood.happy",
    "group": "mood",
    "lang": "ka",
-   "text": "ბედნიერი ვარ",
-   "translit": "Bednieri var",
+   "text": "მიხარია",
+   "translit": "Mikharia",
    "checked": true,
    "note": ""
   },
@@ -13356,8 +13356,8 @@
    "id": "mood.goodnight",
    "group": "mood",
    "lang": "ka",
-   "text": "ღამე მშვიდობისა",
-   "translit": "Ghame mshvidobisa",
+   "text": "ძილი ნებისა",
+   "translit": "Dzili nebisa",
    "checked": true,
    "note": ""
   },
@@ -13789,8 +13789,8 @@
     "f": "Я счастлива"
    },
    "translit": {
-    "m": "Ya schastliv",
-    "f": "Ya schastliva"
+    "m": "Ya shchastliv",
+    "f": "Ya shchastliva"
    },
    "checked": true,
    "note": ""
