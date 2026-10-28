@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Language Starter - first phrases for international youth exchanges</title>
+  <meta name="description" content="Free phrase cards, a quiz and a printable phrase card in 42 languages for international youth exchanges and trainings. No account, no tracking, works offline.">
+  <meta name="author" content="Iva Tsatskrialashvili">
+  <link rel="canonical" href="https://mrlololi.com/Webprojekte/language-starter/">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Iva Tsatskrialashvili, Portfolio">
+  <meta property="og:title" content="Language Starter - first phrases for international youth exchanges">
+  <meta property="og:description" content="45 first phrases in 42 languages: cards to listen to, a quiz and a phrase card to print. Free for clubs and groups.">
+  <meta property="og:url" content="https://mrlololi.com/Webprojekte/language-starter/">
+  <meta property="og:image" content="https://mrlololi.com/Webprojekte/assets/og/og-language-starter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Language Starter: speech bubbles saying Hallo, Cześć, Hola and გამარჯობა">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="de_AT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Language Starter - first phrases for international youth exchanges">
+  <meta name="twitter:description" content="45 first phrases in 42 languages: cards, a quiz and a phrase card to print.">
+  <meta name="twitter:image" content="https://mrlololi.com/Webprojekte/assets/og/og-language-starter.png">
+  <meta name="twitter:image:alt" content="Language Starter: speech bubbles saying Hallo, Cześć, Hola and გამარჯობა">
+
+  <link rel="icon" href="../assets/icons/langstarter.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/langstarter-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <script>
+    /* Runs before first paint: theme without flashing, and hide the page until the strings are in. */
+    (function (root) {
+      root.classList.remove('no-js');
+      root.classList.add('js', 'i18n-pending');
+      try {
+        var theme = localStorage.getItem('iva-portfolio-theme');
+        if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+      } catch (error) { /* storage blocked - follow the system theme */ }
+      if (/[?&]review=/.test(location.search)) root.classList.add('is-review');
+      setTimeout(function () { root.classList.remove('i18n-pending'); }, 3000);
+    })(document.documentElement);
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="css/langstarter.css">
+
+  <script src="../assets/js/theme.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/voice.js" defer></script>
+  <script src="js/vendor/qrcode.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="16" class="brand__mark-bg"/>
+          <circle cx="25" cy="32" r="14" class="brand__mark-a"/>
+          <circle cx="39" cy="32" r="14" class="brand__mark-b"/>
+        </svg>
+        <span class="brand__name brand__name--short" data-i18n="brand.short">Iva T.</span>
+        <span class="brand__name brand__name--long" data-i18n="brand.long">Iva Tsatskrialashvili</span>
+        <span class="visually-hidden">, <span data-i18n="a11y.home">portfolio home</span></span>
+      </a>
+
+      <div class="lang-switch" role="group" aria-labelledby="lang-label">
+        <span id="lang-label" class="visually-hidden" data-i18n="lang.label">Interface language</span>
+        <div class="lang-switch__buttons" id="lang-buttons"></div>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-pressed="false">
+        <span class="visually-hidden" data-i18n="theme.dark">Dark theme</span>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero container" aria-labelledby="hero-title">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Language Starter · 42 languages</p>
+      <h1 id="hero-title" data-i18n="hero.title">First phrases for international youth exchanges</h1>
+      <p class="lead" data-i18n="hero.lead">Learn a few first sentences in each other's languages, for youth exchanges and trainings, for example within Erasmus+.</p>
+      <p class="hero__free" data-i18n="hero.free">Free for clubs, associations and groups. Native speakers are checking the drafts.</p>
+    </section>
+
+    <section class="container chooser" id="chooser" aria-labelledby="chooser-title">
+      <div class="chooser-card">
+        <h2 class="chooser__title" id="chooser-title" data-i18n="chooser.title">Pick your languages</h2>
+        <p class="status" id="status" role="status" data-i18n="loading">Loading phrases...</p>
+        <div class="chooser__row">
+          <div class="field">
+            <label class="field__label" for="from-select" data-i18n="chooser.mine">My language</label>
+            <select class="field__select" id="from-select" disabled></select>
+          </div>
+          <button type="button" class="swap" id="swap-btn" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7h12m0 0-4-4m4 4-4 4M17 17H5m0 0 4-4m-4 4 4 4"/></svg>
+            <span class="visually-hidden" data-i18n="chooser.swap">Swap languages</span>
+          </button>
+          <div class="field">
+            <label class="field__label" for="to-select" data-i18n="chooser.learn">I am learning</label>
+            <select class="field__select" id="to-select" disabled></select>
+          </div>
+        </div>
+        <div class="chooser__share">
+          <button type="button" class="btn btn--quiet" id="copy-btn" hidden data-i18n="chooser.link">Copy link for your group</button>
+          <span class="chooser__msg" id="copy-msg" role="status"></span>
+        </div>
+        <div class="pick-wrap" id="pick-wrap" hidden>
+          <h3 class="pick-wrap__title" data-i18n="chooser.pick">Which language do you want to learn?</h3>
+          <ul class="pick-grid" id="pick-grid"></ul>
+        </div>
+      </div>
+    </section>
+
+    <div id="pair" hidden>
+      <nav class="container page-nav" data-i18n-attr="aria-label:nav.label" aria-label="On this page">
+        <ul>
+          <li><a href="#phrases" data-i18n="nav.phrases">Phrases</a></li>
+          <li><a href="#quiz" data-i18n="nav.quiz">Quiz</a></li>
+          <li><a href="#card" data-i18n="nav.card">Phrase card</a></li>
+        </ul>
+      </nav>
+
+      <div class="container">
+        <div class="draft" id="draft" role="note" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></svg>
+          <div>
+            <p class="draft__title" data-i18n="draft.title">Draft - being checked by native speakers</p>
+            <p class="draft__text" id="draft-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <section class="container phrases" id="phrases" aria-labelledby="phrases-title">
+        <h2 id="phrases-title" data-i18n="phrases.title">Phrases</h2>
+        <p class="section-text" data-i18n="phrases.text">Pick a topic.</p>
+        <div class="chips" id="group-chips" role="group" data-i18n-attr="aria-label:phrases.groups" aria-label="Topics"></div>
+        <div class="cards" id="cards"></div>
+      </section>
+
+      <section class="container quiz" id="quiz" aria-labelledby="quiz-title">
+        <h2 id="quiz-title" data-i18n="quiz.title">Quiz</h2>
+        <p class="section-text" data-i18n="quiz.text">Four answers, one is right.</p>
+
+        <div class="quiz-card">
+          <p class="notice" id="storage-notice" hidden data-i18n="storage.off"></p>
+
+          <section class="screen" id="screen-start" aria-labelledby="start-title">
+            <h3 class="screen__title visually-hidden" id="start-title" tabindex="-1" data-i18n="quiz.title">Quiz</h3>
+            <form class="start-form" id="start-form">
+              <fieldset class="field-group">
+                <legend class="field-group__legend" data-i18n="start.group">Topic</legend>
+                <div class="pills" id="quiz-groups"></div>
+              </fieldset>
+              <fieldset class="field-group">
+                <legend class="field-group__legend" data-i18n="start.direction">Direction</legend>
+                <div class="pills">
+                  <label class="pill"><input type="radio" name="dir" value="learn" checked><span id="dir-learn-label"></span></label>
+                  <label class="pill"><input type="radio" name="dir" value="say"><span id="dir-say-label"></span></label>
+                </div>
+              </fieldset>
+              <div class="start-actions">
+                <button type="submit" class="btn btn--primary" data-i18n="start.go">Start quiz</button>
+                <button type="button" class="btn btn--outline" id="resume-btn" hidden></button>
+              </div>
+            </form>
+
+            <section class="stats" aria-labelledby="stats-title">
+              <h4 class="stats__title" id="stats-title" data-i18n="stats.title">Your progress</h4>
+              <dl class="stats__list">
+                <div class="stat"><dt data-i18n="stats.known">Known</dt><dd id="stat-known"></dd></div>
+                <div class="stat"><dt data-i18n="stats.best">Best round</dt><dd id="stat-best"></dd></div>
+                <div class="stat"><dt data-i18n="stats.rounds">Rounds</dt><dd id="stat-rounds"></dd></div>
+              </dl>
+              <div class="stats__reset">
+                <button type="button" class="btn btn--quiet" id="reset-btn" data-i18n="stats.reset">Reset progress</button>
+                <span class="stats__reset-msg" id="reset-msg" role="status"></span>
+              </div>
+            </section>
+          </section>
+
+          <section class="screen" id="screen-question" hidden aria-labelledby="q-counter">
+            <div class="q-top">
+              <h3 class="q-counter" id="q-counter" tabindex="-1"></h3>
+              <p class="q-score">
+                <span class="visually-hidden" data-i18n="q.scoreLabel">Score</span>
+                <span class="q-score__item q-score__item--ok">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                  <span class="visually-hidden" data-i18n="score.correct">correct</span>
+                  <span id="score-ok">0</span>
+                </span>
+                <span class="q-score__item q-score__item--bad">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg>
+                  <span class="visually-hidden" data-i18n="score.wrong">wrong</span>
+                  <span id="score-bad">0</span>
+                </span>
+              </p>
+            </div>
+            <progress class="q-progress" id="q-progress" max="1" value="0" aria-labelledby="q-counter"></progress>
+
+            <div class="prompt">
+              <p class="prompt__label" id="q-label"></p>
+              <p class="prompt__word" id="q-word"></p>
+              <p class="prompt__translit" id="q-translit"></p>
+            </div>
+
+            <div class="options" id="q-options" role="group" data-i18n-attr="aria-label:q.optionsLabel" aria-label="Answers"></div>
+            <div class="feedback" id="q-feedback" role="status"></div>
+            <div class="q-actions">
+              <button type="button" class="btn btn--primary btn--next" id="next-btn" hidden></button>
+            </div>
+            <div class="q-foot">
+              <p class="kbd-hint" id="kbd-hint"></p>
+              <button type="button" class="btn btn--quiet" id="quit-btn" data-i18n="q.quit">End quiz</button>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-result" hidden aria-labelledby="result-title">
+            <h3 class="screen__title" id="result-title" tabindex="-1" data-i18n="result.title">Your result</h3>
+            <div class="result-score">
+              <div class="result-ring" aria-hidden="true">
+                <svg viewBox="0 0 120 120" focusable="false">
+                  <circle class="result-ring__track" cx="60" cy="60" r="52"/>
+                  <circle class="result-ring__value" id="result-ring-value" cx="60" cy="60" r="52" pathLength="100"/>
+                </svg>
+                <span class="result-ring__label" id="r-percent-short"></span>
+              </div>
+              <div class="result-score__text">
+                <p class="result-score__big"><span id="r-correct"></span> <span class="result-score__of"><span data-i18n="result.of">of</span> <span id="r-total"></span></span></p>
+                <p class="result-score__percent" id="r-percent"></p>
+                <p class="result-message" id="r-message"></p>
+              </div>
+            </div>
+            <div class="wrong" id="r-wrong-wrap" hidden>
+              <h4 class="wrong__title" data-i18n="result.wrongTitle">Practise these again</h4>
+              <ul class="wrong__list" id="r-wrong"></ul>
+            </div>
+            <div class="result-actions">
+              <button type="button" class="btn btn--primary" id="retry-btn" hidden></button>
+              <button type="button" class="btn btn--outline" id="again-btn" data-i18n="result.again">New round</button>
+              <button type="button" class="btn btn--quiet" id="settings-btn" data-i18n="result.settings">Change settings</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="container print-section" id="card" aria-labelledby="card-title">
+        <h2 id="card-title" data-i18n="print.title">Phrase card</h2>
+        <p class="section-text" data-i18n="print.text">All phrases on one A4 page.</p>
+        <p class="print-actions">
+          <button type="button" class="btn btn--primary" id="print-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-i18n="print.button">Print phrase card</span>
+          </button>
+        </p>
+        <div class="sheet-wrap" role="region" data-i18n-attr="aria-label:print.preview" aria-label="Preview of the phrase card">
+          <article class="sheet" id="sheet"></article>
+        </div>
+      </section>
+    </div>
+
+    <!-- static:start (generated by tools/build.mjs from data/phrases.json - do not edit by hand) -->
+    <section class="container static-fallback" aria-labelledby="static-title">
+      <h2 id="static-title">English to German: all 45 phrases</h2>
+      <p class="section-text">This list works without JavaScript. With JavaScript you can pick any of the 42 languages, listen, play the quiz and print a phrase card.</p>
+      <h3>Getting to know each other</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td lang="en">Hello</td><td lang="de">Hallo</td></tr>
+          <tr><td>2</td><td lang="en">Good morning</td><td lang="de">Guten Morgen</td></tr>
+          <tr><td>3</td><td lang="en">My name is …</td><td lang="de">Ich heiße …</td></tr>
+          <tr><td>4</td><td lang="en">What's your name?</td><td lang="de">Wie heißt du?</td></tr>
+          <tr><td>5</td><td lang="en">Nice to meet you</td><td lang="de">Schön, dich kennenzulernen</td></tr>
+          <tr><td>6</td><td lang="en">Where are you from?</td><td lang="de">Woher kommst du?</td></tr>
+          <tr><td>7</td><td lang="en">I'm from …</td><td lang="de">Ich komme aus …</td></tr>
+          <tr><td>8</td><td lang="en">Goodbye</td><td lang="de">Tschüss</td></tr>
+          <tr><td>9</td><td lang="en">See you tomorrow</td><td lang="de">Bis morgen</td></tr>
+        </tbody>
+      </table>
+      <h3>Being polite</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>10</td><td lang="en">Please</td><td lang="de">Bitte</td></tr>
+          <tr><td>11</td><td lang="en">Thank you</td><td lang="de">Danke</td></tr>
+          <tr><td>12</td><td lang="en">Sorry</td><td lang="de">Entschuldigung</td></tr>
+          <tr><td>13</td><td lang="en">Yes</td><td lang="de">Ja</td></tr>
+          <tr><td>14</td><td lang="en">No</td><td lang="de">Nein</td></tr>
+          <tr><td>15</td><td lang="en">No problem</td><td lang="de">Kein Problem</td></tr>
+        </tbody>
+      </table>
+      <h3>In the project</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>16</td><td lang="en">Let's start!</td><td lang="de">Los geht's!</td></tr>
+          <tr><td>17</td><td lang="en">Break!</td><td lang="de">Pause!</td></tr>
+          <tr><td>18</td><td lang="en">Lunch is ready</td><td lang="de">Das Mittagessen ist fertig</td></tr>
+          <tr><td>19</td><td lang="en">Where is the toilet?</td><td lang="de">Wo ist die Toilette?</td></tr>
+          <tr><td>20</td><td lang="en">I don't understand</td><td lang="de">Ich verstehe das nicht</td></tr>
+          <tr><td>21</td><td lang="en">Can you repeat that, please?</td><td lang="de">Kannst du das bitte wiederholen?</td></tr>
+          <tr><td>22</td><td lang="en">Slowly, please</td><td lang="de">Langsamer, bitte</td></tr>
+          <tr><td>23</td><td lang="en">All together!</td><td lang="de">Alle zusammen!</td></tr>
+          <tr><td>24</td><td lang="en">Well done!</td><td lang="de">Gut gemacht!</td></tr>
+          <tr><td>25</td><td lang="en">Cheers!</td><td lang="de">Prost!</td></tr>
+        </tbody>
+      </table>
+      <h3>How I feel</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>26</td><td lang="en">I'm tired</td><td lang="de">Ich bin müde</td></tr>
+          <tr><td>27</td><td lang="en">I'm happy</td><td lang="de">Ich bin glücklich</td></tr>
+          <tr><td>28</td><td lang="en">I'm hungry</td><td lang="de">Ich habe Hunger</td></tr>
+          <tr><td>29</td><td lang="en">I like it</td><td lang="de">Das gefällt mir</td></tr>
+          <tr><td>30</td><td lang="en">Good night</td><td lang="de">Gute Nacht</td></tr>
+        </tbody>
+      </table>
+      <h3>Help</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>31</td><td lang="en">Help!</td><td lang="de">Hilfe!</td></tr>
+          <tr><td>32</td><td lang="en">I need a doctor</td><td lang="de">Ich brauche einen Arzt</td></tr>
+          <tr><td>33</td><td lang="en">Emergency number: 112</td><td lang="de">Notruf: 112</td></tr>
+          <tr><td>34</td><td lang="en">Where is …?</td><td lang="de">Wo ist …?</td></tr>
+          <tr><td>35</td><td lang="en">I'm lost</td><td lang="de">Ich habe mich verlaufen</td></tr>
+        </tbody>
+      </table>
+      <h3>Numbers</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>36</td><td lang="en">one</td><td lang="de">eins</td></tr>
+          <tr><td>37</td><td lang="en">two</td><td lang="de">zwei</td></tr>
+          <tr><td>38</td><td lang="en">three</td><td lang="de">drei</td></tr>
+          <tr><td>39</td><td lang="en">four</td><td lang="de">vier</td></tr>
+          <tr><td>40</td><td lang="en">five</td><td lang="de">fünf</td></tr>
+          <tr><td>41</td><td lang="en">six</td><td lang="de">sechs</td></tr>
+          <tr><td>42</td><td lang="en">seven</td><td lang="de">sieben</td></tr>
+          <tr><td>43</td><td lang="en">eight</td><td lang="de">acht</td></tr>
+          <tr><td>44</td><td lang="en">nine</td><td lang="de">neun</td></tr>
+          <tr><td>45</td><td lang="en">ten</td><td lang="de">zehn</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- static:end -->
+
+    <section class="review" id="review" hidden></section>
+
+    <section class="container about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title" data-i18n="about.title">How it works</h2>
+      <p data-i18n="about.p1">Choose your language and the one you want to learn. You get 45 short phrases in 6 topics, a quiz and a phrase card to print.</p>
+      <p data-i18n="about.p2">No account, no tracking, nothing is sent anywhere. After the first visit it also works offline.</p>
+      <p data-i18n="about.p3">Listen uses the voices of your device or browser.</p>
+      <div class="thanks" id="thanks" hidden>
+        <h3 data-i18n="thanks.title">Thank you</h3>
+        <p data-i18n="thanks.text">These people checked the phrases:</p>
+        <ul class="thanks__list" id="thanks-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__who">
+        <span class="site-footer__name" data-i18n="footer.name">Iva Tsatskrialashvili</span>
+        <span data-i18n="footer.role">Marketing Automation Engineer in Graz, Austria</span>
+        <span data-i18n="footer.built">Language Starter: plain HTML, CSS and JavaScript, no tracking</span>
+      </div>
+      <ul class="site-footer__links">
+        <li><a href="../" data-i18n="footer.portfolio">All web projects</a></li>
+        <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener" data-i18n="footer.linkedin">LinkedIn</a></li>
+        <li><a href="https://www.malt.de/profile/ivatsatskrialashvili" rel="me noopener" data-i18n="footer.malt">Malt</a></li>
+        <li><a href="https://github.com/mrlololi/Webprojekte" rel="noopener" data-i18n="footer.source">Source on GitHub</a></li>
+      </ul>
+    </div>
+    <p class="container site-footer__legal"><a href="https://mrlololi.com/impressum/">Impressum</a> · <a href="https://mrlololi.com/datenschutz/">Datenschutz</a> · <a href="https://mrlololi.com/">mrlololi.com</a></p>
+  </footer>
+</body>
+</html>

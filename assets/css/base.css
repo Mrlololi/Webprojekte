@@ -29,6 +29,8 @@
     --c-kitty: light-dark(#b4490c, #fb923c);
     --c-kitty-soft: light-dark(#fbe9dc, #3a2414);
     --c-kitty-deco: #da6517; /* decoration only, never text */
+    --c-lang: light-dark(#5b3fc0, #b5a6ff);
+    --c-lang-soft: light-dark(#eeeafc, #26213f);
     --c-danger: light-dark(#b91c1c, #f87171);
     --c-danger-soft: light-dark(#fde8e8, #3b1d1f);
     --c-on-accent: light-dark(#ffffff, #14161a);

@@ -1,6 +1,6 @@
 # Webprojekte by Iva Tsatskrialashvili
 
-Two small web projects I rebuilt from scratch in 2026, plus a landing page that links to both.
+Small web projects built in 2026, plus a landing page that links to them.
 
 Live: <https://mrlololi.com/Webprojekte/>
 
@@ -8,6 +8,7 @@ Live: <https://mrlololi.com/Webprojekte/>
 |---|---|---|---|
 | [GeoAPP](geoapp/) | A quiz that helps Ukrainians in Georgia learn the Georgian numbers 0-30 | Plain JavaScript app, data in a JSON file, three interface languages, saved progress, keyboard controls, accessibility | [Open](https://mrlololi.com/Webprojekte/geoapp/) |
 | [KittyCats](kittycats/) | A one-page layout demo with kittens drawn in SVG | CSS Grid, Flexbox, `position: sticky`, a two-column split, a form grid, light and dark theme | [Open](https://mrlololi.com/Webprojekte/kittycats/) |
+| [Language Starter](language-starter/) | First phrases for international youth exchanges: 45 phrases in 42 languages, cards to listen to, a quiz and a one-page phrase card to print | One JSON file for 1890 entries, Web Speech API with a fallback for recordings, print CSS for exactly one A4 page, a QR code made in the browser, offline, review mode for native speakers | [Open](https://mrlololi.com/Webprojekte/language-starter/) |
 
 ## About me
 
@@ -32,7 +33,8 @@ Webprojekte/
 │   ├── icons/            SVG favicons and 180x180 touch icons for each page
 │   └── og/               1200x630 preview images for social media
 ├── geoapp/               see geoapp/README.md
-└── kittycats/            see kittycats/README.md
+├── kittycats/            see kittycats/README.md
+└── language-starter/     see language-starter/README.md
 ```
 
 ## Shared design

@@ -254,6 +254,73 @@
     transform: translateX(4px);
   }
 
+  .project--lang {
+    --accent: var(--c-lang);
+    --accent-soft: var(--c-lang-soft);
+  }
+
+  /* Language Starter preview: one phrase card and three speech bubbles */
+  .project__visual--lang {
+    grid-template-columns: auto auto;
+    gap: var(--space-4);
+  }
+
+  .mini-phrase {
+    display: grid;
+    gap: 2px;
+    padding: var(--space-3) var(--space-4);
+    background: var(--c-surface);
+    border-top: 5px solid #d9879a;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-2);
+    rotate: -2deg;
+  }
+
+  .mini-phrase__word {
+    font-family: var(--font-ka);
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .mini-phrase__translit,
+  .mini-phrase__mine {
+    font-size: var(--step--1);
+    color: var(--c-text-muted);
+  }
+
+  .mini-phrase__listen {
+    justify-self: start;
+    margin-top: var(--space-1);
+    padding: 0 var(--space-3);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 2px solid var(--c-text);
+    border-radius: var(--radius-pill);
+  }
+
+  .mini-bubbles {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .mini-bubbles span {
+    padding: var(--space-1) var(--space-3);
+    font-weight: 700;
+    color: #1c1b19;
+    border-radius: var(--radius-md) var(--radius-md) var(--radius-md) 4px;
+  }
+
+  .mini-bubbles span:nth-child(1) { background: #e3f0da; }
+  .mini-bubbles span:nth-child(2) { background: #fbf0cc; translate: 0.75rem 0; }
+  .mini-bubbles span:nth-child(3) { background: #dcebf7; }
+
+  @media (max-width: 22.5em) {
+    .mini-bubbles {
+      display: none;
+    }
+  }
+
   /* GeoAPP preview: a tiny quiz built from HTML and CSS */
   .mini-quiz {
     display: grid;

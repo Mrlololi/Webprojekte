@@ -1,0 +1,16 @@
+{
+  "name": "Language Starter - first phrases",
+  "short_name": "Language Starter",
+  "description": "45 first phrases in 42 languages for international youth exchanges: cards, quiz and a phrase card to print.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f0",
+  "theme_color": "#5b3fc0",
+  "icons": [
+    { "src": "../assets/icons/langstarter-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "../assets/icons/langstarter-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "../assets/icons/langstarter-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

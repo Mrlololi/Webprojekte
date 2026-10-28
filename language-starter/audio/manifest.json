@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Recorded audio files, relative to this folder: {lang}/{id}.mp3, or {lang}/{id}.m.mp3 and {lang}/{id}.f.mp3 for the two speaker forms. Only files listed here are used; everything else falls back to the browser voice.",
+  "files": []
+}
