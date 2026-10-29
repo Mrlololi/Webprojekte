@@ -8,7 +8,7 @@
  *
  * If you add a file the app needs, add it to FILES as well.
  */
-var CACHE = 'langstarter-v1';
+var CACHE = 'langstarter-v2';
 var FILES = [
   './',
   './index.html',
@@ -23,6 +23,8 @@ var FILES = [
   './manifest.webmanifest',
   '../assets/css/base.css',
   '../assets/js/theme.js',
+  '../assets/fonts/bricolage-grotesque-latin.woff2',
+  '../assets/fonts/atkinson-hyperlegible-next-latin.woff2',
   '../assets/icons/langstarter.svg',
   '../assets/icons/langstarter-192.png'
 ];

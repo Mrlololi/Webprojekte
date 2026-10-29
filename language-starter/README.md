@@ -90,6 +90,10 @@ Review link for a native speaker: `https://mrlololi.com/Webprojekte/language-sta
 
 Listen uses the speech voices of the device or browser. Voices on the device are preferred. Some browsers also offer network voices (for example the "Google" voices in desktop Chrome): with those, the phrase text is sent to the browser maker's speech service. When the device is offline and only a network voice exists, the button is hidden.
 
+## Look
+
+Since 29.10.2026 the page uses the shared header, footer, colours and fonts of Webprojekte (the look of mrlololi.com, see the root README). The phrase card for printing stays black on white paper, also in the dark theme. Data, URLs, the review mode and the print layout did not change.
+
 ## Accessibility
 
 WCAG 2.2 AA: every phrase element has its `lang` attribute (and `xx-Latn` on Latin spellings), keyboard play (1-4, Enter), visible focus, real buttons and radio inputs, feedback with icon and text, contrast of at least 4.5:1 in both themes, less motion when the system asks for it.

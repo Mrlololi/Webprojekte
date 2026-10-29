@@ -1,63 +1,66 @@
 /* ==========================================================================
-   Landing page - styles on top of base.css
-   Uses both project accents: teal for GeoAPP, pumpkin for KittyCats.
+   Landing page (/Webprojekte/) and 404: intro with photo and logo balls,
+   four project cards with small looping previews, footer mascots.
+   The page holds German and English; html[lang] decides which one shows.
    ========================================================================== */
 
 @layer page {
-  :root {
-    --accent: var(--c-text);
-    --accent-soft: var(--c-surface-2);
+  /* ---------- Language: show one of the two texts ---------- */
+
+  html:lang(en) [data-l="de"],
+  html:not(:lang(en)) [data-l="en"] {
+    display: none;
   }
 
   /* ---------- Intro ---------- */
 
   .intro {
+    padding-block: var(--space-7) var(--space-8);
+    background:
+      radial-gradient(60rem 30rem at 85% 0%, color-mix(in srgb, var(--lav) 55%, transparent), transparent 70%),
+      radial-gradient(40rem 26rem at 0% 100%, color-mix(in srgb, var(--pink) 45%, transparent), transparent 70%);
+  }
+
+  :root[data-theme="dark"] .intro {
+    background: radial-gradient(60rem 30rem at 85% 0%, rgb(220 211 240 / 0.08), transparent 70%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .intro {
+      background: radial-gradient(60rem 30rem at 85% 0%, rgb(220 211 240 / 0.08), transparent 70%);
+    }
+  }
+
+  .intro__grid {
     display: grid;
+    gap: var(--space-7);
     align-items: center;
-    gap: var(--space-6);
-    padding-block: var(--space-8) var(--space-7);
   }
 
   @media (min-width: 48em) {
-    .intro {
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    .intro__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem);
+      gap: var(--space-8);
     }
   }
 
   .intro__text {
     display: grid;
-    justify-items: start;
     gap: var(--space-4);
+    justify-items: start;
   }
 
-  .intro h1 {
-    font-size: clamp(2rem, 1.4rem + 3.4vw, 4.25rem);
-    letter-spacing: -0.03em;
+  .intro__text h1 {
+    max-width: 16ch;
   }
 
-  .intro__role {
-    margin-top: calc(-1 * var(--space-2));
-    font-size: var(--step-2);
-    font-weight: 600;
+  .intro__who {
+    color: var(--c-text);
+  }
+
+  .intro__what {
+    max-width: 60ch;
     color: var(--c-text-muted);
-  }
-
-  .skills,
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    padding: 0;
-    list-style: none;
-  }
-
-  .skills li {
-    padding: var(--space-1) var(--space-3);
-    font-size: var(--step--1);
-    font-weight: 600;
-    background: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-pill);
   }
 
   .intro__links {
@@ -69,65 +72,70 @@
     list-style: none;
   }
 
-  .intro__art {
+  .intro__media {
+    position: relative;
     justify-self: center;
-    width: min(100%, 22rem);
+    width: min(100%, 21rem);
+    padding: 0 0 var(--space-6) var(--space-6);
   }
 
-  @media (max-width: 47.99em) {
-    .intro__art {
-      display: none;
-    }
-  }
-
-  .intro__art svg {
+  .intro__photo {
     width: 100%;
-    aspect-ratio: 1;
-    overflow: visible;
+    height: auto;
+    aspect-ratio: 340 / 425;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2);
   }
 
-  .intro__ring {
-    fill: none;
-    stroke: var(--c-border-strong);
-    stroke-width: 1.5;
-    stroke-dasharray: 3 9;
-    transform-origin: center;
-    animation: turn 60s linear infinite;
+  /* The three logo balls overlap the photo's corner. The canvas (3D) sits on the flat SVG and
+     fades in only when balls3d.js has drawn its first frame. */
+  .intro__balls {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 9.5rem;
+    aspect-ratio: 53 / 29;
+    color: var(--c-text);
   }
 
-  .intro__dot-a {
-    fill: var(--c-geo);
+  .intro__balls-flat,
+  .intro__balls canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .intro__dot-b {
-    fill: var(--c-kitty);
-    fill-opacity: 0.86;
+  .intro__balls canvas {
+    /* The spheres need room to turn: the canvas is larger than the flat logo. */
+    inset: -30% -18%;
+    width: 136%;
+    height: 160%;
+    opacity: 0;
+    transition: opacity 0.6s var(--ease);
   }
 
-  .intro__spark {
-    fill: var(--c-kitty-deco);
+  .intro__balls.is-3d canvas {
+    opacity: 1;
   }
 
-  .intro__spark--b {
-    fill: var(--c-geo);
-  }
-
-  @keyframes turn {
-    to {
-      transform: rotate(1turn);
-    }
+  .intro__balls.is-3d .intro__balls-flat {
+    opacity: 0;
+    transition: opacity 0.6s var(--ease);
   }
 
   /* ---------- Projects ---------- */
 
-  .projects__head {
-    margin-bottom: var(--space-6);
+  .projects {
+    padding-block: var(--space-8) 0;
   }
 
-  .section-text {
-    max-width: 62ch;
-    margin-top: var(--space-3);
-    color: var(--c-text-muted);
+  .projects__head {
+    display: grid;
+    gap: var(--space-3);
+    max-width: 46rem;
+    margin-bottom: var(--space-7);
   }
 
   .projects__grid {
@@ -137,24 +145,12 @@
     list-style: none;
   }
 
-  @media (min-width: 48em) {
+  @media (min-width: 46em) {
     .projects__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  .project--geo {
-    --accent: var(--c-geo);
-    --accent-soft: var(--c-geo-soft);
-  }
-
-  .project--kitty {
-    --accent: var(--c-kitty);
-    --accent-soft: var(--c-kitty-soft);
-  }
-
-  /* The whole card is clickable through the heading link (stretched ::after);
-     the card itself stays a plain list item for screen readers. */
   .project {
     position: relative;
     display: flex;
@@ -163,46 +159,49 @@
     background: var(--c-surface);
     border: 1px solid var(--c-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-1);
-    transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
   }
 
-  .project:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-2);
-    transform: translateY(-4px);
+  .project:focus-within {
+    border-color: var(--c-text);
   }
 
-  .project:has(.project__link:focus-visible) {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
-  }
-
-  .project__link {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .project__link:focus-visible {
-    outline: none;
-  }
-
-  .project__link::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  @media (hover: hover) and (pointer: fine) {
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: var(--c-border-strong);
+      box-shadow: var(--shadow-2);
+    }
   }
 
   .project__visual {
     position: relative;
     display: grid;
     place-items: center;
-    aspect-ratio: 16 / 9;
-    max-height: 16rem;
+    height: 11rem;
     overflow: hidden;
-    background: var(--accent-soft);
-    border-bottom: 1px solid var(--c-border);
+    color: var(--c-text);
+    background: var(--tint);
+  }
+
+  .project--geo {
+    --tint: var(--pist-tint);
+    --deep: var(--c-geo);
+  }
+
+  .project--lang {
+    --tint: var(--blue-tint);
+    --deep: var(--blue-ink);
+  }
+
+  .project--ki {
+    --tint: var(--lav-tint);
+    --deep: var(--lav-ink);
+  }
+
+  .project--kitty {
+    --tint: var(--peach-tint);
+    --deep: var(--c-kitty);
   }
 
   .project__body {
@@ -213,25 +212,52 @@
     padding: var(--space-5);
   }
 
-  .project__body .eyebrow {
-    color: var(--accent);
-  }
-
   .project__body h3 {
-    font-size: var(--step-3);
+    font-size: var(--step-2);
   }
 
-  .project__body > p:not(.eyebrow) {
-    color: var(--c-text-muted);
+  .project__link {
+    color: var(--c-text);
+    text-decoration: none;
+  }
+
+  /* The whole card is one link (the heading); the rest is plain text. */
+  .project__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .project__link:focus-visible {
+    outline: none;
+  }
+
+  .project__link:focus-visible::after {
+    outline: 3px solid var(--c-text);
+    outline-offset: -3px;
+    border-radius: var(--radius-lg);
+  }
+
+  .project__shows {
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--deep);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: 0;
+    list-style: none;
   }
 
   .tags li {
-    padding: 0 var(--space-2);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--c-text-muted);
+    padding: 0.1rem 0.5rem;
+    font-size: var(--step--1);
+    color: var(--c-text);
     background: var(--c-surface-2);
-    border-radius: var(--radius-sm);
+    border-radius: 6px;
   }
 
   .project__cta {
@@ -241,161 +267,306 @@
     margin-top: auto;
     padding-top: var(--space-2);
     font-weight: 700;
-    color: var(--accent);
   }
 
   .project__cta svg {
     width: 1.1em;
     height: 1.1em;
-    transition: transform var(--dur) var(--ease);
+    transition: transform 0.3s var(--ease);
   }
 
-  .project:hover .project__cta svg {
-    transform: translateX(4px);
-  }
-
-  .project--lang {
-    --accent: var(--c-lang);
-    --accent-soft: var(--c-lang-soft);
-  }
-
-  /* Language Starter preview: one phrase card and three speech bubbles */
-  .project__visual--lang {
-    grid-template-columns: auto auto;
-    gap: var(--space-4);
-  }
-
-  .mini-phrase {
-    display: grid;
-    gap: 2px;
-    padding: var(--space-3) var(--space-4);
-    background: var(--c-surface);
-    border-top: 5px solid #d9879a;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-2);
-    rotate: -2deg;
-  }
-
-  .mini-phrase__word {
-    font-family: var(--font-ka);
-    font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .mini-phrase__translit,
-  .mini-phrase__mine {
-    font-size: var(--step--1);
-    color: var(--c-text-muted);
-  }
-
-  .mini-phrase__listen {
-    justify-self: start;
-    margin-top: var(--space-1);
-    padding: 0 var(--space-3);
-    font-size: 0.8rem;
-    font-weight: 700;
-    border: 2px solid var(--c-text);
-    border-radius: var(--radius-pill);
-  }
-
-  .mini-bubbles {
-    display: grid;
-    gap: var(--space-2);
-  }
-
-  .mini-bubbles span {
-    padding: var(--space-1) var(--space-3);
-    font-weight: 700;
-    color: #1c1b19;
-    border-radius: var(--radius-md) var(--radius-md) var(--radius-md) 4px;
-  }
-
-  .mini-bubbles span:nth-child(1) { background: #e3f0da; }
-  .mini-bubbles span:nth-child(2) { background: #fbf0cc; translate: 0.75rem 0; }
-  .mini-bubbles span:nth-child(3) { background: #dcebf7; }
-
-  @media (max-width: 22.5em) {
-    .mini-bubbles {
-      display: none;
+  @media (hover: hover) and (pointer: fine) {
+    .project:hover .project__cta svg {
+      transform: translateX(4px);
     }
   }
 
-  /* GeoAPP preview: a tiny quiz built from HTML and CSS */
-  .mini-quiz {
-    display: grid;
-    justify-items: center;
-    gap: var(--space-1);
-    width: min(78%, 20rem);
-    padding: var(--space-4);
-    color: #fff;
-    background: linear-gradient(150deg, #134e4a, #0f2f2d);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-2);
-    rotate: -2deg;
+  /* ---------- Card previews (decorative, aria-hidden). Each loop ends on its full state,
+     so reduced motion (one 0.01 ms run) shows the finished picture. ---------- */
+
+  .project__visual * {
+    animation-fill-mode: both;
   }
 
-  .mini-quiz__word {
+  @media (prefers-reduced-motion: no-preference) {
+    .js .project__visual:not(.is-live) * {
+      animation-play-state: paused;
+    }
+  }
+
+  /* GeoAPP: 30 = ოც (20) + და (and) + ათი (10) */
+  .pv-geo {
+    display: grid;
+    gap: var(--space-2);
+    justify-items: center;
+  }
+
+  .pv-geo__word {
     font-family: var(--font-ka);
-    font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+    font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2;
   }
 
-  .mini-quiz__translit {
-    font-size: var(--step--1);
-    color: #cfe5e1;
+  .pv-geo__sum {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
-  .mini-quiz__options {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .pv-geo__word span,
+  .pv-geo__sum span {
+    display: inline-block;
+    padding-inline: 0.12em;
+    border-radius: 6px;
+  }
+
+  .pv-geo__a {
+    animation: pv-geo-a 6s ease-in-out infinite;
+  }
+
+  .pv-geo__c {
+    animation: pv-geo-c 6s ease-in-out infinite;
+  }
+
+  .pv-geo__b,
+  .pv-geo__d {
+    animation: pv-geo-d 6s ease-in-out infinite;
+  }
+
+  @keyframes pv-geo-a {
+    0%, 8% { background: transparent; color: var(--c-text); }
+    15%, 100% { background: var(--pink); color: var(--ink); }
+  }
+
+  @keyframes pv-geo-c {
+    0%, 33% { background: transparent; color: var(--c-text); }
+    40%, 100% { background: var(--blue); color: var(--ink); }
+  }
+
+  @keyframes pv-geo-d {
+    0%, 58% { background: transparent; color: var(--c-text); }
+    66%, 100% { background: var(--pist); color: var(--ink); }
+  }
+
+  /* Language Starter: greetings pop up one after the other */
+  .pv-lang {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     gap: var(--space-2);
-    width: 100%;
-    margin-top: var(--space-2);
+    max-width: 17rem;
   }
 
-  .mini-quiz__options span {
-    padding: var(--space-1) 0;
-    font-weight: 800;
-    text-align: center;
-    background: rgb(255 255 255 / 0.1);
-    border: 1px solid rgb(255 255 255 / 0.25);
-    border-radius: var(--radius-sm);
+  .pv-lang__b {
+    position: relative;
+    color: var(--ink);
+    padding: 0.3rem 0.85rem;
+    font-weight: 700;
+    background: #FFFFFF;
+    border: 2px solid var(--ink);
+    border-radius: 1rem 1rem 1rem 0.25rem;
+    animation: pv-pop 7s var(--ease) infinite;
   }
 
-  .mini-quiz__options .is-correct {
-    color: #0f2f2d;
-    background: #5eead4;
-    border-color: #5eead4;
+  .pv-lang__b[lang="ka"] {
+    font-family: var(--font-ka);
   }
 
-  /* KittyCats preview: kitten + a tiny wireframe of a grid */
-  .project__visual--kitty {
-    grid-template-columns: auto auto;
-    gap: var(--space-5);
+  .pv-lang__b--2 { animation-delay: 0.5s; background: var(--pink); }
+  .pv-lang__b--3 { animation-delay: 1s; background: var(--pist); }
+  .pv-lang__b--4 { animation-delay: 1.5s; background: var(--lav); }
+
+  @keyframes pv-pop {
+    0% { opacity: 0; transform: translateY(10px) scale(0.9); }
+    8%, 100% { opacity: 1; transform: none; }
   }
 
-  .mini-kitten {
-    width: clamp(6rem, 4rem + 8vw, 9rem);
-    aspect-ratio: 1;
-    rotate: -4deg;
-  }
-
-  .mini-layout {
+  /* KI: three mails get their decision chip */
+  .pv-ki {
     display: grid;
-    grid-template-columns: repeat(2, 2.75rem);
-    grid-template-rows: repeat(2, 2.75rem);
     gap: var(--space-2);
+    width: min(80%, 17rem);
   }
 
-  .mini-layout span {
-    border: 2px dashed var(--accent);
-    border-radius: var(--radius-sm);
+  .pv-ki__row {
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: 0.45rem 0.6rem;
+    background: #FFFFFF;
+    border: 1px solid rgb(43 42 51 / 0.12);
+    border-radius: 10px;
   }
 
-  .mini-layout span:first-child {
-    grid-row: span 2;
-    background: color-mix(in srgb, var(--accent) 18%, transparent);
+  .pv-ki__row i {
+    flex: 1;
+    height: 0.5rem;
+    max-width: 6rem;
+    background: rgb(43 42 51 / 0.18);
+    border-radius: 4px;
+  }
+
+  .pv-ki__chip {
+    padding: 0.05rem 0.45rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    border-radius: 6px;
+    animation: pv-chip 7s var(--ease) infinite;
+  }
+
+  .pv-ki__chip--draft { background: var(--pist); }
+  .pv-ki__chip--human { background: var(--pink); animation-delay: 0.8s; }
+  .pv-ki__chip--spam { background: #E3DBE2; animation-delay: 1.6s; }
+
+  @keyframes pv-chip {
+    0%, 6% { opacity: 0; transform: scale(0.6); }
+    12%, 100% { opacity: 1; transform: none; }
+  }
+
+  /* KittyCats: the kitten blinks and wags its tail */
+  .pv-kitty {
+    width: 9.5rem;
+    height: auto;
+    margin-top: 1.5rem;
+  }
+
+  .pv-kitty__eyes {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: pv-blink 5s ease-in-out infinite;
+  }
+
+  .pv-kitty__tail {
+    transform-box: fill-box;
+    transform-origin: 0% 100%;
+    animation: pv-tail 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pv-blink {
+    0%, 44%, 52%, 100% { transform: none; }
+    48% { transform: scaleY(0.1); }
+  }
+
+  @keyframes pv-tail {
+    0%, 100% { transform: none; }
+    50% { transform: rotate(-9deg); }
+  }
+
+  /* ---------- Cards reveal calmly on scroll (and again on re-entry) ---------- */
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-on [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+
+    .reveal-on [data-reveal].is-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-on .projects__grid > :nth-child(2n).is-in {
+      transition-delay: 0.08s;
+    }
+  }
+
+  /* ---------- Footer mascots (landing page only), wave when the footer comes into view ---------- */
+
+  .footer-mascots {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-1);
+  }
+
+  .footer-mascots .mascot {
+    width: 3.25rem;
+    height: auto;
+    overflow: visible;
+  }
+
+  .footer-mascots .o {
+    stroke: var(--on-ink);
+  }
+
+  .footer-mascots .m-shadow {
+    fill: #FFFFFF;
+    opacity: 0.14;
+  }
+
+  .footer-mascots .m-wave {
+    transform-box: view-box;
+  }
+
+  .footer-mascots .mascot:nth-child(1) .m-wave { transform-origin: 83px 72px; }
+  .footer-mascots .mascot:nth-child(2) .m-wave { transform-origin: 86px 70px; animation-delay: 0.15s; }
+  .footer-mascots .mascot:nth-child(3) .m-wave { transform-origin: 81px 74px; animation-delay: 0.3s; }
+
+  .footer-mascots.is-waving .m-wave {
+    animation-name: wave;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: none; }
+    50% { transform: rotate(-16deg); }
+  }
+
+  /* ---------- 404 ---------- */
+
+  .nf {
+    padding-block: var(--space-8);
+  }
+
+  .nf__grid {
+    display: grid;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  @media (min-width: 48em) {
+    .nf__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+    }
+  }
+
+  .nf__text {
+    display: grid;
+    gap: var(--space-4);
+    justify-items: start;
+  }
+
+  .nf__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: 0;
+    list-style: none;
+  }
+
+  .nf__scene {
+    justify-self: center;
+    width: min(100%, 24rem);
+    padding: var(--space-4) var(--space-2) var(--space-2);
+    background: var(--peach);
+    border-radius: var(--radius-xl);
+  }
+
+  .nf__lens {
+    transform-box: view-box;
+    transform-origin: 150px 120px;
+    animation: nf-search 4s ease-in-out infinite;
+  }
+
+  @keyframes nf-search {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    30% { transform: translate(-36px, 6px) rotate(-6deg); }
+    60% { transform: translate(18px, -4px) rotate(5deg); }
   }
 }

@@ -1,4 +1,4 @@
-/* Generated copy of numbers.json for file:// use. Do not edit - edit numbers.json and regenerate (see README). */
+/* Generated copy of numbers.json for file:// use. Do not edit - edit numbers.json and run node tools/build.mjs. */
 window.GEOAPP_NUMBERS = {
   "version": 1,
   "description": "Georgian numbers 0-30. number = the numeral as used in Georgia (Arabic digits), georgian = Georgian (Mkhedruli) script, translit = Latin transliteration (Georgian national system, without apostrophes), uk/de/en = translations.",

@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Recorded Georgian numbers, relative to this folder: ka/{number}.mp3, for example ka/27.mp3. Only files listed here are used. A number without a file gets no Listen button.",
+  "files": []
+}

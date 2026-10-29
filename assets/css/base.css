@@ -1,13 +1,83 @@
 /* ==========================================================================
-   Shared base for all three pages (landing, GeoAPP, KittyCats)
-   Tokens, reset, typography, header, footer, buttons, theme toggle.
+   Shared base for every page of Webprojekte (landing, 404 and the four projects)
+   The look of mrlololi.com (identity 21.10.2026, palette B, Stage 4 header):
+   tokens, fonts, reset, header, footer, buttons, theme toggle.
    Each page sets --accent / --accent-soft for its own colour.
 
-   Everything lives in cascade layers. The two unlayered rules at the end
-   ([hidden] and reduced motion) therefore always win - no !important needed.
+   Everything lives in cascade layers. The unlayered rules at the end
+   ([hidden], tagline language and reduced motion) therefore always win.
    ========================================================================== */
 
 @layer tokens, reset, base, components, page;
+
+/* ---------- Fonts (self-hosted, copied from mrlololi.com) ---------- */
+/* Latin only: Georgian, Armenian, Greek and Cyrillic fall through to the system fonts. */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/bricolage-grotesque-latin.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: optional;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/bricolage-grotesque-latin-ext.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: optional;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("../fonts/atkinson-hyperlegible-next-latin.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("../fonts/atkinson-hyperlegible-next-latin-ext.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/eb-garamond-italic-400.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: optional;
+}
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/eb-garamond-italic-500.woff2") format("woff2");
+  font-weight: 500; font-style: italic; font-display: optional;
+}
+
+/* Metric-matched fallbacks (values from mrlololi.com, src/tools/fallback-metrics.mjs).
+   Limited to Latin, so other scripts keep their own system font. */
+@font-face {
+  font-family: "Bricolage Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Arial");
+  font-weight: 500 900;
+  size-adjust: 93.48%; ascent-override: 99.49%; descent-override: 28.88%; line-gap-override: 0%;
+  unicode-range: U+0000-024F, U+2000-206F, U+20AC;
+}
+@font-face {
+  font-family: "Atkinson Fallback";
+  src: local("Arial"), local("ArialMT");
+  font-weight: 100 550;
+  size-adjust: 99.21%; ascent-override: 98.78%; descent-override: 32.26%; line-gap-override: 0%;
+  unicode-range: U+0000-024F, U+2000-206F, U+20AC;
+}
+@font-face {
+  font-family: "Atkinson Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  font-weight: 551 900;
+  size-adjust: 99.21%; ascent-override: 98.78%; descent-override: 32.26%; line-gap-override: 0%;
+  unicode-range: U+0000-024F, U+2000-206F, U+20AC;
+}
+@font-face {
+  font-family: "EB Garamond Fallback";
+  src: local("Georgia Italic"), local("Georgia-Italic"), local("Georgia");
+  font-style: italic; font-weight: 100 900;
+  size-adjust: 85.58%; ascent-override: 118.02%; descent-override: 35.06%; line-gap-override: 0%;
+  unicode-range: U+0000-024F, U+2000-206F, U+20AC;
+}
 
 /* ---------- Design tokens ---------- */
 
@@ -15,41 +85,71 @@
   :root {
     color-scheme: light dark;
 
-    /* Colour system - every text pair is checked against WCAG 2.1 AA */
-    --c-bg: light-dark(#f7f5f0, #14161a);
-    --c-surface: light-dark(#ffffff, #1d2026);
-    --c-surface-2: light-dark(#efebe3, #262a31);
-    --c-border: light-dark(#ddd7cb, #343943);
-    --c-border-strong: light-dark(#8b8478, #767d8a); /* >= 3:1 for form controls */
-    --c-text: light-dark(#1c1b19, #ece9e3); /* 15.8:1 / 15.0:1 */
-    --c-text-muted: light-dark(#5c5850, #a9a59c); /* 6.5:1 / 6.6:1 */
+    /* Palette B of mrlololi.com: soft ink on warm paper, pastels as surfaces.
+       Dark values are new for Webprojekte; every text pair passes WCAG AA (qa/contrast.mjs). */
+    --ink: #2B2A33;
+    --on-ink: #F3EEF0;
+    --pink: #F4C9D3;
+    --blue: #BFD8EE;
+    --pist: #CFE3C2;
+    --lav: #DCD3F0;
+    --peach: #F7DCC8;
 
-    --c-geo: light-dark(#0f766e, #2dd4bf);
-    --c-geo-soft: light-dark(#e1f2ef, #12302d);
-    --c-kitty: light-dark(#b4490c, #fb923c);
-    --c-kitty-soft: light-dark(#fbe9dc, #3a2414);
-    --c-kitty-deco: #da6517; /* decoration only, never text */
-    --c-lang: light-dark(#5b3fc0, #b5a6ff);
-    --c-lang-soft: light-dark(#eeeafc, #26213f);
-    --c-danger: light-dark(#b91c1c, #f87171);
-    --c-danger-soft: light-dark(#fde8e8, #3b1d1f);
-    --c-on-accent: light-dark(#ffffff, #14161a);
+    --c-bg: light-dark(#FDF9F6, #1C1B22);
+    --c-surface: light-dark(#FFFFFF, #26252D);
+    --c-surface-2: light-dark(#F4F1FB, #312F39);
+    --c-border: light-dark(#E6DFE4, #3B3943);
+    --c-border-strong: light-dark(#837E8B, #8F8999); /* >= 3:1 for form controls */
+    --c-text: light-dark(#2B2A33, #F3EEF0);
+    --c-text-muted: light-dark(#4A4753, #C4BEC8);
+    --c-header: light-dark(rgb(253 249 246 / 0.86), rgb(28 27 34 / 0.86));
+    --c-footer: light-dark(#2B2A33, #121117);
+
+    /* Pastel surfaces and the ink that reads on them */
+    --pink-tint: light-dark(#FDF0F3, #3A2830);
+    --blue-tint: light-dark(#EEF5FB, #21303F);
+    --pist-tint: light-dark(#F2F8EE, #24311F);
+    --lav-tint: light-dark(#F4F1FB, #2C2840);
+    --peach-tint: light-dark(#FCF1E8, #382B22);
+    --pink-ink: light-dark(#9C3F58, #F4C9D3);
+    --blue-ink: light-dark(#2F6A9E, #BFD8EE);
+    --pist-ink: light-dark(#3F6B31, #CFE3C2);
+    --lav-ink: light-dark(#5A4A9C, #DCD3F0);
+
+    /* Project accents, kept only where they carry meaning */
+    --c-geo: light-dark(#0F766E, #2DD4BF);
+    --c-geo-soft: light-dark(#E1F2EF, #12302D);
+    --c-kitty: light-dark(#B4490C, #FB923C);
+    --c-kitty-soft: light-dark(#FBE9DC, #3A2414);
+    --c-kitty-deco: #DA6517; /* decoration only, never text */
+    --c-lang: var(--c-text); /* Language Starter: the ink system, no own colour */
+    --c-lang-soft: var(--blue-tint);
+    --c-ki: var(--lav-ink);
+    --c-ki-soft: var(--lav-tint);
+    --c-danger: light-dark(#B91C1C, #F87171);
+    --c-danger-soft: light-dark(#FDE8E8, #3B1D1F);
+    --c-ok: light-dark(#3F6B31, #A8D38F);
+    --c-ok-soft: light-dark(#F2F8EE, #24311F);
+    --c-on-accent: light-dark(#FFFFFF, #1C1B22);
 
     --accent: var(--c-text);
     --accent-soft: var(--c-surface-2);
 
     /* Typography */
-    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-    --font-serif: ui-serif, "Iowan Old Style", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+    --font-body: "Atkinson Hyperlegible Next", "Atkinson Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+    --font-display: "Bricolage Grotesque", "Bricolage Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+    --font-accent: "EB Garamond", "EB Garamond Fallback", Georgia, "Times New Roman", serif;
+    --font-sans: var(--font-body);
+    --font-serif: var(--font-display); /* older page CSS uses this name for headings */
     --font-ka: "Noto Sans Georgian", "Segoe UI", Sylfaen, "BPG Nino Mtavruli", system-ui, sans-serif;
     --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
 
-    --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
-    --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
-    --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.4rem);
-    --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.75rem);
-    --step-3: clamp(1.73rem, 1.5rem + 1.15vw, 2.2rem);
-    --step-4: clamp(2.07rem, 1.7rem + 1.9vw, 2.75rem);
+    --step--1: clamp(0.875rem, 0.8542rem + 0.0926vw, 0.9375rem);
+    --step-0: clamp(1.0625rem, 1.0417rem + 0.0926vw, 1.125rem);
+    --step-1: clamp(1.25rem, 1.2083rem + 0.1852vw, 1.375rem);
+    --step-2: clamp(1.5rem, 1.375rem + 0.5556vw, 1.875rem);
+    --step-3: clamp(1.75rem, 1.4583rem + 1.2963vw, 2.625rem);
+    --step-4: clamp(2.25rem, 1.6667rem + 2.5926vw, 4rem);
 
     /* Spacing (4px base) */
     --space-1: 0.25rem;
@@ -63,18 +163,19 @@
 
     --radius-sm: 8px;
     --radius-md: 14px;
-    --radius-lg: 22px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
     --radius-pill: 999px;
 
-    --shadow-1: 0 1px 2px rgb(20 18 15 / 0.06), 0 8px 24px -12px rgb(20 18 15 / 0.18);
-    --shadow-2: 0 2px 4px rgb(20 18 15 / 0.06), 0 22px 44px -18px rgb(20 18 15 / 0.3);
+    --shadow-1: 0 1px 2px rgb(43 42 51 / 0.06), 0 8px 24px -12px rgb(43 42 51 / 0.16);
+    --shadow-2: 0 2px 4px rgb(43 42 51 / 0.06), 0 22px 44px -18px rgb(43 42 51 / 0.26);
 
     --container: 72rem;
     --gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
     --header-h: 4rem;
 
-    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-    --dur: 180ms;
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --dur: 200ms;
   }
 
   :root[data-theme="light"] {
@@ -105,6 +206,7 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-padding-top: calc(var(--header-h) + var(--space-4));
+    background-color: var(--c-bg);
   }
 
   body {
@@ -113,11 +215,12 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-size: var(--step-0);
     line-height: 1.6;
     color: var(--c-text);
     background-color: var(--c-bg);
+    overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -130,9 +233,9 @@
   h3,
   h4 {
     margin: 0;
-    font-family: var(--font-serif);
-    font-weight: 700;
-    line-height: 1.15;
+    font-family: var(--font-display);
+    font-weight: 650;
+    line-height: 1.12;
     letter-spacing: -0.015em;
     text-wrap: balance;
     overflow-wrap: break-word;
@@ -140,6 +243,9 @@
 
   h1 {
     font-size: var(--step-4);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
   }
 
   h2 {
@@ -202,8 +308,13 @@
     text-decoration-thickness: 2px;
   }
 
+  ::selection {
+    color: var(--ink);
+    background: var(--lav);
+  }
+
   :focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--c-text);
     outline-offset: 3px;
   }
 
@@ -242,8 +353,8 @@
     padding: var(--space-2) var(--space-4);
     font-weight: 700;
     color: var(--c-on-accent);
-    background: var(--accent);
-    border-radius: var(--radius-sm);
+    background: var(--c-text);
+    border-radius: var(--radius-pill);
     transform: translateY(-200%);
     transition: transform var(--dur) var(--ease);
   }
@@ -253,10 +364,10 @@
   }
 
   .eyebrow {
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-size: var(--step--1);
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--c-text-muted);
   }
@@ -264,78 +375,106 @@
   .lead {
     max-width: 60ch;
     font-size: var(--step-1);
-    line-height: 1.55;
+    line-height: 1.5;
     color: var(--c-text-muted);
+  }
+
+  /* One italic serif accent per heading, as on mrlololi.com. */
+  .accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.08em;
+    letter-spacing: -0.005em;
+  }
+
+  /* Labels (not controls): the shared chip of mrlololi.com, Stage 3. */
+  .chip {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    font-size: var(--step--1);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--c-text);
+    background: var(--c-surface-2);
+    border-radius: 6px;
   }
 }
 
 /* ---------- Components ---------- */
 
 @layer components {
-  /* Header */
+  /* Header: variant (a) of mrlololi.com, a light translucent bar with blur. */
 
   .site-header {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 50;
-    background: color-mix(in srgb, var(--c-bg) 88%, transparent);
+    background: var(--c-header);
     border-bottom: 1px solid var(--c-border);
-    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  @media (min-width: 50em) {
+    .site-header {
+      position: sticky;
+      top: 0;
+    }
   }
 
   .site-header__inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1) var(--space-3);
     min-height: var(--header-h);
+    padding-block: var(--space-1);
   }
 
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
     min-height: 44px;
-    margin-right: auto;
-    font-weight: 700;
     color: var(--c-text);
     text-decoration: none;
   }
 
-  .brand__mark {
-    flex: none;
-    width: 32px;
-    height: 32px;
+  .brand__logo {
+    width: auto;
+    height: clamp(1.55rem, 1.2rem + 1.4vw, 2.25rem);
   }
 
-  .brand__mark-bg {
-    fill: var(--c-text);
+  .brand__label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding-inline: var(--space-3);
+    font-size: var(--step--1);
+    font-weight: 700;
+    color: var(--c-text);
+    text-decoration: none;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-pill);
   }
 
-  .brand__mark-a {
-    fill: var(--c-geo);
+  .brand__label:hover,
+  .brand__label[aria-current] {
+    border-color: var(--c-text);
   }
 
-  .brand__mark-b {
-    fill: var(--c-kitty);
-    fill-opacity: 0.9;
+  .header-tools {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-left: auto;
   }
 
-  .brand__name {
-    white-space: nowrap;
-  }
-
-  .brand__name--long {
-    display: none;
-  }
-
-  @media (min-width: 40em) {
-    .brand__name--short {
-      display: none;
-    }
-
-    .brand__name--long {
-      display: inline;
-    }
+  /* Project links: a second row on phones (wrapping, nothing hidden); inline from 62em. */
+  .site-nav {
+    order: 5;
+    flex-basis: 100%;
+    margin-inline: calc(-1 * var(--space-2));
   }
 
   .site-nav ul {
@@ -350,9 +489,10 @@
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    padding-inline: var(--space-3);
+    padding-inline: var(--space-2);
     font-size: var(--step--1);
-    font-weight: 600;
+    font-weight: 700;
+    white-space: nowrap;
     color: var(--c-text-muted);
     text-decoration: none;
     border-radius: var(--radius-pill);
@@ -362,7 +502,61 @@
   .site-nav a:hover,
   .site-nav a[aria-current] {
     color: var(--c-text);
-    background: var(--c-surface-2);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  @media (min-width: 62em) {
+    .site-nav {
+      order: 0;
+      flex-basis: auto;
+      margin-left: auto;
+      margin-right: 0;
+      overflow: visible;
+    }
+
+    .site-nav a {
+      padding-inline: var(--space-3);
+    }
+
+    .header-tools {
+      margin-left: 0;
+    }
+  }
+
+  /* Language switch (pages with more than one language) */
+
+  .lang-switch__buttons,
+  .lang-links {
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    list-style: none;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-pill);
+  }
+
+  .lang-links a {
+    display: inline-grid;
+    place-items: center;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding-inline: var(--space-2);
+    font-size: var(--step--1);
+    font-weight: 700;
+    color: var(--c-text-muted);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+  }
+
+  .lang-links a:hover {
+    color: var(--c-text);
+  }
+
+  .lang-links a[aria-current] {
+    color: var(--c-on-accent);
+    background: var(--c-text);
   }
 
   /* Theme toggle */
@@ -382,8 +576,7 @@
   }
 
   .theme-toggle:hover {
-    background: var(--c-surface-2);
-    border-color: var(--c-border-strong);
+    border-color: var(--c-text);
   }
 
   .theme-toggle svg {
@@ -400,7 +593,7 @@
     display: block;
   }
 
-  /* Buttons */
+  /* Buttons (ink pill, as on mrlololi.com) */
 
   .btn {
     display: inline-flex;
@@ -409,11 +602,12 @@
     gap: var(--space-2);
     min-height: 48px;
     padding: var(--space-3) var(--space-5);
+    font-family: var(--font-body);
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: var(--radius-pill);
     transition:
       background-color var(--dur) var(--ease),
@@ -426,12 +620,11 @@
   .btn--primary {
     color: var(--c-on-accent);
     background: var(--accent);
-    box-shadow: var(--shadow-1);
   }
 
   .btn--primary:hover {
-    background: color-mix(in srgb, var(--accent) 85%, var(--c-text));
-    transform: translateY(-1px);
+    color: var(--c-on-accent);
+    box-shadow: 0 10px 24px rgb(43 42 51 / 0.2);
   }
 
   .btn--outline {
@@ -441,7 +634,6 @@
   }
 
   .btn--outline:hover {
-    background: var(--c-surface-2);
     border-color: var(--c-text);
   }
 
@@ -475,15 +667,27 @@
     flex: none;
   }
 
-  /* Footer */
+  /* Footer: the dark lockup with the tagline, links, legal line. */
 
   .site-footer {
     margin-top: var(--space-8);
-    padding-block: var(--space-6);
+    padding-block: var(--space-7) var(--space-6);
     font-size: var(--step--1);
-    color: var(--c-text-muted);
-    background: var(--c-surface);
-    border-top: 1px solid var(--c-border);
+    color: var(--on-ink);
+    background: var(--c-footer);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
+  .site-footer a {
+    color: var(--on-ink);
+  }
+
+  .site-footer a:hover {
+    color: #FFFFFF;
+  }
+
+  .site-footer :focus-visible {
+    outline-color: var(--on-ink);
   }
 
   .site-footer__inner {
@@ -491,26 +695,63 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-5) var(--space-6);
+  }
+
+  .site-footer__brand {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
     gap: var(--space-4) var(--space-6);
   }
 
-  .site-footer__who {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
+  .brand-lockup {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.2rem;
+    min-height: 44px;
+    text-decoration: none;
   }
 
-  .site-footer__name {
-    font-size: var(--step-0);
-    font-weight: 700;
-    color: var(--c-text);
+  .brand-lockup__icon {
+    grid-row: 1 / span 2;
+    width: auto;
+    height: 1.6rem;
+  }
+
+  .brand-lockup__word {
+    width: auto;
+    height: 2rem;
+  }
+
+  .tagline {
+    margin: 0;
+    font-family: var(--font-accent);
+    font-size: 1.125rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #FFFFFF;
+  }
+
+  .tl-pink {
+    color: var(--pink);
+  }
+
+  .tl-blue {
+    color: var(--blue);
+  }
+
+  .tl-pist {
+    color: var(--pist);
   }
 
   .site-footer__links {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-1) var(--space-2);
-    margin-left: calc(-1 * var(--space-2));
+    gap: 0 var(--space-4);
     padding: 0;
     list-style: none;
   }
@@ -519,24 +760,36 @@
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    padding-inline: var(--space-2);
-    font-weight: 600;
-    color: var(--c-text);
+    font-weight: 700;
   }
 
   /* Impressum and privacy policy of mrlololi.com, reachable from every page (Austrian law). */
   .site-footer__legal {
-    margin-block: var(--space-4) 0;
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgb(243 238 240 / 0.16);
   }
 
   .site-footer__legal a {
-    color: var(--c-text);
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 }
 
 /* ---------- Unlayered: these must beat every layer ---------- */
 
 [hidden] {
+  display: none;
+}
+
+/* The footer tagline follows the page language: German pages say «Logik, Lösung, Live.»,
+   all others «Logic, Loop, Live.». Pages that switch language set <html lang>, so no script. */
+html:lang(de) .tagline[lang="en"],
+html:not(:lang(de)) .tagline[lang="de"] {
   display: none;
 }
 
@@ -555,6 +808,7 @@
   *::before,
   *::after {
     animation-duration: 0.01ms;
+    animation-delay: 0s;
     animation-iteration-count: 1;
     transition-duration: 0.01ms;
     scroll-behavior: auto;

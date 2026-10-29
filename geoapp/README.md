@@ -14,8 +14,10 @@ Live: <https://mrlololi.com/Webprojekte/geoapp/>
 - Progress is saved in `localStorage`: your settings, the round you're in (reload and carry on), your best round, how many rounds you played and your last answer for each number. Every read and write is wrapped in `try/catch`. If the browser blocks storage, the app still works and shows a short note.
 - Works offline after the first visit and can be added to the home screen of a phone. That matters for the people it's built for: mobile data is often slow or expensive.
 - On a phone the round scrolls itself so the Georgian word and all four answers are on one screen. Number-key hints are hidden on touch screens.
-- A table with all 31 numbers, and a short explanation of how Georgian counts in twenties (21 is ოც + და + ერთი, "twenty and one").
-- Light and dark theme, shared with the rest of the portfolio.
+- **Counting in twenties:** an animated example (30 = ოც + და + ათი = 20 + 10) and a card where you pick any number from 0 to 30 and see its parts light up, with the literal meaning ("twenty and seven"). Only the 31 words from `data/numbers.json` are used. Examples above 30 will be added after a native speaker has checked them.
+- **Live feedback:** a soft glow for a right answer, a calm colour fade for a wrong one, and a streak counter for right answers in a row. Screen readers hear the streak once per answer, politely.
+- A table with all 31 numbers.
+- Light and dark theme and the look of mrlololi.com, shared with the rest of Webprojekte. With "reduce motion" the explanation shows its final state.
 
 ## What it shows
 
@@ -55,6 +57,16 @@ Browsers don't allow `fetch()` for files opened from disk (`file://`). So on a w
 
 On macOS or Linux: `{ printf 'window.GEOAPP_NUMBERS = '; cat data/numbers.json; printf ';\n'; } > data/numbers.js`
 
+### Recordings (ready for later)
+
+There is no speech synthesis for Georgian: browser voices for it are rare and often wrong. Instead `js/voice.js` plays recorded files, the same way as Language Starter:
+
+- Put the files in `audio/ka/`, one per number: `audio/ka/0.mp3` to `audio/ka/30.mp3`.
+- List each one in `audio/manifest.json`, for example `"files": ["ka/27.mp3"]`. Only listed files are used.
+- A number without a file gets no "Listen" button. Files played once also work offline.
+
+The manifest is empty for now; the numbers will be recorded by a native speaker.
+
 ### Offline mode
 
 `sw.js` loads everything from the network first, so visitors always get the newest version. Only when there's no connection does it fall back to the copy it saved. Service workers only run over https (or on localhost), so offline mode is not active when you open the file from disk. If you add a file the app needs, add it to the `FILES` list in `sw.js` too.
@@ -66,8 +78,8 @@ On macOS or Linux: `{ printf 'window.GEOAPP_NUMBERS = '; cat data/numbers.json; 
 
 ## Put it on GitHub Pages
 
-GeoAPP goes online together with the whole `Webprojekte` repository, see the [main README](../README.md#put-it-on-github-pages). It uses the shared files in `../assets/`, so upload the whole `Webprojekte` folder and not just `geoapp/`.
+GeoAPP goes online together with the whole `Webprojekte` repository, see the [main README](../README.md#hosting). It uses the shared files in `../assets/`, so upload the whole `Webprojekte` folder and not just `geoapp/`.
 
 ## Where it comes from
 
-The first version is at [mrlololi.github.io/GeoAPP](https://mrlololi.github.io/GeoAPP). It was multiple choice only and in English only. This version keeps the same 31 numbers and transliterations and adds the Ukrainian and German translations, typing mode, saved progress, repeating mistakes and the three interface languages.
+The first version was multiple choice only and in English only. Its old address mrlololi.github.io/GeoAPP now redirects here (the redirect lives in the repository `Mrlololi/GeoAPP`). This version keeps the same 31 numbers and transliterations and adds the Ukrainian and German translations, typing mode, saved progress, repeating mistakes and the three interface languages.

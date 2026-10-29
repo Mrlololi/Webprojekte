@@ -1,0 +1,369 @@
+{
+ "quelle": "demo_ki/daten/mails.json und demo_ki/daten/ergebnisse_beispiel.json (Texte unverändert)",
+ "lauf": {
+  "erzeugt": "14.10.2026",
+  "modell": "Claude (Beispiellauf mit prompt/system_prompt.md)"
+ },
+ "mails": [
+  {
+   "id": 1,
+   "von": "Sabine K.",
+   "betreff": "Passwort",
+   "text": "Hallo, ich komme nicht mehr in meinen Kurs rein, hab mein Passwort vergessen. LG Sabine",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Zugang & Login",
+    "prioritaet": "normal",
+    "braucht_mensch": false,
+    "sicherheit": 0.96,
+    "betreff": "Re: Passwort",
+    "entwurf": "Hallo Sabine,\n\nkein Problem: Geh auf kurse.lichtwerk-akademie.example/login und klick auf \"Passwort vergessen\". Du bekommst dann sofort eine E-Mail mit einem Link, über den du ein neues Passwort setzt. Schau bitte auch im Spam-Ordner nach, falls sie nicht gleich auftaucht.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 2,
+   "von": "Markus T.",
+   "betreff": "Keine Zugangsdaten!!",
+   "text": "Ich habe vor einer Stunde die Porträt-Masterclass gekauft und noch immer keine Zugangsdaten bekommen!! Was ist da los?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Zugang & Login",
+    "prioritaet": "hoch",
+    "braucht_mensch": false,
+    "sicherheit": 0.9,
+    "betreff": "Re: Keine Zugangsdaten",
+    "entwurf": "Hallo Markus,\n\ndanke für deine Nachricht und sorry für das Warten. Normalerweise kommen die Zugangsdaten innerhalb von 10 Minuten. Schau bitte kurz im Spam- und Werbe-Ordner nach. Wir schicken dir die Zugangsdaten außerdem gleich noch einmal an diese Adresse.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "Zahlung prüfen und Zugangsdaten manuell erneut senden",
+    "grund": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 3,
+   "von": "Julia M.",
+   "betreff": "Rechnung",
+   "text": "Hi, ich bräuchte die Rechnung für meinen Grundkurs, für die Steuer. Danke!",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Rechnung",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.95,
+    "betreff": "Re: Rechnung",
+    "entwurf": "Hallo Julia,\n\ndie Rechnung hast du nach der Zahlung automatisch per E-Mail bekommen. Du findest sie außerdem jederzeit in deinem Kundenkonto unter \"Rechnungen\" zum Download.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 4,
+   "von": "Thomas Huber, Huber Media GmbH",
+   "betreff": "Rechnung auf Firma",
+   "text": "Sehr geehrte Damen und Herren,\nkönnten Sie die Rechnung für die Porträt-Masterclass bitte auf unsere Firma ausstellen? Huber Media GmbH, Hauptplatz 1, 8010 Graz, UID ATU12345678.\nMit freundlichen Grüßen, Thomas Huber",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Rechnung",
+    "prioritaet": "normal",
+    "braucht_mensch": false,
+    "sicherheit": 0.88,
+    "betreff": "Re: Rechnung auf Firma",
+    "entwurf": "Sehr geehrter Herr Huber,\n\nvielen Dank für Ihre Nachricht. Wir stellen Ihnen gern eine korrigierte Rechnung auf die Huber Media GmbH mit der angegebenen Adresse und UID aus und schicken sie Ihnen in den nächsten Tagen per E-Mail.\n\nViele Grüße, Ihr Lichtwerk-Team",
+    "aktion": "Korrigierte Rechnung auf Huber Media GmbH, Hauptplatz 1, 8010 Graz, UID ATU12345678 ausstellen und senden",
+    "grund": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 5,
+   "von": "Anna P.",
+   "betreff": "Karte abgelehnt",
+   "text": "Hallo, meine Kreditkarte wurde bei der zweiten Rate abgelehnt, ich habe jetzt eine neue Karte. Was muss ich tun?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Zahlung & Raten",
+    "prioritaet": "hoch",
+    "braucht_mensch": false,
+    "sicherheit": 0.93,
+    "betreff": "Re: Karte abgelehnt",
+    "entwurf": "Hallo Anna,\n\ndanke, dass du so schnell Bescheid gibst. Hinterleg die neue Karte bitte in deinem Kundenkonto unter \"Zahlungsmethode\". Wir versuchen die Rate 3 Tage nach dem ersten Versuch automatisch erneut abzubuchen, dann sollte alles passen. Wichtig: Nach zwei fehlgeschlagenen Versuchen pausiert der Kurszugang, bis die Rate bezahlt ist. Mit der neuen Karte passiert das nicht.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 6,
+   "von": "Daniel R.",
+   "betreff": "Rate später zahlen?",
+   "text": "Hi Lena, könnte ich die zweite Rate einen Monat später zahlen? Es ist gerade finanziell etwas knapp. Danke dir!",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Zahlung & Raten",
+    "prioritaet": "normal",
+    "braucht_mensch": true,
+    "sicherheit": 0.9,
+    "grund": "Aufschub einer Rate entscheidet die Inhaberin im Einzelfall.",
+    "betreff": "Re: Rate später zahlen?",
+    "entwurf": "Hallo Daniel,\n\ndanke, dass du offen schreibst. Einen Aufschub entscheidet Lena persönlich, deshalb habe ich deine Nachricht an sie weitergegeben. Du bekommst in den nächsten Tagen eine Antwort von ihr. Bis dahin musst du nichts tun.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "An Lena Berger weiterleiten: Aufschub 2. Rate um 1 Monat",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 7,
+   "von": "Petra W.",
+   "betreff": "Geld zurück",
+   "text": "Hallo, ich habe den Grundkurs vor 5 Tagen gekauft, aber er ist doch nichts für mich. Kann ich mein Geld zurückbekommen?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Rückerstattung",
+    "prioritaet": "normal",
+    "braucht_mensch": true,
+    "sicherheit": 0.94,
+    "grund": "Rückzahlung muss vom Team ausgelöst werden (liegt innerhalb der 14-Tage-Garantie).",
+    "betreff": "Re: Geld zurück",
+    "entwurf": "Hallo Petra,\n\nschade, dass der Kurs nicht passt, aber natürlich: Du hast den Kurs vor 5 Tagen gekauft, damit gilt unsere 14-Tage-Geld-zurück-Garantie. Wir veranlassen die Rückzahlung und melden uns, sobald sie unterwegs ist. Wenn du magst, sag uns kurz, was dir gefehlt hat. Das hilft uns sehr.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "Kaufdatum prüfen, Rückzahlung Grundkurs (199 €) auslösen, Zugang beenden",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 8,
+   "von": "Michael S.",
+   "betreff": "Absolut enttäuscht",
+   "text": "Ich habe vor zwei Monaten die Masterclass gekauft und bin absolut enttäuscht. Die Videos sind viel zu oberflächlich. Ich will mein Geld zurück, und zwar komplett.",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Beschwerde",
+    "prioritaet": "hoch",
+    "braucht_mensch": true,
+    "sicherheit": 0.91,
+    "grund": "Rückerstattung außerhalb der 14 Tage: nur Ausnahme durch die Inhaberin. Verärgerter Kunde.",
+    "betreff": "Re: Absolut enttäuscht",
+    "entwurf": "Hallo Michael,\n\ndanke, dass du uns so offen schreibst. Es tut mir leid, dass die Masterclass deine Erwartungen nicht erfüllt. Damit wir das richtig verstehen: Welche Themen waren dir zu oberflächlich, und was hattest du dir stattdessen erwartet?\n\nDeine Bitte um Rückerstattung habe ich an Lena weitergegeben. Sie meldet sich persönlich bei dir.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "An Lena Berger: Rückerstattung nach 2 Monaten (außerhalb Garantie), Kunde verärgert, persönlich antworten",
+    "fehlende_infos": "Welche Inhalte konkret zu oberflächlich waren"
+   }
+  },
+  {
+   "id": 9,
+   "von": "Carina L.",
+   "betreff": "Live-Q&A",
+   "text": "Wann ist eigentlich das nächste Live-Q&A? Und gibt's eine Aufzeichnung, falls ich nicht kann?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Live-Termine",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.97,
+    "betreff": "Re: Live-Q&A",
+    "entwurf": "Hallo Carina,\n\ndas Live-Q&A ist jeden ersten Donnerstag im Monat um 19:00 Uhr (Wiener Zeit) über Zoom. Den Link findest du im Kursbereich. Falls du nicht kannst: Die Aufzeichnung steht innerhalb von 24 Stunden im Kursbereich.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 10,
+   "von": "Stefan G.",
+   "betreff": "Zertifikat und Zugriff",
+   "text": "Hallo! Bekomme ich am Ende ein Zertifikat? Und wie lange kann ich auf den Grundkurs zugreifen?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Kursinhalt",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.97,
+    "betreff": "Re: Zertifikat und Zugriff",
+    "entwurf": "Hallo Stefan,\n\nja: Sobald du alle Module abgeschlossen hast, bekommst du automatisch eine Teilnahmebestätigung als PDF. Auf den Grundkurs kannst du 12 Monate ab dem Kauf zugreifen.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 11,
+   "von": "Helga F.",
+   "betreff": "Videos ruckeln",
+   "text": "Die Videos ruckeln auf meinem iPad die ganze Zeit. Kann man da was machen?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Technik",
+    "prioritaet": "normal",
+    "braucht_mensch": false,
+    "sicherheit": 0.86,
+    "betreff": "Re: Videos ruckeln",
+    "entwurf": "Hallo Helga,\n\ndas lässt sich meist schnell lösen: Stell im Videoplayer die Qualität auf 720p und nutze nach Möglichkeit WLAN statt mobiler Daten. Am besten funktioniert ein aktueller Safari oder Chrome. Wenn es danach immer noch ruckelt, schreib uns bitte, welches iPad-Modell du hast, dann schauen wir weiter.\n\nViele Grüße, dein Lichtwerk-Team",
+    "fehlende_infos": "iPad-Modell, falls das Problem bleibt",
+    "grund": "",
+    "aktion": ""
+   }
+  },
+  {
+   "id": 12,
+   "von": "Robert N.",
+   "betreff": "Kurs verschenken",
+   "text": "Kann ich den Grundkurs meiner Frau zum Geburtstag schenken?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Verkauf & Gutscheine",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.95,
+    "betreff": "Re: Kurs verschenken",
+    "entwurf": "Hallo Robert,\n\nsehr gern! Im Shop findest du unter \"Gutschein kaufen\" Gutscheine mit frei wählbarem Wert. Für den Grundkurs wären das 199 €. Der Gutschein ist 3 Jahre gültig, deine Frau kann also starten, wann sie möchte.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 13,
+   "von": "Lisa B.",
+   "betreff": "Code HERBST20 geht nicht",
+   "text": "Hey, der Code HERBST20 aus eurem Newsletter funktioniert im Checkout nicht :(",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Verkauf & Gutscheine",
+    "prioritaet": "normal",
+    "braucht_mensch": true,
+    "sicherheit": 0.89,
+    "grund": "Rabattcodes prüft nur das Team, die Gültigkeit ist nicht in der Wissensbasis.",
+    "betreff": "Re: Code HERBST20",
+    "entwurf": "Hallo Lisa,\n\ndanke für den Hinweis. Wir prüfen den Code HERBST20 und melden uns heute noch bei dir, damit du den Rabatt bekommst, wenn er gilt.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "Code HERBST20 im Shop prüfen, ggf. reparieren oder Rabatt manuell gewähren",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 14,
+   "von": "Frank D.",
+   "betreff": "Mitgliedschaft kündigen",
+   "text": "Ich möchte meine Club-Mitgliedschaft kündigen. Wie geht das?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Abo & Kündigung",
+    "prioritaet": "normal",
+    "braucht_mensch": false,
+    "sicherheit": 0.94,
+    "betreff": "Re: Mitgliedschaft kündigen",
+    "entwurf": "Hallo Frank,\n\ndas geht ganz einfach in deinem Kundenkonto unter \"Abo verwalten\". Die Mitgliedschaft endet dann zum Monatsende, bis dahin kannst du alles weiter nutzen. Wenn du magst, sag uns kurz, warum du gehst. Das hilft uns, besser zu werden.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 15,
+   "von": "Eva K.",
+   "betreff": "Zahlung Rate 2",
+   "text": "Hallo, hier meine Kartendaten für die zweite Rate: 4111 1111 1111 1111, 12/27, CVC 123. Bitte einfach abbuchen, danke!",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Datenschutz",
+    "prioritaet": "hoch",
+    "braucht_mensch": false,
+    "sicherheit": 0.97,
+    "betreff": "Re: Zahlung Rate 2",
+    "entwurf": "Hallo Eva,\n\ndanke, dass du so schnell zahlen möchtest. Bitte schick uns Kartendaten aus Sicherheitsgründen nie per E-Mail. Wir löschen deine Nachricht mit den Kartendaten. Hinterleg die Karte einfach selbst in deinem Kundenkonto unter \"Zahlungsmethode\", dann wird die Rate automatisch abgebucht. Zur Sicherheit kannst du überlegen, die Karte bei deiner Bank sperren zu lassen.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "Mail mit Zahlungsdaten löschen (auch aus Papierkorb), nichts davon speichern",
+    "grund": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 16,
+   "von": "Jonas V.",
+   "betreff": "Welche Kamera?",
+   "text": "Muss ich mir für die Masterclass eine teure Kamera kaufen? Ich hab nur mein Handy.",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Kursinhalt",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.92,
+    "betreff": "Re: Welche Kamera?",
+    "entwurf": "Hallo Jonas,\n\nfür den Grundkurs reicht dein Handy völlig. Für die Porträt-Masterclass empfehlen wir eine Kamera mit manuellem Modus, weil viele Übungen mit Blende und Belichtungszeit arbeiten. Eine teure muss es nicht sein. Wenn du noch keine hast, ist der Grundkurs ein guter Start.\n\nViele Grüße, dein Lichtwerk-Team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 17,
+   "von": "Emily R.",
+   "betreff": "Course in English?",
+   "text": "Hi, is the course also available in English? Thanks, Emily",
+   "lang": "en",
+   "ergebnis": {
+    "kategorie": "Kursinhalt",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.95,
+    "betreff": "Re: Course in English?",
+    "entwurf": "Hi Emily,\n\nthanks for asking! All our courses are in German. For the basic photography course (Foto-Grundkurs) we offer English subtitles, so you can follow it well in English.\n\nBest regards, your Lichtwerk team",
+    "grund": "",
+    "aktion": "",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 18,
+   "von": "Dr. Werner L.",
+   "betreff": "Letzte Aufforderung",
+   "text": "Sehr geehrte Damen und Herren,\nsollte ich mein Geld für die Masterclass nicht bis Freitag zurückerhalten, werde ich meinen Anwalt einschalten.\nDr. Werner L.",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Beschwerde",
+    "prioritaet": "hoch",
+    "braucht_mensch": true,
+    "sicherheit": 0.95,
+    "grund": "Rechtliche Drohung: nur Eingang bestätigen, Inhaberin antwortet persönlich.",
+    "betreff": "Re: Letzte Aufforderung",
+    "entwurf": "Sehr geehrter Herr Dr. L.,\n\nvielen Dank für Ihre Nachricht. Wir haben sie erhalten und an die Inhaberin, Lena Berger, weitergegeben. Sie meldet sich persönlich bei Ihnen.\n\nMit freundlichen Grüßen, Ihr Lichtwerk-Team",
+    "aktion": "Sofort an Lena Berger: Rückforderung mit Anwaltsdrohung, Frist Freitag. Kaufdatum und Verlauf prüfen",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 19,
+   "von": "Mia Photography",
+   "betreff": "Kooperation?",
+   "text": "Hi! Ich bin Fotografin mit 40k Followern auf Instagram und würde gern mit euch kooperieren. Interesse?",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Kooperation",
+    "prioritaet": "niedrig",
+    "braucht_mensch": true,
+    "sicherheit": 0.93,
+    "grund": "Kooperationen entscheidet die Inhaberin.",
+    "betreff": "Re: Kooperation?",
+    "entwurf": "Hallo Mia,\n\ndanke für dein Interesse! Kooperationen entscheidet Lena persönlich. Ich habe deine Anfrage an sie weitergegeben, du bekommst innerhalb von 2 Wochen eine Antwort. Wenn du magst, schick uns gern schon ein paar Ideen, wie eine Zusammenarbeit aussehen könnte.\n\nViele Grüße, dein Lichtwerk-Team",
+    "aktion": "An Lena Berger weiterleiten: Kooperationsanfrage Instagram (40k)",
+    "fehlende_infos": ""
+   }
+  },
+  {
+   "id": 20,
+   "von": "Kontoservice",
+   "betreff": "Ihr Konto wird gesperrt",
+   "text": "Ihr Konto wird in 24 Stunden gesperrt. Klicken Sie hier, um Ihre Daten zu bestätigen: http://konto-pruefung.example",
+   "lang": "de",
+   "ergebnis": {
+    "kategorie": "Spam",
+    "prioritaet": "niedrig",
+    "braucht_mensch": false,
+    "sicherheit": 0.99,
+    "betreff": "",
+    "entwurf": "",
+    "aktion": "Als Phishing markieren und löschen, Link nicht öffnen",
+    "grund": "",
+    "fehlende_infos": ""
+   }
+  }
+ ]
+}

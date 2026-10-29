@@ -5,20 +5,26 @@
  * newest files (no stale versions after an update); offline visitors get the
  * last copy that was loaded. Only same-origin GET requests are handled.
  *
- * If you add a file the app needs, add it to FILES as well.
+ * If you add a file the app needs, add it to FILES as well and raise the
+ * number in CACHE. Recordings in audio/ are not listed: each one is saved
+ * the first time it is played, so it then plays offline too.
  */
-var CACHE = 'geoapp-v1';
+var CACHE = 'geoapp-v2';
 var FILES = [
   './',
   './index.html',
   './css/geoapp.css',
   './js/i18n.js',
   './js/storage.js',
+  './js/voice.js',
   './js/app.js',
   './data/numbers.json',
+  './audio/manifest.json',
   './manifest.webmanifest',
   '../assets/css/base.css',
   '../assets/js/theme.js',
+  '../assets/fonts/bricolage-grotesque-latin.woff2',
+  '../assets/fonts/atkinson-hyperlegible-next-latin.woff2',
   '../assets/icons/geoapp.svg',
   '../assets/icons/geoapp-192.png'
 ];

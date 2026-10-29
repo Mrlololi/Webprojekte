@@ -1,82 +1,105 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Page not found - Iva Tsatskrialashvili</title>
-  <meta name="description" content="This page doesn't exist. Here are the pages that do.">
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
-  <!-- GitHub Pages serves this file for any missing address, at any depth,
-       so every link here starts with /Webprojekte/. Change it if the
-       repository gets a different name. -->
-  <link rel="icon" href="/Webprojekte/assets/favicon.svg" type="image/svg+xml">
-
   <script>
+    /* Theme and language as on the landing page (stored choice, then the browser). */
     (function (root) {
+      var lang = null;
       try {
         var theme = localStorage.getItem('iva-portfolio-theme');
         if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
-      } catch (error) { /* storage blocked - follow the system theme */ }
+        lang = localStorage.getItem('iva-webprojekte-lang');
+      } catch (error) { /* storage blocked */ }
+      if (lang !== 'de' && lang !== 'en') {
+        var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        lang = /^de\b/i.test(first) ? 'de' : 'en';
+      }
+      root.lang = lang;
+      if (lang === 'en') document.title = 'Page not found | Webprojekte';
     })(document.documentElement);
   </script>
-
+  <title>Seite nicht gefunden | Webprojekte</title>
+  <meta name="description" content="Diese Seite gibt es nicht. Hier sind die Seiten, die es gibt.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FDF9F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C1B22" media="(prefers-color-scheme: dark)">
+  <!-- GitHub Pages serves this file for any missing address, at any depth,
+       so every link here starts with /Webprojekte/. -->
+  <link rel="icon" href="/Webprojekte/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/Webprojekte/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/Webprojekte/assets/css/base.css">
   <link rel="stylesheet" href="/Webprojekte/assets/css/landing.css">
   <script src="/Webprojekte/assets/js/theme.js" defer></script>
+  <noscript><style>.theme-toggle { display: none; }</style></noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main"><span data-l="de">Zum Inhalt</span><span data-l="en">Skip to content</span></a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/Webprojekte/">
-        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <rect width="64" height="64" rx="16" class="brand__mark-bg"/>
-          <circle cx="25" cy="32" r="14" class="brand__mark-a"/>
-          <circle cx="39" cy="32" r="14" class="brand__mark-b"/>
-        </svg>
-        <span class="brand__name brand__name--short">Iva T.</span>
-        <span class="brand__name brand__name--long">Iva Tsatskrialashvili</span>
+      <a class="brand" href="https://mrlololi.com/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="117 -870 5248 884" aria-hidden="true" focusable="false" class="brand__logo"><g transform="translate(0 -1012) scale(21.3125)"><g stroke="currentColor" stroke-width="3"><circle cx="20" cy="32" r="13" fill="#F4C9D3"/><circle cx="44" cy="32" r="13" fill="#CFE3C2"/><circle cx="32" cy="32" r="13" fill="#BFD8EE"/></g></g><g transform="translate(1909 0)"><g fill="currentColor"><path id="mrl-word" d="M55 0l0-328l0-200l129 0l2 171l17 0q12-64 34-105q23-41 56-60q34-20 79-20q47 0 78 21q30 21 47 62q17 41 21 102l15 0q13-65 39-106q25-41 61-60q36-19 80-19q44 0 76 17q33 17 55 50q21 33 32 83q11 50 11 116l0 276l-162 0l0-257q0-49-8-82q-8-32-25-48q-16-17-43-17q-30 0-52 22q-23 22-35 62q-12 40-12 94l0 226l-158 0l0-256q0-51-9-83q-9-32-26-48q-17-17-43-17q-30 0-51 21q-22 21-34 61q-12 40-12 96l0 226l-162 0zM960 0l0-256l0-272l134 0l2 187l17 0q7-73 26-117q19-43 53-63q33-19 82-19q11 0 23 2q12 2 27 6l-6 174q-18-9-37-13q-20-3-35-3q-37 0-64 16q-26 15-41 47q-15 32-19 80l0 231l-162 0zM1364 0l0-714l159 0l0 714l-159 0zM1848 14q-79 0-140-31q-61-31-95-93q-35-61-35-154q0-95 35-156q35-62 96-92q61-30 140-30q80 0 141 31q61 31 95 92q35 62 35 155q0 96-36 157q-35 62-97 92q-62 29-139 29zm5-118q34 0 58-16q23-17 34-51q12-34 12-83q0-53-13-89q-12-36-37-56q-25-19-62-19q-34 0-57 17q-24 16-36 50q-11 34-11 85q0 80 29 121q29 41 83 41zM2174 0l0-714l159 0l0 714l-159 0zM2658 14q-79 0-140-31q-61-31-95-93q-35-61-35-154q0-95 35-156q35-62 96-92q61-30 140-30q80 0 141 31q61 31 95 92q35 62 35 155q0 96-36 157q-35 62-97 92q-62 29-139 29zm5-118q34 0 58-16q23-17 34-51q12-34 12-83q0-53-13-89q-12-36-37-56q-25-19-62-19q-34 0-57 17q-24 16-36 50q-11 34-11 85q0 80 29 121q29 41 83 41zM2984 0l0-714l159 0l0 714l-159 0zM3224 0l0-528l162 0l0 528l-162 0z"/></g><circle cx="3306" cy="-720" r="120" fill="#CFE3C2" stroke="currentColor" stroke-width="60"/></g></svg>
+        <span class="visually-hidden">mrlololi.com</span>
       </a>
+      <a class="brand__label" href="/Webprojekte/">Webprojekte</a>
 
+      <nav class="site-nav" aria-label="Webprojekte">
+        <ul>
+          <li><a href="/Webprojekte/geoapp/">GeoAPP</a></li>
+          <li><a href="/Webprojekte/language-starter/">Language Starter</a></li>
+          <li><a href="/Webprojekte/ki-kundenservice/">KI im Kundenservice</a></li>
+          <li><a href="/Webprojekte/kittycats/">KittyCats</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
       <button class="theme-toggle" type="button" aria-pressed="false">
-        <span class="visually-hidden">Dark theme</span>
+        <span class="visually-hidden"><span data-l="de">Dunkles Design</span><span data-l="en">Dark theme</span></span>
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
+      </div>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="intro container" aria-labelledby="nf-title">
-      <div class="intro__text">
-        <p class="eyebrow">Error 404</p>
-        <h1 id="nf-title">This page doesn't exist</h1>
-        <p class="lead">Maybe the link is old or has a typo. These pages are here:</p>
-        <ul class="intro__links">
-          <li><a class="btn btn--primary" href="/Webprojekte/">Home</a></li>
-          <li><a class="btn btn--outline" href="/Webprojekte/geoapp/">GeoAPP</a></li>
-          <li><a class="btn btn--outline" href="/Webprojekte/kittycats/">KittyCats</a></li>
-        </ul>
+    <section class="nf container" aria-labelledby="nf-title">
+      <div class="nf__grid">
+        <div class="nf__text">
+          <p class="eyebrow"><span data-l="de">Fehler 404</span><span data-l="en">Error 404</span></p>
+          <h1 id="nf-title"><span data-l="de">Diese Seite gibt es <span class="accent">nicht</span>.</span><span data-l="en">This page doesn't <span class="accent">exist</span>.</span></h1>
+          <p class="lead"><span data-l="de">Vielleicht ist der Link alt oder hat einen Tippfehler. Diese Seiten gibt es:</span><span data-l="en">Maybe the link is old or has a typo. These pages are here:</span></p>
+          <ul class="nf__links">
+            <li><a class="btn btn--primary" href="/Webprojekte/"><span data-l="de">Alle Webprojekte</span><span data-l="en">All web projects</span></a></li>
+            <li><a class="btn btn--outline" href="/Webprojekte/geoapp/">GeoAPP</a></li>
+            <li><a class="btn btn--outline" href="/Webprojekte/language-starter/">Language Starter</a></li>
+            <li><a class="btn btn--outline" href="/Webprojekte/ki-kundenservice/">KI im Kundenservice</a></li>
+            <li><a class="btn btn--outline" href="/Webprojekte/kittycats/">KittyCats</a></li>
+            <li><a class="btn btn--quiet" href="https://mrlololi.com/">mrlololi.com</a></li>
+          </ul>
+        </div>
+        <div class="nf__scene"><svg class="nf__art" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><ellipse cx="180" cy="188" rx="150" ry="6" fill="#2B2A33" opacity=".08"/><g transform="translate(112 34) rotate(-12)"><path d="M0 0h30l8 8v30l-6-4-6 5-6-5-6 5-6-5-8 4z" fill="#FFFFFF" stroke="#2B2A33" stroke-width="2.4" stroke-linejoin="round"/><path d="M30 0v8h8" fill="none" stroke="#2B2A33" stroke-width="2.4" stroke-linejoin="round"/><path d="M7 12h18M7 19h22M7 26h14" stroke="#2B2A33" stroke-width="2" stroke-linecap="round" opacity=".35"/></g><svg x="18" y="70" width="92" height="95.06666666666666" viewBox="-8 -8 120 124"><ellipse data-part="shadow" class="m-shadow" cx="50" cy="109" rx="23" ry="3.6" fill="#2B2A33" opacity=".13"/><g data-part="rig"><g data-part="legs"><path class="o" d="M41 92v12M59 92v12" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path class="o" d="M36 105h9M55 105h9" fill="none" stroke="#2B2A33" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="body"><clipPath id="mb-live-wow-nf"><path d="M50 17C55 17 82 40 82 66A32 32 0 0 1 18 66C18 40 45 17 50 17z"/></clipPath><path d="M50 17C55 17 82 40 82 66A32 32 0 0 1 18 66C18 40 45 17 50 17z" fill="#CFE3C2"/><g data-part="belly"><ellipse clip-path="url(#mb-live-wow-nf)" cx="50" cy="109" rx="36" ry="26" fill="#EAF4E3"/></g><circle cx="30" cy="72" r="4.6" fill="#3F6B31" opacity=".22"/><circle cx="70" cy="72" r="4.6" fill="#3F6B31" opacity=".22"/><ellipse cx="36" cy="44" rx="8" ry="4.8" fill="#fff" opacity=".6" transform="rotate(-48 36 44)"/><path class="o" d="M50 17C55 17 82 40 82 66A32 32 0 0 1 18 66C18 40 45 17 50 17z" fill="none" stroke="#2B2A33" stroke-width="3.5" stroke-linejoin="round"/></g><g data-part="eyes"><g class="m-eye"><circle cx="39" cy="62" r="6.6" fill="#2B2A33"/><circle cx="41.31" cy="59.492" r="2.2" fill="#fff"/></g><g class="m-eye"><circle cx="61" cy="62" r="6.6" fill="#2B2A33"/><circle cx="63.31" cy="59.492" r="2.2" fill="#fff"/></g><path d="M34 49.5q5-4 10 0M56 49.5q5-4 10 0" fill="none" stroke="#2B2A33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="mouth"><ellipse cx="50" cy="78.5" rx="3.8" ry="4.8" fill="#2B2A33"/></g><g data-part="accessory"><path class="o" d="M50 18V6" fill="none" stroke="#2B2A33" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path class="o" d="M50-5.6l1.8 4.2 4.5.4-3.4 2.9 1 4.4L50 4l-3.9 2.3 1-4.4-3.4-2.9 4.5-.4z" fill="#F7DCC8" stroke="#2B2A33" stroke-width="2" stroke-linejoin="round"/></g><g data-part="arms"><path class="o" d="M19 74q-9 -1 -10 -12" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle class="o" cx="9" cy="62" r="4.4" fill="#CFE3C2" stroke="#2B2A33" stroke-width="2.4"/><path class="o" d="M81 74q9 -1 10 -12" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle class="o" cx="91" cy="62" r="4.4" fill="#CFE3C2" stroke="#2B2A33" stroke-width="2.4"/></g></g></svg><svg x="128" y="58" width="112" height="115.73333333333333" viewBox="-8 -8 120 124"><ellipse data-part="shadow" class="m-shadow" cx="50" cy="109" rx="23" ry="3.6" fill="#2B2A33" opacity=".13"/><g data-part="rig"><g data-part="legs"><path class="o" d="M41 92v12M59 92v12" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path class="o" d="M36 105h9M55 105h9" fill="none" stroke="#2B2A33" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="body"><clipPath id="mb-logik-think-nf"><path d="M25.5 30.5A16 16 0 0 1 39.7 22H60.3A16 16 0 0 1 74.5 30.5L86.1 52.5A16 16 0 0 1 86.1 67.5L74.5 89.5A16 16 0 0 1 60.3 98H39.7A16 16 0 0 1 25.5 89.5L13.9 67.5A16 16 0 0 1 13.9 52.5z"/></clipPath><path d="M25.5 30.5A16 16 0 0 1 39.7 22H60.3A16 16 0 0 1 74.5 30.5L86.1 52.5A16 16 0 0 1 86.1 67.5L74.5 89.5A16 16 0 0 1 60.3 98H39.7A16 16 0 0 1 25.5 89.5L13.9 67.5A16 16 0 0 1 13.9 52.5z" fill="#F4C9D3"/><g data-part="belly"><ellipse clip-path="url(#mb-logik-think-nf)" cx="50" cy="103" rx="36" ry="26" fill="#FBE6EC"/></g><circle cx="28.5" cy="65" r="4.6" fill="#9C3F58" opacity=".22"/><circle cx="71.5" cy="65" r="4.6" fill="#9C3F58" opacity=".22"/><ellipse cx="33" cy="34" rx="8" ry="4.8" fill="#fff" opacity=".6" transform="rotate(-32 33 34)"/><path class="o" d="M25.5 30.5A16 16 0 0 1 39.7 22H60.3A16 16 0 0 1 74.5 30.5L86.1 52.5A16 16 0 0 1 86.1 67.5L74.5 89.5A16 16 0 0 1 60.3 98H39.7A16 16 0 0 1 25.5 89.5L13.9 67.5A16 16 0 0 1 13.9 52.5z" fill="none" stroke="#2B2A33" stroke-width="3.5" stroke-linejoin="round"/></g><g data-part="eyes"><g class="m-eye"><circle cx="38.7" cy="53.8" r="4.6" fill="#2B2A33"/><circle cx="40.540000000000006" cy="52.419999999999995" r="1.6" fill="#fff"/></g><g class="m-eye"><circle cx="63.7" cy="53.8" r="4.6" fill="#2B2A33"/><circle cx="65.54" cy="52.419999999999995" r="1.6" fill="#fff"/></g><path d="M56.5 43q6-4 12-1" fill="none" stroke="#2B2A33" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="mouth"><path d="M47 72q4-2.5 9-.5" fill="none" stroke="#2B2A33" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="accessory"><g class="m-glasses" fill="none" stroke="#2B2A33" stroke-width="2.6"><circle cx="37.5" cy="55" r="9.5"/><circle cx="62.5" cy="55" r="9.5"/><path d="M47 55h6" stroke-linecap="round"/></g></g><g data-part="arms"><path class="o" d="M17 72q-7 4 -7 13" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle class="o" cx="10" cy="85" r="4.4" fill="#F4C9D3" stroke="#2B2A33" stroke-width="2.4"/><path d="M83 72C92 78 67 82 58 79" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="79" r="4.4" fill="#F4C9D3" stroke="#2B2A33" stroke-width="2.4"/></g></g></svg><svg x="256" y="72" width="90" height="93" viewBox="-8 -8 120 124"><ellipse data-part="shadow" class="m-shadow" cx="50" cy="109" rx="23" ry="3.6" fill="#2B2A33" opacity=".13"/><g data-part="rig"><g data-part="legs"><path class="o" d="M41 92v12M59 92v12" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path class="o" d="M36 105h9M55 105h9" fill="none" stroke="#2B2A33" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="body"><clipPath id="mb-loesung-idle-nf"><path d="M50 22a38 38 0 1 1 0 76a38 38 0 1 1 0-76z"/></clipPath><path d="M50 22a38 38 0 1 1 0 76a38 38 0 1 1 0-76z" fill="#BFD8EE"/><g data-part="belly"><ellipse clip-path="url(#mb-loesung-idle-nf)" cx="50" cy="103" rx="36" ry="26" fill="#E4F0FA"/></g><circle cx="29" cy="66" r="4.6" fill="#2F6A9E" opacity=".22"/><circle cx="71" cy="66" r="4.6" fill="#2F6A9E" opacity=".22"/><ellipse cx="33" cy="39" rx="8" ry="4.8" fill="#fff" opacity=".6" transform="rotate(-38 33 39)"/><path class="o" d="M50 22a38 38 0 1 1 0 76a38 38 0 1 1 0-76z" fill="none" stroke="#2B2A33" stroke-width="3.5" stroke-linejoin="round"/></g><g data-part="eyes"><g class="m-eye"><circle cx="38" cy="56" r="5.6" fill="#2B2A33"/><circle cx="39.96" cy="53.872" r="1.9" fill="#fff"/></g><g class="m-eye"><circle cx="62" cy="56" r="5.6" fill="#2B2A33"/><circle cx="63.96" cy="53.872" r="1.9" fill="#fff"/></g></g><g data-part="mouth"><path d="M44 71q6 5.5 12 0" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g><g data-part="accessory"><g transform="translate(93 83) rotate(24)" fill="#fff" stroke="#2B2A33" stroke-width="2.2" stroke-linejoin="round"><rect x="-2.4" y="-18" width="4.8" height="22" rx="2.4"/><path d="M-2.4-17l-3.6-4a6.5 6.5 0 0 1 2.8-8l1.5 5h3.4l1.5-5a6.5 6.5 0 0 1 2.8 8l-3.6 4z"/></g></g><g data-part="arms"><path class="o" d="M14 70q-7 4 -7 13" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle class="o" cx="7" cy="83" r="4.4" fill="#BFD8EE" stroke="#2B2A33" stroke-width="2.4"/><path class="o" d="M86 70q7 4 7 13" fill="none" stroke="#2B2A33" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle class="o" cx="93" cy="83" r="4.4" fill="#BFD8EE" stroke="#2B2A33" stroke-width="2.4"/></g></g></svg><g class="nf__lens"><path d="M160 136l-16 18" stroke="#2B2A33" stroke-width="7" stroke-linecap="round"/><path d="M160 136l-16 18" stroke="#F7DCC8" stroke-width="3.4" stroke-linecap="round"/><circle cx="172" cy="122" r="17" fill="#FFFFFF" fill-opacity=".55" stroke="#2B2A33" stroke-width="4"/><path d="M164 114a10 10 0 0 1 10-4" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></g></svg></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <div class="site-footer__who">
-        <span class="site-footer__name">Iva Tsatskrialashvili</span>
-        <span>Marketing Automation Engineer in Graz, Austria</span>
+      <div class="site-footer__brand">
+        <a class="brand-lockup" href="https://mrlololi.com/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="5.5 17.5 53 29" aria-hidden="true" focusable="false" class="brand-lockup__icon"><g stroke="#FFFFFF" stroke-width="3"><circle cx="20" cy="32" r="13" fill="#F4C9D3"/><circle cx="44" cy="32" r="13" fill="#CFE3C2"/><circle cx="32" cy="32" r="13" fill="#BFD8EE"/></g></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="55 -870 3401 884" aria-hidden="true" focusable="false" class="brand-lockup__word"><use href="#mrl-word" fill="#FFFFFF"/><circle cx="3306" cy="-720" r="120" fill="#CFE3C2" stroke="#FFFFFF" stroke-width="60"/></svg><span class="visually-hidden">mrlololi.com</span>
+          <p lang="de" class="tagline tagline--dark"><span class="tl-pink">Lo</span>gik, <span class="tl-blue">Lö</span>sung, <span class="tl-pist">Li</span>ve.</p><p lang="en" class="tagline tagline--dark"><span class="tl-pink">Lo</span>gic, <span class="tl-blue">Lo</span>op, <span class="tl-pist">Li</span>ve.</p>
+        </a>
       </div>
       <ul class="site-footer__links">
-        <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener">LinkedIn</a></li>
-        <li><a href="https://www.malt.de/profile/ivatsatskrialashvili" rel="me noopener">Malt</a></li>
-      </ul>
+      <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener">LinkedIn</a></li>
+      <li><a href="https://www.malt.de/profile/ivatsatskrialashvili" rel="me noopener">Malt</a></li>
+      <li><a href="https://github.com/Mrlololi/Webprojekte" rel="noopener">GitHub</a></li>
+    </ul>
+      <p class="site-footer__legal"><a href="https://mrlololi.com/impressum/">Impressum</a> <a href="https://mrlololi.com/datenschutz/">Datenschutz</a> <a href="https://mrlololi.com/">mrlololi.com</a></p>
     </div>
-    <p class="container site-footer__legal"><a href="https://mrlololi.com/impressum/">Impressum</a> · <a href="https://mrlololi.com/datenschutz/">Datenschutz</a> · <a href="https://mrlololi.com/">mrlololi.com</a></p>
   </footer>
 </body>
 </html>

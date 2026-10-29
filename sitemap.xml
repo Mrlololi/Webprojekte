@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Webprojekte: the landing page, the four projects and their language variants.
+     Never list the review addresses of Language Starter (review mode is noindex).
+     lastmod changes only when the text of that page really changes. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mrlololi.com/Webprojekte/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mrlololi.com/Webprojekte/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrlololi.com/Webprojekte/"/>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/?lang=en</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mrlololi.com/Webprojekte/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mrlololi.com/Webprojekte/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrlololi.com/Webprojekte/"/>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/geoapp/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/geoapp/?lang=de</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/geoapp/?lang=en</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/language-starter/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/language-starter/?ui=de</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/ki-kundenservice/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://mrlololi.com/Webprojekte/kittycats/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+</urlset>

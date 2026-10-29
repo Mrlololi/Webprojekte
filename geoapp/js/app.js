@@ -4,6 +4,7 @@
  * Depends on (loaded before, all with `defer`):
  *   window.GEOAPP_I18N  - js/i18n.js
  *   window.GeoStorage   - js/storage.js
+ *   window.GeoVoice     - js/voice.js (recorded numbers, optional)
  *
  * Data comes from data/numbers.json. When the page is opened straight from
  * disk (file://) browsers refuse to fetch() local files, so the app loads
@@ -14,6 +15,7 @@
 
   var I18N = window.GEOAPP_I18N;
   var store = window.GeoStorage;
+  var voice = window.GeoVoice || { ready: Promise.resolve(), has: function () { return false; }, play: function () {}, stop: function () {} };
 
   var DATA_URL = 'data/numbers.json';
   var DATA_FALLBACK_URL = 'data/numbers.js';
@@ -31,7 +33,7 @@
     numbers: [],              // array from numbers.json
     byNumber: new Map(),      // number -> entry
     settings: { mode: 'choice', range: 'all' },
-    progress: { rounds: 0, best: null, items: {} },
+    progress: { rounds: 0, best: null, bestStreak: 0, items: {} },
     round: null,              // see newRound()
     options: [],              // numbers shown as options for the current question
     hintVisible: false,
@@ -61,6 +63,7 @@
     statKnown: $('stat-known'),
     statBest: $('stat-best'),
     statRounds: $('stat-rounds'),
+    statStreak: $('stat-streak'),
     resetBtn: $('reset-btn'),
     resetMsg: $('reset-msg'),
 
@@ -68,9 +71,12 @@
     progressBar: $('q-progress'),
     scoreOk: $('score-ok'),
     scoreBad: $('score-bad'),
+    scoreStreak: $('score-streak'),
+    streakPill: $('streak-pill'),
     word: $('q-word'),
     translit: $('q-translit'),
     hintBtn: $('hint-btn'),
+    qListen: $('q-listen'),
     options: $('q-options'),
     typedForm: $('q-typed'),
     input: $('q-input'),
@@ -87,13 +93,27 @@
     rTotal: $('r-total'),
     rPercent: $('r-percent'),
     rMessage: $('r-message'),
+    rStreak: $('r-streak'),
     rWrongWrap: $('r-wrong-wrap'),
     rWrong: $('r-wrong'),
     retryBtn: $('retry-btn'),
     againBtn: $('again-btn'),
     settingsBtn: $('settings-btn'),
 
-    numbersBody: $('numbers-body')
+    numbersBody: $('numbers-body'),
+
+    demo: $('tw-demo'),
+    replay: $('tw-replay'),
+    twRange: $('tw-range'),
+    twNum: $('tw-num'),
+    twWord: $('tw-word'),
+    twTranslit: $('tw-translit'),
+    twParts: $('tw-parts'),
+    twSum: $('tw-sum'),
+    twLiteral: $('tw-literal'),
+    twNote: $('tw-note'),
+    twListen: $('tw-listen'),
+    twStatus: $('tw-status')
   };
 
   /* ------------------------------------------------------------------ */
@@ -160,27 +180,6 @@
         var bits = pair.split(':');
         if (bits.length === 2) node.setAttribute(bits[0].trim(), t(bits[1].trim()));
       });
-    });
-
-    // Georgian examples split into parts: ოც + და + ერთი
-    document.querySelectorAll('[data-i18n-parts]').forEach(function (node) {
-      var parts = raw(node.getAttribute('data-i18n-parts'));
-      if (!Array.isArray(parts)) return;
-      var children = [];
-      parts.forEach(function (part, index) {
-        if (index > 0) {
-          var dot = document.createElement('span');
-          dot.className = 'tip__joint';
-          dot.setAttribute('aria-hidden', 'true');
-          dot.textContent = '+';
-          children.push(dot);
-        }
-        var piece = document.createElement('span');
-        piece.className = 'tip__part';
-        piece.textContent = part;
-        children.push(piece);
-      });
-      node.replaceChildren.apply(node, children);
     });
 
     renderLangButtons();
@@ -348,6 +347,7 @@
       state.progress = {
         rounds: Number(progress.rounds) || 0,
         best: typeof progress.best === 'number' ? progress.best : null,
+        bestStreak: Number(progress.bestStreak) || 0,
         items: progress.items
       };
     }
@@ -359,7 +359,12 @@
     }
 
     var round = store.get('round', null);
-    if (isValidRound(round)) state.round = round;
+    if (isValidRound(round)) {
+      // Rounds saved before the streak counter existed start at 0.
+      round.streak = Number(round.streak) || 0;
+      round.bestStreak = Number(round.bestStreak) || 0;
+      state.round = round;
+    }
   }
 
   function isValidRound(round) {
@@ -414,6 +419,7 @@
       : t('stats.none');
     el.statBest.textContent = state.progress.best === null ? t('stats.none') : formatPercent(state.progress.best);
     el.statRounds.textContent = formatValue(state.progress.rounds);
+    el.statStreak.textContent = formatValue(state.progress.bestStreak);
 
     var round = state.round;
     var resumable = round && round.index < round.queue.length;
@@ -462,7 +468,7 @@
       return;
     }
     state.resetArmed = false;
-    state.progress = { rounds: 0, best: null, items: {} };
+    state.progress = { rounds: 0, best: null, bestStreak: 0, items: {} };
     state.round = null;
     saveProgress();
     saveRound();
@@ -484,7 +490,9 @@
       index: 0,
       answered: false,
       correct: 0,
-      wrong: []
+      wrong: [],
+      streak: 0,
+      bestStreak: 0
     };
     saveRound();
     showScreen('question');
@@ -540,6 +548,9 @@
     el.feedback.replaceChildren();
     el.feedback.className = 'feedback';
     el.nextBtn.hidden = true;
+    el.options.classList.remove('just-answered');
+    el.input.classList.remove('is-right', 'is-wrong');
+    voice.stop();
 
     el.options.hidden = round.mode !== 'choice';
     el.typedForm.hidden = round.mode !== 'typed';
@@ -570,6 +581,9 @@
     el.progressBar.value = answeredCount(round);
     el.scoreOk.textContent = formatValue(round.correct);
     el.scoreBad.textContent = formatValue(round.wrong.length);
+    el.scoreStreak.textContent = formatValue(round.streak || 0);
+    var entry = currentEntry();
+    el.qListen.hidden = !entry || !voice.has(entry.number);
 
     el.translit.classList.toggle('is-visible', state.hintVisible);
     el.hintBtn.setAttribute('aria-pressed', String(state.hintVisible));
@@ -655,8 +669,15 @@
     var isCorrect = chosen === entry.number;
 
     round.answered = true;
-    if (isCorrect) round.correct += 1;
-    else round.wrong.push(entry.number);
+    if (isCorrect) {
+      round.correct += 1;
+      round.streak = (round.streak || 0) + 1;
+      round.bestStreak = Math.max(round.bestStreak || 0, round.streak);
+      if (round.streak > state.progress.bestStreak) state.progress.bestStreak = round.streak;
+    } else {
+      round.wrong.push(entry.number);
+      round.streak = 0;
+    }
     round.lastTyped = typedText;
     round.lastChosen = chosen;
     recordAnswer(entry.number, isCorrect);
@@ -664,15 +685,19 @@
     state.answeredAt = Date.now();
 
     markOptions(chosen, entry.number);
+    el.options.classList.add('just-answered');
     if (round.mode === 'typed') {
       el.input.readOnly = true;
       el.checkBtn.disabled = true;
       el.checkBtn.hidden = true;
+      el.input.classList.add(isCorrect ? 'is-right' : 'is-wrong');
       if (!isCorrect) el.input.setAttribute('aria-invalid', 'true');
     }
 
     renderFeedback(isCorrect, entry, typedText);
+    el.feedback.classList.add('feedback--anim');
     renderQuestionTexts();
+    if (isCorrect) restartClass(el.streakPill, 'is-bumped');
     renderTableRow(entry.number);
 
     el.nextBtn.hidden = false;
@@ -725,7 +750,19 @@
     if (!isCorrect && typedText) {
       body.append(span('feedback__typed', t('fb.youTyped', { answer: typedText })));
     }
+    // The streak is read out once per answer, as part of this polite status message.
+    var streak = state.round ? state.round.streak : 0;
+    if (isCorrect && streak >= 2) {
+      body.append(span('feedback__streak', t('fb.streak', { n: streak })));
+    }
     el.feedback.replaceChildren(icon, body);
+  }
+
+  /** Remove and re-add a class so its CSS animation plays again. */
+  function restartClass(node, name) {
+    node.classList.remove(name);
+    void node.offsetWidth;
+    node.classList.add(name);
   }
 
   function goNext(fromKeyboard) {
@@ -756,7 +793,8 @@
       total: total,
       correct: round.correct,
       percent: percent,
-      wrong: round.wrong.slice()
+      wrong: round.wrong.slice(),
+      streak: round.bestStreak || 0
     };
     store.set('lastResult', state.lastResult);
     state.round = null;
@@ -786,6 +824,7 @@
       : result.percent >= 50 ? 'result.good'
       : 'result.low';
     el.rMessage.textContent = t(messageKey);
+    el.rStreak.textContent = result.streak ? t('result.streak', { n: result.streak }) : '';
 
     var wrongCount = result.wrong.length;
     el.rWrongWrap.hidden = wrongCount === 0;
@@ -874,6 +913,117 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* Counting in twenties: the "take a number apart" card                */
+  /* ------------------------------------------------------------------ */
+
+  var TEEN_END = 'მეტი'; // "more": every word from 11 to 19 ends like this
+
+  /**
+   * Splits a number from the data into parts. Nothing is made up: every
+   * part is cut from the words in numbers.json, and if the pieces don't
+   * spell the word exactly, the word is shown whole.
+   */
+  function breakdown(n) {
+    var entry = state.byNumber.get(n);
+    var and = t('tw.and');
+    var unit = state.byNumber.get(n > 20 ? n - 20 : n - 10);
+    var twenty = state.byNumber.get(20);
+    var stem = twenty ? twenty.georgian.slice(0, -1) : ''; // ოცი -> ოც
+
+    if (n > 20 && unit && stem + 'და' + unit.georgian === entry.georgian) {
+      return {
+        parts: [[stem, '20', 'twenty'], ['და', and, 'link'], [unit.georgian, String(n - 20), 'unit']],
+        sum: '20 + ' + (n - 20) + ' = ' + n,
+        literal: t('tw.literal', { text: translation(twenty) + ' ' + and + ' ' + translation(unit) }),
+        note: t('tw.note.after')
+      };
+    }
+    if (n > 10 && n < 20 && unit && entry.georgian.slice(-TEEN_END.length) === TEEN_END) {
+      return {
+        parts: [[entry.georgian.slice(0, -TEEN_END.length), String(n - 10), 'unit'], [TEEN_END, t('tw.moreWord'), 'link']],
+        sum: '10 + ' + (n - 10) + ' = ' + n,
+        literal: '',
+        note: t('tw.note.teen', { word: translation(unit) })
+      };
+    }
+    return {
+      parts: [[entry.georgian, String(n), n === 20 ? 'twenty' : 'unit']],
+      sum: '',
+      literal: '',
+      note: t(n === 0 ? 'tw.note.zero' : n === 20 ? 'tw.note.twenty' : 'tw.note.base')
+    };
+  }
+
+  function partNode(part) {
+    var node = span('tw-part tw-part--' + part[2]);
+    node.append(span('tw-part__ka', part[0], 'ka'), span('tw-part__val', part[1]));
+    return node;
+  }
+
+  var twTimer = 0;
+
+  function renderTwenties(animate) {
+    if (!el.twRange || !state.numbers.length) return;
+    var n = Number(el.twRange.value);
+    var entry = state.byNumber.get(n);
+    if (!entry) return;
+    var info = breakdown(n);
+
+    el.twNum.textContent = String(n);
+    el.twWord.textContent = entry.georgian;
+    el.twTranslit.textContent = entry.translit;
+    el.twParts.replaceChildren.apply(el.twParts, info.parts.map(partNode));
+    el.twSum.textContent = info.sum;
+    el.twSum.hidden = !info.sum;
+    el.twLiteral.textContent = info.literal;
+    el.twLiteral.hidden = !info.literal;
+    el.twNote.textContent = info.note;
+    el.twListen.hidden = !voice.has(n);
+
+    if (animate && !reducedMotion()) {
+      restartClass(el.twParts, 'is-lighting');
+      restartClass(el.twSum, 'is-lighting');
+    }
+
+    // Screen readers hear one short summary once the slider stops moving.
+    window.clearTimeout(twTimer);
+    if (animate) {
+      twTimer = window.setTimeout(function () {
+        el.twStatus.replaceChildren(
+          document.createTextNode(n + ', '),
+          span('', entry.georgian, 'ka'),
+          document.createTextNode(info.sum ? ', ' + info.sum.split(' = ')[0] : '')
+        );
+      }, 700);
+    }
+  }
+
+  function stepTwenties(delta) {
+    var next = Math.min(30, Math.max(0, Number(el.twRange.value) + delta));
+    if (next === Number(el.twRange.value)) return;
+    el.twRange.value = String(next);
+    renderTwenties(true);
+  }
+
+  /** The 30 = ოც + და + ათი demo plays once when it scrolls into view. */
+  function setupDemo() {
+    if (!el.demo || reducedMotion() || !('IntersectionObserver' in window)) return;
+    el.replay.hidden = false;
+    el.demo.classList.add('is-waiting');
+    var observer = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      observer.disconnect();
+      playDemo();
+    }, { threshold: 0.4 });
+    observer.observe(el.demo);
+  }
+
+  function playDemo() {
+    el.demo.classList.remove('is-waiting');
+    restartClass(el.demo, 'is-playing');
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Language change while a screen is open                              */
   /* ------------------------------------------------------------------ */
 
@@ -882,6 +1032,7 @@
       return;
     }
     renderTable();
+    renderTwenties(false);
     if (state.screen === 'start') {
       renderStart();
     } else if (state.screen === 'question' && state.round) {
@@ -972,6 +1123,17 @@
     el.againBtn.addEventListener('click', playAgain);
     el.settingsBtn.addEventListener('click', function () { openStart(true); });
 
+    el.qListen.addEventListener('click', function () {
+      var entry = currentEntry();
+      if (entry) voice.play(entry.number);
+    });
+    el.twRange.addEventListener('input', function () { renderTwenties(true); });
+    document.querySelectorAll('.tw-step').forEach(function (button) {
+      button.addEventListener('click', function () { stepTwenties(Number(button.getAttribute('data-step'))); });
+    });
+    el.twListen.addEventListener('click', function () { voice.play(Number(el.twRange.value)); });
+    el.replay.addEventListener('click', playDemo);
+
     document.addEventListener('keydown', onKeydown);
   }
 
@@ -1002,6 +1164,7 @@
     openStart(false);
     document.documentElement.classList.remove('i18n-pending');
     wire();
+    setupDemo();
     registerServiceWorker();
 
     loadNumbers()
@@ -1015,6 +1178,12 @@
           saveRound();
         }
         renderTable();
+        renderTwenties(false);
+        // Listen buttons appear only once the manifest says a recording exists.
+        voice.ready.then(function () {
+          renderTwenties(false);
+          if (state.screen === 'question' && state.round) renderQuestionTexts();
+        });
         if (state.screen === 'start') renderStart();
         if (state.pending) {
           var pending = state.pending;

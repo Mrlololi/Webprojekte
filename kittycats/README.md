@@ -1,12 +1,28 @@
-# KittyCats: a responsive layout demo
+# KittyCats: an animation and layout demo
 
-KittyCats is a single page about kittens that grow up into slightly grumpier cats, with a bit of Halloween cobweb on top. The real point is the layout. Every section uses a different technique, and a small note on the page says which one.
+KittyCats is a single page about kittens that grow up into slightly grumpier cats, with a bit of Halloween cobweb on top. Since October 2026 it is the animation showcase of Webprojekte: the hand-drawn SVG kittens blink, flick their tails, stretch, change their mood and one walks along with your scroll. Every section uses a different layout technique and a different animation technique, and two small notes on the page («Technique» and «Animation») say which.
 
 Live: <https://mrlololi.com/Webprojekte/kittycats/>
 
 It's only a demo. No kittens are for sale and the contact form doesn't send anything.
 
-## Sections and techniques
+## Animation
+
+| # | Section | Animation technique |
+|---|---|---|
+| - | Top of the page | GSAP timeline: the kitten blinks and both cats flick their tails for about four seconds, then rest. ScrollTrigger replays it when the part comes back and pauses it off-screen. |
+| 01 | A few honest questions | SVG path morph without a paid plugin: tail, eyelids and mouth have the same path commands in both moods, so GSAP tweens the numbers in the `d` attribute (`attr: { d }`). ScrollTrigger with `scrub` ties the mood to the scroll position. |
+| 02 | From kitten to cat | GSAP ScrollTrigger: `ScrollTrigger.batch()` lifts the tiles into place and plays it backwards when you scroll back, so the entrance replays. Each kitten blinks once. |
+| 03 | More kitties to choose from | CSS scroll-driven animation: each kitten stretches while its card comes into view, `animation-timeline: view()` inside `@supports`, no JavaScript. Browsers without it get an IntersectionObserver class instead. |
+| 04 | About KittyCats | GSAP ScrollTrigger, scrubbed: from 768px the card drifts 40px against the text. On phones `gsap.matchMedia()` leaves only a fade. |
+| 05 | Get more information | None, on purpose: nothing moves next to the form fields. |
+| - | Between the sections | A small cat walks along a dashed line with the scroll position (ScrollTrigger, scrub). |
+
+Rules: transform and opacity only (plus SVG attributes), loops pause off-screen, no pinning on phones, and with "reduce motion" every drawing shows its final state. Without JavaScript everything is visible and readable.
+
+GSAP 3.15.0 (core and ScrollTrigger) is self-hosted in `../assets/vendor/` and loaded only on this page. Licence: GreenSock standard "no charge" license (https://gsap.com/standard-license), free for commercial sites. No club or paid plugins are used. The page's own motion code is `js/motion.js`.
+
+## Sections and layout techniques
 
 | # | Section | Technique |
 |---|---|---|
@@ -53,6 +69,10 @@ The texts come from the first version from October 2025, which had four pages (H
 - The quick way: double-click `index.html`.
 - Like on GitHub Pages: run `python -m http.server 8000` in the `Webprojekte` folder and open <http://localhost:8000/kittycats/>.
 
+## Old address
+
+The first version lived at mrlololi.github.io/KittyCats. That address now redirects here; the redirect lives in the repository `Mrlololi/KittyCats`.
+
 ## Put it on GitHub Pages
 
-KittyCats goes online together with the whole `Webprojekte` repository, see the [main README](../README.md#put-it-on-github-pages). It uses the shared files in `../assets/`, so upload the whole `Webprojekte` folder and not just `kittycats/`.
+KittyCats goes online together with the whole `Webprojekte` repository, see the [main README](../README.md#hosting). It uses the shared files in `../assets/`, so upload the whole `Webprojekte` folder and not just `kittycats/`.

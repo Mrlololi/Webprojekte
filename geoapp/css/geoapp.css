@@ -41,8 +41,10 @@
     transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
   }
 
-  .lang-switch__btn:hover {
-    color: var(--c-text);
+  @media (hover: hover) {
+    .lang-switch__btn:hover {
+      color: var(--c-text);
+    }
   }
 
   .lang-switch__btn[aria-pressed="true"] {
@@ -189,8 +191,10 @@
     transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
   }
 
-  .mode-option:hover {
-    border-color: var(--c-border-strong);
+  @media (hover: hover) {
+    .mode-option:hover {
+      border-color: var(--c-border-strong);
+    }
   }
 
   /* Native radio stays in the page (focusable, announced), visually replaced. */
@@ -309,8 +313,10 @@
     }
   }
 
-  .pill:hover span {
-    border-color: var(--c-border-strong);
+  @media (hover: hover) {
+    .pill:hover span {
+      border-color: var(--c-border-strong);
+    }
   }
 
   .pill:has(input:checked) span {
@@ -453,6 +459,21 @@
     background: var(--c-danger-soft);
   }
 
+  /* Streak: right answers in a row */
+  .q-score__item--streak {
+    color: var(--lav-ink);
+    background: var(--lav-tint);
+  }
+
+  .q-score__item--streak svg {
+    stroke-width: 2.2;
+  }
+
+  .q-score__label {
+    font-size: var(--step--1);
+    font-weight: 700;
+  }
+
   .q-progress {
     display: block;
     width: 100%;
@@ -570,9 +591,38 @@
     transition: background-color var(--dur) var(--ease);
   }
 
-  .hint-toggle:hover,
   .hint-toggle[aria-pressed="true"] {
     background: rgb(255 255 255 / 0.2);
+  }
+
+  @media (hover: hover) {
+    .hint-toggle:hover {
+      background: rgb(255 255 255 / 0.2);
+    }
+  }
+
+  .prompt__tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  /* "Listen" - only shown when a recording exists (see js/voice.js) */
+  .listen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .listen-btn svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .prompt :focus-visible {
@@ -661,11 +711,13 @@
     stroke-linejoin: round;
   }
 
-  .option:hover:not(:disabled) {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-1);
-    transform: translateY(-2px);
+  @media (hover: hover) {
+    .option:hover:not(:disabled) {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-1);
+      transform: translateY(-2px);
+    }
   }
 
   .option:disabled {
@@ -782,6 +834,15 @@
     background: var(--c-surface-2);
   }
 
+  .typed__input.is-right {
+    border-color: var(--c-geo);
+    background: var(--c-geo-soft);
+  }
+
+  .typed__input.is-wrong {
+    background: var(--c-danger-soft);
+  }
+
   .typed__row .btn {
     flex: 1 0 auto;
   }
@@ -882,6 +943,16 @@
 
   .feedback__typed {
     font-size: var(--step--1);
+  }
+
+  .feedback__streak {
+    margin-top: var(--space-1);
+    font-weight: 700;
+  }
+
+  .result-streak {
+    margin-top: var(--space-2);
+    font-weight: 700;
   }
 
   .q-actions {
@@ -1081,8 +1152,387 @@
     flex: 1 1 auto;
   }
 
+  /* ---------- Counting in twenties ---------- */
+
+  .twenties__grid {
+    display: grid;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
+  }
+
+  @media (min-width: 56em) {
+    .twenties__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .tw-demo,
+  .tw-card {
+    margin: 0;
+    padding: clamp(1.25rem, 0.9rem + 1.5vw, 2rem);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Demo: 30 = ოც + და + ათი. Without JS or with reduced motion this is
+     simply the finished picture. */
+  .tw-demo {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: var(--space-4);
+    text-align: center;
+    background: var(--c-geo-soft);
+    border-color: color-mix(in srgb, var(--c-geo) 30%, transparent);
+  }
+
+  .tw-demo__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-2) var(--space-3);
+    margin: 0;
+  }
+
+  .tw-demo__num {
+    font-family: var(--font-display);
+    font-size: var(--step-4);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--c-geo);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tw-demo__eq {
+    font-size: var(--step-2);
+    font-weight: 700;
+    color: var(--c-text-muted);
+  }
+
+  .tw-demo__word {
+    font-family: var(--font-ka);
+    font-size: var(--step-3);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .tw-demo__sum {
+    margin: 0;
+    font-size: var(--step-2);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tw-c-twenty {
+    color: var(--blue-ink);
+  }
+
+  .tw-c-unit {
+    color: var(--pist-ink);
+  }
+
+  .tw-demo__caption {
+    font-weight: 600;
+    color: var(--c-text-muted);
+  }
+
+  .tw-demo__replay {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .tw-demo__replay svg,
+  .tw-step svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Word parts: one pastel per role, the role is also written underneath */
+  .tw-parts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    margin: 0;
+  }
+
+  .tw-part {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 3.25rem;
+    padding: var(--space-2) var(--space-3);
+    background: var(--part-bg);
+    border: 1px solid color-mix(in srgb, var(--part-ink) 35%, transparent);
+    border-radius: var(--radius-md);
+  }
+
+  .tw-part__ka {
+    font-family: var(--font-ka);
+    font-size: var(--step-2);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .tw-part__val {
+    font-size: var(--step--1);
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--part-ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tw-part--twenty {
+    --part-bg: var(--blue-tint);
+    --part-ink: var(--blue-ink);
+  }
+
+  .tw-part--link {
+    --part-bg: var(--lav-tint);
+    --part-ink: var(--lav-ink);
+  }
+
+  .tw-part--unit {
+    --part-bg: var(--pist-tint);
+    --part-ink: var(--pist-ink);
+  }
+
+  .tw-part--times {
+    --part-bg: var(--pink-tint);
+    --part-ink: var(--pink-ink);
+  }
+
+  .tw-parts--small {
+    justify-content: flex-start;
+    gap: var(--space-1);
+  }
+
+  .tw-parts--small .tw-part {
+    min-width: 2.4rem;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+
+  .tw-parts--small .tw-part__ka {
+    font-size: var(--step-0);
+  }
+
+  /* Interactive card */
+  .tw-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    background: var(--c-surface);
+    box-shadow: var(--shadow-1);
+  }
+
+  .tw-card__title {
+    font-size: var(--step-1);
+  }
+
+  .tw-card__label {
+    font-weight: 700;
+  }
+
+  .tw-picker {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .tw-range {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 44px;
+    margin: 0;
+    accent-color: var(--c-geo);
+    cursor: pointer;
+  }
+
+  .tw-step {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--c-text);
+    background: var(--c-surface-2);
+    border: 2px solid var(--c-border-strong);
+    border-radius: 50%;
+    transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+  }
+
+  @media (hover: hover) {
+    .tw-step:hover {
+      background: var(--c-geo-soft);
+      border-color: var(--c-geo);
+    }
+  }
+
+  .tw-result {
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    gap: var(--space-2);
+    min-height: 16.5rem;
+    padding: var(--space-4);
+    text-align: center;
+    background: var(--c-surface-2);
+    border-radius: var(--radius-md);
+  }
+
+  .tw-result p {
+    margin: 0;
+  }
+
+  .tw-result__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-1) var(--space-3);
+  }
+
+  .tw-result__num {
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--c-geo);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tw-result__word {
+    font-family: var(--font-ka);
+    font-size: var(--step-2);
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .tw-result__translit {
+    color: var(--c-text-muted);
+  }
+
+  .tw-result .tw-parts {
+    margin-block: var(--space-2);
+  }
+
+  .tw-result__sum {
+    font-size: var(--step-1);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tw-result__literal {
+    font-weight: 600;
+  }
+
+  .tw-result__note {
+    max-width: 42ch;
+    font-size: var(--step--1);
+    color: var(--c-text-muted);
+  }
+
+  .tw-listen {
+    align-self: flex-start;
+  }
+
+  /* Examples above 30: kept apart, dashed and labelled, they're not in the quiz */
+  .tw-more {
+    margin-top: var(--space-6);
+  }
+
+  .tw-more__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-3);
+    font-size: var(--step-1);
+  }
+
+  .tw-badge {
+    padding: 2px var(--space-3);
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--pink-ink);
+    background: var(--pink-tint);
+    border-radius: var(--radius-pill);
+  }
+
+  .tw-more__text {
+    max-width: 62ch;
+    margin-top: var(--space-2);
+    color: var(--c-text-muted);
+  }
+
+  .tw-more__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+    gap: var(--space-3);
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tw-ex {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--c-surface);
+    border: 1px dashed var(--c-border-strong);
+    border-radius: var(--radius-md);
+  }
+
+  .tw-ex__num {
+    flex: none;
+    min-width: 2ch;
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 800;
+    line-height: 1.15;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tw-ex__body {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-2);
+    min-width: 0;
+  }
+
+  .tw-ex__word > [lang="ka"] {
+    font-family: var(--font-ka);
+    font-size: var(--step-1);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .tw-ex__translit {
+    font-size: var(--step--1);
+    color: var(--c-text-muted);
+  }
+
+  .tw-ex__sum {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
   /* ---------- Number table ---------- */
 
+  .twenties,
   .numbers,
   .about {
     margin-top: var(--space-8);
@@ -1118,8 +1568,10 @@
     display: none;
   }
 
-  .numbers__summary:hover {
-    background: var(--c-surface-2);
+  @media (hover: hover) {
+    .numbers__summary:hover {
+      background: var(--c-surface-2);
+    }
   }
 
   .numbers__summary:focus-visible {
@@ -1229,74 +1681,11 @@
 
   .about {
     display: grid;
-    gap: var(--space-6);
-  }
-
-  @media (min-width: 48em) {
-    .about {
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      align-items: start;
-    }
-  }
-
-  .about__text {
-    display: grid;
     gap: var(--space-4);
   }
 
-  .about__text p {
+  .about p {
     max-width: 62ch;
-  }
-
-  .tip {
-    padding: var(--space-5);
-    background: var(--accent-soft);
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-    border-radius: var(--radius-lg);
-  }
-
-  .tip h3 {
-    margin-bottom: var(--space-2);
-  }
-
-  .tip__list {
-    display: grid;
-    gap: var(--space-2);
-    margin-top: var(--space-4);
-    padding: 0;
-    list-style: none;
-  }
-
-  .tip__row {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: var(--space-3) var(--space-4);
-    background: var(--c-surface);
-    border-radius: var(--radius-md);
-  }
-
-  .tip__ka {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.25em;
-    font-family: var(--font-ka);
-    font-size: var(--step-1);
-    font-weight: 700;
-  }
-
-  .tip__part:first-child {
-    color: var(--accent);
-  }
-
-  .tip__joint,
-  .tip__gloss {
-    color: var(--c-text-muted);
-  }
-
-  .tip__gloss {
-    font-size: var(--step--1);
   }
 
   /* ---------- No JS ---------- */
@@ -1305,5 +1694,183 @@
     padding: var(--space-4);
     text-align: center;
     background: var(--c-surface-2);
+  }
+
+  /* Without JS the quiz can't run: the explanation, the examples and the
+     table stay (filled in Ukrainian), the quiz and the live card go. */
+  .no-js .quiz-section,
+  .no-js .tw-card,
+  .no-js .col-status {
+    display: none;
+  }
+
+  /* ---------- Motion (only when the system allows it) ---------- */
+
+  @media (prefers-reduced-motion: no-preference) {
+    .options.just-answered .option.is-correct {
+      animation: ga-pop 560ms var(--ease);
+    }
+
+    .options.just-answered .option.is-wrong,
+    .typed__input.is-wrong {
+      animation: ga-fade-bad 650ms ease-out;
+    }
+
+    .typed__input.is-right {
+      animation: ga-glow 700ms var(--ease);
+    }
+
+    .feedback--anim {
+      animation: ga-rise 320ms var(--ease);
+    }
+
+    .feedback--anim.feedback--ok .feedback__icon {
+      animation: ga-pop-icon 460ms var(--ease) 60ms backwards;
+    }
+
+    .q-score__item--streak.is-bumped {
+      animation: ga-bump 420ms var(--ease);
+    }
+
+    .tw-parts.is-lighting .tw-part {
+      animation: ga-light 560ms var(--ease) backwards;
+    }
+
+    .tw-parts.is-lighting .tw-part:nth-child(2) {
+      animation-delay: 150ms;
+    }
+
+    .tw-parts.is-lighting .tw-part:nth-child(3) {
+      animation-delay: 300ms;
+    }
+
+    .tw-result__sum.is-lighting {
+      animation: ga-rise 360ms var(--ease) 420ms backwards;
+    }
+
+    /* The demo waits (parts hidden) until it scrolls into view. */
+    .tw-demo.is-waiting .tw-part,
+    .tw-demo.is-waiting .tw-demo__sum,
+    .tw-demo.is-waiting .tw-demo__caption {
+      opacity: 0;
+    }
+
+    .tw-demo.is-playing .tw-demo__word {
+      animation: ga-rise 500ms var(--ease) backwards;
+    }
+
+    .tw-demo.is-playing .tw-part {
+      animation: ga-split 620ms var(--ease) 700ms backwards;
+    }
+
+    .tw-demo.is-playing .tw-part:nth-child(2) {
+      animation-delay: 950ms;
+    }
+
+    .tw-demo.is-playing .tw-part:nth-child(3) {
+      animation-delay: 1200ms;
+    }
+
+    .tw-demo.is-playing .tw-demo__sum {
+      animation: ga-rise 420ms var(--ease) 1750ms backwards;
+    }
+
+    .tw-demo.is-playing .tw-demo__caption {
+      animation: ga-rise 420ms var(--ease) 2050ms backwards;
+    }
+  }
+
+  @keyframes ga-pop {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--c-geo) 50%, transparent);
+    }
+
+    35% {
+      transform: scale(1.035);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 14px color-mix(in srgb, var(--c-geo) 0%, transparent);
+    }
+  }
+
+  @keyframes ga-glow {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--c-geo) 50%, transparent);
+    }
+
+    100% {
+      box-shadow: 0 0 0 12px color-mix(in srgb, var(--c-geo) 0%, transparent);
+    }
+  }
+
+  /* Wrong: no shake, the colour just fades in from neutral. */
+  @keyframes ga-fade-bad {
+    from {
+      background-color: var(--c-surface);
+      border-color: var(--c-border-strong);
+    }
+  }
+
+  @keyframes ga-rise {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+
+  @keyframes ga-pop-icon {
+    0% {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+
+    70% {
+      transform: scale(1.12);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ga-bump {
+    40% {
+      transform: scale(1.15);
+    }
+  }
+
+  @keyframes ga-light {
+    0% {
+      opacity: 0.2;
+      transform: translateY(8px) scale(0.94);
+    }
+
+    70% {
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--part-ink) 25%, transparent);
+    }
+
+    100% {
+      opacity: 1;
+      transform: none;
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--part-ink) 0%, transparent);
+    }
+  }
+
+  @keyframes ga-split {
+    from {
+      opacity: 0;
+      transform: translateY(-1.4em) scale(0.85);
+    }
+  }
+
+  @media print {
+    .tw-demo .tw-part,
+    .tw-demo__sum,
+    .tw-demo__caption {
+      opacity: 1;
+    }
   }
 }

@@ -1218,6 +1218,8 @@
     color: #1c1b19;
     background: #fff;
     box-shadow: var(--shadow-2);
+    /* The card is paper: its chips keep the light colours in the dark theme too. */
+    color-scheme: light;
   }
 
   .sheet__inner {

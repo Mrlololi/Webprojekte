@@ -1,18 +1,19 @@
 # Webprojekte by Iva Tsatskrialashvili
 
-Small web projects built in 2026, plus a landing page that links to them.
+Web projects built in 2026, plus a landing page that links to them. Part of [mrlololi.com](https://mrlololi.com/) and in the same look: the logo «drei Kugeln», the pastel palette, the fonts and the mascots.
 
-Live: <https://mrlololi.com/Webprojekte/>
+Live: <https://mrlololi.com/Webprojekte/> (German, or English with `?lang=en`)
 
-| Project | What it is | What you can see in the code | Live |
+| Project | What it is | What it shows | Live |
 |---|---|---|---|
-| [GeoAPP](geoapp/) | A quiz that helps Ukrainians in Georgia learn the Georgian numbers 0-30 | Plain JavaScript app, data in a JSON file, three interface languages, saved progress, keyboard controls, accessibility | [Open](https://mrlololi.com/Webprojekte/geoapp/) |
-| [KittyCats](kittycats/) | A one-page layout demo with kittens drawn in SVG | CSS Grid, Flexbox, `position: sticky`, a two-column split, a form grid, light and dark theme | [Open](https://mrlololi.com/Webprojekte/kittycats/) |
-| [Language Starter](language-starter/) | First phrases for international youth exchanges: 45 phrases in 42 languages, cards to listen to, a quiz and a one-page phrase card to print | One JSON file for 1890 entries, Web Speech API with a fallback for recordings, print CSS for exactly one A4 page, a QR code made in the browser, offline, review mode for native speakers | [Open](https://mrlololi.com/Webprojekte/language-starter/) |
+| [GeoAPP](geoapp/) | A quiz for people from Ukraine in Georgia: the Georgian numbers 0-30, with an explanation of counting in twenties | A learning app without a framework, three interface languages, saved progress, offline | [Open](https://mrlololi.com/Webprojekte/geoapp/) |
+| [Language Starter](language-starter/) | First phrases for international youth exchanges: 45 phrases in 42 languages, cards to listen to, a quiz and a one-page phrase card to print | One JSON file for 1890 entries, Web Speech API with a fallback for recordings, print CSS for exactly one A4 page, review mode for native speakers | [Open](https://mrlololi.com/Webprojekte/language-starter/) |
+| [KI im Kundenservice](ki-kundenservice/) | The full inbox of a made-up photo school: 20 emails, sorted by AI, with draft replies and the hard cases handed to a person | AI with clear rules and human approval; an example run, nothing is sent, no API key in the browser | [Open](https://mrlololi.com/Webprojekte/ki-kundenservice/) |
+| [KittyCats](kittycats/) | A page of hand-drawn SVG kittens that move as you scroll | GSAP ScrollTrigger, CSS scroll-driven animation, SVG path morphing, plus the layout techniques Grid, Flexbox and sticky | [Open](https://mrlololi.com/Webprojekte/kittycats/) |
 
 ## About me
 
-I'm Iva Tsatskrialashvili, a Marketing Automation Engineer in Graz, Austria. I work with ActiveCampaign, Zapier, Leadpages and Wix. I'm studying Marketing & Sales at FH CAMPUS 02 Graz and come from mobile software development.
+I'm Iva Tsatskrialashvili (he/him), a Marketing Automation Engineer in Graz, Austria. Services and prices: <https://mrlololi.com/>
 
 - LinkedIn: <https://www.linkedin.com/in/tsatskrialashvili-iva/>
 - Malt: <https://www.malt.de/profile/ivatsatskrialashvili>
@@ -21,78 +22,52 @@ I'm Iva Tsatskrialashvili, a Marketing Automation Engineer in Graz, Austria. I w
 
 ```
 Webprojekte/
-├── index.html            landing page
-├── 404.html              "page not found", GitHub Pages shows it for any wrong address
-├── README.md             this file
-├── .nojekyll             tells GitHub Pages to serve the files as they are
+├── index.html              landing page, German and English in one file
+├── 404.html                "page not found", GitHub Pages shows it for any wrong address
+├── sitemap.xml             landing page, the four projects and their language variants
 ├── assets/
-│   ├── css/base.css      shared colours, type sizes, header, footer, buttons
-│   ├── css/landing.css   styles for the landing page only
-│   ├── js/theme.js       light/dark switch, shared by all three pages
-│   ├── favicon.svg       favicon of the landing page
-│   ├── icons/            SVG favicons and 180x180 touch icons for each page
-│   └── og/               1200x630 preview images for social media
-├── geoapp/               see geoapp/README.md
-├── kittycats/            see kittycats/README.md
-└── language-starter/     see language-starter/README.md
+│   ├── css/base.css        shared tokens, fonts, header, footer, buttons (all pages)
+│   ├── css/landing.css     landing page and 404
+│   ├── js/theme.js         light/dark switch, shared by all pages
+│   ├── js/landing.js       landing page: language details, reveals, preview loops
+│   ├── js/balls3d.js       the 3D logo balls (built from tools/balls3d.src.js, includes parts of OGL)
+│   ├── fonts/              Bricolage Grotesque, Atkinson Hyperlegible Next, EB Garamond italic (SIL OFL)
+│   ├── img/                the photo on the landing page
+│   ├── vendor/             GSAP 3.15 core and ScrollTrigger (KittyCats only)
+│   ├── favicon.svg         the mrlololi icon «drei Kugeln»
+│   ├── icons/              favicons and touch icons of the projects
+│   └── og/                 1200x630 preview images for social media
+├── tools/balls3d.src.js    source of the 3D balls
+├── geoapp/                 see geoapp/README.md
+├── language-starter/       see language-starter/README.md
+├── ki-kundenservice/       see ki-kundenservice/README.md
+└── kittycats/              see kittycats/README.md
 ```
 
 ## Shared design
 
-All three pages load `assets/css/base.css`, so they look like they belong together.
-
-- Colours are CSS custom properties written with `light-dark()`, so one variable covers both themes. Every text colour has at least 4.5:1 contrast with its background. A few examples: text `#1c1b19` on `#f7f5f0` is 15.8:1, the GeoAPP teal `#0f766e` on white is 5.5:1 and the KittyCats orange `#b4490c` on white is 5.4:1. The old KittyCats orange `#da6517` only reaches 3.6:1, so it's used for decoration only.
-- Fonts are the ones already on your device, so nothing has to be downloaded or licensed. Body text uses `system-ui`, headings use a serif. Font sizes scale with `clamp()`.
-- The CSS is split into cascade layers (`@layer tokens, reset, base, components, page`). That keeps selectors simple, and there's no `!important` and no inline `style` anywhere.
-- The theme follows your system setting on the first visit. If you click the switch, the choice is saved in `localStorage` (key `iva-portfolio-theme`) and applies to all three pages.
+- **Look:** the header lockup of mrlololi.com on a light translucent bar, a small «Webprojekte» label, the project links, and the theme switch. The dark footer carries the lockup with the tagline «Logik, Lösung, Live.» (German pages) or «Logic, Loop, Live.» (all others); only the landing page has the three waving mascots.
+- **Colours** are CSS custom properties written with `light-dark()`: soft ink `#2B2A33` on warm paper, pastels pink, blue, pistachio, lavender and peach as surfaces. The dark values were made for Webprojekte. Every text pair passes WCAG AA (4.5:1) in both themes. GeoAPP keeps its teal and KittyCats its orange, because they carry meaning there.
+- **Fonts** are self-hosted (no requests to other servers): Bricolage Grotesque for headings, Atkinson Hyperlegible Next for text, EB Garamond italic for one accent word. They cover Latin only, so Georgian, Armenian, Greek and Cyrillic use the fonts of the device.
+- **Motion:** small and calm. Cards reveal on scroll and again when you come back, loops run only while visible, hover effects only with a mouse. With "reduce motion" switched on, every animation shows its final state.
+- **3D:** the three logo balls on the landing page are soft 3D spheres (WebGL with [OGL](https://github.com/oframe/ogl), Unlicense). They load after the page is idle and only on devices with a mouse, WebGL and no reduced-motion setting; everyone else sees the flat logo. They pause off-screen and in hidden tabs.
+- The CSS is split into cascade layers (`@layer tokens, reset, base, components, page`), so selectors stay simple.
+- The theme follows your system on the first visit. A click on the switch is saved in `localStorage` (`iva-portfolio-theme`) and applies to all pages. The landing page language is saved under `iva-webprojekte-lang`.
 
 ## Run it locally
 
-Double-click `index.html`. Everything works, GeoAPP included: when it's opened from disk it reads its data from `data/numbers.js`, because browsers block `fetch()` for local files.
-
-If you want it exactly like on GitHub Pages, start any small web server in this folder, for example:
+Start any small web server in this folder, for example:
 
 ```bash
 python -m http.server 8000
 ```
 
-and open <http://localhost:8000/>.
+and open <http://localhost:8000/>. (Opened from disk, the pages also work, but fonts and the 3D balls need a server.)
 
-## Put it on GitHub Pages
+## Hosting
 
-1. Create a public repository called `Webprojekte` under `mrlololi` and push the contents of this folder to the `main` branch. `index.html` should be at the top level of the repository.
-2. In the repository go to Settings, then Pages. Under "Build and deployment" choose "Deploy from a branch", pick `main` and `/ (root)`, and save.
-3. About a minute later the site is online at `https://mrlololi.com/Webprojekte/`.
-
-The canonical and Open Graph links in the pages point to that address. If you pick a different repository name or a custom domain, replace `https://mrlololi.com/Webprojekte/` in the three `index.html` files, and `/Webprojekte/` in `404.html` (that page can show up at any address, so its links start at the root).
-
-### Quick check after uploading
-
-- Open each page on your phone and on a computer.
-- GeoAPP offline: open GeoAPP once, then switch on airplane mode and reload. The quiz should still load. On Android Chrome you can also add it to the home screen ("Install app").
-- Run Lighthouse in Chrome (F12, tab "Lighthouse") on each page.
-
-### The old links on Malt
-
-The Malt profile still links to `mrlololi.github.io/GeoAPP` and `mrlololi.github.io/KittyCats`. You can either change those links, or put a redirect into the `index.html` of each old repository:
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>GeoAPP has moved</title>
-  <link rel="canonical" href="https://mrlololi.com/Webprojekte/geoapp/">
-  <meta http-equiv="refresh" content="0; url=https://mrlololi.com/Webprojekte/geoapp/">
-</head>
-<body>
-  <p>GeoAPP has moved to <a href="https://mrlololi.com/Webprojekte/geoapp/">mrlololi.com/Webprojekte/geoapp</a>.</p>
-</body>
-</html>
-```
-
-For KittyCats, use `kittycats` instead of `geoapp`.
+The repository is published with GitHub Pages (branch `main`, folder `/`) under <https://mrlololi.com/Webprojekte/>. The old addresses `mrlololi.github.io/GeoAPP` and `mrlololi.github.io/KittyCats` redirect here; those redirects live in the repositories `Mrlololi/GeoAPP` and `Mrlololi/KittyCats`.
 
 ## Images and rights
 
-Everything here was made for this project. The cats and icons are SVG written by hand, and the social media images and touch icons were drawn with simple shapes and system fonts. Nothing was copied from the old sites or from anyone else, and there are no placeholder images.
+Everything here was made for this project. The cats, mascots and icons are SVG drawn by hand, the social media images are rendered from HTML. The photo is Iva's own. Fonts: SIL Open Font License. GSAP: GreenSock standard "no charge" license. OGL: Unlicense.

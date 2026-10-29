@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>KI im Kundenservice: Demo-Postfach mit 20 Mails</title>
+  <meta name="description" content="Ein Demo-Postfach mit 20 Support-Mails einer erfundenen Fotoschule: Kategorie, Priorität, Antwortentwurf und interne Aufgabe pro Mail. Ein Mensch gibt frei, nichts wird automatisch gesendet.">
+  <meta name="author" content="Iva Tsatskrialashvili">
+  <link rel="canonical" href="https://mrlololi.com/Webprojekte/ki-kundenservice/">
+  <meta name="theme-color" content="#FDF9F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C1B22" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Iva Tsatskrialashvili, Portfolio">
+  <meta property="og:title" content="KI im Kundenservice: Demo-Postfach mit 20 Mails">
+  <meta property="og:description" content="20 Support-Mails, für jede eine Kategorie, eine Priorität und ein Antwortentwurf. Heikles geht an einen Menschen, nichts wird automatisch gesendet.">
+  <meta property="og:url" content="https://mrlololi.com/Webprojekte/ki-kundenservice/">
+  <meta property="og:image" content="https://mrlololi.com/Webprojekte/assets/og/og-ki-kundenservice.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KI im Kundenservice: ein Postfach mit Mails und einem Antwortentwurf">
+  <meta property="og:locale" content="de_AT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KI im Kundenservice: Demo-Postfach mit 20 Mails">
+  <meta name="twitter:description" content="20 Support-Mails mit Kategorie, Priorität und Antwortentwurf. Ein Mensch gibt frei.">
+  <meta name="twitter:image" content="https://mrlololi.com/Webprojekte/assets/og/og-ki-kundenservice.png">
+  <meta name="twitter:image:alt" content="KI im Kundenservice: ein Postfach mit Mails und einem Antwortentwurf">
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script>
+    /* Runs before first paint: the stored theme without flashing, and the js class. */
+    (function (root) {
+      root.classList.remove('no-js');
+      root.classList.add('js');
+      try {
+        var theme = localStorage.getItem('iva-portfolio-theme');
+        if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+      } catch (error) { /* storage blocked - follow the system theme */ }
+    })(document.documentElement);
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="css/ki.css">
+
+  <script src="../assets/js/theme.js" defer></script>
+  <script src="js/inbox.js" defer></script>
+  <noscript><style>.theme-toggle { display: none; }</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="https://mrlololi.com/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="117 -870 5248 884" aria-hidden="true" focusable="false" class="brand__logo"><g transform="translate(0 -1012) scale(21.3125)"><g stroke="currentColor" stroke-width="3"><circle cx="20" cy="32" r="13" fill="#F4C9D3"/><circle cx="44" cy="32" r="13" fill="#CFE3C2"/><circle cx="32" cy="32" r="13" fill="#BFD8EE"/></g></g><g transform="translate(1909 0)"><g fill="currentColor"><path id="mrl-word" d="M55 0l0-328l0-200l129 0l2 171l17 0q12-64 34-105q23-41 56-60q34-20 79-20q47 0 78 21q30 21 47 62q17 41 21 102l15 0q13-65 39-106q25-41 61-60q36-19 80-19q44 0 76 17q33 17 55 50q21 33 32 83q11 50 11 116l0 276l-162 0l0-257q0-49-8-82q-8-32-25-48q-16-17-43-17q-30 0-52 22q-23 22-35 62q-12 40-12 94l0 226l-158 0l0-256q0-51-9-83q-9-32-26-48q-17-17-43-17q-30 0-51 21q-22 21-34 61q-12 40-12 96l0 226l-162 0zM960 0l0-256l0-272l134 0l2 187l17 0q7-73 26-117q19-43 53-63q33-19 82-19q11 0 23 2q12 2 27 6l-6 174q-18-9-37-13q-20-3-35-3q-37 0-64 16q-26 15-41 47q-15 32-19 80l0 231l-162 0zM1364 0l0-714l159 0l0 714l-159 0zM1848 14q-79 0-140-31q-61-31-95-93q-35-61-35-154q0-95 35-156q35-62 96-92q61-30 140-30q80 0 141 31q61 31 95 92q35 62 35 155q0 96-36 157q-35 62-97 92q-62 29-139 29zm5-118q34 0 58-16q23-17 34-51q12-34 12-83q0-53-13-89q-12-36-37-56q-25-19-62-19q-34 0-57 17q-24 16-36 50q-11 34-11 85q0 80 29 121q29 41 83 41zM2174 0l0-714l159 0l0 714l-159 0zM2658 14q-79 0-140-31q-61-31-95-93q-35-61-35-154q0-95 35-156q35-62 96-92q61-30 140-30q80 0 141 31q61 31 95 92q35 62 35 155q0 96-36 157q-35 62-97 92q-62 29-139 29zm5-118q34 0 58-16q23-17 34-51q12-34 12-83q0-53-13-89q-12-36-37-56q-25-19-62-19q-34 0-57 17q-24 16-36 50q-11 34-11 85q0 80 29 121q29 41 83 41zM2984 0l0-714l159 0l0 714l-159 0zM3224 0l0-528l162 0l0 528l-162 0z"/></g><circle cx="3306" cy="-720" r="120" fill="#CFE3C2" stroke="currentColor" stroke-width="60"/></g></svg>
+        <span class="visually-hidden">mrlololi.com</span>
+      </a>
+      <a class="brand__label" href="../">Webprojekte</a>
+
+      <nav class="site-nav" aria-label="Webprojekte">
+        <ul>
+          <li><a href="../geoapp/">GeoAPP</a></li>
+          <li><a href="../language-starter/">Language Starter</a></li>
+          <li><a href="../ki-kundenservice/" aria-current="page">KI im Kundenservice</a></li>
+          <li><a href="../kittycats/">KittyCats</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+      <button class="theme-toggle" type="button" aria-pressed="false">
+        <span class="visually-hidden">Dunkles Design</span>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero container" aria-labelledby="hero-title">
+      <p class="eyebrow">Demo <span aria-hidden="true">·</span> Beispiellauf</p>
+      <h1 id="hero-title">KI im <span class="accent">Kundenservice</span></h1>
+      <p class="lead">Ein Postfach mit 20 typischen Support-Mails einer Online-Fotoschule. Für jede Mail schlägt die KI eine Kategorie, eine Priorität, einen Antwortentwurf und eine interne Aufgabe vor. Heikles geht an einen Menschen, und nichts wird automatisch gesendet.</p>
+      <ul class="stats" aria-label="Auf einen Blick"><!-- build:stats -->
+        <li><strong>20</strong> <span>Mails im Postfach</span></li>
+        <li><strong>13</strong> <span>Entwürfe direkt freigabebereit</span></li>
+        <li><strong>6</strong> <span>gehen an einen Menschen, mit Entwurf</span></li>
+        <li><strong>1</strong> <span>gefiltert, kein Entwurf</span></li>
+      <!-- /build:stats --></ul>
+    </section>
+
+    <section class="container inbox-section" aria-labelledby="inbox-title">
+      <div class="section-head">
+        <h2 id="inbox-title">Das <span class="accent">Postfach</span></h2>
+        <p class="run-note"><span class="run-note__label">Beispiellauf</span> Die Ergebnisse hat Claude am <!-- build:lauf -->14.10.2026<!-- /build:lauf --> mit dem System-Prompt und der Wissensbasis dieses Projekts erzeugt. Auf dieser Seite läuft keine KI: Sie sehen den gespeicherten Lauf. Die Schule «Lichtwerk Fotoakademie», alle Personen und Mails sind erfunden.</p>
+      </div>
+
+      <div class="specials">
+        <h3 class="specials__title">Drei Sonderfälle</h3>
+        <ul class="specials__list">
+          <li><a class="special-link" href="#mail-15"><span class="badge badge--karte">Kartendaten</span> <span class="special-link__text">Kartennummer in der Mail: wird nicht wiederholt, die Mail soll gelöscht werden.</span></a></li>
+          <li><a class="special-link" href="#mail-18"><span class="badge badge--anwalt">Anwalt</span> <span class="special-link__text">Drohung mit dem Anwalt: geht an einen Menschen, der Entwurf bestätigt nur den Eingang.</span></a></li>
+          <li><a class="special-link" href="#mail-20"><span class="badge badge--phishing">Phishing</span> <span class="special-link__text">Phishing-Mail: wird gefiltert, kein Entwurf.</span></a></li>
+        </ul>
+      </div>
+
+      <div class="inbox" id="inbox">
+        <div class="inbox__bar" data-filters hidden>
+          <div class="filters" role="group" aria-label="Mails filtern"><!-- build:filters -->
+            <button type="button" class="filter" data-filter="alle" aria-pressed="true">Alle <span class="filter__count">20</span></button>
+            <button type="button" class="filter" data-filter="entwurf" aria-pressed="false">Entwurf <span class="filter__count">13</span></button>
+            <button type="button" class="filter" data-filter="mensch" aria-pressed="false">an Menschen <span class="filter__count">6</span></button>
+            <button type="button" class="filter" data-filter="gefiltert" aria-pressed="false">gefiltert <span class="filter__count">1</span></button>
+          <!-- /build:filters --></div>
+          <p class="inbox__count" aria-hidden="true"></p>
+        </div>
+
+        <div class="inbox__panes">
+          <nav class="inbox__nav" aria-labelledby="list-title">
+            <h3 class="visually-hidden" id="list-title">Alle Mails</h3>
+            <p class="visually-hidden" id="list-hint" data-js-only hidden>Mit den Pfeiltasten nach oben und unten zwischen den Mails wechseln, mit Enter öffnen.</p>
+            <ol class="inbox__list" aria-describedby="list-hint"><!-- build:list -->
+            <li data-typ="entwurf"><a class="item" href="#mail-1" data-id="1">
+              <span class="item__top"><span class="item__from">Sabine K.</span> <span class="item__num">Nr. 1</span></span>
+              <span class="item__subject">Passwort</span>
+              <span class="item__chips"><span class="chip">Zugang &amp; Login</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-2" data-id="2">
+              <span class="item__top"><span class="item__from">Markus T.</span> <span class="item__num">Nr. 2</span></span>
+              <span class="item__subject">Keine Zugangsdaten!!</span>
+              <span class="item__chips"><span class="chip">Zugang &amp; Login</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-3" data-id="3">
+              <span class="item__top"><span class="item__from">Julia M.</span> <span class="item__num">Nr. 3</span></span>
+              <span class="item__subject">Rechnung</span>
+              <span class="item__chips"><span class="chip">Rechnung</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-4" data-id="4">
+              <span class="item__top"><span class="item__from">Thomas Huber, Huber Media GmbH</span> <span class="item__num">Nr. 4</span></span>
+              <span class="item__subject">Rechnung auf Firma</span>
+              <span class="item__chips"><span class="chip">Rechnung</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-5" data-id="5">
+              <span class="item__top"><span class="item__from">Anna P.</span> <span class="item__num">Nr. 5</span></span>
+              <span class="item__subject">Karte abgelehnt</span>
+              <span class="item__chips"><span class="chip">Zahlung &amp; Raten</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="mensch"><a class="item" href="#mail-6" data-id="6">
+              <span class="item__top"><span class="item__from">Daniel R.</span> <span class="item__num">Nr. 6</span></span>
+              <span class="item__subject">Rate später zahlen?</span>
+              <span class="item__chips"><span class="chip">Zahlung &amp; Raten</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an Menschen</span> </span>
+            </a></li>
+            <li data-typ="mensch"><a class="item" href="#mail-7" data-id="7">
+              <span class="item__top"><span class="item__from">Petra W.</span> <span class="item__num">Nr. 7</span></span>
+              <span class="item__subject">Geld zurück</span>
+              <span class="item__chips"><span class="chip">Rückerstattung</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an Menschen</span> </span>
+            </a></li>
+            <li data-typ="mensch"><a class="item" href="#mail-8" data-id="8">
+              <span class="item__top"><span class="item__from">Michael S.</span> <span class="item__num">Nr. 8</span></span>
+              <span class="item__subject">Absolut enttäuscht</span>
+              <span class="item__chips"><span class="chip">Beschwerde</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an Menschen</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-9" data-id="9">
+              <span class="item__top"><span class="item__from">Carina L.</span> <span class="item__num">Nr. 9</span></span>
+              <span class="item__subject">Live-Q&amp;A</span>
+              <span class="item__chips"><span class="chip">Live-Termine</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-10" data-id="10">
+              <span class="item__top"><span class="item__from">Stefan G.</span> <span class="item__num">Nr. 10</span></span>
+              <span class="item__subject">Zertifikat und Zugriff</span>
+              <span class="item__chips"><span class="chip">Kursinhalt</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-11" data-id="11">
+              <span class="item__top"><span class="item__from">Helga F.</span> <span class="item__num">Nr. 11</span></span>
+              <span class="item__subject">Videos ruckeln</span>
+              <span class="item__chips"><span class="chip">Technik</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-12" data-id="12">
+              <span class="item__top"><span class="item__from">Robert N.</span> <span class="item__num">Nr. 12</span></span>
+              <span class="item__subject">Kurs verschenken</span>
+              <span class="item__chips"><span class="chip">Verkauf &amp; Gutscheine</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="mensch"><a class="item" href="#mail-13" data-id="13">
+              <span class="item__top"><span class="item__from">Lisa B.</span> <span class="item__num">Nr. 13</span></span>
+              <span class="item__subject">Code HERBST20 geht nicht</span>
+              <span class="item__chips"><span class="chip">Verkauf &amp; Gutscheine</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an Menschen</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-14" data-id="14">
+              <span class="item__top"><span class="item__from">Frank D.</span> <span class="item__num">Nr. 14</span></span>
+              <span class="item__subject">Mitgliedschaft kündigen</span>
+              <span class="item__chips"><span class="chip">Abo &amp; Kündigung</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-15" data-id="15">
+              <span class="item__top"><span class="item__from">Eva K.</span> <span class="item__num">Nr. 15</span></span>
+              <span class="item__subject">Zahlung Rate 2</span>
+              <span class="item__chips"><span class="chip">Datenschutz</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> <span class="badge badge--karte">Kartendaten</span></span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-16" data-id="16">
+              <span class="item__top"><span class="item__from">Jonas V.</span> <span class="item__num">Nr. 16</span></span>
+              <span class="item__subject">Welche Kamera?</span>
+              <span class="item__chips"><span class="chip">Kursinhalt</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="entwurf"><a class="item" href="#mail-17" data-id="17">
+              <span class="item__top"><span class="item__from">Emily R.</span> <span class="item__num">Nr. 17</span></span>
+              <span class="item__subject" lang="en">Course in English?</span>
+              <span class="item__chips"><span class="chip">Kursinhalt</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span> </span>
+            </a></li>
+            <li data-typ="mensch"><a class="item" href="#mail-18" data-id="18">
+              <span class="item__top"><span class="item__from">Dr. Werner L.</span> <span class="item__num">Nr. 18</span></span>
+              <span class="item__subject">Letzte Aufforderung</span>
+              <span class="item__chips"><span class="chip">Beschwerde</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an Menschen</span> <span class="badge badge--anwalt">Anwalt</span></span>
+            </a></li>
+            <li data-typ="mensch"><a class="item" href="#mail-19" data-id="19">
+              <span class="item__top"><span class="item__from">Mia Photography</span> <span class="item__num">Nr. 19</span></span>
+              <span class="item__subject">Kooperation?</span>
+              <span class="item__chips"><span class="chip">Kooperation</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an Menschen</span> </span>
+            </a></li>
+            <li data-typ="gefiltert"><a class="item" href="#mail-20" data-id="20">
+              <span class="item__top"><span class="item__from">Kontoservice</span> <span class="item__num">Nr. 20</span></span>
+              <span class="item__subject">Ihr Konto wird gesperrt</span>
+              <span class="item__chips"><span class="chip">Spam</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="decision-chip decision-chip--gefiltert"><span class="visually-hidden">Entscheidung: </span>gefiltert</span> <span class="badge badge--phishing">Phishing</span></span>
+            </a></li>
+          <!-- /build:list --></ol>
+          </nav>
+
+          <div class="inbox__detail" id="inbox-detail">
+            <button type="button" class="btn btn--quiet back" data-back hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Zurück zur Liste
+            </button>
+<!-- build:mails -->
+            <article class="mail" id="mail-1" data-typ="entwurf" data-id="1" aria-labelledby="mail-1-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 1 von 20 <span aria-hidden="true">·</span> von Sabine K.</p>
+                <h3 class="mail__title" id="mail-1-title" tabindex="-1">Passwort</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Zugang &amp; Login</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Hallo, ich komme nicht mehr in meinen Kurs rein, hab mein Passwort vergessen. LG Sabine</div>
+              <section class="decision" aria-labelledby="mail-1-decision">
+                <h4 id="mail-1-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 96 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-1-draft">
+                <h4 id="mail-1-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Passwort</span></p>
+                <div class="draft__text">Hallo Sabine,
+
+kein Problem: Geh auf kurse.lichtwerk-akademie.example/login und klick auf &quot;Passwort vergessen&quot;. Du bekommst dann sofort eine E-Mail mit einem Link, über den du ein neues Passwort setzt. Schau bitte auch im Spam-Ordner nach, falls sie nicht gleich auftaucht.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-1-task">
+                <h4 id="mail-1-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-2" data-typ="entwurf" data-id="2" aria-labelledby="mail-2-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 2 von 20 <span aria-hidden="true">·</span> von Markus T.</p>
+                <h3 class="mail__title" id="mail-2-title" tabindex="-1">Keine Zugangsdaten!!</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Zugang &amp; Login</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> </p>
+              </header>
+              <div class="mail__text">Ich habe vor einer Stunde die Porträt-Masterclass gekauft und noch immer keine Zugangsdaten bekommen!! Was ist da los?</div>
+              <section class="decision" aria-labelledby="mail-2-decision">
+                <h4 id="mail-2-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 90 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-2-draft">
+                <h4 id="mail-2-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Keine Zugangsdaten</span></p>
+                <div class="draft__text">Hallo Markus,
+
+danke für deine Nachricht und sorry für das Warten. Normalerweise kommen die Zugangsdaten innerhalb von 10 Minuten. Schau bitte kurz im Spam- und Werbe-Ordner nach. Wir schicken dir die Zugangsdaten außerdem gleich noch einmal an diese Adresse.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-2-task">
+                <h4 id="mail-2-task">Interne Aufgabe</h4>
+                <p>Zahlung prüfen und Zugangsdaten manuell erneut senden</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-3" data-typ="entwurf" data-id="3" aria-labelledby="mail-3-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 3 von 20 <span aria-hidden="true">·</span> von Julia M.</p>
+                <h3 class="mail__title" id="mail-3-title" tabindex="-1">Rechnung</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Rechnung</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text">Hi, ich bräuchte die Rechnung für meinen Grundkurs, für die Steuer. Danke!</div>
+              <section class="decision" aria-labelledby="mail-3-decision">
+                <h4 id="mail-3-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 95 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-3-draft">
+                <h4 id="mail-3-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Rechnung</span></p>
+                <div class="draft__text">Hallo Julia,
+
+die Rechnung hast du nach der Zahlung automatisch per E-Mail bekommen. Du findest sie außerdem jederzeit in deinem Kundenkonto unter &quot;Rechnungen&quot; zum Download.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-3-task">
+                <h4 id="mail-3-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-4" data-typ="entwurf" data-id="4" aria-labelledby="mail-4-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 4 von 20 <span aria-hidden="true">·</span> von Thomas Huber, Huber Media GmbH</p>
+                <h3 class="mail__title" id="mail-4-title" tabindex="-1">Rechnung auf Firma</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Rechnung</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Sehr geehrte Damen und Herren,
+könnten Sie die Rechnung für die Porträt-Masterclass bitte auf unsere Firma ausstellen? Huber Media GmbH, Hauptplatz 1, 8010 Graz, UID ATU12345678.
+Mit freundlichen Grüßen, Thomas Huber</div>
+              <section class="decision" aria-labelledby="mail-4-decision">
+                <h4 id="mail-4-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 88 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-4-draft">
+                <h4 id="mail-4-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Rechnung auf Firma</span></p>
+                <div class="draft__text">Sehr geehrter Herr Huber,
+
+vielen Dank für Ihre Nachricht. Wir stellen Ihnen gern eine korrigierte Rechnung auf die Huber Media GmbH mit der angegebenen Adresse und UID aus und schicken sie Ihnen in den nächsten Tagen per E-Mail.
+
+Viele Grüße, Ihr Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-4-task">
+                <h4 id="mail-4-task">Interne Aufgabe</h4>
+                <p>Korrigierte Rechnung auf Huber Media GmbH, Hauptplatz 1, 8010 Graz, UID ATU12345678 ausstellen und senden</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-5" data-typ="entwurf" data-id="5" aria-labelledby="mail-5-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 5 von 20 <span aria-hidden="true">·</span> von Anna P.</p>
+                <h3 class="mail__title" id="mail-5-title" tabindex="-1">Karte abgelehnt</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Zahlung &amp; Raten</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> </p>
+              </header>
+              <div class="mail__text">Hallo, meine Kreditkarte wurde bei der zweiten Rate abgelehnt, ich habe jetzt eine neue Karte. Was muss ich tun?</div>
+              <section class="decision" aria-labelledby="mail-5-decision">
+                <h4 id="mail-5-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 93 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-5-draft">
+                <h4 id="mail-5-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Karte abgelehnt</span></p>
+                <div class="draft__text">Hallo Anna,
+
+danke, dass du so schnell Bescheid gibst. Hinterleg die neue Karte bitte in deinem Kundenkonto unter &quot;Zahlungsmethode&quot;. Wir versuchen die Rate 3 Tage nach dem ersten Versuch automatisch erneut abzubuchen, dann sollte alles passen. Wichtig: Nach zwei fehlgeschlagenen Versuchen pausiert der Kurszugang, bis die Rate bezahlt ist. Mit der neuen Karte passiert das nicht.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-5-task">
+                <h4 id="mail-5-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-6" data-typ="mensch" data-id="6" aria-labelledby="mail-6-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 6 von 20 <span aria-hidden="true">·</span> von Daniel R.</p>
+                <h3 class="mail__title" id="mail-6-title" tabindex="-1">Rate später zahlen?</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Zahlung &amp; Raten</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Hi Lena, könnte ich die zweite Rate einen Monat später zahlen? Es ist gerade finanziell etwas knapp. Danke dir!</div>
+              <section class="decision" aria-labelledby="mail-6-decision">
+                <h4 id="mail-6-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an einen Menschen</span></span></h4>
+                <p><strong>Grund:</strong> Aufschub einer Rate entscheidet die Inhaberin im Einzelfall.</p>
+                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: 90 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-6-draft">
+                <h4 id="mail-6-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Rate später zahlen?</span></p>
+                <div class="draft__text">Hallo Daniel,
+
+danke, dass du offen schreibst. Einen Aufschub entscheidet Lena persönlich, deshalb habe ich deine Nachricht an sie weitergegeben. Du bekommst in den nächsten Tagen eine Antwort von ihr. Bis dahin musst du nichts tun.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-6-task">
+                <h4 id="mail-6-task">Interne Aufgabe</h4>
+                <p>An Lena Berger weiterleiten: Aufschub 2. Rate um 1 Monat</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-7" data-typ="mensch" data-id="7" aria-labelledby="mail-7-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 7 von 20 <span aria-hidden="true">·</span> von Petra W.</p>
+                <h3 class="mail__title" id="mail-7-title" tabindex="-1">Geld zurück</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Rückerstattung</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Hallo, ich habe den Grundkurs vor 5 Tagen gekauft, aber er ist doch nichts für mich. Kann ich mein Geld zurückbekommen?</div>
+              <section class="decision" aria-labelledby="mail-7-decision">
+                <h4 id="mail-7-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an einen Menschen</span></span></h4>
+                <p><strong>Grund:</strong> Rückzahlung muss vom Team ausgelöst werden (liegt innerhalb der 14-Tage-Garantie).</p>
+                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: 94 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-7-draft">
+                <h4 id="mail-7-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Geld zurück</span></p>
+                <div class="draft__text">Hallo Petra,
+
+schade, dass der Kurs nicht passt, aber natürlich: Du hast den Kurs vor 5 Tagen gekauft, damit gilt unsere 14-Tage-Geld-zurück-Garantie. Wir veranlassen die Rückzahlung und melden uns, sobald sie unterwegs ist. Wenn du magst, sag uns kurz, was dir gefehlt hat. Das hilft uns sehr.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-7-task">
+                <h4 id="mail-7-task">Interne Aufgabe</h4>
+                <p>Kaufdatum prüfen, Rückzahlung Grundkurs (199 €) auslösen, Zugang beenden</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-8" data-typ="mensch" data-id="8" aria-labelledby="mail-8-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 8 von 20 <span aria-hidden="true">·</span> von Michael S.</p>
+                <h3 class="mail__title" id="mail-8-title" tabindex="-1">Absolut enttäuscht</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Beschwerde</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> </p>
+              </header>
+              <div class="mail__text">Ich habe vor zwei Monaten die Masterclass gekauft und bin absolut enttäuscht. Die Videos sind viel zu oberflächlich. Ich will mein Geld zurück, und zwar komplett.</div>
+              <section class="decision" aria-labelledby="mail-8-decision">
+                <h4 id="mail-8-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an einen Menschen</span></span></h4>
+                <p><strong>Grund:</strong> Rückerstattung außerhalb der 14 Tage: nur Ausnahme durch die Inhaberin. Verärgerter Kunde.</p>
+                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: 91 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-8-draft">
+                <h4 id="mail-8-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Absolut enttäuscht</span></p>
+                <div class="draft__text">Hallo Michael,
+
+danke, dass du uns so offen schreibst. Es tut mir leid, dass die Masterclass deine Erwartungen nicht erfüllt. Damit wir das richtig verstehen: Welche Themen waren dir zu oberflächlich, und was hattest du dir stattdessen erwartet?
+
+Deine Bitte um Rückerstattung habe ich an Lena weitergegeben. Sie meldet sich persönlich bei dir.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-8-task">
+                <h4 id="mail-8-task">Interne Aufgabe</h4>
+                <p>An Lena Berger: Rückerstattung nach 2 Monaten (außerhalb Garantie), Kunde verärgert, persönlich antworten</p>
+                <p><strong>Noch nachfragen:</strong> Welche Inhalte konkret zu oberflächlich waren</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-9" data-typ="entwurf" data-id="9" aria-labelledby="mail-9-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 9 von 20 <span aria-hidden="true">·</span> von Carina L.</p>
+                <h3 class="mail__title" id="mail-9-title" tabindex="-1">Live-Q&amp;A</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Live-Termine</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text">Wann ist eigentlich das nächste Live-Q&amp;A? Und gibt's eine Aufzeichnung, falls ich nicht kann?</div>
+              <section class="decision" aria-labelledby="mail-9-decision">
+                <h4 id="mail-9-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 97 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-9-draft">
+                <h4 id="mail-9-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Live-Q&amp;A</span></p>
+                <div class="draft__text">Hallo Carina,
+
+das Live-Q&amp;A ist jeden ersten Donnerstag im Monat um 19:00 Uhr (Wiener Zeit) über Zoom. Den Link findest du im Kursbereich. Falls du nicht kannst: Die Aufzeichnung steht innerhalb von 24 Stunden im Kursbereich.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-9-task">
+                <h4 id="mail-9-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-10" data-typ="entwurf" data-id="10" aria-labelledby="mail-10-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 10 von 20 <span aria-hidden="true">·</span> von Stefan G.</p>
+                <h3 class="mail__title" id="mail-10-title" tabindex="-1">Zertifikat und Zugriff</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Kursinhalt</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text">Hallo! Bekomme ich am Ende ein Zertifikat? Und wie lange kann ich auf den Grundkurs zugreifen?</div>
+              <section class="decision" aria-labelledby="mail-10-decision">
+                <h4 id="mail-10-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 97 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-10-draft">
+                <h4 id="mail-10-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Zertifikat und Zugriff</span></p>
+                <div class="draft__text">Hallo Stefan,
+
+ja: Sobald du alle Module abgeschlossen hast, bekommst du automatisch eine Teilnahmebestätigung als PDF. Auf den Grundkurs kannst du 12 Monate ab dem Kauf zugreifen.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-10-task">
+                <h4 id="mail-10-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-11" data-typ="entwurf" data-id="11" aria-labelledby="mail-11-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 11 von 20 <span aria-hidden="true">·</span> von Helga F.</p>
+                <h3 class="mail__title" id="mail-11-title" tabindex="-1">Videos ruckeln</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Technik</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Die Videos ruckeln auf meinem iPad die ganze Zeit. Kann man da was machen?</div>
+              <section class="decision" aria-labelledby="mail-11-decision">
+                <h4 id="mail-11-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 86 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-11-draft">
+                <h4 id="mail-11-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Videos ruckeln</span></p>
+                <div class="draft__text">Hallo Helga,
+
+das lässt sich meist schnell lösen: Stell im Videoplayer die Qualität auf 720p und nutze nach Möglichkeit WLAN statt mobiler Daten. Am besten funktioniert ein aktueller Safari oder Chrome. Wenn es danach immer noch ruckelt, schreib uns bitte, welches iPad-Modell du hast, dann schauen wir weiter.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-11-task">
+                <h4 id="mail-11-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+                <p><strong>Noch nachfragen:</strong> iPad-Modell, falls das Problem bleibt</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-12" data-typ="entwurf" data-id="12" aria-labelledby="mail-12-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 12 von 20 <span aria-hidden="true">·</span> von Robert N.</p>
+                <h3 class="mail__title" id="mail-12-title" tabindex="-1">Kurs verschenken</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Verkauf &amp; Gutscheine</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text">Kann ich den Grundkurs meiner Frau zum Geburtstag schenken?</div>
+              <section class="decision" aria-labelledby="mail-12-decision">
+                <h4 id="mail-12-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 95 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-12-draft">
+                <h4 id="mail-12-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Kurs verschenken</span></p>
+                <div class="draft__text">Hallo Robert,
+
+sehr gern! Im Shop findest du unter &quot;Gutschein kaufen&quot; Gutscheine mit frei wählbarem Wert. Für den Grundkurs wären das 199 €. Der Gutschein ist 3 Jahre gültig, deine Frau kann also starten, wann sie möchte.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-12-task">
+                <h4 id="mail-12-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-13" data-typ="mensch" data-id="13" aria-labelledby="mail-13-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 13 von 20 <span aria-hidden="true">·</span> von Lisa B.</p>
+                <h3 class="mail__title" id="mail-13-title" tabindex="-1">Code HERBST20 geht nicht</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Verkauf &amp; Gutscheine</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Hey, der Code HERBST20 aus eurem Newsletter funktioniert im Checkout nicht :(</div>
+              <section class="decision" aria-labelledby="mail-13-decision">
+                <h4 id="mail-13-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an einen Menschen</span></span></h4>
+                <p><strong>Grund:</strong> Rabattcodes prüft nur das Team, die Gültigkeit ist nicht in der Wissensbasis.</p>
+                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: 89 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-13-draft">
+                <h4 id="mail-13-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Code HERBST20</span></p>
+                <div class="draft__text">Hallo Lisa,
+
+danke für den Hinweis. Wir prüfen den Code HERBST20 und melden uns heute noch bei dir, damit du den Rabatt bekommst, wenn er gilt.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-13-task">
+                <h4 id="mail-13-task">Interne Aufgabe</h4>
+                <p>Code HERBST20 im Shop prüfen, ggf. reparieren oder Rabatt manuell gewähren</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-14" data-typ="entwurf" data-id="14" aria-labelledby="mail-14-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 14 von 20 <span aria-hidden="true">·</span> von Frank D.</p>
+                <h3 class="mail__title" id="mail-14-title" tabindex="-1">Mitgliedschaft kündigen</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Abo &amp; Kündigung</span> <span class="chip chip--prio chip--normal"><span class="visually-hidden">Priorität: </span>normal</span> </p>
+              </header>
+              <div class="mail__text">Ich möchte meine Club-Mitgliedschaft kündigen. Wie geht das?</div>
+              <section class="decision" aria-labelledby="mail-14-decision">
+                <h4 id="mail-14-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 94 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-14-draft">
+                <h4 id="mail-14-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Mitgliedschaft kündigen</span></p>
+                <div class="draft__text">Hallo Frank,
+
+das geht ganz einfach in deinem Kundenkonto unter &quot;Abo verwalten&quot;. Die Mitgliedschaft endet dann zum Monatsende, bis dahin kannst du alles weiter nutzen. Wenn du magst, sag uns kurz, warum du gehst. Das hilft uns, besser zu werden.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-14-task">
+                <h4 id="mail-14-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-15" data-typ="entwurf" data-id="15" aria-labelledby="mail-15-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 15 von 20 <span aria-hidden="true">·</span> von Eva K.</p>
+                <h3 class="mail__title" id="mail-15-title" tabindex="-1">Zahlung Rate 2</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Datenschutz</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="badge badge--karte">Kartendaten</span></p>
+              </header>
+              <div class="mail__text">Hallo, hier meine Kartendaten für die zweite Rate: <mark class="mail__mark">4111 1111 1111 1111, 12/27, CVC 123</mark>. Bitte einfach abbuchen, danke!</div>
+              <p class="special special--karte">Sonderfall Kartendaten: Die Kundin schickt ihre Kartennummer per Mail. Der Entwurf wiederholt sie nicht, bittet darum, Kartendaten nie per Mail zu schicken, und die interne Aufgabe lautet: Mail löschen.</p>
+              <section class="decision" aria-labelledby="mail-15-decision">
+                <h4 id="mail-15-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 97 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-15-draft">
+                <h4 id="mail-15-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Zahlung Rate 2</span></p>
+                <div class="draft__text">Hallo Eva,
+
+danke, dass du so schnell zahlen möchtest. Bitte schick uns Kartendaten aus Sicherheitsgründen nie per E-Mail. Wir löschen deine Nachricht mit den Kartendaten. Hinterleg die Karte einfach selbst in deinem Kundenkonto unter &quot;Zahlungsmethode&quot;, dann wird die Rate automatisch abgebucht. Zur Sicherheit kannst du überlegen, die Karte bei deiner Bank sperren zu lassen.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-15-task">
+                <h4 id="mail-15-task">Interne Aufgabe</h4>
+                <p>Mail mit Zahlungsdaten löschen (auch aus Papierkorb), nichts davon speichern</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-16" data-typ="entwurf" data-id="16" aria-labelledby="mail-16-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 16 von 20 <span aria-hidden="true">·</span> von Jonas V.</p>
+                <h3 class="mail__title" id="mail-16-title" tabindex="-1">Welche Kamera?</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Kursinhalt</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text">Muss ich mir für die Masterclass eine teure Kamera kaufen? Ich hab nur mein Handy.</div>
+              <section class="decision" aria-labelledby="mail-16-decision">
+                <h4 id="mail-16-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 92 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-16-draft">
+                <h4 id="mail-16-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Welche Kamera?</span></p>
+                <div class="draft__text">Hallo Jonas,
+
+für den Grundkurs reicht dein Handy völlig. Für die Porträt-Masterclass empfehlen wir eine Kamera mit manuellem Modus, weil viele Übungen mit Blende und Belichtungszeit arbeiten. Eine teure muss es nicht sein. Wenn du noch keine hast, ist der Grundkurs ein guter Start.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-16-task">
+                <h4 id="mail-16-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-17" data-typ="entwurf" data-id="17" aria-labelledby="mail-17-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 17 von 20 <span aria-hidden="true">·</span> von Emily R.</p>
+                <h3 class="mail__title" id="mail-17-title" tabindex="-1" lang="en">Course in English?</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Kursinhalt</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text" lang="en">Hi, is the course also available in English? Thanks, Emily</div>
+              <section class="decision" aria-labelledby="mail-17-decision">
+                <h4 id="mail-17-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--entwurf"><span class="visually-hidden">Entscheidung: </span>Entwurf</span></span></h4>
+                <p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: 95 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-17-draft">
+                <h4 id="mail-17-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span lang="en">Re: Course in English?</span></p>
+                <div class="draft__text" lang="en">Hi Emily,
+
+thanks for asking! All our courses are in German. For the basic photography course (Foto-Grundkurs) we offer English subtitles, so you can follow it well in English.
+
+Best regards, your Lichtwerk team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-17-task">
+                <h4 id="mail-17-task">Interne Aufgabe</h4>
+                <p class="task__none">Keine. Der Entwurf reicht.</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-18" data-typ="mensch" data-id="18" aria-labelledby="mail-18-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 18 von 20 <span aria-hidden="true">·</span> von Dr. Werner L.</p>
+                <h3 class="mail__title" id="mail-18-title" tabindex="-1">Letzte Aufforderung</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Beschwerde</span> <span class="chip chip--prio chip--hoch"><span class="visually-hidden">Priorität: </span>hoch</span> <span class="badge badge--anwalt">Anwalt</span></p>
+              </header>
+              <div class="mail__text">Sehr geehrte Damen und Herren,
+sollte ich mein Geld für die Masterclass nicht bis Freitag zurückerhalten, werde ich meinen Anwalt einschalten.
+Dr. Werner L.</div>
+              <p class="special special--anwalt">Sonderfall Anwalt: Bei einer rechtlichen Drohung bestätigt der Entwurf nur den Eingang. Entscheiden und antworten muss die Inhaberin persönlich.</p>
+              <section class="decision" aria-labelledby="mail-18-decision">
+                <h4 id="mail-18-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an einen Menschen</span></span></h4>
+                <p><strong>Grund:</strong> Rechtliche Drohung: nur Eingang bestätigen, Inhaberin antwortet persönlich.</p>
+                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: 95 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-18-draft">
+                <h4 id="mail-18-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Letzte Aufforderung</span></p>
+                <div class="draft__text">Sehr geehrter Herr Dr. L.,
+
+vielen Dank für Ihre Nachricht. Wir haben sie erhalten und an die Inhaberin, Lena Berger, weitergegeben. Sie meldet sich persönlich bei Ihnen.
+
+Mit freundlichen Grüßen, Ihr Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-18-task">
+                <h4 id="mail-18-task">Interne Aufgabe</h4>
+                <p>Sofort an Lena Berger: Rückforderung mit Anwaltsdrohung, Frist Freitag. Kaufdatum und Verlauf prüfen</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-19" data-typ="mensch" data-id="19" aria-labelledby="mail-19-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 19 von 20 <span aria-hidden="true">·</span> von Mia Photography</p>
+                <h3 class="mail__title" id="mail-19-title" tabindex="-1">Kooperation?</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Kooperation</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> </p>
+              </header>
+              <div class="mail__text">Hi! Ich bin Fotografin mit 40k Followern auf Instagram und würde gern mit euch kooperieren. Interesse?</div>
+              <section class="decision" aria-labelledby="mail-19-decision">
+                <h4 id="mail-19-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--mensch"><span class="visually-hidden">Entscheidung: </span>an einen Menschen</span></span></h4>
+                <p><strong>Grund:</strong> Kooperationen entscheidet die Inhaberin.</p>
+                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: 93 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-19-draft">
+                <h4 id="mail-19-draft">Antwortentwurf</h4>
+                <p class="draft__subject"><span class="draft__label">Betreff:</span> <span>Re: Kooperation?</span></p>
+                <div class="draft__text">Hallo Mia,
+
+danke für dein Interesse! Kooperationen entscheidet Lena persönlich. Ich habe deine Anfrage an sie weitergegeben, du bekommst innerhalb von 2 Wochen eine Antwort. Wenn du magst, schick uns gern schon ein paar Ideen, wie eine Zusammenarbeit aussehen könnte.
+
+Viele Grüße, dein Lichtwerk-Team</div>
+                <div class="approve" data-approve hidden>
+                  <button type="button" class="btn btn--primary approve__btn">Freigeben</button>
+                  <p class="approve__status" role="status"></p>
+                </div>
+              </section>
+              <section class="task" aria-labelledby="mail-19-task">
+                <h4 id="mail-19-task">Interne Aufgabe</h4>
+                <p>An Lena Berger weiterleiten: Kooperationsanfrage Instagram (40k)</p>
+              </section>
+            </article>
+            <article class="mail" id="mail-20" data-typ="gefiltert" data-id="20" aria-labelledby="mail-20-title">
+              <header class="mail__head">
+                <p class="mail__meta">Mail 20 von 20 <span aria-hidden="true">·</span> von Kontoservice</p>
+                <h3 class="mail__title" id="mail-20-title" tabindex="-1">Ihr Konto wird gesperrt</h3>
+                <p class="mail__chips"><span class="chip"><span class="visually-hidden">Kategorie: </span>Spam</span> <span class="chip chip--prio chip--niedrig"><span class="visually-hidden">Priorität: </span>niedrig</span> <span class="badge badge--phishing">Phishing</span></p>
+              </header>
+              <div class="mail__text">Ihr Konto wird in 24 Stunden gesperrt. Klicken Sie hier, um Ihre Daten zu bestätigen: <mark class="mail__mark">http://konto-pruefung.example</mark></div>
+              <p class="special special--phishing">Sonderfall Phishing: Die Mail wird als Phishing erkannt und gefiltert. Es gibt keinen Entwurf, der Link wird nicht geöffnet.</p>
+              <section class="decision" aria-labelledby="mail-20-decision">
+                <h4 id="mail-20-decision">Entscheidung <span class="decision__value"><span class="decision-chip decision-chip--gefiltert"><span class="visually-hidden">Entscheidung: </span>gefiltert</span></span></h4>
+                <p>Spam oder Phishing erkannt. Die KI schreibt keinen Entwurf. Einschätzung der KI: 99 % sicher.</p>
+              </section>
+              <section class="draft" aria-labelledby="mail-20-draft">
+                <h4 id="mail-20-draft">Antwortentwurf</h4>
+                <p class="draft__none">Kein Entwurf: Die Mail wurde gefiltert.</p>
+              </section>
+              <section class="task" aria-labelledby="mail-20-task">
+                <h4 id="mail-20-task">Interne Aufgabe</h4>
+                <p>Als Phishing markieren und löschen, Link nicht öffnen</p>
+              </section>
+            </article>
+          <!-- /build:mails -->
+          </div>
+        </div>
+        <p class="visually-hidden" role="status" id="inbox-status"></p>
+      </div>
+    </section>
+
+    <section class="container how" aria-labelledby="how-title">
+      <h2 id="how-title">So <span class="accent">funktioniert</span> es</h2>
+      <ol class="steps">
+        <li class="step"><span class="step__num" aria-hidden="true">1</span><h3>Mail lesen</h3><p>Eine neue Mail kommt im Postfach an. Make, Zapier oder n8n reicht sie an die KI weiter, zusammen mit Ihrer Wissensbasis: Preise, Fristen, Regeln.</p></li>
+        <li class="step"><span class="step__num" aria-hidden="true">2</span><h3>Erkennen</h3><p>Die KI ordnet die Mail einer Kategorie zu, setzt eine Priorität und entscheidet: Reicht ein Entwurf, oder muss ein Mensch ran? Geld, Kulanz, Beschwerden und Rechtliches gehen immer an einen Menschen.</p></li>
+        <li class="step"><span class="step__num" aria-hidden="true">3</span><h3>Entwurf schreiben</h3><p>Sie schreibt einen kurzen Entwurf in der Sprache und Anrede der Kundin, nur mit Fakten aus der Wissensbasis, und notiert eine interne Aufgabe für Ihr Team.</p></li>
+        <li class="step"><span class="step__num" aria-hidden="true">4</span><h3>Ein Mensch gibt frei</h3><p>Der Entwurf liegt im Postfach. Jemand aus Ihrem Team liest ihn, ändert, was nötig ist, und schickt ihn ab. Nichts geht automatisch hinaus.</p></li>
+      </ol>
+    </section>
+
+    <section class="container calc-section" aria-labelledby="calc-title">
+      <div class="calc">
+        <div class="calc__intro">
+          <h2 id="calc-title">Was spart das <span class="accent">pro Monat?</span></h2>
+          <p>Eine Schätzung für Ihr Postfach. Annahmen: 4,33 Wochen pro Monat, ein geprüfter Entwurf spart 70 % der Zeit einer Standardantwort, Ihr Team kostet 25 € pro Stunde.</p>
+        </div>
+        <form class="calc__form" id="calc" data-js-only hidden>
+          <div class="field">
+            <label for="calc-mails">Mails pro Woche</label>
+            <input id="calc-mails" name="mails" type="number" inputmode="numeric" min="0" max="5000" step="1" value="120">
+          </div>
+          <div class="field">
+            <label for="calc-minutes">Minuten pro Mail</label>
+            <input id="calc-minutes" name="minutes" type="number" inputmode="numeric" min="0" max="60" step="1" value="6">
+          </div>
+          <div class="field">
+            <label for="calc-share">Anteil Standardmails in %</label>
+            <input id="calc-share" name="share" type="number" inputmode="numeric" min="0" max="100" step="1" value="60">
+          </div>
+        </form>
+        <p class="calc__example" data-no-js>Beispiel: 120 Mails pro Woche, 6 Minuten pro Mail, 60 % Standardmails.</p>
+        <output class="calc__result" for="calc-mails calc-minutes calc-share" form="calc" id="calc-result">
+          <span class="calc__figure"><strong data-calc="hours">21,8</strong> <span>Stunden pro Monat gespart</span></span>
+          <span class="calc__figure"><strong data-calc="euro">546 €</strong> <span>pro Monat</span></span>
+          <span class="calc__detail">Standardantworten kosten Ihr Team heute rund <span data-calc="total">31,2</span> Stunden im Monat.</span>
+        </output>
+      </div>
+    </section>
+
+    <section class="container privacy" aria-labelledby="privacy-title">
+      <div class="privacy__grid">
+        <div>
+          <h2 id="privacy-title">Datenschutz und <span class="accent">Kontrolle</span></h2>
+          <ul class="checks">
+            <li>Nur Entwürfe, keine automatische Antwort. Jede Mail sieht ein Mensch, bevor etwas hinausgeht.</li>
+            <li>Heikles geht immer an einen Menschen: Geld, Kulanz, Beschwerden, rechtliche Themen.</li>
+            <li>Karten-, Bank- und Ausweisdaten wiederholt die KI nie. Die Mail wird zum Löschen markiert.</li>
+            <li>DSGVO: Auftragsverarbeitungsverträge mit allen Anbietern, Server in der EU, wo möglich. Getestet wird zuerst mit anonymisierten Mails.</li>
+          </ul>
+        </div>
+        <div class="privacy__page">
+          <h3>Und auf dieser Seite?</h3>
+          <p>Hier läuft keine KI und hier wird nichts gesendet. «Freigeben» zeigt nur einen Hinweis. Die Seite lädt nichts von anderen Servern, setzt keine Cookies und zählt keine Besuche.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">Für Ihr <span class="accent">Postfach</span></h2>
+      <p>Ich richte KI-Antwortentwürfe für Online-Schulen und kleine Teams ein: mit Ihrem Postfach, Ihrer Wissensbasis und Ihrem Ton.</p>
+      <p class="cta__buttons">
+        <a class="btn btn--primary" href="https://mrlololi.com/ki-antwortentwuerfe/">Das Angebot auf mrlololi.com</a>
+        <a class="btn btn--outline" href="https://github.com/Mrlololi/Webprojekte/tree/main/ki-kundenservice" rel="noopener">Quellcode auf GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="brand-lockup" href="https://mrlololi.com/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="5.5 17.5 53 29" aria-hidden="true" focusable="false" class="brand-lockup__icon"><g stroke="#FFFFFF" stroke-width="3"><circle cx="20" cy="32" r="13" fill="#F4C9D3"/><circle cx="44" cy="32" r="13" fill="#CFE3C2"/><circle cx="32" cy="32" r="13" fill="#BFD8EE"/></g></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="55 -870 3401 884" aria-hidden="true" focusable="false" class="brand-lockup__word"><use href="#mrl-word" fill="#FFFFFF"/><circle cx="3306" cy="-720" r="120" fill="#CFE3C2" stroke="#FFFFFF" stroke-width="60"/></svg><span class="visually-hidden">mrlololi.com</span>
+          <p lang="de" class="tagline tagline--dark"><span class="tl-pink">Lo</span>gik, <span class="tl-blue">Lö</span>sung, <span class="tl-pist">Li</span>ve.</p><p lang="en" class="tagline tagline--dark"><span class="tl-pink">Lo</span>gic, <span class="tl-blue">Lo</span>op, <span class="tl-pist">Li</span>ve.</p>
+        </a>
+      </div>
+      <ul class="site-footer__links">
+        <li><a href="../">Alle Webprojekte</a></li>
+        <li><a href="https://www.linkedin.com/in/tsatskrialashvili-iva/" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://www.malt.de/profile/ivatsatskrialashvili" rel="me noopener">Malt</a></li>
+        <li><a href="https://github.com/Mrlololi/Webprojekte" rel="noopener">Quellcode auf GitHub</a></li>
+      </ul>
+      <p class="site-footer__legal"><a href="https://mrlololi.com/impressum/">Impressum</a> <a href="https://mrlololi.com/datenschutz/">Datenschutz</a> <a href="https://mrlololi.com/">mrlololi.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
