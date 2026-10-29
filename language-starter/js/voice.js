@@ -57,12 +57,27 @@ window.LSVoice = (function () {
     });
   }
 
+  var listeners = [];
+
+  /** Re-read the voices; tell the app when the list changed. */
+  function refresh() {
+    if (!synth) return;
+    var before = voices.length;
+    voices = synth.getVoices() || [];
+    if (voices.length !== before) listeners.forEach(function (fn) { fn(); });
+  }
+
   function init() {
-    if (synth && synth.addEventListener) {
-      synth.addEventListener('voiceschanged', function () { voices = synth.getVoices() || []; });
-    }
+    if (synth && synth.addEventListener) synth.addEventListener('voiceschanged', refresh);
+    // iOS Safari often fills the list only after the first user gesture, and after the
+    // first wait above. So "no audio" is decided again on the first tap or key.
+    ['pointerdown', 'touchend', 'keydown'].forEach(function (type) {
+      window.addEventListener(type, function () { window.setTimeout(refresh, 300); }, { once: true, passive: true });
+    });
     return Promise.all([loadManifest(), loadVoices()]);
   }
+
+  function onChange(fn) { listeners.push(fn); }
 
   function norm(tag) {
     return String(tag || '').replace(/_/g, '-').toLowerCase();
@@ -154,5 +169,5 @@ window.LSVoice = (function () {
     });
   }
 
-  return { init: init, canPlay: canPlay, play: play, stop: stop, list: list, speakable: speakable };
+  return { init: init, onChange: onChange, canPlay: canPlay, play: play, stop: stop, list: list, speakable: speakable };
 })();

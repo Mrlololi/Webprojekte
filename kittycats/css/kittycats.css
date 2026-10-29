@@ -583,7 +583,7 @@
   @media (hover: hover) {
     .cat-card:hover {
       box-shadow: var(--shadow-2);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
   }
 
@@ -729,8 +729,10 @@
     border-radius: var(--radius-pill);
   }
 
-  .person__links a:hover {
-    border-color: var(--c-text);
+  @media (hover: hover) {
+    .person__links a:hover {
+      border-color: var(--c-text);
+    }
   }
 
   /* ==========================================================================

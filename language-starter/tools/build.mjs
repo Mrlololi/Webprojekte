@@ -51,6 +51,22 @@ writeFileSync(
   'window.LS_PHRASES = ' + JSON.stringify(data) + ';\n'
 );
 
+/* ---------- 1b. one small file per language (the app loads only what it needs) ---------- */
+
+// data/index.json: languages (with "checked" when every entry is checked), groups and the
+// phrase order. data/xx.json: the entries of one language. A reviewer on a phone downloads
+// the index and two languages instead of all 42.
+const languages = {};
+for (const [code, info] of Object.entries(data.languages)) {
+  languages[code] = { ...info, checked: ids.every((id) => byLang[code][id].checked === true) };
+}
+const order = [...ids].sort((a, b) => ns.get(a) - ns.get(b)).map((id) => ({ n: ns.get(id), id, group: byLang.en[id].group }));
+const generated = 'Generated from phrases.json by tools/build.mjs. Do not edit.';
+writeFileSync(join(root, 'data', 'index.json'), JSON.stringify({ version: data.version, generated, languages, groups: data.groups, phrases: order }) + '\n');
+for (const code of Object.keys(data.languages)) {
+  writeFileSync(join(root, 'data', `${code}.json`), JSON.stringify({ lang: code, generated, phrases: data.phrases.filter((p) => p.lang === code) }) + '\n');
+}
+
 /* ---------- 2. static EN -> DE list ---------- */
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

@@ -168,7 +168,7 @@
 
   @media (hover: hover) and (pointer: fine) {
     .project:hover {
-      transform: translateY(-4px);
+      transform: translateY(-2px);
       border-color: var(--c-border-strong);
       box-shadow: var(--shadow-2);
     }

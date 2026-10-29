@@ -304,8 +304,10 @@
     text-underline-offset: 0.18em;
   }
 
-  a:hover {
-    text-decoration-thickness: 2px;
+  @media (hover: hover) {
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
   }
 
   ::selection {
@@ -346,6 +348,9 @@
   }
 
   .skip-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     position: absolute;
     top: var(--space-2);
     left: var(--space-2);
@@ -458,6 +463,16 @@
     border-radius: var(--radius-pill);
   }
 
+  .brand__label {
+    position: relative;
+  }
+
+  .brand__label::after {
+    content: "";
+    position: absolute;
+    inset: -4px 0;
+  }
+
   .brand__label:hover,
   .brand__label[aria-current] {
     border-color: var(--c-text);
@@ -540,8 +555,8 @@
   .lang-links a {
     display: inline-grid;
     place-items: center;
-    min-width: 2.5rem;
-    min-height: 2.5rem;
+    min-width: 44px;
+    min-height: 44px;
     padding-inline: var(--space-2);
     font-size: var(--step--1);
     font-weight: 700;
@@ -550,8 +565,10 @@
     border-radius: var(--radius-pill);
   }
 
-  .lang-links a:hover {
-    color: var(--c-text);
+  @media (hover: hover) {
+    .lang-links a:hover {
+      color: var(--c-text);
+    }
   }
 
   .lang-links a[aria-current] {
@@ -575,8 +592,10 @@
     transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
   }
 
-  .theme-toggle:hover {
-    border-color: var(--c-text);
+  @media (hover: hover) {
+    .theme-toggle:hover {
+      border-color: var(--c-text);
+    }
   }
 
   .theme-toggle svg {
@@ -622,9 +641,11 @@
     background: var(--accent);
   }
 
-  .btn--primary:hover {
-    color: var(--c-on-accent);
-    box-shadow: 0 10px 24px rgb(43 42 51 / 0.2);
+  @media (hover: hover) {
+    .btn--primary:hover {
+      color: var(--c-on-accent);
+      box-shadow: 0 10px 24px rgb(43 42 51 / 0.2);
+    }
   }
 
   .btn--outline {
@@ -633,8 +654,10 @@
     border-color: var(--c-border-strong);
   }
 
-  .btn--outline:hover {
-    border-color: var(--c-text);
+  @media (hover: hover) {
+    .btn--outline:hover {
+      border-color: var(--c-text);
+    }
   }
 
   .btn--quiet {
@@ -647,8 +670,10 @@
     text-underline-offset: 0.2em;
   }
 
-  .btn--quiet:hover {
-    color: var(--c-text);
+  @media (hover: hover) {
+    .btn--quiet:hover {
+      color: var(--c-text);
+    }
   }
 
   .btn:active:not(:disabled) {
@@ -682,8 +707,10 @@
     color: var(--on-ink);
   }
 
-  .site-footer a:hover {
-    color: #FFFFFF;
+  @media (hover: hover) {
+    .site-footer a:hover {
+      color: #FFFFFF;
+    }
   }
 
   .site-footer :focus-visible {
@@ -778,6 +805,81 @@
     align-items: center;
     min-height: 44px;
   }
+
+  /* Phones and tablets: logo, label, language and theme in one row; the project links
+     in one row below that scrolls sideways if it does not fit. */
+  @media (max-width: 61.99em) {
+    .site-header__inner {
+      row-gap: 0;
+    }
+
+    .site-nav {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .site-nav ul {
+      flex-wrap: nowrap;
+    }
+  }
+
+  /* Phones: every control in the header keeps 44 px (mrlololi.com, Stage 6). */
+  @media (max-width: 29.99em) {
+    .site-header__inner {
+      column-gap: var(--space-2);
+    }
+
+    .brand__logo {
+      height: 1.15rem;
+    }
+
+    .brand__label {
+      padding-inline: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .header-tools {
+      gap: var(--space-1);
+    }
+
+    .lang-links a {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
+
+  /* Very narrow phones (360 px): the pills look smaller so the row still fits, but an
+     invisible frame keeps every touch area at 44 x 44 px. */
+  @media (max-width: 23.5em) {
+    .brand__logo {
+      height: 1.1rem;
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
+    }
+
+    .lang-links a {
+      min-width: 34px;
+      min-height: 36px;
+    }
+
+    .brand__label,
+    .theme-toggle,
+    .lang-links a {
+      position: relative;
+    }
+
+    .brand__label::after,
+    .theme-toggle::after,
+    .lang-links a::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+    }
+  }
+
 }
 
 /* ---------- Unlayered: these must beat every layer ---------- */

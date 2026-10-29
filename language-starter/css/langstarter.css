@@ -9,19 +9,21 @@
     --accent: var(--c-lang);
     --accent-soft: var(--c-lang-soft);
 
-    /* One pastel per topic (surfaces only, text stays ink) */
-    --g-intro: light-dark(#fbe3e9, #3b2530);
-    --g-polite: light-dark(#e3f0da, #22311f);
-    --g-project: light-dark(#dcebf7, #1d2b3a);
-    --g-mood: light-dark(#fbf0cc, #36301a);
-    --g-help: light-dark(#fde4d6, #3c2619);
-    --g-numbers: light-dark(#e9e4fa, #29243f);
-    --g-intro-line: light-dark(#d9879a, #c97b8e);
-    --g-polite-line: light-dark(#8db878, #7fa96b);
-    --g-project-line: light-dark(#7aa7cf, #6f9bc4);
-    --g-mood-line: light-dark(#d6b54a, #c9a843);
-    --g-help-line: light-dark(#e08b5e, #d1825a);
-    --g-numbers-line: light-dark(#9a88d9, #8f7fd0);
+    /* One pastel per topic, palette B of mrlololi.com (base.css tokens). The pastels are
+       surfaces in both themes and the text on them is always ink (.on-pastel below), so the
+       dark theme shows the same soft colours instead of dark red or brown boxes. */
+    --g-intro: var(--pink);
+    --g-polite: var(--pist);
+    --g-project: var(--blue);
+    --g-mood: var(--peach);
+    --g-help: var(--lav);
+    --g-numbers: var(--pink);
+    --g-intro-line: light-dark(#9C3F58, var(--pink));
+    --g-polite-line: light-dark(#3F6B31, var(--pist));
+    --g-project-line: light-dark(#2F6A9E, var(--blue));
+    --g-mood-line: light-dark(#B4490C, var(--peach));
+    --g-help-line: light-dark(#5A4A9C, var(--lav));
+    --g-numbers-line: light-dark(#9C3F58, var(--pink));
 
     --font-script: "Segoe UI", "Noto Sans", "Noto Sans Georgian", "Noto Sans Armenian", Sylfaen, system-ui, sans-serif;
   }
@@ -59,14 +61,43 @@
     border-radius: var(--radius-pill);
   }
 
-  .lang-switch__btn:hover {
-    color: var(--c-text);
+  @media (hover: hover) {
+    .lang-switch__btn:hover {
+      color: var(--c-text);
+    }
   }
 
   .lang-switch__btn[aria-pressed="true"] {
     color: var(--c-on-accent);
     background: var(--accent);
   }
+
+  .lang-switch__btn {
+    min-height: 44px;
+  }
+
+  /* Phones: the header fits in one row (logo, label, language, theme). */
+  @media (max-width: 29.99em) {
+    .lang-switch__buttons {
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 23.5em) {
+    .lang-switch__btn {
+      position: relative;
+      min-width: 32px;
+      min-height: 36px;
+      padding: 0 6px;
+    }
+
+    .lang-switch__btn::after {
+      content: "";
+      position: absolute;
+      inset: -4px 0;
+    }
+  }
+
 
   /* ---------- Hero ---------- */
 
@@ -224,8 +255,10 @@
     }
   }
 
-  .swap:hover:not(:disabled) {
-    transform: rotate(180deg);
+  @media (hover: hover) {
+    .swap:hover:not(:disabled) {
+      transform: rotate(180deg);
+    }
   }
 
   .swap:disabled {
@@ -278,9 +311,11 @@
     transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
   }
 
-  .pick:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
+  @media (hover: hover) {
+    .pick:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+    }
   }
 
   .pick__endonym {
@@ -306,7 +341,7 @@
   }
 
   .pick__badge.is-checked {
-    color: var(--c-text);
+    color: var(--ink);
     background: var(--g-polite);
   }
 
@@ -338,8 +373,10 @@
     border-radius: var(--radius-pill);
   }
 
-  .page-nav a:hover {
-    border-color: var(--accent);
+  @media (hover: hover) {
+    .page-nav a:hover {
+      border-color: var(--accent);
+    }
   }
 
   /* ---------- Draft banner ---------- */
@@ -350,6 +387,7 @@
     max-width: 52rem;
     margin: 0 auto var(--space-4);
     padding: var(--space-3) var(--space-4);
+    color: var(--ink);
     background: var(--g-mood);
     border: 1px solid var(--g-mood-line);
     border-left-width: 5px;
@@ -401,11 +439,14 @@
     transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
   }
 
-  .chip:hover {
-    border-color: var(--c-border-strong);
+  @media (hover: hover) {
+    .chip:hover {
+      border-color: var(--c-border-strong);
+    }
   }
 
   .chip[aria-pressed="true"] {
+    color: var(--ink);
     background: var(--chip-bg);
     border-color: var(--chip-line);
   }
@@ -432,6 +473,48 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
     gap: var(--space-4);
+  }
+
+  /* Desktop: 3 per row on a 6-column grid. The topics have 9, 6, 10, 5, 5 and 10 phrases;
+     with 1 or 2 left over, the last cards share their rows (10 = 3 + 3 + 2 + 2, 5 = 3 + 2).
+     Cards in a row are as tall as the tallest (grid stretch). */
+  @media (min-width: 56.25em) {
+    .cards {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .cards > * {
+      grid-column: span 2;
+    }
+
+    .cards[data-rest="1"] > :nth-last-child(-n + 4),
+    .cards[data-rest="2"] > :nth-last-child(-n + 2) {
+      grid-column: span 3;
+    }
+  }
+
+  .cards__note {
+    margin-bottom: var(--space-3);
+    font-size: var(--step--1);
+    color: var(--c-text-muted);
+  }
+
+  .hero__help {
+    font-size: var(--step--1);
+    text-align: center;
+  }
+
+  .hero__help a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 700;
+    color: var(--c-text);
+  }
+
+  .hero__help span {
+    display: block;
+    color: var(--c-text-muted);
   }
 
   .phrase {
@@ -461,6 +544,7 @@
   }
 
   .phrase__digit {
+    color: var(--ink);
     display: grid;
     place-items: center;
     min-width: 2.5rem;
@@ -473,6 +557,7 @@
   }
 
   .phrase__learn {
+    color: var(--ink);
     display: grid;
     gap: var(--space-1);
     padding: var(--space-3);
@@ -508,6 +593,12 @@
   .phrase__translit {
     font-weight: 600;
     color: var(--c-text-muted);
+    overflow-wrap: anywhere;
+  }
+
+  /* On the pastel box the Latin spelling stays dark too (soft ink, 7:1 and more). */
+  .phrase__learn .phrase__translit {
+    color: #4A4753;
     overflow-wrap: anywhere;
   }
 
@@ -556,8 +647,10 @@
     border-radius: var(--radius-pill);
   }
 
-  .listen:hover {
-    background: var(--c-surface-2);
+  @media (hover: hover) {
+    .listen:hover {
+      background: var(--c-surface-2);
+    }
   }
 
   .listen svg {
@@ -588,9 +681,17 @@
   /* ---------- Quiz (GeoAPP patterns) ---------- */
 
   .quiz-card {
-    max-width: 46rem;
+    max-width: 52rem;
     margin-top: var(--space-4);
-    margin-inline: 0;
+    margin-inline: auto;
+  }
+
+  /* The quiz is centred on wide screens, its heading too. */
+  @media (min-width: 62em) {
+    .quiz > h2,
+    .quiz > .section-text {
+      text-align: center;
+    }
   }
 
   .notice {
@@ -660,8 +761,10 @@
     border: 0;
   }
 
-  .pill:hover > span {
-    border-color: var(--c-border-strong);
+  @media (hover: hover) {
+    .pill:hover > span {
+      border-color: var(--c-border-strong);
+    }
   }
 
   .pill:has(input:checked) > span {
@@ -932,10 +1035,12 @@
     height: 1.5rem;
   }
 
-  .option:hover:not(:disabled) {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    transform: translateY(-2px);
+  @media (hover: hover) {
+    .option:hover:not(:disabled) {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
   }
 
   .option:disabled {
@@ -1396,9 +1501,62 @@
   .static-fallback h3 {
     margin-top: var(--space-5);
   }
+
+  /* Phones: denser cards, the Listen button next to the phrase. */
+  @media (max-width: 39.99em) {
+    .cards {
+      gap: var(--space-3);
+    }
+
+    .phrase {
+      gap: var(--space-1);
+      padding: var(--space-3);
+    }
+
+    .phrase__learn {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+    }
+
+    .phrase__learn > :not(.listen),
+    .phrase__form > :not(.listen) {
+      grid-column: 1;
+    }
+
+    .phrase__learn > .listen,
+    .phrase__form > .listen {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin-top: 0;
+      padding: 0 var(--space-3);
+    }
+
+    .phrase__form {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: var(--space-2);
+    }
+
+    .phrase__learn .listen__text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .phrase__text {
+      font-size: var(--step-1);
+    }
+  }
 }
 
-/* ---------- Review mode (?review=fi): a plain table, nothing else ---------- */
+/* ---------- Review mode: ?review (picker) and ?review=fi ----------
+   Opened from a group chat, mostly on a phone: a table on wide screens, one block per phrase
+   below 640 px, and a bar at the bottom to copy, share or e-mail the fixes. */
 
 .is-review .site-header,
 .is-review .hero,
@@ -1411,27 +1569,127 @@
   display: none;
 }
 
+html.is-review {
+  /* The bar never covers a focused field: scrolling keeps room for it. */
+  scroll-padding-bottom: calc(var(--rv-bar-h, 10rem) + 1rem);
+}
+
 .is-review .review {
-  width: min(100% - 2rem, 62rem);
-  margin: 2rem auto 0;
+  width: min(100% - 2rem, 66rem);
+  margin: 1.5rem auto 0;
+  padding-bottom: calc(var(--rv-bar-h, 10rem) + 1.5rem);
   font-size: 1rem;
 }
 
-.review__title {
+.review__head {
+  display: grid;
+  gap: 0.5rem;
   margin-bottom: 1rem;
-  font-size: 1.6rem;
+}
+
+.review__langs {
+  display: flex;
+  justify-self: start;
+  gap: 2px;
+  margin: 0 0 0.5rem;
+  padding: 2px;
+  list-style: none;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+}
+
+.review__langs a {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  font-weight: 700;
+  color: var(--c-text-muted);
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.review__langs a[aria-current] {
+  color: var(--c-on-accent);
+  background: var(--c-text);
+}
+
+.review__title {
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.1rem);
 }
 
 .review__intro {
-  display: grid;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
+  max-width: 62ch;
+  color: var(--c-text-muted);
 }
 
 .review__actions {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
+.review__stored {
+  margin-bottom: 1rem;
+  font-size: var(--step--1);
+  color: var(--c-text-muted);
+}
+
+.review__error {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--c-danger);
+}
+
+/* Picker: all 42 languages, drafts first */
+.review-pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.review-pick__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0 0.5rem;
+  min-height: 3.5rem;
+  padding: 0.6rem 0.9rem;
+  color: var(--c-text);
+  text-decoration: none;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+}
+
+@media (hover: hover) {
+  .review-pick__item:hover {
+    border-color: var(--c-text);
+  }
+}
+
+.review-pick__endonym {
+  font-family: var(--font-script);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.review-pick__name {
+  grid-column: 1;
+  font-size: var(--step--1);
+  color: var(--c-text-muted);
+}
+
+.review-pick__item .pick__badge {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+/* The table (wide screens and print) */
 .review__table {
   width: 100%;
   border-collapse: collapse;
@@ -1439,14 +1697,10 @@
   background: var(--c-surface);
 }
 
-.review__scroll {
-  overflow-x: auto;
-}
-
 .review__table th,
 .review__table td {
   overflow-wrap: anywhere;
-  padding: 0.4rem 0.6rem;
+  padding: 0.5rem 0.6rem;
   text-align: left;
   vertical-align: top;
   border: 1px solid var(--c-border);
@@ -1466,8 +1720,238 @@
   color: var(--c-text-muted);
 }
 
-.review__error {
-  color: var(--c-danger);
+.rv-text {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.rv-check {
+  min-width: 13rem;
+}
+
+.rv-row[data-mark="ok"] > * {
+  background: var(--c-ok-soft);
+}
+
+.rv-row[data-mark="fix"] > * {
+  background: var(--pink-tint);
+}
+
+.rv-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.rv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.4rem 0.85rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--c-text);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  border-radius: 999px;
+}
+
+@media (hover: hover) {
+  .rv-btn:hover {
+    border-color: var(--c-text);
+  }
+}
+
+/* Pressed: a filled pill with a drawn tick, not only a colour change. */
+.rv-btn[aria-pressed="true"] {
+  border-width: 2px;
+  border-color: var(--c-text);
+}
+
+.rv-btn--ok[aria-pressed="true"] {
+  background: var(--c-ok-soft);
+}
+
+.rv-btn--fix[aria-pressed="true"] {
+  background: var(--pink-tint);
+}
+
+.rv-btn[aria-pressed="true"]::before {
+  content: "";
+  width: 0.35em;
+  height: 0.7em;
+  margin-top: -0.15em;
+  border: solid currentColor;
+  border-width: 0 0.14em 0.14em 0;
+  transform: rotate(45deg);
+}
+
+.rv-fix {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.rv-fix[hidden] {
+  display: none;
+}
+
+.rv-fix__label {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  font-weight: 700;
+}
+
+.rv-fix__field {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  /* 16 px at least: iOS zooms into smaller fields */
+  font-size: max(16px, 1rem);
+  line-height: 1.4;
+  color: var(--c-text);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  scroll-margin-bottom: calc(var(--rv-bar-h, 10rem) + 1rem);
+}
+
+/* The bar at the bottom */
+.rv-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.75rem max(1rem, env(safe-area-inset-right)) calc(0.75rem + env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  background: var(--c-header);
+  border-top: 1px solid var(--c-border);
+  box-shadow: 0 -8px 24px -16px rgb(43 42 51 / 0.35);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.rv-bar > * {
+  width: min(100%, 66rem);
+  margin-inline: auto;
+}
+
+.rv-bar__count {
+  font-weight: 700;
+}
+
+.rv-bar__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rv-bar__tools .btn {
+  min-height: 44px;
+}
+
+.rv-bar__hint {
+  font-size: var(--step--1);
+  color: var(--c-text-muted);
+}
+
+.rv-bar__manual {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.rv-bar__manual[hidden] {
+  display: none;
+}
+
+/* Phones: one block per phrase instead of the table */
+@media screen and (max-width: 39.99em) {
+  .review__table,
+  .review__table tbody,
+  .review__table tr,
+  .review__table th,
+  .review__table td {
+    display: block;
+  }
+
+  .review__table {
+    background: none;
+  }
+
+  .review__table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .review__table .rv-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.15rem 0.6rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+  }
+
+  .rv-row[data-mark="ok"] {
+    background: var(--c-ok-soft);
+  }
+
+  .rv-row[data-mark="fix"] {
+    background: var(--pink-tint);
+  }
+
+  .review__table .rv-row > * {
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+
+  .review__n {
+    grid-row: 1 / span 2;
+    font-weight: 700;
+    color: var(--c-text-muted);
+  }
+
+  .rv-en,
+  .review__meaning {
+    grid-column: 2;
+  }
+
+  .rv-text {
+    grid-column: 1 / -1;
+    margin-top: 0.4rem;
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .rv-latin {
+    grid-column: 1 / -1;
+    color: var(--c-text-muted);
+  }
+
+  .rv-check {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin-top: 0.5rem;
+  }
+
+  .rv-btn {
+    flex: 1 1 8rem;
+  }
+
+  .rv-bar__tools .btn {
+    flex: 1 1 auto;
+    padding-inline: 0.9rem;
+  }
 }
 
 /* ---------- Print ---------- */
@@ -1527,8 +2011,17 @@
   }
 
   .is-review .review__actions,
-  .is-review .site-footer {
+  .is-review .site-footer,
+  .review__langs,
+  .review__stored,
+  .rv-check,
+  .rv-check-head,
+  .rv-bar {
     display: none;
+  }
+
+  .rv-row[data-mark] > * {
+    background: none;
   }
 
   .review__table {
