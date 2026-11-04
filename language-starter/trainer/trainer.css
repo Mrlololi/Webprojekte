@@ -1,0 +1,56 @@
+/* Trainer guide (language-starter/trainer/): German and English in one file, html[lang] shows one. */
+
+@layer page {
+  html:lang(en) [data-l="de"],
+  html:not(:lang(en)) [data-l="en"] {
+    display: none;
+  }
+
+  .trainer {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 46rem;
+    padding-block: var(--space-7) 0;
+  }
+
+  .trainer__guide {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .trainer__guide h1 {
+    font-size: var(--step-4);
+  }
+
+  .trainer__guide h2 {
+    margin-top: var(--space-5);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--step-1);
+    color: var(--ink);
+    background: var(--pink);
+    border-radius: var(--radius-sm);
+  }
+
+  .trainer__guide h2:nth-of-type(2) {
+    background: var(--blue);
+  }
+
+  .trainer__guide h2:nth-of-type(3) {
+    background: var(--pist);
+  }
+
+  .trainer__tip {
+    margin-top: var(--space-5);
+    padding: var(--space-4);
+    color: var(--ink);
+    background: var(--peach);
+    border-radius: var(--radius-md);
+  }
+
+  .trainer__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+}

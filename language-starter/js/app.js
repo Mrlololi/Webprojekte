@@ -48,6 +48,8 @@
     groupOf: {},              // id -> group id
     checkedLang: {},          // lang -> all entries checked
     loaded: {},               // lang -> its entries are in byLang
+    partialLang: {},          // lang -> some entries checked, not all (for example only 1-45)
+    groupLangs: [],           // ?group=de,fi,sk: the languages of a group (2-10), or none
     group: 'intro',           // phrase cards: active topic
     quiz: { group: 'all', dir: 'learn' },
     progress: null,
@@ -119,6 +121,17 @@
     thanksList: $('thanks-list'),
     review: $('review'),
     helpLink: $('help-link'),
+    groupList: $('group-list'),
+    groupCount: $('group-count'),
+    groupTools: $('group-tools'),
+    groupMsg: $('group-msg'),
+    groupBar: $('group-bar'),
+    groupBarText: $('group-bar-text'),
+    groupAll: $('group-all'),
+    posterSelect: $('poster-phrase'),
+    posterA: $('poster-a'),
+    posterB: $('poster-b'),
+    sheet2: $('sheet-2'),
     helpCount: $('help-count'),
     noAudio: $('no-audio')
   };
@@ -382,7 +395,10 @@
       state.groupOf[p.id] = p.group;
       return p.id;
     });
-    state.codes.forEach(function (code) { state.checkedLang[code] = index.languages[code].checked === true; });
+    state.codes.forEach(function (code) {
+      state.checkedLang[code] = index.languages[code].checked === true;
+      state.partialLang[code] = !state.checkedLang[code] && index.languages[code].partial === true;
+    });
   }
 
   function addEntries(list) {
@@ -406,6 +422,7 @@
     Object.keys(data.languages).forEach(function (code) {
       var info = Object.assign({}, data.languages[code]);
       info.checked = (byLang[code] || []).length > 0 && byLang[code].every(function (e) { return e.checked === true; });
+      info.partial = !info.checked && (byLang[code] || []).some(function (e) { return e.checked === true; });
       languages[code] = info;
     });
     indexMeta({ version: data.version, languages: languages, groups: data.groups, phrases: order });
@@ -456,6 +473,7 @@
     var query = [];
     if (state.from) query.push('from=' + state.from);
     if (state.to) query.push('to=' + state.to);
+    if (state.groupLangs.length) query.push('group=' + state.groupLangs.join(','));
     query.push('ui=' + state.ui);
     try {
       window.history.replaceState(null, '', window.location.pathname + '?' + query.join('&') + window.location.hash);
@@ -463,7 +481,7 @@
   }
 
   function shareUrl() {
-    return PAGE_URL + '?from=' + state.from + '&to=' + state.to + '&ui=' + state.ui;
+    return PAGE_URL + '?from=' + state.from + '&to=' + state.to + (state.groupLangs.length ? '&group=' + state.groupLangs.join(',') : '') + '&ui=' + state.ui;
   }
 
   function browserLang() {
@@ -481,12 +499,15 @@
     var saved = store.get('pair', null) || {};
     var from = p.get('from');
     var to = p.get('to');
-    var valid = function (code) { return code && state.codes.indexOf(code) !== -1; };
-    state.from = valid(from) ? from : valid(saved.from) ? saved.from : browserLang();
+    var valid = function (code) { return code && availableCodes().indexOf(code) !== -1; };
+    var mine = browserLang();
+    state.from = valid(from) ? from : valid(saved.from) ? saved.from : valid(mine) ? mine : availableCodes()[0];
     if (valid(to)) state.to = to;
     else if (!valid(from) && valid(saved.to)) state.to = saved.to;
     else state.to = '';
     if (state.to === state.from) state.to = '';
+    // A group link opens a pair at once; the second language has a voice when one is there.
+    if (!state.to && state.groupLangs.length) state.to = defaultSecond(state.from);
   }
 
   function setPair(from, to) {
@@ -524,11 +545,23 @@
       empty.textContent = t('chooser.empty');
       options.push(empty);
     }
-    sortedCodes().forEach(function (code) {
+    var codes = pickerCodes();
+    var voiced = codes.filter(hasVoice);
+    var silent = codes.filter(function (code) { return !hasVoice(code); });
+    var optionFor = function (code) {
       var option = document.createElement('option');
       option.value = code;
       option.textContent = langLabel(code);
-      options.push(option);
+      return option;
+    };
+    // Two groups when both exist: «mit Stimme», then «ohne Ton auf diesem Gerät».
+    [[voiced, 'chooser.withVoice'], [silent, 'chooser.noVoice']].forEach(function (part) {
+      if (!part[0].length) return;
+      if (!voiced.length || !silent.length) { part[0].forEach(function (code) { options.push(optionFor(code)); }); return; }
+      var group = document.createElement('optgroup');
+      group.label = t(part[1]);
+      part[0].forEach(function (code) { group.appendChild(optionFor(code)); });
+      options.push(group);
     });
     select.replaceChildren.apply(select, options);
     select.value = value || '';
@@ -544,20 +577,36 @@
 
     el.pickWrap.hidden = Boolean(state.to);
     if (!state.to) {
-      var items = sortedCodes().filter(function (code) { return code !== state.from; }).map(function (code) {
+      var items = pickerCodes().filter(function (code) { return code !== state.from; }).map(function (code) {
         var li = document.createElement('li');
         var button = make('button', 'pick');
         button.type = 'button';
         button.setAttribute('data-to', code);
         var endonym = span('pick__endonym', langData(code).endonym, code);
         var name = span('pick__name', langName(code));
-        var badge = span('pick__badge' + (state.checkedLang[code] ? ' is-checked' : ''), t(state.checkedLang[code] ? 'chooser.checked' : 'chooser.draft'));
-        button.append(endonym, name, badge);
+        var badge = statusBadge(code);
+        var sound = span('pick__voice' + (hasVoice(code) ? ' has-voice' : ''), t(hasVoice(code) ? 'chooser.withVoice' : 'chooser.noVoice'));
+        button.append(endonym, name, badge, sound);
         li.appendChild(button);
         return li;
       });
       el.pickGrid.replaceChildren.apply(el.pickGrid, items);
     }
+  }
+
+  /** «geprüft», «teilweise geprüft» or «Entwurf». */
+  function statusBadge(code) {
+    var key = state.checkedLang[code] ? 'chooser.checked' : state.partialLang[code] ? 'chooser.partial' : 'chooser.draft';
+    return span('pick__badge' + (state.checkedLang[code] ? ' is-checked' : state.partialLang[code] ? ' is-partial' : ''), t(key));
+  }
+
+  /** "46-66" for a language whose entries are checked except these. */
+  function openRange(code) {
+    var open = state.order.map(function (id) { return entry(code, id); }).filter(function (e) { return e && !e.checked; }).map(function (e) { return e.n; });
+    if (!open.length) return '';
+    var min = Math.min.apply(null, open);
+    var max = Math.max.apply(null, open);
+    return open.length === max - min + 1 ? (min === max ? String(min) : min + '-' + max) : '';
   }
 
   function copyLink() {
@@ -576,7 +625,10 @@
     var unchecked = [state.to, state.from].filter(function (code) { return code && !state.checkedLang[code]; });
     el.draft.hidden = unchecked.length === 0;
     if (unchecked.length) {
-      el.draftText.textContent = t('draft.text', { langs: unchecked.map(function (c) { return langData(c).endonym; }).join(', ') });
+      el.draftText.textContent = t('draft.text', { langs: unchecked.map(function (c) {
+        var range = state.partialLang[c] ? openRange(c) : '';
+        return langData(c).endonym + (range ? ' (' + t('draft.phrases', { range: range }) + ')' : '');
+      }).join(', ') });
     }
   }
 
@@ -711,8 +763,10 @@
   function renderHelp() {
     var total = state.codes.length;
     var n = state.codes.filter(function (code) { return state.checkedLang[code]; }).length;
+    var p = state.codes.filter(function (code) { return state.partialLang[code]; }).length;
     el.helpLink.href = '?review&ui=' + state.ui;
-    el.helpCount.textContent = t('hero.checked', { n: n, total: total });
+    $('trainer-link').href = 'trainer/?lang=' + (state.ui === 'de' ? 'de' : 'en');
+    el.helpCount.textContent = t('hero.checked', { n: n, total: total }) + (p ? ', ' + t('hero.partial', { n: p }) : '');
   }
 
   function onListen(button) {
@@ -1142,6 +1196,7 @@
 
   function onKeydown(event) {
     if (event.ctrlKey || event.metaKey || event.altKey || event.defaultPrevented) return;
+    if (onProjectorKey(event)) return;
     if (state.screen !== 'question' || !state.round || !state.to) return;
     var target = event.target;
     var tag = target && target.tagName;
@@ -1217,8 +1272,15 @@
     return node;
   }
 
-  function renderSheet() {
-    var sheet = el.sheet;
+  /** Page 1: the first five topics; page 2: numbers, games, food, goodbye. */
+  var SHEET_PAGES = [['intro', 'polite', 'project', 'mood', 'help'], null];
+
+  function sheetGroups(page) {
+    var first = SHEET_PAGES[0].filter(function (g) { return groupIds().indexOf(g) !== -1; });
+    return page === 0 ? first : groupIds().filter(function (g) { return first.indexOf(g) === -1; });
+  }
+
+  function buildSheet(page) {
     var inner = make('div', 'sheet__inner');
 
     var head = make('header', 'sheet__head');
@@ -1228,7 +1290,8 @@
       document.createTextNode('Language Starter · '),
       span('', langData(state.from).endonym, state.from),
       document.createTextNode(' → '),
-      span('', langData(state.to).endonym, state.to)
+      span('', langData(state.to).endonym, state.to),
+      document.createTextNode(' · ' + (page + 1) + '/2')
     );
     titles.appendChild(title);
     if (!state.checkedLang[state.to] || !state.checkedLang[state.from]) titles.appendChild(make('p', 'sheet__draft', t('sheet.draft')));
@@ -1237,7 +1300,7 @@
     head.append(titles, qr);
 
     var cols = make('div', 'sheet__cols');
-    groupIds().forEach(function (groupId) {
+    sheetGroups(page).forEach(function (groupId) {
       var section = make('section', 'sheet__group sheet__group--' + groupId);
       section.appendChild(make('h4', 'sheet__group-title', groupName(groupId)));
       var list = make('dl', 'sheet__list');
@@ -1261,13 +1324,19 @@
     foot.append(span('sheet__url', PAGE_URL.replace('https://', '')), span('', t('sheet.footer')));
 
     inner.append(head, cols, foot);
-    sheet.replaceChildren(inner);
-    sheet.setAttribute('lang', state.ui);
+    return inner;
+  }
+
+  function renderSheet() {
+    [el.sheet, el.sheet2].forEach(function (sheet, page) {
+      sheet.replaceChildren(buildSheet(page));
+      sheet.setAttribute('lang', state.ui);
+    });
     fitSheet();
   }
 
   /**
-   * The phrase card sits far down the page and laying out its 45 rows is the
+   * The phrase card sits far down the page and laying out its rows is the
    * heaviest work of the page: draw it when it comes within about a screen,
    * or right before printing, not while the page loads.
    */
@@ -1299,7 +1368,10 @@
    * what fits on screen fits on paper. Shrink the type until it fits.
    */
   function fitSheet() {
-    var sheet = el.sheet;
+    [el.sheet, el.sheet2].forEach(fitOne);
+  }
+
+  function fitOne(sheet) {
     var inner = sheet.firstElementChild;
     if (!inner || !sheet.offsetWidth) return;
     var limit = function () {
@@ -1311,7 +1383,7 @@
       return inner.scrollHeight <= limit() * 0.985;
     };
     // Steps of 0.025 from 1 down to 0.55; the largest one that fits wins. A binary search
-    // needs about 5 layouts instead of up to 19 (each one lays out all 45 phrases).
+    // needs about 5 layouts instead of up to 19 (each one lays out all its phrases).
     var steps = [];
     for (var i = 0; i <= 18; i++) steps.push(1 - i * 0.025);
     var scale = steps[steps.length - 1];
@@ -1379,8 +1451,8 @@
   function renderReviewPicker(note) {
     document.title = 'Language Starter: ' + t('review.pickTitle');
     var codes = sortedCodes();
-    var drafts = codes.filter(function (c) { return !state.checkedLang[c]; });
-    var done = codes.filter(function (c) { return state.checkedLang[c]; });
+    var drafts = codes.filter(function (c) { return !state.checkedLang[c] && !state.partialLang[c]; });
+    var done = codes.filter(function (c) { return state.partialLang[c]; }).concat(codes.filter(function (c) { return state.checkedLang[c]; }));
     var list = make('ul', 'review-pick');
     list.setAttribute('aria-label', t('review.pickList'));
     drafts.concat(done).forEach(function (code) {
@@ -1390,7 +1462,7 @@
       a.append(
         span('review-pick__endonym', langData(code).endonym, code),
         span('review-pick__name', langName(code) + ' (' + code + ')'),
-        span('pick__badge' + (state.checkedLang[code] ? ' is-checked' : ''), t(state.checkedLang[code] ? 'chooser.checked' : 'chooser.draft'))
+        statusBadge(code)
       );
       li.appendChild(a);
       list.appendChild(li);
@@ -1538,6 +1610,10 @@
       tr.id = 'p' + n;
       var num = make('th', 'review__n', String(n));
       num.scope = 'row';
+      if (e.checked) {
+        tr.classList.add('rv-row--checked');
+        num.appendChild(span('rv-checked', t('chooser.checked')));
+      }
       var english = make('td', 'rv-en', plain(base.text || ''));
       english.lang = 'en';
       var meaning = make('td', 'review__meaning', plain(base.meaning || ''));
@@ -1656,6 +1732,343 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* Group languages (?group=de,fi,sk), poster, projector                */
+  /* A group leader picks the 2-10 languages of the group: one link for  */
+  /* the group chat, a poster to print, and a projector view.            */
+  /* ------------------------------------------------------------------ */
+
+  var GROUP_MIN = 2;
+  var GROUP_MAX = 10;
+
+  /** "de, FI,xx,fi" -> ['de', 'fi'] (known codes, no doubles, at most 10); fewer than 2 -> []. */
+  function parseGroup(value) {
+    var seen = {};
+    var codes = String(value || '').toLowerCase().split(/[\s,;]+/).filter(function (code) {
+      if (!code || seen[code] || !state.data.languages[code]) return false;
+      seen[code] = true;
+      return true;
+    }).slice(0, GROUP_MAX);
+    return codes.length >= GROUP_MIN ? codes : [];
+  }
+
+  function availableCodes() {
+    return state.groupLangs.length ? state.groupLangs : state.codes;
+  }
+
+  /** A voice on this device, or a recording, for the language. */
+  function hasVoice(code) {
+    var info = langData(code);
+    return Boolean(info) && voice.canPlay(code, info.tts, state.order[0], null);
+  }
+
+  /** The languages for the pickers: by name, the ones with a voice first. */
+  function pickerCodes() {
+    var list = sortedCodes().filter(function (code) { return availableCodes().indexOf(code) !== -1; });
+    return list.filter(hasVoice).concat(list.filter(function (code) { return !hasVoice(code); }));
+  }
+
+  function groupUrl() {
+    return PAGE_URL + '?group=' + state.groupLangs.join(',') + '&ui=' + state.ui;
+  }
+
+  function setGroup(codes) {
+    state.groupLangs = codes.length >= GROUP_MIN ? codes.slice(0, GROUP_MAX) : [];
+    store.set('group', state.groupLangs);
+    var from = state.from;
+    var to = state.to;
+    if (state.groupLangs.length) {
+      if (state.groupLangs.indexOf(from) === -1) from = state.groupLangs[0];
+      if (to && state.groupLangs.indexOf(to) === -1) to = '';
+      if (!to) to = defaultSecond(from);
+    }
+    return loadLangs(state.groupLangs.concat([from, to, 'en'])).then(function () { return setPair(from, to); });
+  }
+
+  /** In a group the second language is set at once: the first one with a voice, if any. */
+  function defaultSecond(from) {
+    var others = pickerCodes().filter(function (code) { return code !== from; });
+    return others[0] || '';
+  }
+
+  function renderGroup() {
+    var codes = sortedCodes();
+    var boxes = codes.map(function (code) {
+      var li = document.createElement('li');
+      var label = make('label', 'gpick');
+      var box = document.createElement('input');
+      box.type = 'checkbox';
+      box.value = code;
+      box.checked = state.groupLangs.indexOf(code) !== -1;
+      label.append(box, span('gpick__endonym', langData(code).endonym, code), span('gpick__name', langName(code)));
+      li.appendChild(label);
+      return li;
+    });
+    el.groupList.replaceChildren.apply(el.groupList, boxes);
+    updateGroupStatus();
+    var active = state.groupLangs.length > 0;
+    el.groupTools.hidden = !active;
+    el.groupBar.hidden = !active;
+    if (active) {
+      el.groupBarText.textContent = t('group.active', { langs: state.groupLangs.map(function (c) { return langData(c).endonym; }).join(', ') });
+      el.groupAll.href = '?ui=' + state.ui;
+      fillPosterSelect();
+    }
+  }
+
+  function checkedBoxes() {
+    return Array.prototype.slice.call(el.groupList.querySelectorAll('input:checked')).map(function (box) { return box.value; });
+  }
+
+  function updateGroupStatus() {
+    var n = checkedBoxes().length;
+    el.groupCount.textContent = n < GROUP_MIN ? t('group.tooFew', { n: n }) : t('group.count', { n: n });
+    // At most 10: the other boxes wait until one is unticked.
+    el.groupList.querySelectorAll('input').forEach(function (box) {
+      box.disabled = !box.checked && n >= GROUP_MAX;
+    });
+  }
+
+  function onGroupChange() {
+    updateGroupStatus();
+    var picked = checkedBoxes();
+    // Keep the order the leader ticked them in: already chosen first, new ones at the end.
+    var ordered = state.groupLangs.filter(function (c) { return picked.indexOf(c) !== -1; })
+      .concat(picked.filter(function (c) { return state.groupLangs.indexOf(c) === -1; }));
+    if (ordered.length >= GROUP_MIN || state.groupLangs.length) setGroup(ordered.length >= GROUP_MIN ? ordered : []);
+  }
+
+  function copyGroupLink() {
+    var url = groupUrl();
+    var done = function () { el.groupMsg.textContent = t('group.copied'); };
+    var failed = function () { el.groupMsg.textContent = t('group.copyManual', { url: url }); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, failed);
+    else failed();
+  }
+
+  function phraseLabel(id) {
+    var base = entry('en', id);
+    return base.n + '. ' + plain(base.text);
+  }
+
+  function fillPosterSelect() {
+    var current = el.posterSelect.value || state.order[0];
+    var options = state.order.map(function (id) {
+      var option = document.createElement('option');
+      option.value = id;
+      option.textContent = phraseLabel(id);
+      option.lang = 'en';
+      return option;
+    });
+    el.posterSelect.replaceChildren.apply(el.posterSelect, options);
+    el.posterSelect.value = current;
+  }
+
+  /** One language block: its name, the phrase (both forms if any), the Latin spelling. */
+  function phraseBlock(code, id, cls) {
+    var e = entry(code, id);
+    var item = make('li', cls);
+    item.appendChild(span(cls + '__lang', langData(code).endonym, code));
+    var text = make('p', cls + '__text', e.forms ? plain(e.forms.m) + ' / ' + plain(e.forms.f) : plain(e.text));
+    text.lang = code;
+    item.appendChild(text);
+    if (e.translit) {
+      var latin = make('p', cls + '__translit', flatTranslit(e));
+      latin.lang = code + '-Latn';
+      item.appendChild(latin);
+    }
+    return item;
+  }
+
+  function setPrintMode(mode) {
+    document.documentElement.setAttribute('data-print', mode);
+  }
+
+  /** (a) One phrase large in all group languages, one A4 page, with the QR code of the group link. */
+  function renderPosterA(id) {
+    var base = entry('en', id);
+    var page = make('article', 'poster-a');
+    var head = make('header', 'poster-a__head');
+    head.append(make('p', 'poster-a__brand', 'Language Starter'), make('p', 'poster-a__meaning', base.n + ' · ' + plain(base.text)));
+    var list = make('ul', 'poster-a__list');
+    list.setAttribute('data-count', String(state.groupLangs.length));
+    state.groupLangs.forEach(function (code) { list.appendChild(phraseBlock(code, id, 'pa')); });
+    var foot = make('footer', 'poster-a__foot');
+    var qr = make('figure', 'poster-a__qr');
+    qr.append(qrSvg(groupUrl()), make('figcaption', '', t('poster.scan')));
+    foot.append(make('p', 'poster-a__url', PAGE_URL.replace('https://', '')), qr);
+    page.append(head, list, foot);
+    el.posterA.replaceChildren(page);
+  }
+
+  /** (b) All phrases x group languages, as many pages as needed. */
+  function renderPosterB() {
+    var table = make('table', 'poster-b');
+    table.setAttribute('data-count', String(state.groupLangs.length));
+    var caption = make('caption', '', 'Language Starter · ' + state.groupLangs.map(function (c) { return langData(c).endonym; }).join(' · '));
+    var thead = document.createElement('thead');
+    var row = document.createElement('tr');
+    var th = make('th', '', 'Nr.');
+    th.scope = 'col';
+    row.appendChild(th);
+    state.groupLangs.forEach(function (code) {
+      var cell = make('th', '', langData(code).endonym);
+      cell.scope = 'col';
+      cell.lang = code;
+      row.appendChild(cell);
+    });
+    thead.appendChild(row);
+    table.append(caption, thead);
+    groupIds().forEach(function (groupId) {
+      var body = document.createElement('tbody');
+      var titleRow = make('tr', 'poster-b__topic');
+      var title = make('th', '', groupName(groupId));
+      title.colSpan = state.groupLangs.length + 1;
+      title.scope = 'colgroup';
+      titleRow.appendChild(title);
+      body.appendChild(titleRow);
+      idsIn(groupId).forEach(function (id) {
+        var tr = document.createElement('tr');
+        var n = make('th', '', String(entry('en', id).n));
+        n.scope = 'row';
+        tr.appendChild(n);
+        state.groupLangs.forEach(function (code) {
+          var e = entry(code, id);
+          var td = document.createElement('td');
+          td.appendChild(fillText(span('', null, code), e.forms ? e.forms.m + ' / ' + e.forms.f : e.text));
+          if (e.translit) {
+            var latin = span('poster-b__translit', flatTranslit(e), code + '-Latn');
+            td.appendChild(latin);
+          }
+          tr.appendChild(td);
+        });
+        body.appendChild(tr);
+      });
+      table.appendChild(body);
+    });
+    el.posterB.replaceChildren(table);
+  }
+
+  function printPoster(kind) {
+    loadLangs(state.groupLangs.concat(['en'])).then(function () {
+      if (kind === 'a') renderPosterA(el.posterSelect.value || state.order[0]);
+      else renderPosterB();
+      setPrintMode(kind);
+      window.print();
+    });
+  }
+
+  /* Projector: one phrase in all group languages, full screen. */
+  var projector = { node: null, index: 0, opener: null };
+
+  function projectorRender() {
+    var id = state.order[projector.index];
+    var base = entry('en', id);
+    var p = projector.node;
+    p.querySelector('.proj__meta').textContent = t('projector.meta', { n: base.n, total: state.order.length, text: plain(base.text) });
+    var list = p.querySelector('.proj__list');
+    list.setAttribute('data-count', String(state.groupLangs.length));
+    list.replaceChildren.apply(list, state.groupLangs.map(function (code) { return phraseBlock(code, id, 'pj'); }));
+    p.querySelector('[data-proj="listen"]').hidden = !state.groupLangs.some(hasVoice);
+  }
+
+  function projectorMove(step) {
+    var total = state.order.length;
+    projector.index = (projector.index + step + total) % total;
+    projectorRender();
+  }
+
+  function projectorRandom() {
+    var total = state.order.length;
+    var next = projector.index;
+    while (total > 1 && next === projector.index) next = Math.floor(Math.random() * total);
+    projector.index = next;
+    projectorRender();
+  }
+
+  function projectorListen() {
+    var id = state.order[projector.index];
+    voice.queue(state.groupLangs.filter(hasVoice).map(function (code) {
+      var e = entry(code, id);
+      return { lang: code, tts: langData(code).tts, text: e.forms ? e.forms.m : e.text };
+    }));
+  }
+
+  function openProjector(opener) {
+    if (projector.node) return;
+    var start = state.order.indexOf(el.posterSelect.value);
+    projector.index = start === -1 ? 0 : start;
+    projector.opener = opener || null;
+    var node = make('div', 'proj');
+    node.setAttribute('role', 'dialog');
+    node.setAttribute('aria-modal', 'true');
+    node.setAttribute('aria-label', t('projector.title'));
+    node.tabIndex = -1;
+    var top = make('div', 'proj__top');
+    var meta = make('p', 'proj__meta');
+    meta.setAttribute('aria-live', 'polite');
+    var close = make('button', 'btn btn--outline proj__close', t('projector.close'));
+    close.type = 'button';
+    close.setAttribute('data-proj', 'close');
+    top.append(meta, close);
+    var list = make('ul', 'proj__list');
+    var bar = make('div', 'proj__bar');
+    [['prev', 'projector.prev', 'btn--outline'], ['next', 'projector.next', 'btn--primary'], ['random', 'projector.random', 'btn--outline'], ['listen', 'projector.listen', 'btn--outline']].forEach(function (b) {
+      var button = make('button', 'btn ' + b[2], t(b[1]));
+      button.type = 'button';
+      button.setAttribute('data-proj', b[0]);
+      bar.appendChild(button);
+    });
+    var keys = make('p', 'proj__keys', t('projector.keys'));
+    node.append(top, list, bar, keys);
+    node.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-proj]');
+      if (!button) return;
+      var action = button.getAttribute('data-proj');
+      if (action === 'close') closeProjector();
+      else if (action === 'next') projectorMove(1);
+      else if (action === 'prev') projectorMove(-1);
+      else if (action === 'random') projectorRandom();
+      else if (action === 'listen') projectorListen();
+    });
+    document.body.appendChild(node);
+    document.documentElement.classList.add('has-projector');
+    projector.node = node;
+    projectorRender();
+    node.focus();
+    if (node.requestFullscreen) node.requestFullscreen().catch(function () { /* the overlay covers the window anyway */ });
+  }
+
+  function closeProjector() {
+    if (!projector.node) return;
+    voice.stop();
+    var node = projector.node;
+    projector.node = null;
+    document.documentElement.classList.remove('has-projector');
+    if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function () {});
+    node.remove();
+    if (projector.opener) projector.opener.focus();
+  }
+
+  /** Keys in the projector: arrows and space move, Esc leaves. Tab stays inside. */
+  function onProjectorKey(event) {
+    if (!projector.node) return false;
+    var key = event.key;
+    if (key === 'Escape') { closeProjector(); }
+    else if (key === 'ArrowRight' || key === 'ArrowDown' || key === 'PageDown' || (key === ' ' && !event.target.closest('button'))) { projectorMove(1); }
+    else if (key === 'ArrowLeft' || key === 'ArrowUp' || key === 'PageUp') { projectorMove(-1); }
+    else if (key === 'Tab') {
+      var focusable = Array.prototype.slice.call(projector.node.querySelectorAll('button:not([hidden])'));
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === projector.node)) { last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { first.focus(); }
+      else return true;
+    } else return true;
+    event.preventDefault();
+    return true;
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Render everything that depends on the pair                          */
   /* ------------------------------------------------------------------ */
 
@@ -1670,6 +2083,7 @@
 
   function renderAll() {
     renderHelp();
+    renderGroup();
     renderChooser();
     renderThanks();
     el.pair.hidden = !state.to;
@@ -1733,7 +2147,21 @@
     el.settingsBtn.addEventListener('click', function () { openStart(true); });
     document.addEventListener('keydown', onKeydown);
 
+    el.groupList.addEventListener('change', onGroupChange);
+    $('group-copy').addEventListener('click', copyGroupLink);
+    $('poster-a-btn').addEventListener('click', function () { printPoster('a'); });
+    $('poster-b-btn').addEventListener('click', function () { printPoster('b'); });
+    $('projector-btn').addEventListener('click', function (event) {
+      var opener = event.currentTarget;
+      loadLangs(state.groupLangs.concat(['en'])).then(function () { openProjector(opener); });
+    });
+    document.addEventListener('fullscreenchange', function () {
+      // Esc in full screen leaves full screen first: leave the projector with it.
+      if (!document.fullscreenElement && projector.node) closeProjector();
+    });
+
     el.printBtn.addEventListener('click', function () {
+      setPrintMode('sheet');
       flushSheet();
       fitSheet();
       window.print();
@@ -1798,17 +2226,27 @@
     wire();
     registerServiceWorker();
     // iOS may offer voices only after the first tap: redraw the Listen buttons when they arrive.
-    voice.onChange(function () { if (state.data && state.to) renderCards(); });
+    // ... and re-sort the pickers (languages with a voice first).
+    voice.onChange(function () {
+      if (!state.data) return;
+      renderChooser();
+      if (state.to) renderCards();
+    });
 
     Promise.all([loadIndex(), voice.init()])
       .then(function () {
         if (groupIds().indexOf(state.group) === -1) state.group = groupIds()[0];
         if (state.quiz.group !== 'all' && groupIds().indexOf(state.quiz.group) === -1) state.quiz.group = 'all';
+        // ?group= wins over the remembered group; invalid codes are ignored.
+        var fromUrl = params().get('group');
+        var saved = store.get('group', null);
+        state.groupLangs = fromUrl !== null ? parseGroup(fromUrl) : Array.isArray(saved) ? parseGroup(saved.join(',')) : [];
+        if (fromUrl !== null) store.set('group', state.groupLangs);
         pickPair();
         store.set('pair', { from: state.from, to: state.to });
         updateUrl();
         loadPairProgress();
-        return loadLangs([state.from, state.to, 'en']);
+        return loadLangs([state.from, state.to, 'en'].concat(state.groupLangs));
       })
       .then(function () {
         el.status.hidden = true;

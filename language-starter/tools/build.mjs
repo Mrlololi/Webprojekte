@@ -58,7 +58,9 @@ writeFileSync(
 // the index and two languages instead of all 42.
 const languages = {};
 for (const [code, info] of Object.entries(data.languages)) {
-  languages[code] = { ...info, checked: ids.every((id) => byLang[code][id].checked === true) };
+  const checked = ids.every((id) => byLang[code][id].checked === true);
+  // partial: a native speaker checked some phrases, but not all (for example 1-45, not 46-66).
+  languages[code] = { ...info, checked, partial: !checked && ids.some((id) => byLang[code][id].checked === true) };
 }
 const order = [...ids].sort((a, b) => ns.get(a) - ns.get(b)).map((id) => ({ n: ns.get(id), id, group: byLang.en[id].group }));
 const generated = 'Generated from phrases.json by tools/build.mjs. Do not edit.';

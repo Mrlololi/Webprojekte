@@ -327,6 +327,21 @@
    "id": "numbers",
    "en": "Numbers",
    "de": "Zahlen"
+  },
+  {
+   "id": "games",
+   "en": "Games & energizers",
+   "de": "Spiele & Energizer"
+  },
+  {
+   "id": "food",
+   "en": "Food",
+   "de": "Essen"
+  },
+  {
+   "id": "bye",
+   "en": "Saying goodbye",
+   "de": "Abschied"
   }
  ],
  "phrases": [
@@ -889,7 +904,7 @@
    "lang": "hr",
    "text": "Molim te",
    "checked": false,
-   "note": ""
+   "note": "In a café or to strangers, just say molim (Jednu kavu, molim) or the polite molim Vas."
   },
   {
    "n": 11,
@@ -1725,9 +1740,9 @@
    "id": "polite.please",
    "group": "polite",
    "lang": "da",
-   "text": "Vær sød",
+   "text": "Vær sød at {X}",
    "checked": false,
-   "note": "Danish has no exact word for 'please'. When asking for something, Danes usually just add 'tak' at the end (En kaffe, tak)."
+   "note": "Danish has no exact word for 'please'. To ask someone to do something you say 'Vær sød at …' (Vær sød at gentage det). When asking for a thing, Danes just add 'tak' at the end (En kaffe, tak)."
   },
   {
    "n": 11,
@@ -3117,7 +3132,7 @@
    "id": "project.welldone",
    "group": "project",
    "lang": "et",
-   "text": "Hästi tehtud!",
+   "text": "Tubli!",
    "checked": false,
    "note": ""
   },
@@ -3747,7 +3762,7 @@
    "id": "intro.yourname",
    "group": "intro",
    "lang": "fr",
-   "text": "Comment tu t'appelles?",
+   "text": "Comment tu t'appelles ?",
    "checked": false,
    "note": ""
   },
@@ -3769,7 +3784,7 @@
    "id": "intro.wherefrom",
    "group": "intro",
    "lang": "fr",
-   "text": "Tu viens d'où?",
+   "text": "Tu viens d'où ?",
    "checked": false,
    "note": ""
   },
@@ -3859,7 +3874,7 @@
    "id": "project.start",
    "group": "project",
    "lang": "fr",
-   "text": "On commence!",
+   "text": "On commence !",
    "checked": false,
    "note": ""
   },
@@ -3868,7 +3883,7 @@
    "id": "project.break",
    "group": "project",
    "lang": "fr",
-   "text": "Pause!",
+   "text": "Pause !",
    "checked": false,
    "note": ""
   },
@@ -3886,7 +3901,7 @@
    "id": "project.toilet",
    "group": "project",
    "lang": "fr",
-   "text": "Où sont les toilettes?",
+   "text": "Où sont les toilettes ?",
    "checked": false,
    "note": ""
   },
@@ -3904,7 +3919,7 @@
    "id": "project.repeat",
    "group": "project",
    "lang": "fr",
-   "text": "Tu peux répéter, s'il te plaît?",
+   "text": "Tu peux répéter, s'il te plaît ?",
    "checked": false,
    "note": ""
   },
@@ -3922,7 +3937,7 @@
    "id": "project.together",
    "group": "project",
    "lang": "fr",
-   "text": "Tous ensemble!",
+   "text": "Tous ensemble !",
    "checked": false,
    "note": ""
   },
@@ -3931,7 +3946,7 @@
    "id": "project.welldone",
    "group": "project",
    "lang": "fr",
-   "text": "Bien joué!",
+   "text": "Bien joué !",
    "checked": false,
    "note": ""
   },
@@ -3940,7 +3955,7 @@
    "id": "project.cheers",
    "group": "project",
    "lang": "fr",
-   "text": "Santé!",
+   "text": "Santé !",
    "checked": false,
    "note": ""
   },
@@ -4002,7 +4017,7 @@
    "id": "help.help",
    "group": "help",
    "lang": "fr",
-   "text": "Au secours!",
+   "text": "Au secours !",
    "checked": false,
    "note": ""
   },
@@ -4020,7 +4035,7 @@
    "id": "help.emergency",
    "group": "help",
    "lang": "fr",
-   "text": "Numéro d'urgence: 112",
+   "text": "Numéro d'urgence : 112",
    "checked": false,
    "note": ""
   },
@@ -4029,7 +4044,7 @@
    "id": "help.whereis",
    "group": "help",
    "lang": "fr",
-   "text": "Où est {X}?",
+   "text": "Où est {X} ?",
    "checked": false,
    "note": ""
   },
@@ -5226,7 +5241,7 @@
    "id": "project.cheers",
    "group": "project",
    "lang": "hu",
-   "text": "Egészségedre!",
+   "text": "Egészségünkre!",
    "checked": false,
    "note": ""
   },
@@ -5687,7 +5702,7 @@
    "lang": "ga",
    "text": "Cabhair!",
    "checked": false,
-   "note": "Unsure which call is most natural when shouted; \"Fóir orm!\" or \"Cabhraigh liom!\" (help me) are also used."
+   "note": "\"Cabhraigh liom!\" or \"Fóir orm!\" (help me) are also used."
   },
   {
    "n": 32,
@@ -6838,7 +6853,7 @@
    "id": "project.repeat",
    "group": "project",
    "lang": "lt",
-   "text": "Ar gali pakartoti, prašau?",
+   "text": "Gal gali pakartoti?",
    "checked": false,
    "note": ""
   },
@@ -7113,7 +7128,7 @@
    "lang": "mt",
    "text": "Għandi pjaċir nafek",
    "checked": false,
-   "note": "Not fully sure this is the most common wording; the short \"Pjaċir\" is also very common."
+   "note": "The short \"Pjaċir!\" is also very common."
   },
   {
    "n": 6,
@@ -7230,7 +7245,7 @@
    "lang": "mt",
    "text": "L-ikla lesta",
    "checked": false,
-   "note": "Literally \"the meal is ready\"; \"L-ikel lest\" (the food is ready) is also common. Unsure which a group leader would shout more."
+   "note": "Literally \"the meal is ready\"; \"L-ikel lest\" (the food is ready) is also common."
   },
   {
    "n": 19,
@@ -7273,7 +7288,7 @@
    "id": "project.together",
    "group": "project",
    "lang": "mt",
-   "text": "Flimkien!",
+   "text": "Ilkoll flimkien!",
    "checked": false,
    "note": ""
   },
@@ -7949,11 +7964,7 @@
    "id": "intro.nice",
    "group": "intro",
    "lang": "pt",
-   "text": null,
-   "forms": {
-    "m": "Encantado",
-    "f": "Encantada"
-   },
+   "text": "Muito prazer",
    "checked": false,
    "note": ""
   },
@@ -7980,7 +7991,7 @@
    "id": "intro.bye",
    "group": "intro",
    "lang": "pt",
-   "text": "Adeus",
+   "text": "Tchau",
    "checked": false,
    "note": ""
   },
@@ -8047,7 +8058,7 @@
    "id": "polite.noproblem",
    "group": "polite",
    "lang": "pt",
-   "text": "Não há problema",
+   "text": "Sem problema",
    "checked": false,
    "note": ""
   },
@@ -8085,14 +8096,14 @@
    "lang": "pt",
    "text": "Onde é a casa de banho?",
    "checked": false,
-   "note": ""
+   "note": "In Brazil: 'Onde é o banheiro?'"
   },
   {
    "n": 20,
    "id": "project.notunderstand",
    "group": "project",
    "lang": "pt",
-   "text": "Não percebo",
+   "text": "Não entendo",
    "checked": false,
    "note": ""
   },
@@ -9224,7 +9235,7 @@
    "lang": "sl",
    "text": "Sem iz {X}",
    "checked": false,
-   "note": "{X} takes the genitive case: iz Nemčije, iz Berlina. The preposition becomes z before some words (z Dunaja)."
+   "note": "{X} takes the genitive case: iz Nemčije, iz Berlina. Places used with 'na' (na Dunaju) take z instead of iz, written s before p, t, k, f, s, š, c, č, h: z Dunaja, s Ptuja."
   },
   {
    "n": 8,
@@ -9748,7 +9759,7 @@
    "lang": "es",
    "text": "La comida está lista",
    "checked": false,
-   "note": "Spain usage: 'la comida' is the midday meal. In Latin America it is 'el almuerzo' (in Spain 'almuerzo' is a mid-morning snack)."
+   "note": "Spain usage: 'la comida' is the midday meal. In Latin America it is 'el almuerzo' (in many parts of Spain 'almuerzo' means a mid-morning snack)."
   },
   {
    "n": 19,
@@ -10091,9 +10102,9 @@
    "id": "polite.please",
    "group": "polite",
    "lang": "sv",
-   "text": "Snälla",
+   "text": "Tack",
    "checked": false,
-   "note": "'Snälla' is used when asking someone to do something. When ordering or asking for a thing, Swedes add 'tack' instead (En kaffe, tack)."
+   "note": "Swedish has no direct word for please: when ordering or asking for a thing you add 'tack' (En kaffe, tack). 'Snälla' is used when urging someone to do something (Snälla, hjälp mig)."
   },
   {
    "n": 11,
@@ -11739,7 +11750,7 @@
    "text": "Молим те",
    "translit": "Molim te",
    "checked": false,
-   "note": ""
+   "note": "In a café or to strangers, just say molim (Jednu kafu, molim) or the polite molim Vas."
   },
   {
    "n": 11,
@@ -12217,7 +12228,7 @@
    "text": "Те молам",
    "translit": "Te molam",
    "checked": false,
-   "note": ""
+   "note": "To a waiter, a stranger or several people say Ве молам (Ve molam)."
   },
   {
    "n": 11,
@@ -14068,7 +14079,7 @@
    "group": "intro",
    "lang": "hy",
    "text": "Մինչև վաղը",
-   "translit": "Minchev vaghy",
+   "translit": "Minchev vaghə",
    "checked": false,
    "note": ""
   },
@@ -14117,8 +14128,8 @@
    "id": "polite.no",
    "group": "polite",
    "lang": "hy",
-   "text": "Ոչ",
-   "translit": "Voch",
+   "text": "Չէ",
+   "translit": "Che",
    "checked": false,
    "note": ""
   },
@@ -14148,7 +14159,7 @@
    "group": "project",
    "lang": "hy",
    "text": "Ընդմիջո՛ւմ",
-   "translit": "Yndmijum!",
+   "translit": "Əndmijum!",
    "checked": false,
    "note": ""
   },
@@ -14158,7 +14169,7 @@
    "group": "project",
    "lang": "hy",
    "text": "Ճաշը պատրաստ է",
-   "translit": "Chashy patrast e",
+   "translit": "Chashə patrast e",
    "checked": false,
    "note": ""
   },
@@ -14168,7 +14179,7 @@
    "group": "project",
    "lang": "hy",
    "text": "Որտե՞ղ է զուգարանը",
-   "translit": "Vortegh e zugarany?",
+   "translit": "Vortegh e zugaranə?",
    "checked": false,
    "note": ""
   },
@@ -14208,7 +14219,7 @@
    "group": "project",
    "lang": "hy",
    "text": "Բոլորը միասի՛ն",
-   "translit": "Bolory miasin!",
+   "translit": "Bolorə miasin!",
    "checked": false,
    "note": ""
   },
@@ -14418,7 +14429,7 @@
    "group": "numbers",
    "lang": "hy",
    "text": "ինը",
-   "translit": "iny",
+   "translit": "inə",
    "checked": false,
    "note": ""
   },
@@ -14428,7 +14439,7 @@
    "group": "numbers",
    "lang": "hy",
    "text": "տասը",
-   "translit": "tasy",
+   "translit": "tasə",
    "checked": false,
    "note": ""
   },
@@ -14626,7 +14637,7 @@
    "id": "project.slowly",
    "group": "project",
    "lang": "az",
-   "text": "Yavaş, zəhmət olmasa",
+   "text": "Daha yavaş, zəhmət olmasa",
    "checked": false,
    "note": ""
   },
@@ -14853,7 +14864,7 @@
    "group": "intro",
    "lang": "be",
    "text": "Добрай раніцы",
-   "translit": "Dobraj ranitsy",
+   "translit": "Dobray ranitsy",
    "checked": false,
    "note": ""
   },
@@ -14913,7 +14924,7 @@
    "group": "intro",
    "lang": "be",
    "text": "Бывай",
-   "translit": "Byvaj",
+   "translit": "Byvay",
    "checked": false,
    "note": ""
   },
@@ -14943,7 +14954,7 @@
    "group": "polite",
    "lang": "be",
    "text": "Дзякуй",
-   "translit": "Dziakuj",
+   "translit": "Dziakuy",
    "checked": false,
    "note": ""
   },
@@ -15053,7 +15064,7 @@
    "group": "project",
    "lang": "be",
    "text": "Павольней, калі ласка",
-   "translit": "Pavolniej, kali laska",
+   "translit": "Pavolniey, kali laska",
    "checked": false,
    "note": ""
   },
@@ -15073,7 +15084,7 @@
    "group": "project",
    "lang": "be",
    "text": "Малайчына!",
-   "translit": "Malajchyna!",
+   "translit": "Malaychyna!",
    "checked": false,
    "note": ""
   },
@@ -15177,7 +15188,7 @@
    "group": "help",
    "lang": "be",
    "text": "Нумар экстраннай дапамогі: 112",
-   "translit": "Numar ekstrannaj dapamohi: 112",
+   "translit": "Numar ekstrannay dapamohi: 112",
    "checked": false,
    "note": ""
   },
@@ -15396,7 +15407,7 @@
    "lang": "bs",
    "text": "Molim te",
    "checked": false,
-   "note": ""
+   "note": "In a café or to strangers, just say molim (Jednu kafu, molim) or the polite molim Vas."
   },
   {
    "n": 11,
@@ -16620,7 +16631,7 @@
    "lang": "cy",
    "text": "Dw i'n dod o {X}",
    "checked": false,
-   "note": "\"o\" causes soft mutation of Welsh place names (Caerdydd -> o Gaerdydd, Llundain -> o Lundain); foreign names usually stay unchanged (o Ffrainc, o Berlin)."
+   "note": "\"o\" causes soft mutation (Caerdydd -> o Gaerdydd, Llundain -> o Lundain, Lloegr -> o Loegr, Paris -> o Baris); less familiar foreign names are often left unchanged (o Berlin)."
   },
   {
    "n": 8,
@@ -17088,7 +17099,7 @@
    "lang": "lb",
    "text": "Neen",
    "checked": false,
-   "note": "Standalone form keeps the n by the n-rule; \"Nee\" is also widely written and said. Not fully sure which the current dictionary (LOD) treats as primary."
+   "note": "Standalone form keeps the n by the n-rule; \"Nee\" is also widely written and said."
   },
   {
    "n": 15,
@@ -17275,7 +17286,7 @@
    "id": "help.lost",
    "group": "help",
    "lang": "lb",
-   "text": "Ech hu mech verlafen",
+   "text": "Ech hu mech verlaf",
    "checked": false,
    "note": ""
   },
@@ -18184,6 +18195,8534 @@
    "group": "numbers",
    "lang": "eu",
    "text": "hamar",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "en",
+   "text": "Your turn!",
+   "checked": true,
+   "note": "",
+   "meaning": "Telling one peer it is their turn in a game or round, informal",
+   "gender": false
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "en",
+   "text": "Who's next?",
+   "checked": true,
+   "note": "",
+   "meaning": "Asking the group who goes next in a round",
+   "gender": false
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "en",
+   "text": "Make a circle!",
+   "checked": true,
+   "note": "",
+   "meaning": "Group leader asks the whole group to stand in a circle",
+   "gender": false
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "en",
+   "text": "Find a partner!",
+   "checked": true,
+   "note": "",
+   "meaning": "Group leader asks everyone to pair up",
+   "gender": false
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "en",
+   "text": "Ready?",
+   "checked": true,
+   "note": "",
+   "meaning": "Asking the group if they are ready before a game starts",
+   "gender": false
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "en",
+   "text": "One more time!",
+   "checked": true,
+   "note": "",
+   "meaning": "Let's do it again (a game, a song, an energizer)",
+   "gender": false
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "en",
+   "text": "We did it!",
+   "checked": true,
+   "note": "",
+   "meaning": "The group celebrates a success together",
+   "gender": false
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "en",
+   "text": "I'm vegetarian",
+   "checked": true,
+   "note": "",
+   "meaning": "Telling the kitchen or a peer you don't eat meat or fish",
+   "gender": true
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "en",
+   "text": "I'm allergic to {X}",
+   "checked": true,
+   "note": "",
+   "meaning": "{X} is a food, for example nuts or milk. Safety-relevant: must be clear and correct",
+   "gender": true
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "en",
+   "text": "Is there meat in it?",
+   "checked": true,
+   "note": "",
+   "meaning": "Asking about a dish",
+   "gender": false
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "en",
+   "text": "It's delicious!",
+   "checked": true,
+   "note": "",
+   "meaning": "Praise for the food",
+   "gender": false
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "en",
+   "text": "Water, please",
+   "checked": true,
+   "note": "",
+   "meaning": "Asking for water at the table",
+   "gender": false
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "en",
+   "text": "I'm full",
+   "checked": true,
+   "note": "",
+   "meaning": "Polite way to say you have eaten enough",
+   "gender": true
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "en",
+   "text": "Enjoy your meal!",
+   "checked": true,
+   "note": "",
+   "meaning": "Said to the group before eating (like Guten Appetit / Bon appétit)",
+   "gender": false
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "en",
+   "text": "How are you?",
+   "checked": true,
+   "note": "",
+   "meaning": "Asking one peer, informal",
+   "gender": false
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "en",
+   "text": "I'm fine, thanks",
+   "checked": true,
+   "note": "",
+   "meaning": "Answer to How are you?",
+   "gender": true
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "en",
+   "text": "Today was great!",
+   "checked": true,
+   "note": "",
+   "meaning": "Said at the end of a good day",
+   "gender": false
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "en",
+   "text": "I learned a lot",
+   "checked": true,
+   "note": "",
+   "meaning": "Feedback round at the end of a project",
+   "gender": true
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "en",
+   "text": "Thank you for everything",
+   "checked": true,
+   "note": "",
+   "meaning": "Said at the end of a project to the group or the team",
+   "gender": true
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "en",
+   "text": "I'll miss you all",
+   "checked": true,
+   "note": "",
+   "meaning": "Said to the whole group on the last day",
+   "gender": false
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "en",
+   "text": "Let's stay in touch!",
+   "checked": true,
+   "note": "",
+   "meaning": "Said to the group on the last day",
+   "gender": false
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "bg",
+   "text": "Твой ред е!",
+   "translit": "Tvoy red e!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "bg",
+   "text": "Кой е следващият?",
+   "translit": "Koy e sledvashtiyat?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "bg",
+   "text": "Направете кръг!",
+   "translit": "Napravete krag!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "bg",
+   "text": "Разделете се по двойки!",
+   "translit": "Razdelete se po dvoyki!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "bg",
+   "text": "Готови?",
+   "translit": "Gotovi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "bg",
+   "text": "Още веднъж!",
+   "translit": "Oshte vednazh!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "bg",
+   "text": "Успяхме!",
+   "translit": "Uspyahme!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "bg",
+   "text": null,
+   "forms": {
+    "m": "Аз съм вегетарианец",
+    "f": "Аз съм вегетарианка"
+   },
+   "translit": {
+    "m": "Az sam vegetarianets",
+    "f": "Az sam vegetarianka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "bg",
+   "text": null,
+   "forms": {
+    "m": "Алергичен съм към {X}",
+    "f": "Алергична съм към {X}"
+   },
+   "translit": {
+    "m": "Alergichen sam kam {X}",
+    "f": "Alergichna sam kam {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "bg",
+   "text": "Има ли месо в това?",
+   "translit": "Ima li meso v tova?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "bg",
+   "text": "Много е вкусно!",
+   "translit": "Mnogo e vkusno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "bg",
+   "text": "Вода, моля",
+   "translit": "Voda, molya",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "bg",
+   "text": null,
+   "forms": {
+    "m": "Сит съм",
+    "f": "Сита съм"
+   },
+   "translit": {
+    "m": "Sit sam",
+    "f": "Sita sam"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "bg",
+   "text": "Добър апетит!",
+   "translit": "Dobar apetit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "bg",
+   "text": "Как си?",
+   "translit": "Kak si?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "bg",
+   "text": "Добре съм, благодаря",
+   "translit": "Dobre sam, blagodarya",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "bg",
+   "text": "Днес беше супер!",
+   "translit": "Dnes beshe super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "bg",
+   "text": "Научих много",
+   "translit": "Nauchih mnogo",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "bg",
+   "text": "Благодаря за всичко",
+   "translit": "Blagodarya za vsichko",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "bg",
+   "text": "Ще ми липсвате всички",
+   "translit": "Shte mi lipsvate vsichki",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "bg",
+   "text": "Да поддържаме връзка!",
+   "translit": "Da poddarzhame vrazka!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "hr",
+   "text": "Ti si na redu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "hr",
+   "text": "Tko je sljedeći?",
+   "checked": false,
+   "note": "Differs: sr Ko je sledeći?, bs Ko je sljedeći?, hr Tko je sljedeći?"
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "hr",
+   "text": "Napravite krug!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "hr",
+   "text": "Podijelite se u parove!",
+   "checked": false,
+   "note": "Ekavian sr Podelite, ijekavian bs/hr Podijelite"
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "hr",
+   "text": "Spremni?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "hr",
+   "text": "Još jednom!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "hr",
+   "text": "Uspjeli smo!",
+   "checked": false,
+   "note": "Ekavian sr Uspeli, ijekavian bs/hr Uspjeli"
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "hr",
+   "text": null,
+   "forms": {
+    "m": "Ja sam vegetarijanac",
+    "f": "Ja sam vegetarijanka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "hr",
+   "text": null,
+   "forms": {
+    "m": "Alergičan sam na {X}",
+    "f": "Alergična sam na {X}"
+   },
+   "checked": false,
+   "note": "{X} takes the accusative: na orašaste plodove, na mlijeko"
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "hr",
+   "text": "Ima li mesa u ovome?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "hr",
+   "text": "Jako je fino!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "hr",
+   "text": "Vodu, molim te",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "hr",
+   "text": null,
+   "forms": {
+    "m": "Sit sam",
+    "f": "Sita sam"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "hr",
+   "text": "Dobar tek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "hr",
+   "text": "Kako si?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "hr",
+   "text": "Dobro sam, hvala",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "hr",
+   "text": "Danas je bilo super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "hr",
+   "text": null,
+   "forms": {
+    "m": "Puno sam naučio",
+    "f": "Puno sam naučila"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "hr",
+   "text": "Hvala na svemu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "hr",
+   "text": "Svi ćete mi nedostajati",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "hr",
+   "text": "Ostanimo u kontaktu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "cs",
+   "text": "Jsi na řadě!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "cs",
+   "text": "Kdo je další?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "cs",
+   "text": "Udělejte kruh!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "cs",
+   "text": "Utvořte dvojice!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "cs",
+   "text": "Připraveni?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "cs",
+   "text": "Ještě jednou!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "cs",
+   "text": "Dokázali jsme to!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "cs",
+   "text": null,
+   "forms": {
+    "m": "Jsem vegetarián",
+    "f": "Jsem vegetariánka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "cs",
+   "text": "Mám alergii na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative case: na ořechy, na mléko."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "cs",
+   "text": "Je v tom maso?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "cs",
+   "text": "Je to výborné!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "cs",
+   "text": "Vodu, prosím",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "cs",
+   "text": null,
+   "forms": {
+    "m": "Jsem najedený",
+    "f": "Jsem najedená"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "cs",
+   "text": "Dobrou chuť!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "cs",
+   "text": "Jak se máš?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "cs",
+   "text": "Dobře, díky",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "cs",
+   "text": "Dneska to bylo super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "cs",
+   "text": null,
+   "forms": {
+    "m": "Hodně jsem se naučil",
+    "f": "Hodně jsem se naučila"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "cs",
+   "text": "Děkuju za všechno",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "cs",
+   "text": "Budete mi všichni chybět",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "cs",
+   "text": "Zůstaňme v kontaktu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "da",
+   "text": "Din tur!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "da",
+   "text": "Hvem er den næste?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "da",
+   "text": "Stil jer i en rundkreds!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "da",
+   "text": "Find en makker!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "da",
+   "text": "Er I klar?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "da",
+   "text": "En gang til!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "da",
+   "text": "Vi klarede det!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "da",
+   "text": "Jeg er vegetar",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "da",
+   "text": "Jeg er allergisk over for {X}",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "da",
+   "text": "Er der kød i?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "da",
+   "text": "Det er lækkert!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "da",
+   "text": "Vand, tak",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "da",
+   "text": "Jeg er mæt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "da",
+   "text": "Velbekomme!",
+   "checked": false,
+   "note": "Also the reply after the meal when someone says 'Tak for mad'."
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "da",
+   "text": "Hvordan har du det?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "da",
+   "text": "Godt, tak",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "da",
+   "text": "Det var en fed dag!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "da",
+   "text": "Jeg har lært meget",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "da",
+   "text": "Tak for alt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "da",
+   "text": "Jeg kommer til at savne jer alle sammen",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "da",
+   "text": "Lad os holde kontakten!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "nl",
+   "text": "Jouw beurt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "nl",
+   "text": "Wie is de volgende?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "nl",
+   "text": "Ga in een kring staan!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "nl",
+   "text": "Zoek een partner!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "nl",
+   "text": "Zijn jullie er klaar voor?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "nl",
+   "text": "Nog een keer!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "nl",
+   "text": "Het is gelukt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "nl",
+   "text": "Ik ben vegetariër",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "nl",
+   "text": "Ik ben allergisch voor {X}",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "nl",
+   "text": "Zit er vlees in?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "nl",
+   "text": "Het is heerlijk!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "nl",
+   "text": "Water, alsjeblieft",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "nl",
+   "text": "Ik zit vol",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "nl",
+   "text": "Eet smakelijk!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "nl",
+   "text": "Hoe gaat het met je?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "nl",
+   "text": "Goed, dank je",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "nl",
+   "text": "Vandaag was echt leuk!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "nl",
+   "text": "Ik heb veel geleerd",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "nl",
+   "text": "Bedankt voor alles",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "nl",
+   "text": "Ik ga jullie allemaal missen",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "nl",
+   "text": "Laten we contact houden!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "et",
+   "text": "Sinu kord!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "et",
+   "text": "Kes on järgmine?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "et",
+   "text": "Moodustage ring!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "et",
+   "text": "Leidke endale paariline!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "et",
+   "text": "Valmis?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "et",
+   "text": "Veel kord!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "et",
+   "text": "Saime hakkama!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "et",
+   "text": "Ma olen taimetoitlane",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "et",
+   "text": "Mul on allergia {X} vastu",
+   "checked": false,
+   "note": "{X} goes in the genitive: pähklite vastu, piima vastu."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "et",
+   "text": "Kas selles on liha?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "et",
+   "text": "Väga maitsev!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "et",
+   "text": "Vett, palun",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "et",
+   "text": "Mu kõht on täis",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "et",
+   "text": "Head isu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "et",
+   "text": "Kuidas läheb?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "et",
+   "text": "Hästi, aitäh",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "et",
+   "text": "Täna oli super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "et",
+   "text": "Ma õppisin palju",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "et",
+   "text": "Aitäh kõige eest",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "et",
+   "text": "Ma hakkan teid kõiki igatsema",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "et",
+   "text": "Hoiame ühendust!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "fi",
+   "text": "Sinun vuorosi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "fi",
+   "text": "Kuka seuraavaksi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "fi",
+   "text": "Tehkää piiri!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "fi",
+   "text": "Etsikää pari!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "fi",
+   "text": "Valmiina?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "fi",
+   "text": "Vielä kerran!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "fi",
+   "text": "Me tehtiin se!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "fi",
+   "text": "Olen kasvissyöjä",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "fi",
+   "text": "Olen allerginen {X}-lle",
+   "checked": false,
+   "note": "The ending -lle is attached without a hyphen and the stem can change (pähkinä: pähkinöille, maito: maidolle)."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "fi",
+   "text": "Onko tässä lihaa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "fi",
+   "text": "Tosi hyvää!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "fi",
+   "text": "Vettä, kiitos",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "fi",
+   "text": "Olen täynnä",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "fi",
+   "text": "Hyvää ruokahalua!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "fi",
+   "text": "Mitä kuuluu?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "fi",
+   "text": "Hyvää, kiitos",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "fi",
+   "text": "Tänään oli tosi kivaa!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "fi",
+   "text": "Opin paljon",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "fi",
+   "text": "Kiitos kaikesta",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "fi",
+   "text": "Minulle tulee ikävä teitä kaikkia",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "fi",
+   "text": "Pidetään yhteyttä!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "fr",
+   "text": "À toi !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "fr",
+   "text": "À qui le tour ?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "fr",
+   "text": "Faites un cercle !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "fr",
+   "text": "Mettez-vous par deux !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "fr",
+   "text": "Prêts ?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "fr",
+   "text": "Encore une fois !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "fr",
+   "text": "On a réussi !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "fr",
+   "text": null,
+   "forms": {
+    "m": "Je suis végétarien",
+    "f": "Je suis végétarienne"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "fr",
+   "text": "Je suis allergique à {X}",
+   "checked": false,
+   "note": "With an article 'à' contracts: allergique au lait, aux noix, à la farine."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "fr",
+   "text": "Il y a de la viande dedans ?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "fr",
+   "text": "C'est délicieux !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "fr",
+   "text": "De l'eau, s'il te plaît",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "fr",
+   "text": "Je n'ai plus faim",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "fr",
+   "text": "Bon appétit !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "fr",
+   "text": "Ça va ?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "fr",
+   "text": "Ça va bien, merci",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "fr",
+   "text": "C'était génial aujourd'hui !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "fr",
+   "text": "J'ai beaucoup appris",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "fr",
+   "text": "Merci pour tout",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "fr",
+   "text": "Vous allez tous me manquer",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "fr",
+   "text": "On reste en contact !",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "de",
+   "text": "Du bist dran!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "de",
+   "text": "Wer ist als Nächstes dran?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "de",
+   "text": "Bildet einen Kreis!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "de",
+   "text": "Findet euch zu zweit zusammen!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "de",
+   "text": "Seid ihr bereit?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "de",
+   "text": "Noch einmal!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "de",
+   "text": "Wir haben es geschafft!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "de",
+   "text": null,
+   "forms": {
+    "m": "Ich bin Vegetarier",
+    "f": "Ich bin Vegetarierin"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "de",
+   "text": "Ich bin allergisch gegen {X}",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "de",
+   "text": "Ist da Fleisch drin?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "de",
+   "text": "Das ist lecker!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "de",
+   "text": "Wasser, bitte",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "de",
+   "text": "Ich bin satt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "de",
+   "text": "Guten Appetit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "de",
+   "text": "Wie geht's dir?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "de",
+   "text": "Gut, danke",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "de",
+   "text": "Das war ein toller Tag!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "de",
+   "text": "Ich habe viel gelernt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "de",
+   "text": "Danke für alles",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "de",
+   "text": "Ich werde euch alle vermissen",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "de",
+   "text": "Lasst uns in Kontakt bleiben!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "el",
+   "text": "Σειρά σου!",
+   "translit": "Seira sou!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "el",
+   "text": "Ποιος είναι ο επόμενος;",
+   "translit": "Poios einai o epomenos?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "el",
+   "text": "Κάντε έναν κύκλο!",
+   "translit": "Kante enan kyklo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "el",
+   "text": "Βρείτε ζευγάρι!",
+   "translit": "Vreite zevgari!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "el",
+   "text": "Έτοιμοι;",
+   "translit": "Etoimoi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "el",
+   "text": "Άλλη μια φορά!",
+   "translit": "Alli mia fora!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "el",
+   "text": "Τα καταφέραμε!",
+   "translit": "Ta kataferame!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "el",
+   "text": "Είμαι χορτοφάγος",
+   "translit": "Eimai chortofagos",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "el",
+   "text": null,
+   "forms": {
+    "m": "Είμαι αλλεργικός σε {X}",
+    "f": "Είμαι αλλεργική σε {X}"
+   },
+   "translit": {
+    "m": "Eimai allergikos se {X}",
+    "f": "Eimai allergiki se {X}"
+   },
+   "checked": false,
+   "note": "With the article σε contracts: στο γάλα (milk), στους ξηρούς καρπούς (nuts)"
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "el",
+   "text": "Έχει κρέας μέσα;",
+   "translit": "Echei kreas mesa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "el",
+   "text": "Είναι πολύ νόστιμο!",
+   "translit": "Einai poly nostimo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "el",
+   "text": "Νερό, παρακαλώ",
+   "translit": "Nero, parakalo",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "el",
+   "text": null,
+   "forms": {
+    "m": "Είμαι χορτάτος",
+    "f": "Είμαι χορτάτη"
+   },
+   "translit": {
+    "m": "Eimai chortatos",
+    "f": "Eimai chortati"
+   },
+   "checked": false,
+   "note": "Χόρτασα (Chortasa, I've had enough) is also very common and the same for everyone"
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "el",
+   "text": "Καλή όρεξη!",
+   "translit": "Kali orexi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "el",
+   "text": "Τι κάνεις;",
+   "translit": "Ti kaneis?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "el",
+   "text": "Καλά, ευχαριστώ",
+   "translit": "Kala, efcharisto",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "el",
+   "text": "Σήμερα ήταν τέλεια!",
+   "translit": "Simera itan teleia!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "el",
+   "text": "Έμαθα πολλά",
+   "translit": "Ematha polla",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "el",
+   "text": "Ευχαριστώ για όλα",
+   "translit": "Efcharisto gia ola",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "el",
+   "text": "Θα μου λείψετε όλοι",
+   "translit": "Tha mou leipsete oloi",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "el",
+   "text": "Ας κρατήσουμε επαφή!",
+   "translit": "As kratisoume epafi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "hu",
+   "text": "Te jössz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "hu",
+   "text": "Ki a következő?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "hu",
+   "text": "Álljatok körbe!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "hu",
+   "text": "Keressetek egy párt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "hu",
+   "text": "Készen álltok?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "hu",
+   "text": "Még egyszer!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "hu",
+   "text": "Megcsináltuk!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "hu",
+   "text": "Vegetáriánus vagyok",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "hu",
+   "text": "Allergiás vagyok {X}-ra",
+   "checked": false,
+   "note": "The suffix follows vowel harmony: -ra (mogyoróra), -re (tejre). In normal writing it is attached without a hyphen; with a common noun the article a/az is often added (a tejre)."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "hu",
+   "text": "Van benne hús?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "hu",
+   "text": "Nagyon finom!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "hu",
+   "text": "Vizet kérek",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "hu",
+   "text": "Jóllaktam",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "hu",
+   "text": "Jó étvágyat!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "hu",
+   "text": "Hogy vagy?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "hu",
+   "text": "Jól vagyok, köszönöm",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "hu",
+   "text": "Nagyon jó volt ma!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "hu",
+   "text": "Sokat tanultam",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "hu",
+   "text": "Köszönök mindent",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "hu",
+   "text": "Mindannyian hiányozni fogtok",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "hu",
+   "text": "Tartsuk a kapcsolatot!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "ga",
+   "text": "Do sheal!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "ga",
+   "text": "Cé atá ar aghaidh?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "ga",
+   "text": "Déanaigí ciorcal!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "ga",
+   "text": "Faighigí páirtí!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "ga",
+   "text": "An bhfuil sibh réidh?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "ga",
+   "text": "Uair amháin eile!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "ga",
+   "text": "Rinneamar é!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "ga",
+   "text": "Is feoilséantóir mé",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "ga",
+   "text": "Tá ailléirge orm le {X}",
+   "checked": false,
+   "note": "With the article le becomes leis: leis an mbainne (milk); without it: le cnónna (nuts)."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "ga",
+   "text": "An bhfuil feoil ann?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "ga",
+   "text": "Tá sé an-bhlasta!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "ga",
+   "text": "Uisce, le do thoil",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "ga",
+   "text": "Tá mo dhóthain agam",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "ga",
+   "text": "Bainigí taitneamh as an mbéile!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "ga",
+   "text": "Conas atá tú?",
+   "checked": false,
+   "note": "Munster form; in Connacht \"Cén chaoi a bhfuil tú?\", in Ulster \"Cad é mar atá tú?\"."
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "ga",
+   "text": "Tá mé go maith, go raibh maith agat",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "ga",
+   "text": "Bhí an lá inniu go hiontach!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "ga",
+   "text": "D'fhoghlaim mé a lán",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "ga",
+   "text": "Go raibh maith agaibh as gach rud",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "ga",
+   "text": "Braithfidh mé uaim sibh go léir",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "ga",
+   "text": "Fanaimis i dteagmháil!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "it",
+   "text": "Tocca a te!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "it",
+   "text": "A chi tocca?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "it",
+   "text": "Fate un cerchio!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "it",
+   "text": "Mettetevi in coppia!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "it",
+   "text": "Pronti?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "it",
+   "text": "Ancora una volta!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "it",
+   "text": "Ce l'abbiamo fatta!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "it",
+   "text": null,
+   "forms": {
+    "m": "Sono vegetariano",
+    "f": "Sono vegetariana"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "it",
+   "text": null,
+   "forms": {
+    "m": "Sono allergico a {X}",
+    "f": "Sono allergica a {X}"
+   },
+   "checked": false,
+   "note": "With an article 'a' contracts: allergico al latte, alle noci."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "it",
+   "text": "C'è carne dentro?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "it",
+   "text": "È buonissimo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "it",
+   "text": "Acqua, per favore",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "it",
+   "text": null,
+   "forms": {
+    "m": "Sono pieno",
+    "f": "Sono piena"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "it",
+   "text": "Buon appetito!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "it",
+   "text": "Come stai?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "it",
+   "text": "Bene, grazie",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "it",
+   "text": "Oggi è stato bellissimo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "it",
+   "text": "Ho imparato tanto",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "it",
+   "text": "Grazie di tutto",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "it",
+   "text": "Mi mancherete tutti",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "it",
+   "text": "Restiamo in contatto!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "lv",
+   "text": "Tava kārta!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "lv",
+   "text": "Kurš nākamais?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "lv",
+   "text": "Nostājieties aplī!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "lv",
+   "text": "Atrodiet sev pāri!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "lv",
+   "text": "Gatavi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "lv",
+   "text": "Vēlreiz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "lv",
+   "text": "Mums izdevās!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "lv",
+   "text": null,
+   "forms": {
+    "m": "Esmu veģetārietis",
+    "f": "Esmu veģetāriete"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "lv",
+   "text": "Man ir alerģija pret {X}",
+   "checked": false,
+   "note": "After pret the food changes its ending: pret riekstiem, pret pienu."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "lv",
+   "text": "Vai tajā ir gaļa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "lv",
+   "text": "Ļoti garšīgi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "lv",
+   "text": "Ūdeni, lūdzu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "lv",
+   "text": null,
+   "forms": {
+    "m": "Esmu paēdis",
+    "f": "Esmu paēdusi"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "lv",
+   "text": "Labu apetīti!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "lv",
+   "text": "Kā tev iet?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "lv",
+   "text": "Labi, paldies",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "lv",
+   "text": "Šodien bija lieliski!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "lv",
+   "text": "Es daudz ko iemācījos",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "lv",
+   "text": "Paldies par visu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "lv",
+   "text": "Man jūsu visu pietrūks",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "lv",
+   "text": "Paliksim sazinā!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "lt",
+   "text": "Tavo eilė!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "lt",
+   "text": "Kas kitas?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "lt",
+   "text": "Sustokite ratu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "lt",
+   "text": "Susiraskite porą!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "lt",
+   "text": "Pasiruošę?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "lt",
+   "text": "Dar kartą!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "lt",
+   "text": "Mums pavyko!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "lt",
+   "text": null,
+   "forms": {
+    "m": "Aš vegetaras",
+    "f": "Aš vegetarė"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "lt",
+   "text": "Man alergija {X}",
+   "checked": false,
+   "note": "{X} takes the dative: riešutams, pienui."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "lt",
+   "text": "Ar čia yra mėsos?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "lt",
+   "text": "Labai skanu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "lt",
+   "text": "Vandens, prašau",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "lt",
+   "text": "Aš prisivalgiau",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "lt",
+   "text": "Skanaus!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "lt",
+   "text": "Kaip sekasi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "lt",
+   "text": "Gerai, ačiū",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "lt",
+   "text": "Šiandien buvo puiku!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "lt",
+   "text": "Aš daug išmokau",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "lt",
+   "text": "Ačiū už viską",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "lt",
+   "text": "Pasiilgsiu jūsų visų",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "lt",
+   "text": "Palaikykime ryšį!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "mt",
+   "text": "Imissek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "mt",
+   "text": "Min imiss?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "mt",
+   "text": "Agħmlu ċirku!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "mt",
+   "text": "Sibu sieħeb!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "mt",
+   "text": "Lesti?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "mt",
+   "text": "Darb'oħra!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "mt",
+   "text": "Irnexxielna!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "mt",
+   "text": null,
+   "forms": {
+    "m": "Jien veġetarjan",
+    "f": "Jien veġetarjana"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "mt",
+   "text": null,
+   "forms": {
+    "m": "Jien allerġiku għal {X}",
+    "f": "Jien allerġika għal {X}"
+   },
+   "checked": false,
+   "note": "With the article għal contracts: għall-ħalib (milk), għall-ġewż (nuts)."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "mt",
+   "text": "Fih il-laħam?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "mt",
+   "text": "Bnin ħafna!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "mt",
+   "text": "Ilma, jekk jogħġbok",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "mt",
+   "text": "Xbajt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "mt",
+   "text": "L-ikla t-tajba!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "mt",
+   "text": "Kif int?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "mt",
+   "text": null,
+   "forms": {
+    "m": "Tajjeb, grazzi",
+    "f": "Tajba, grazzi"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "mt",
+   "text": "Illum kienet ġurnata mill-aqwa!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "mt",
+   "text": "Tgħallimt ħafna",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "mt",
+   "text": "Grazzi ta' kollox",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "mt",
+   "text": "Se nimmissjakom ilkoll",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "mt",
+   "text": "Ejja nibqgħu f'kuntatt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "pl",
+   "text": "Twoja kolej!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "pl",
+   "text": "Kto następny?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "pl",
+   "text": "Stańcie w kole!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "pl",
+   "text": "Dobierzcie się w pary!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "pl",
+   "text": "Gotowi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "pl",
+   "text": "Jeszcze raz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "pl",
+   "text": "Udało się!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "pl",
+   "text": null,
+   "forms": {
+    "m": "Jestem wegetarianinem",
+    "f": "Jestem wegetarianką"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "pl",
+   "text": "Mam alergię na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative case: na orzechy, na mleko."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "pl",
+   "text": "Jest w tym mięso?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "pl",
+   "text": "Pyszne!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "pl",
+   "text": "Poproszę wodę",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "pl",
+   "text": null,
+   "forms": {
+    "m": "Jestem najedzony",
+    "f": "Jestem najedzona"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "pl",
+   "text": "Smacznego!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "pl",
+   "text": "Jak się masz?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "pl",
+   "text": "Dobrze, dzięki",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "pl",
+   "text": "Dzisiaj było super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "pl",
+   "text": null,
+   "forms": {
+    "m": "Dużo się nauczyłem",
+    "f": "Dużo się nauczyłam"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "pl",
+   "text": "Dziękuję za wszystko",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "pl",
+   "text": "Będę za wami tęsknić",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "pl",
+   "text": "Bądźmy w kontakcie!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "pt",
+   "text": "É a tua vez!",
+   "checked": false,
+   "note": "In Brazil usually: É a sua vez!"
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "pt",
+   "text": "Quem é o próximo?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "pt",
+   "text": "Façam um círculo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "pt",
+   "text": "Formem pares!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "pt",
+   "text": "Prontos?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "pt",
+   "text": "Mais uma vez!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "pt",
+   "text": "Conseguimos!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "pt",
+   "text": null,
+   "forms": {
+    "m": "Sou vegetariano",
+    "f": "Sou vegetariana"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "pt",
+   "text": null,
+   "forms": {
+    "m": "Sou alérgico a {X}",
+    "f": "Sou alérgica a {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "pt",
+   "text": "Tem carne?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "pt",
+   "text": "Está delicioso!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "pt",
+   "text": "Água, por favor",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "pt",
+   "text": null,
+   "forms": {
+    "m": "Estou satisfeito",
+    "f": "Estou satisfeita"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "pt",
+   "text": "Bom apetite!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "pt",
+   "text": "Tudo bem?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "pt",
+   "text": null,
+   "forms": {
+    "m": "Tudo bem, obrigado",
+    "f": "Tudo bem, obrigada"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "pt",
+   "text": "Hoje foi incrível!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "pt",
+   "text": "Aprendi muito",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "pt",
+   "text": null,
+   "forms": {
+    "m": "Obrigado por tudo",
+    "f": "Obrigada por tudo"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "pt",
+   "text": "Vou ter saudades de todos vocês",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "pt",
+   "text": "Vamos manter o contacto!",
+   "checked": false,
+   "note": "In Brazil spelled and said: contato."
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "ro",
+   "text": "E rândul tău!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "ro",
+   "text": "Cine urmează?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "ro",
+   "text": "Faceți un cerc!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "ro",
+   "text": "Formați perechi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "ro",
+   "text": "Gata?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "ro",
+   "text": "Încă o dată!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "ro",
+   "text": "Am reușit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "ro",
+   "text": null,
+   "forms": {
+    "m": "Sunt vegetarian",
+    "f": "Sunt vegetariană"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "ro",
+   "text": null,
+   "forms": {
+    "m": "Sunt alergic la {X}",
+    "f": "Sunt alergică la {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "ro",
+   "text": "Are carne?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "ro",
+   "text": "E delicios!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "ro",
+   "text": "Apă, te rog",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "ro",
+   "text": null,
+   "forms": {
+    "m": "Sunt sătul",
+    "f": "Sunt sătulă"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "ro",
+   "text": "Poftă bună!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "ro",
+   "text": "Ce faci?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "ro",
+   "text": "Bine, mulțumesc",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "ro",
+   "text": "Azi a fost super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "ro",
+   "text": "Am învățat multe",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "ro",
+   "text": "Mulțumesc pentru tot",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "ro",
+   "text": "O să-mi fie dor de voi toți",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "ro",
+   "text": "Să ținem legătura!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "sk",
+   "text": "Si na rade!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "sk",
+   "text": "Kto je ďalší?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "sk",
+   "text": "Postavte sa do kruhu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "sk",
+   "text": "Vytvorte dvojice!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "sk",
+   "text": "Pripravení?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "sk",
+   "text": "Ešte raz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "sk",
+   "text": "Dokázali sme to!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "sk",
+   "text": null,
+   "forms": {
+    "m": "Som vegetarián",
+    "f": "Som vegetariánka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "sk",
+   "text": "Mám alergiu na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative case: na orechy, na mlieko."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "sk",
+   "text": "Je v tom mäso?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "sk",
+   "text": "Je to výborné!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "sk",
+   "text": "Vodu, prosím",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "sk",
+   "text": null,
+   "forms": {
+    "m": "Som najedený",
+    "f": "Som najedená"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "sk",
+   "text": "Dobrú chuť!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "sk",
+   "text": "Ako sa máš?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "sk",
+   "text": "Dobre, vďaka",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "sk",
+   "text": "Dnes to bolo super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "sk",
+   "text": null,
+   "forms": {
+    "m": "Veľa som sa naučil",
+    "f": "Veľa som sa naučila"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "sk",
+   "text": "Ďakujem za všetko",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "sk",
+   "text": "Budete mi všetci chýbať",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "sk",
+   "text": "Zostaňme v kontakte!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "sl",
+   "text": "Na vrsti si!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "sl",
+   "text": "Kdo je naslednji?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "sl",
+   "text": "Postavite se v krog!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "sl",
+   "text": "Poiščite si par!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "sl",
+   "text": "Pripravljeni?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "sl",
+   "text": "Še enkrat!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "sl",
+   "text": "Uspelo nam je!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "sl",
+   "text": null,
+   "forms": {
+    "m": "Vegetarijanec sem",
+    "f": "Vegetarijanka sem"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "sl",
+   "text": "Imam alergijo na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative case: na oreščke, na mleko."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "sl",
+   "text": "Je v tem meso?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "sl",
+   "text": "Zelo dobro je!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "sl",
+   "text": "Vodo, prosim",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "sl",
+   "text": null,
+   "forms": {
+    "m": "Sit sem",
+    "f": "Sita sem"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "sl",
+   "text": "Dober tek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "sl",
+   "text": "Kako si?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "sl",
+   "text": "Dobro, hvala",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "sl",
+   "text": "Danes je bilo super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "sl",
+   "text": null,
+   "forms": {
+    "m": "Veliko sem se naučil",
+    "f": "Veliko sem se naučila"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "sl",
+   "text": "Hvala za vse",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "sl",
+   "text": "Vsi mi boste manjkali",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "sl",
+   "text": "Ostanimo v stiku!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "es",
+   "text": "¡Te toca!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "es",
+   "text": "¿A quién le toca?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "es",
+   "text": "¡Haced un círculo!",
+   "checked": false,
+   "note": "Spain usage. In Latin America: ¡Hagan un círculo!"
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "es",
+   "text": "¡Buscad pareja!",
+   "checked": false,
+   "note": "Spain usage. In Latin America: ¡Busquen pareja!"
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "es",
+   "text": "¿Listos?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "es",
+   "text": "¡Otra vez!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "es",
+   "text": "¡Lo conseguimos!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "es",
+   "text": null,
+   "forms": {
+    "m": "Soy vegetariano",
+    "f": "Soy vegetariana"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "es",
+   "text": null,
+   "forms": {
+    "m": "Soy alérgico a {X}",
+    "f": "Soy alérgica a {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "es",
+   "text": "¿Lleva carne?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "es",
+   "text": "¡Está buenísimo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "es",
+   "text": "Agua, por favor",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "es",
+   "text": null,
+   "forms": {
+    "m": "Estoy lleno",
+    "f": "Estoy llena"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "es",
+   "text": "¡Que aproveche!",
+   "checked": false,
+   "note": "Spain usage. In Latin America: ¡Buen provecho!"
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "es",
+   "text": "¿Cómo estás?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "es",
+   "text": "Bien, gracias",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "es",
+   "text": "¡Hoy ha sido genial!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "es",
+   "text": "He aprendido mucho",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "es",
+   "text": "Gracias por todo",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "es",
+   "text": "Os voy a echar de menos a todos",
+   "checked": false,
+   "note": "Spain usage. In Latin America: Los voy a extrañar a todos."
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "es",
+   "text": "¡Seguimos en contacto!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "sv",
+   "text": "Din tur!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "sv",
+   "text": "Vem är nästa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "sv",
+   "text": "Ställ er i en ring!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "sv",
+   "text": "Gå ihop två och två!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "sv",
+   "text": "Är ni redo?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "sv",
+   "text": "En gång till!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "sv",
+   "text": "Vi klarade det!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "sv",
+   "text": "Jag är vegetarian",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "sv",
+   "text": "Jag är allergisk mot {X}",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "sv",
+   "text": "Finns det kött i?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "sv",
+   "text": "Det är jättegott!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "sv",
+   "text": "Vatten, tack",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "sv",
+   "text": "Jag är mätt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "sv",
+   "text": "Smaklig måltid!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "sv",
+   "text": "Hur mår du?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "sv",
+   "text": "Bra, tack",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "sv",
+   "text": "Det var en jättebra dag!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "sv",
+   "text": "Jag har lärt mig mycket",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "sv",
+   "text": "Tack för allt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "sv",
+   "text": "Jag kommer att sakna er alla",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "sv",
+   "text": "Vi håller kontakten!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "no",
+   "text": "Din tur!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "no",
+   "text": "Hvem er neste?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "no",
+   "text": "Still dere i en ring!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "no",
+   "text": "Finn en partner!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "no",
+   "text": "Er dere klare?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "no",
+   "text": "En gang til!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "no",
+   "text": "Vi klarte det!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "no",
+   "text": "Jeg er vegetarianer",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "no",
+   "text": "Jeg er allergisk mot {X}",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "no",
+   "text": "Er det kjøtt i?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "no",
+   "text": "Det er kjempegodt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "no",
+   "text": "Vann, takk",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "no",
+   "text": "Jeg er mett",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "no",
+   "text": "God appetitt!",
+   "checked": false,
+   "note": "Often the host just says 'Vær så god' when the food is served; 'Velbekomme' is the reply to 'Takk for maten' after the meal."
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "no",
+   "text": "Hvordan går det?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "no",
+   "text": "Bra, takk",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "no",
+   "text": "Det var en kjempefin dag!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "no",
+   "text": "Jeg har lært mye",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "no",
+   "text": "Takk for alt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "no",
+   "text": "Jeg kommer til å savne dere alle",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "no",
+   "text": "La oss holde kontakten!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "is",
+   "text": "Komið að þér!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "is",
+   "text": "Hver er næstur?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "is",
+   "text": "Myndið hring!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "is",
+   "text": "Finnið ykkur félaga!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "is",
+   "text": "Eruð þið tilbúin?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "is",
+   "text": "Einu sinni enn!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "is",
+   "text": "Okkur tókst það!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "is",
+   "text": "Ég er grænmetisæta",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "is",
+   "text": "Ég er með ofnæmi fyrir {X}",
+   "checked": false,
+   "note": "'fyrir' takes the dative here, so the food word can change: ofnæmi fyrir hnetum (hnetur, nuts), fyrir mjólk (milk)."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "is",
+   "text": "Er kjöt í þessu?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "is",
+   "text": "Þetta er rosalega gott!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "is",
+   "text": "Vatn, takk",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "is",
+   "text": null,
+   "forms": {
+    "m": "Ég er saddur",
+    "f": "Ég er södd"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "is",
+   "text": "Verði ykkur að góðu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "is",
+   "text": "Hvernig hefurðu það?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "is",
+   "text": "Fínt, takk",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "is",
+   "text": "Þetta var frábær dagur!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "is",
+   "text": "Ég lærði mikið",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "is",
+   "text": "Takk fyrir allt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "is",
+   "text": "Ég á eftir að sakna ykkar allra",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "is",
+   "text": "Höldum sambandi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "tr",
+   "text": "Sıra sende!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "tr",
+   "text": "Sırada kim var?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "tr",
+   "text": "Çember olun!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "tr",
+   "text": "Kendinize bir eş bulun!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "tr",
+   "text": "Hazır mısınız?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "tr",
+   "text": "Bir kez daha!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "tr",
+   "text": "Başardık!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "tr",
+   "text": "Vejetaryenim",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "tr",
+   "text": "{X} alerjim var",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "tr",
+   "text": "İçinde et var mı?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "tr",
+   "text": "Çok lezzetli!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "tr",
+   "text": "Su lütfen",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "tr",
+   "text": "Doydum",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "tr",
+   "text": "Afiyet olsun!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "tr",
+   "text": "Nasılsın?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "tr",
+   "text": "İyiyim, teşekkürler",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "tr",
+   "text": "Bugün harikaydı!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "tr",
+   "text": "Çok şey öğrendim",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "tr",
+   "text": "Her şey için teşekkürler",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "tr",
+   "text": "Hepinizi özleyeceğim",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "tr",
+   "text": "İletişimde kalalım!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "sr",
+   "text": "Ти си на реду!",
+   "translit": "Ti si na redu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "sr",
+   "text": "Ко је следећи?",
+   "translit": "Ko je sledeći?",
+   "checked": false,
+   "note": "Differs: sr Ko je sledeći?, bs Ko je sljedeći?, hr Tko je sljedeći?"
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "sr",
+   "text": "Направите круг!",
+   "translit": "Napravite krug!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "sr",
+   "text": "Поделите се у парове!",
+   "translit": "Podelite se u parove!",
+   "checked": false,
+   "note": "Ekavian sr Podelite, ijekavian bs/hr Podijelite"
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "sr",
+   "text": "Спремни?",
+   "translit": "Spremni?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "sr",
+   "text": "Још једном!",
+   "translit": "Još jednom!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "sr",
+   "text": "Успели смо!",
+   "translit": "Uspeli smo!",
+   "checked": false,
+   "note": "Ekavian sr Uspeli, ijekavian bs/hr Uspjeli"
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "sr",
+   "text": null,
+   "forms": {
+    "m": "Ја сам вегетаријанац",
+    "f": "Ја сам вегетаријанка"
+   },
+   "translit": {
+    "m": "Ja sam vegetarijanac",
+    "f": "Ja sam vegetarijanka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "sr",
+   "text": null,
+   "forms": {
+    "m": "Алергичан сам на {X}",
+    "f": "Алергична сам на {X}"
+   },
+   "translit": {
+    "m": "Alergičan sam na {X}",
+    "f": "Alergična sam na {X}"
+   },
+   "checked": false,
+   "note": "{X} takes the accusative: na orašaste plodove, na mleko"
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "sr",
+   "text": "Има ли меса у овоме?",
+   "translit": "Ima li mesa u ovome?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "sr",
+   "text": "Много је укусно!",
+   "translit": "Mnogo je ukusno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "sr",
+   "text": "Воду, молим те",
+   "translit": "Vodu, molim te",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "sr",
+   "text": null,
+   "forms": {
+    "m": "Сит сам",
+    "f": "Сита сам"
+   },
+   "translit": {
+    "m": "Sit sam",
+    "f": "Sita sam"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "sr",
+   "text": "Добар тек!",
+   "translit": "Dobar tek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "sr",
+   "text": "Како си?",
+   "translit": "Kako si?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "sr",
+   "text": "Добро сам, хвала",
+   "translit": "Dobro sam, hvala",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "sr",
+   "text": "Данас је било супер!",
+   "translit": "Danas je bilo super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "sr",
+   "text": null,
+   "forms": {
+    "m": "Много сам научио",
+    "f": "Много сам научила"
+   },
+   "translit": {
+    "m": "Mnogo sam naučio",
+    "f": "Mnogo sam naučila"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "sr",
+   "text": "Хвала на свему",
+   "translit": "Hvala na svemu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "sr",
+   "text": "Сви ћете ми недостајати",
+   "translit": "Svi ćete mi nedostajati",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "sr",
+   "text": "Останимо у контакту!",
+   "translit": "Ostanimo u kontaktu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "mk",
+   "text": "Ти си на ред!",
+   "translit": "Ti si na red!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "mk",
+   "text": "Кој е следен?",
+   "translit": "Koj e sleden?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "mk",
+   "text": "Направете круг!",
+   "translit": "Napravete krug!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "mk",
+   "text": "Поделете се во парови!",
+   "translit": "Podelete se vo parovi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "mk",
+   "text": "Подготвени?",
+   "translit": "Podgotveni?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "mk",
+   "text": "Уште еднаш!",
+   "translit": "Ushte ednash!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "mk",
+   "text": "Успеавме!",
+   "translit": "Uspeavme!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "mk",
+   "text": null,
+   "forms": {
+    "m": "Јас сум вегетаријанец",
+    "f": "Јас сум вегетаријанка"
+   },
+   "translit": {
+    "m": "Jas sum vegetarijanec",
+    "f": "Jas sum vegetarijanka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "mk",
+   "text": null,
+   "forms": {
+    "m": "Алергичен сум на {X}",
+    "f": "Алергична сум на {X}"
+   },
+   "translit": {
+    "m": "Alergichen sum na {X}",
+    "f": "Alergichna sum na {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "mk",
+   "text": "Има ли месо во ова?",
+   "translit": "Ima li meso vo ova?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "mk",
+   "text": "Многу е вкусно!",
+   "translit": "Mnogu e vkusno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "mk",
+   "text": "Вода, те молам",
+   "translit": "Voda, te molam",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "mk",
+   "text": null,
+   "forms": {
+    "m": "Сит сум",
+    "f": "Сита сум"
+   },
+   "translit": {
+    "m": "Sit sum",
+    "f": "Sita sum"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "mk",
+   "text": "Пријатно!",
+   "translit": "Prijatno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "mk",
+   "text": "Како си?",
+   "translit": "Kako si?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "mk",
+   "text": "Добро сум, благодарам",
+   "translit": "Dobro sum, blagodaram",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "mk",
+   "text": "Денес беше супер!",
+   "translit": "Denes beshe super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "mk",
+   "text": "Научив многу",
+   "translit": "Nauchiv mnogu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "mk",
+   "text": "Благодарам за сè",
+   "translit": "Blagodaram za se",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "mk",
+   "text": "Ќе ми недостигате сите",
+   "translit": "Kje mi nedostigate site",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "mk",
+   "text": "Да останеме во контакт!",
+   "translit": "Da ostaneme vo kontakt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "uk",
+   "text": "Твоя черга!",
+   "translit": "Tvoia cherha!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "uk",
+   "text": "Хто наступний?",
+   "translit": "Khto nastupnyi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "uk",
+   "text": "Станьте в коло!",
+   "translit": "Stante v kolo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "uk",
+   "text": "Знайдіть собі пару!",
+   "translit": "Znaidit sobi paru!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "uk",
+   "text": "Готові?",
+   "translit": "Hotovi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "uk",
+   "text": "Ще раз!",
+   "translit": "Shche raz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "uk",
+   "text": "У нас вийшло!",
+   "translit": "U nas vyishlo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "uk",
+   "text": null,
+   "forms": {
+    "m": "Я вегетаріанець",
+    "f": "Я вегетаріанка"
+   },
+   "translit": {
+    "m": "Ya vehetarianets",
+    "f": "Ya vehetarianka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "uk",
+   "text": "У мене алергія на {X}",
+   "translit": "U mene alerhiia na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative: на горіхи, на молоко."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "uk",
+   "text": "Тут є м’ясо?",
+   "translit": "Tut ye miaso?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "uk",
+   "text": "Дуже смачно!",
+   "translit": "Duzhe smachno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "uk",
+   "text": "Води, будь ласка",
+   "translit": "Vody, bud laska",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "uk",
+   "text": null,
+   "forms": {
+    "m": "Я наївся",
+    "f": "Я наїлася"
+   },
+   "translit": {
+    "m": "Ya naivsia",
+    "f": "Ya nailasia"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "uk",
+   "text": "Смачного!",
+   "translit": "Smachnoho!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "uk",
+   "text": "Як справи?",
+   "translit": "Yak spravy?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "uk",
+   "text": "Добре, дякую",
+   "translit": "Dobre, diakuiu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "uk",
+   "text": "Сьогодні було класно!",
+   "translit": "Sohodni bulo klasno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "uk",
+   "text": null,
+   "forms": {
+    "m": "Я багато чого навчився",
+    "f": "Я багато чого навчилася"
+   },
+   "translit": {
+    "m": "Ya bahato choho navchyvsia",
+    "f": "Ya bahato choho navchylasia"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "uk",
+   "text": "Дякую за все",
+   "translit": "Diakuiu za vse",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "uk",
+   "text": "Я сумуватиму за вами всіма",
+   "translit": "Ya sumuvatymu za vamy vsima",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "uk",
+   "text": "Будьмо на зв’язку!",
+   "translit": "Budmo na zviazku!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "ka",
+   "text": "შენი ჯერია!",
+   "translit": "Sheni jeria!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "ka",
+   "text": "ვინ არის შემდეგი?",
+   "translit": "Vin aris shemdegi?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "ka",
+   "text": "დადექით წრეში!",
+   "translit": "Dadekit tsreshi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "ka",
+   "text": "იპოვეთ წყვილი!",
+   "translit": "Ipovet tsqvili!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "ka",
+   "text": "მზად ხართ?",
+   "translit": "Mzad khart?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "ka",
+   "text": "კიდევ ერთხელ!",
+   "translit": "Kidev ertkhel!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "ka",
+   "text": "გამოგვივიდა!",
+   "translit": "Gamogvivida!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "ka",
+   "text": "ვეგეტარიანელი ვარ",
+   "translit": "Vegetarianeli var",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "ka",
+   "text": "{X}-ზე ალერგია მაქვს",
+   "translit": "{X}-ze alergia makvs",
+   "checked": false,
+   "note": "The ending -ზე replaces the final -ი of the word: თხილი -> თხილზე (nuts), რძე -> რძეზე (milk). In normal writing it is attached without a hyphen."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "ka",
+   "text": "ხორციანია?",
+   "translit": "Khortsiania?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "ka",
+   "text": "ძალიან გემრიელია!",
+   "translit": "Dzalian gemrielia!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "ka",
+   "text": "წყალი, თუ შეიძლება",
+   "translit": "Tsqali, tu sheidzleba",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "ka",
+   "text": "დავნაყრდი",
+   "translit": "Davnaqrdi",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "ka",
+   "text": "გემრიელად მიირთვით!",
+   "translit": "Gemrielad miirtvit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "ka",
+   "text": "როგორ ხარ?",
+   "translit": "Rogor khar?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "ka",
+   "text": "კარგად, მადლობა",
+   "translit": "Kargad, madloba",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "ka",
+   "text": "დღეს ძალიან კარგი დღე იყო!",
+   "translit": "Dghes dzalian kargi dghe iqo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "ka",
+   "text": "ბევრი რამ ვისწავლე",
+   "translit": "Bevri ram vistsavle",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "ka",
+   "text": "მადლობა ყველაფრისთვის",
+   "translit": "Madloba qvelapristvis",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "ka",
+   "text": "ყველა მომენატრებით",
+   "translit": "Qvela momenatrebit",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "ka",
+   "text": "კავშირში ვიყოთ!",
+   "translit": "Kavshirshi viqot!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "ru",
+   "text": "Твоя очередь!",
+   "translit": "Tvoya ochered!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "ru",
+   "text": "Кто следующий?",
+   "translit": "Kto sleduyushchiy?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "ru",
+   "text": "Встаньте в круг!",
+   "translit": "Vstante v krug!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "ru",
+   "text": "Найдите себе пару!",
+   "translit": "Naydite sebe paru!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "ru",
+   "text": "Готовы?",
+   "translit": "Gotovy?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "ru",
+   "text": "Ещё раз!",
+   "translit": "Yeshchyo raz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "ru",
+   "text": "У нас получилось!",
+   "translit": "U nas poluchilos!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "ru",
+   "text": null,
+   "forms": {
+    "m": "Я вегетарианец",
+    "f": "Я вегетарианка"
+   },
+   "translit": {
+    "m": "Ya vegetarianets",
+    "f": "Ya vegetarianka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "ru",
+   "text": "У меня аллергия на {X}",
+   "translit": "U menya allergiya na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative: на орехи, на молоко."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "ru",
+   "text": "Здесь есть мясо?",
+   "translit": "Zdes yest myaso?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "ru",
+   "text": "Очень вкусно!",
+   "translit": "Ochen vkusno!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "ru",
+   "text": "Воды, пожалуйста",
+   "translit": "Vody, pozhaluysta",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "ru",
+   "text": null,
+   "forms": {
+    "m": "Я сыт",
+    "f": "Я сыта"
+   },
+   "translit": {
+    "m": "Ya syt",
+    "f": "Ya syta"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "ru",
+   "text": "Приятного аппетита!",
+   "translit": "Priyatnogo appetita!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "ru",
+   "text": "Как дела?",
+   "translit": "Kak dela?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "ru",
+   "text": "Хорошо, спасибо",
+   "translit": "Khorosho, spasibo",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "ru",
+   "text": "Сегодня было здорово!",
+   "translit": "Segodnya bylo zdorovo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "ru",
+   "text": null,
+   "forms": {
+    "m": "Я многому научился",
+    "f": "Я многому научилась"
+   },
+   "translit": {
+    "m": "Ya mnogomu nauchilsya",
+    "f": "Ya mnogomu nauchilas"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "ru",
+   "text": "Спасибо за всё",
+   "translit": "Spasibo za vsyo",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "ru",
+   "text": "Я буду скучать по вам всем",
+   "translit": "Ya budu skuchat po vam vsem",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "ru",
+   "text": "Будем на связи!",
+   "translit": "Budem na svyazi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "hy",
+   "text": "Քո հե՛րթն է",
+   "translit": "Ko hertn e!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "hy",
+   "text": "Ո՞վ է հաջորդը",
+   "translit": "Ov e hajordə?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "hy",
+   "text": "Շրջան կազմե՛ք",
+   "translit": "Shrjan kazmek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "hy",
+   "text": "Զուգընկեր գտե՛ք",
+   "translit": "Zugənker gtek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "hy",
+   "text": "Պատրա՞ստ եք",
+   "translit": "Patrast yek?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "hy",
+   "text": "Մեկ անգա՛մ էլ",
+   "translit": "Mek angam el!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "hy",
+   "text": "Կարողացա՛նք",
+   "translit": "Karoghatsank!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "hy",
+   "text": "Բուսակեր եմ",
+   "translit": "Busaker yem",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "hy",
+   "text": "{X}-ից ալերգիա ունեմ",
+   "translit": "{X}-its alergia unem",
+   "checked": false,
+   "note": "Ablative -ից: Կաթից (milk), Ընկույզից (nuts); after a vowel it becomes -յից. With Armenian-script words it is attached without a hyphen."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "hy",
+   "text": "Մեջը միս կա՞",
+   "translit": "Mejə mis ka?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "hy",
+   "text": "Շա՛տ համեղ է",
+   "translit": "Shat hamegh e!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "hy",
+   "text": "Ջուր, խնդրում եմ",
+   "translit": "Jur, khndrum yem",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "hy",
+   "text": "Կշտացա",
+   "translit": "Kshtatsa",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "hy",
+   "text": "Բարի ախորժա՛կ",
+   "translit": "Bari akhorzhak!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "hy",
+   "text": "Ո՞նց ես",
+   "translit": "Vonts yes?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "hy",
+   "text": "Լավ եմ, շնորհակալություն",
+   "translit": "Lav yem, shnorhakalutyun",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "hy",
+   "text": "Այսօր հրաշալի՛ էր",
+   "translit": "Aysor hrashali er!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "hy",
+   "text": "Շատ բան սովորեցի",
+   "translit": "Shat ban sovoretsi",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "hy",
+   "text": "Շնորհակալություն ամեն ինչի համար",
+   "translit": "Shnorhakalutyun amen inchi hamar",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "hy",
+   "text": "Բոլորիդ կկարոտեմ",
+   "translit": "Bolorid kkarotem",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "hy",
+   "text": "Կապի մեջ մնա՛նք",
+   "translit": "Kapi mej mnank!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "az",
+   "text": "Növbə səndədir!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "az",
+   "text": "Növbəti kimdir?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "az",
+   "text": "Dairə şəklində durun!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "az",
+   "text": "Özünüzə cüt tapın!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "az",
+   "text": "Hazırsınız?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "az",
+   "text": "Bir daha!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "az",
+   "text": "Bacardıq!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "az",
+   "text": "Mən vegetarianam",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "az",
+   "text": "Mənim {X}-a allergiyam var",
+   "checked": false,
+   "note": "The dative ending follows vowel harmony: -a after back vowels (fındığa, nuts), -ə after front vowels (südə, milk), -ya/-yə after a vowel. In normal writing it is attached without a hyphen."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "az",
+   "text": "İçində ət var?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "az",
+   "text": "Çox dadlıdır!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "az",
+   "text": "Su, zəhmət olmasa",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "az",
+   "text": "Doydum",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "az",
+   "text": "Nuş olsun!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "az",
+   "text": "Necəsən?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "az",
+   "text": "Yaxşıyam, sağ ol",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "az",
+   "text": "Bu gün əla keçdi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "az",
+   "text": "Çox şey öyrəndim",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "az",
+   "text": "Hər şey üçün sağ olun",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "az",
+   "text": "Hamınız üçün darıxacağam",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "az",
+   "text": "Əlaqə saxlayaq!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "be",
+   "text": "Твая чарга!",
+   "translit": "Tvaya charha!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "be",
+   "text": "Хто наступны?",
+   "translit": "Khto nastupny?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "be",
+   "text": "Станьце ў кола!",
+   "translit": "Stantsie w kola!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "be",
+   "text": "Знайдзіце сабе пару!",
+   "translit": "Znaydzitsie sabie paru!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "be",
+   "text": "Гатовыя?",
+   "translit": "Hatovyya?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "be",
+   "text": "Яшчэ раз!",
+   "translit": "Yashche raz!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "be",
+   "text": "У нас атрымалася!",
+   "translit": "U nas atrymalasia!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "be",
+   "text": null,
+   "forms": {
+    "m": "Я вегетарыянец",
+    "f": "Я вегетарыянка"
+   },
+   "translit": {
+    "m": "Ya viehietaryyaniets",
+    "f": "Ya viehietaryyanka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "be",
+   "text": "У мяне алергія на {X}",
+   "translit": "U mianie alierhiya na {X}",
+   "checked": false,
+   "note": "{X} takes the accusative: на арэхі, на малако."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "be",
+   "text": "Тут ёсць мяса?",
+   "translit": "Tut yosts miasa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "be",
+   "text": "Вельмі смачна!",
+   "translit": "Vielmi smachna!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "be",
+   "text": "Вады, калі ласка",
+   "translit": "Vady, kali laska",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "be",
+   "text": null,
+   "forms": {
+    "m": "Я наеўся",
+    "f": "Я наелася"
+   },
+   "translit": {
+    "m": "Ya nayewsia",
+    "f": "Ya nayelasia"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "be",
+   "text": "Смачна есці!",
+   "translit": "Smachna yestsi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "be",
+   "text": "Як справы?",
+   "translit": "Yak spravy?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "be",
+   "text": "Добра, дзякуй",
+   "translit": "Dobra, dziakuy",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "be",
+   "text": "Сёння было класна!",
+   "translit": "Sionnia bylo klasna!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "be",
+   "text": null,
+   "forms": {
+    "m": "Я шмат чаму навучыўся",
+    "f": "Я шмат чаму навучылася"
+   },
+   "translit": {
+    "m": "Ya shmat chamu navuchywsia",
+    "f": "Ya shmat chamu navuchylasia"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "be",
+   "text": "Дзякуй за ўсё",
+   "translit": "Dziakuy za wsio",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "be",
+   "text": "Я буду сумаваць па вас усіх",
+   "translit": "Ya budu sumavats pa vas usikh",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "be",
+   "text": "Будзем на сувязі!",
+   "translit": "Budziem na suviazi!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "bs",
+   "text": "Ti si na redu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "bs",
+   "text": "Ko je sljedeći?",
+   "checked": false,
+   "note": "Differs: sr Ko je sledeći?, bs Ko je sljedeći?, hr Tko je sljedeći?"
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "bs",
+   "text": "Napravite krug!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "bs",
+   "text": "Podijelite se u parove!",
+   "checked": false,
+   "note": "Ekavian sr Podelite, ijekavian bs/hr Podijelite"
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "bs",
+   "text": "Spremni?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "bs",
+   "text": "Još jednom!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "bs",
+   "text": "Uspjeli smo!",
+   "checked": false,
+   "note": "Ekavian sr Uspeli, ijekavian bs/hr Uspjeli"
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "bs",
+   "text": null,
+   "forms": {
+    "m": "Ja sam vegetarijanac",
+    "f": "Ja sam vegetarijanka"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "bs",
+   "text": null,
+   "forms": {
+    "m": "Alergičan sam na {X}",
+    "f": "Alergična sam na {X}"
+   },
+   "checked": false,
+   "note": "{X} takes the accusative: na orašaste plodove, na mlijeko"
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "bs",
+   "text": "Ima li mesa u ovome?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "bs",
+   "text": "Baš je fino!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "bs",
+   "text": "Vodu, molim te",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "bs",
+   "text": null,
+   "forms": {
+    "m": "Sit sam",
+    "f": "Sita sam"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "bs",
+   "text": "Dobar tek!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "bs",
+   "text": "Kako si?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "bs",
+   "text": "Dobro sam, hvala",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "bs",
+   "text": "Danas je bilo super!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "bs",
+   "text": null,
+   "forms": {
+    "m": "Mnogo sam naučio",
+    "f": "Mnogo sam naučila"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "bs",
+   "text": "Hvala na svemu",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "bs",
+   "text": "Svi ćete mi nedostajati",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "bs",
+   "text": "Ostanimo u kontaktu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "ca",
+   "text": "Et toca!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "ca",
+   "text": "A qui li toca?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "ca",
+   "text": "Feu una rotllana!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "ca",
+   "text": "Busqueu parella!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "ca",
+   "text": "A punt?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "ca",
+   "text": "Un altre cop!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "ca",
+   "text": "Ho hem aconseguit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "ca",
+   "text": null,
+   "forms": {
+    "m": "Soc vegetarià",
+    "f": "Soc vegetariana"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "ca",
+   "text": null,
+   "forms": {
+    "m": "Soc al·lèrgic a {X}",
+    "f": "Soc al·lèrgica a {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "ca",
+   "text": "Porta carn?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "ca",
+   "text": "Està boníssim!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "ca",
+   "text": "Aigua, si us plau",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "ca",
+   "text": null,
+   "forms": {
+    "m": "Estic tip",
+    "f": "Estic tipa"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "ca",
+   "text": "Bon profit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "ca",
+   "text": "Com estàs?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "ca",
+   "text": "Bé, gràcies",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "ca",
+   "text": "Avui ha estat genial!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "ca",
+   "text": "He après molt",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "ca",
+   "text": "Gràcies per tot",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "ca",
+   "text": "Us trobaré a faltar a tots",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "ca",
+   "text": "Seguim en contacte!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "gl",
+   "text": "Tócache!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "gl",
+   "text": "A quen lle toca?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "gl",
+   "text": "Facede un círculo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "gl",
+   "text": "Buscade parella!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "gl",
+   "text": "Listos?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "gl",
+   "text": "Outra vez!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "gl",
+   "text": "Conseguímolo!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "gl",
+   "text": null,
+   "forms": {
+    "m": "Son vexetariano",
+    "f": "Son vexetariana"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "gl",
+   "text": null,
+   "forms": {
+    "m": "Son alérxico a {X}",
+    "f": "Son alérxica a {X}"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "gl",
+   "text": "Leva carne?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "gl",
+   "text": "Está moi rico!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "gl",
+   "text": "Auga, por favor",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "gl",
+   "text": null,
+   "forms": {
+    "m": "Estou cheo",
+    "f": "Estou chea"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "gl",
+   "text": "Bo proveito!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "gl",
+   "text": "Como estás?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "gl",
+   "text": "Ben, grazas",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "gl",
+   "text": "Hoxe foi xenial!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "gl",
+   "text": "Aprendín moito",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "gl",
+   "text": "Grazas por todo",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "gl",
+   "text": "Vou botarvos de menos a todos",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "gl",
+   "text": "Seguimos en contacto!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "cy",
+   "text": "Dy dro di!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "cy",
+   "text": "Pwy sy nesa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "cy",
+   "text": "Gwnewch gylch!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "cy",
+   "text": "Ffeindiwch bartner!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "cy",
+   "text": "Barod?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "cy",
+   "text": "Unwaith eto!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "cy",
+   "text": "Llwyddon ni!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "cy",
+   "text": null,
+   "forms": {
+    "m": "Dw i'n llysieuwr",
+    "f": "Dw i'n llysieuwraig"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "cy",
+   "text": "Mae gen i alergedd i {X}",
+   "checked": false,
+   "note": "\"i\" causes soft mutation: i gnau (cnau, nuts), i laeth (llaeth, milk). In the south also \"Mae alergedd 'da fi i {X}\"."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "cy",
+   "text": "Oes cig ynddo fe?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "cy",
+   "text": "Mae'n flasus iawn!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "cy",
+   "text": "Dŵr, os gweli di'n dda",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "cy",
+   "text": "Dw i'n llawn",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "cy",
+   "text": "Mwynhewch eich bwyd!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "cy",
+   "text": "Sut wyt ti?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "cy",
+   "text": "Dw i'n iawn, diolch",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "cy",
+   "text": "Roedd heddiw'n wych!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "cy",
+   "text": "Dw i wedi dysgu llawer",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "cy",
+   "text": "Diolch am bopeth",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "cy",
+   "text": "Bydda i'n gweld eisiau chi i gyd",
+   "checked": false,
+   "note": "Southern form; in the north \"Bydda i'n colli chi i gyd\"."
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "cy",
+   "text": "Dewch i ni gadw mewn cysylltiad!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "lb",
+   "text": "Du bass drun!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "lb",
+   "text": "Wien ass als Nächsten drun?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "lb",
+   "text": "Maacht e Krees!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "lb",
+   "text": "Sicht iech e Partner!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "lb",
+   "text": "Sidd dir prett?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "lb",
+   "text": "Nach eng Kéier!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "lb",
+   "text": "Mir hunn et gepackt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "lb",
+   "text": null,
+   "forms": {
+    "m": "Ech si Vegetarier",
+    "f": "Ech si Vegetarierin"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "lb",
+   "text": "Ech sinn allergesch géint {X}",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "lb",
+   "text": "Ass do Fleesch dran?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "lb",
+   "text": "Dat ass lecker!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "lb",
+   "text": "Waasser, wann ech gelift",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "lb",
+   "text": "Ech si sat",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "lb",
+   "text": "Gudden Appetit!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "lb",
+   "text": "Wéi geet et dir?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "lb",
+   "text": "Gutt, merci",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "lb",
+   "text": "Haut war et flott!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "lb",
+   "text": "Ech hu vill geléiert",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "lb",
+   "text": "Merci fir alles",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "lb",
+   "text": "Ech wäert iech all vermëssen",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "lb",
+   "text": "Loosst eis a Kontakt bleiwen!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "sq",
+   "text": "Radha jote!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "sq",
+   "text": "Kush është i radhës?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "sq",
+   "text": "Bëni një rreth!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "sq",
+   "text": "Gjeni një partner!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "sq",
+   "text": "Jeni gati?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "sq",
+   "text": "Edhe një herë!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "sq",
+   "text": "Ia dolëm!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "sq",
+   "text": null,
+   "forms": {
+    "m": "Jam vegjetarian",
+    "f": "Jam vegjetariane"
+   },
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "sq",
+   "text": null,
+   "forms": {
+    "m": "Jam alergjik ndaj {X}",
+    "f": "Jam alergjike ndaj {X}"
+   },
+   "checked": false,
+   "note": "{X} after ndaj takes the ablative: ndaj qumështit (milk), ndaj arrave (nuts)"
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "sq",
+   "text": "A ka mish brenda?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "sq",
+   "text": "Shumë e shijshme!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "sq",
+   "text": "Ujë, të lutem",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "sq",
+   "text": "U ngopa",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "sq",
+   "text": "Ju bëftë mirë!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "sq",
+   "text": "Si je?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "sq",
+   "text": "Mirë, faleminderit",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "sq",
+   "text": "Sot ishte shumë bukur!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "sq",
+   "text": "Mësova shumë",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "sq",
+   "text": "Faleminderit për gjithçka",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "sq",
+   "text": "Do të më mungoni të gjithë",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "sq",
+   "text": "Le të mbajmë kontakt!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 46,
+   "id": "game.yourturn",
+   "group": "games",
+   "lang": "eu",
+   "text": "Zure txanda!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 47,
+   "id": "game.next",
+   "group": "games",
+   "lang": "eu",
+   "text": "Nor da hurrengoa?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 48,
+   "id": "game.circle",
+   "group": "games",
+   "lang": "eu",
+   "text": "Egin zirkulu bat!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 49,
+   "id": "game.partner",
+   "group": "games",
+   "lang": "eu",
+   "text": "Bilatu bikote bat!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 50,
+   "id": "game.ready",
+   "group": "games",
+   "lang": "eu",
+   "text": "Prest zaudete?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 51,
+   "id": "game.again",
+   "group": "games",
+   "lang": "eu",
+   "text": "Beste behin!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 52,
+   "id": "game.wedidit",
+   "group": "games",
+   "lang": "eu",
+   "text": "Lortu dugu!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 53,
+   "id": "food.veggie",
+   "group": "food",
+   "lang": "eu",
+   "text": "Begetarianoa naiz",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 54,
+   "id": "food.allergic",
+   "group": "food",
+   "lang": "eu",
+   "text": "{X}-arekiko alergia dut",
+   "checked": false,
+   "note": "The ending is attached to the food: -arekiko for one thing (esnearekiko, milk), -ekiko for plurals (intxaurrekiko, nuts). In normal writing it is attached without the hyphen."
+  },
+  {
+   "n": 55,
+   "id": "food.meat",
+   "group": "food",
+   "lang": "eu",
+   "text": "Haragirik badu?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 56,
+   "id": "food.tasty",
+   "group": "food",
+   "lang": "eu",
+   "text": "Oso goxoa dago!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 57,
+   "id": "food.water",
+   "group": "food",
+   "lang": "eu",
+   "text": "Ura, mesedez",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 58,
+   "id": "food.full",
+   "group": "food",
+   "lang": "eu",
+   "text": "Beteta nago",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 59,
+   "id": "food.enjoy",
+   "group": "food",
+   "lang": "eu",
+   "text": "On egin!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 60,
+   "id": "mood.howareyou",
+   "group": "mood",
+   "lang": "eu",
+   "text": "Zer moduz?",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 61,
+   "id": "mood.fine",
+   "group": "mood",
+   "lang": "eu",
+   "text": "Ondo, eskerrik asko",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 62,
+   "id": "bye.great",
+   "group": "bye",
+   "lang": "eu",
+   "text": "Gaur egun zoragarria izan da!",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 63,
+   "id": "bye.learned",
+   "group": "bye",
+   "lang": "eu",
+   "text": "Asko ikasi dut",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 64,
+   "id": "bye.thanks",
+   "group": "bye",
+   "lang": "eu",
+   "text": "Eskerrik asko denagatik",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 65,
+   "id": "bye.miss",
+   "group": "bye",
+   "lang": "eu",
+   "text": "Zuek guztiak faltan botako zaituztet",
+   "checked": false,
+   "note": ""
+  },
+  {
+   "n": 66,
+   "id": "bye.touch",
+   "group": "bye",
+   "lang": "eu",
+   "text": "Jarrai dezagun harremanetan!",
    "checked": false,
    "note": ""
   }

@@ -162,6 +162,12 @@ window.LSVoice = (function () {
     speak(options.text, options.tts);
   }
 
+  /** Projector: say one phrase in several languages, one after another (speech queue). */
+  function queue(items) {
+    stop();
+    items.forEach(function (item) { speak(item.text, item.tts); });
+  }
+
   /** For the report: every voice the browser offers, local or network. */
   function list() {
     return voices.map(function (voice) {
@@ -169,5 +175,5 @@ window.LSVoice = (function () {
     });
   }
 
-  return { init: init, onChange: onChange, canPlay: canPlay, play: play, stop: stop, list: list, speakable: speakable };
+  return { init: init, onChange: onChange, canPlay: canPlay, play: play, queue: queue, stop: stop, list: list, speakable: speakable };
 })();

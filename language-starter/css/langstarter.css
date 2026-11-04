@@ -18,12 +18,18 @@
     --g-mood: var(--peach);
     --g-help: var(--lav);
     --g-numbers: var(--pink);
+    --g-games: var(--blue);
+    --g-food: var(--peach);
+    --g-bye: var(--lav);
     --g-intro-line: light-dark(#9C3F58, var(--pink));
     --g-polite-line: light-dark(#3F6B31, var(--pist));
     --g-project-line: light-dark(#2F6A9E, var(--blue));
     --g-mood-line: light-dark(#B4490C, var(--peach));
     --g-help-line: light-dark(#5A4A9C, var(--lav));
     --g-numbers-line: light-dark(#9C3F58, var(--pink));
+    --g-games-line: light-dark(#2F6A9E, var(--blue));
+    --g-food-line: light-dark(#B4490C, var(--peach));
+    --g-bye-line: light-dark(#5A4A9C, var(--lav));
 
     --font-script: "Segoe UI", "Noto Sans", "Noto Sans Georgian", "Noto Sans Armenian", Sylfaen, system-ui, sans-serif;
   }
@@ -468,6 +474,9 @@
   .chip--mood, .phrase--mood, .sheet__group--mood { --chip-bg: var(--g-mood); --chip-line: var(--g-mood-line); }
   .chip--help, .phrase--help, .sheet__group--help { --chip-bg: var(--g-help); --chip-line: var(--g-help-line); }
   .chip--numbers, .phrase--numbers, .sheet__group--numbers { --chip-bg: var(--g-numbers); --chip-line: var(--g-numbers-line); }
+  .chip--games, .phrase--games, .sheet__group--games { --chip-bg: var(--g-games); --chip-line: var(--g-games-line); }
+  .chip--food, .phrase--food, .sheet__group--food { --chip-bg: var(--g-food); --chip-line: var(--g-food-line); }
+  .chip--bye, .phrase--bye, .sheet__group--bye { --chip-bg: var(--g-bye); --chip-line: var(--g-bye-line); }
 
   .cards {
     display: grid;
@@ -1954,6 +1963,462 @@ html.is-review {
   }
 }
 
+/* ---------- v2: group languages, poster, projector (4.11.2026) ---------- */
+
+@layer page {
+  .group-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 var(--space-3);
+    margin-bottom: var(--space-4);
+    padding: var(--space-2) var(--space-3);
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--lav);
+    border-radius: var(--radius-sm);
+  }
+
+  .group-bar a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--ink);
+  }
+
+  .group {
+    margin-top: var(--space-7);
+  }
+
+  .group-card {
+    display: grid;
+    gap: var(--space-3);
+    max-width: 52rem;
+    margin-inline: auto;
+    padding: clamp(1.25rem, 0.75rem + 2.5vw, 2rem);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .group-pick summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--radius-pill);
+  }
+
+  .group-pick__set {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .group-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: var(--space-2);
+    padding: 0;
+    list-style: none;
+  }
+
+  .gpick {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0 var(--space-2);
+    min-height: 44px;
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .gpick input {
+    grid-row: 1 / span 2;
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--c-text);
+  }
+
+  .gpick:has(input:checked) {
+    color: var(--ink);
+    background: var(--pist);
+    border-color: var(--ink);
+  }
+
+  .gpick:has(input:disabled) {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .gpick__endonym {
+    font-family: var(--font-script);
+    font-weight: 700;
+  }
+
+  .gpick__name {
+    grid-column: 2;
+    font-size: var(--step--1);
+  }
+
+  .group-count,
+  .group-msg {
+    font-size: var(--step--1);
+    color: var(--c-text-muted);
+    overflow-wrap: anywhere;
+  }
+
+  .group-tools {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .group-tools[hidden] {
+    display: none;
+  }
+
+  .group-tools__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-3);
+  }
+
+  div.group-tools__row {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .group-guide a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 700;
+    color: var(--c-text);
+  }
+
+  .pick__voice {
+    font-size: 0.75rem;
+    color: var(--c-text-muted);
+  }
+
+  .pick__voice.has-voice {
+    font-weight: 700;
+    color: var(--c-text);
+  }
+
+  .pick__badge.is-partial {
+    color: var(--ink);
+    background: var(--peach);
+  }
+
+  .rv-checked {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--c-ok);
+  }
+
+  .sheet-wrap {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  /* Posters only appear when printed. */
+  .posters {
+    display: none;
+  }
+
+  /* Projector: one phrase in all group languages, over the whole window. */
+  .has-projector body {
+    overflow: hidden;
+  }
+
+  .proj {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    gap: var(--space-4);
+    padding: clamp(1rem, 3vw, 3rem);
+    color: var(--c-text);
+    background: var(--c-bg);
+    overflow: auto;
+  }
+
+  .proj:focus {
+    outline: none;
+  }
+
+  .proj__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .proj__meta {
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+    font-weight: 700;
+    color: var(--c-text-muted);
+  }
+
+  .proj__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    align-content: center;
+    gap: clamp(0.75rem, 2vw, 2rem);
+    padding: 0;
+    list-style: none;
+  }
+
+  .pj {
+    padding: clamp(0.75rem, 1.5vw, 1.5rem);
+    color: var(--ink);
+    background: var(--pink);
+    border-radius: var(--radius-lg);
+  }
+
+  .pj:nth-child(5n + 2) { background: var(--blue); }
+  .pj:nth-child(5n + 3) { background: var(--pist); }
+  .pj:nth-child(5n + 4) { background: var(--lav); }
+  .pj:nth-child(5n + 5) { background: var(--peach); }
+
+  .pj__lang {
+    display: block;
+    font-size: clamp(0.9rem, 0.7rem + 0.6vw, 1.2rem);
+    font-weight: 700;
+    color: #4A4753;
+  }
+
+  .pj__text {
+    font-family: var(--font-script);
+    font-size: clamp(1.8rem, 1rem + 3.2vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .proj__list[data-count="7"] .pj__text,
+  .proj__list[data-count="8"] .pj__text,
+  .proj__list[data-count="9"] .pj__text,
+  .proj__list[data-count="10"] .pj__text {
+    font-size: clamp(1.4rem, 0.8rem + 2.2vw, 3rem);
+  }
+
+  .pj__translit {
+    margin-top: 0.25rem;
+    font-size: clamp(0.9rem, 0.7rem + 0.6vw, 1.3rem);
+    color: #4A4753;
+  }
+
+  .proj__bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  .proj__bar .btn {
+    min-width: 8rem;
+  }
+
+  .proj__keys {
+    font-size: var(--step--1);
+    text-align: center;
+    color: var(--c-text-muted);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pj {
+      animation: pj-in 0.3s var(--ease) both;
+    }
+
+    @keyframes pj-in {
+      from { opacity: 0; transform: translateY(8px); }
+    }
+  }
+}
+
+/* Poster (a): one phrase large, all group languages, QR code. Exactly one A4 page. */
+.poster-a {
+  display: flex;
+  flex-direction: column;
+  gap: 6mm;
+  width: 210mm;
+  height: 296mm;
+  padding: 14mm;
+  overflow: hidden;
+  color: #1c1b19;
+  background: #fff;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.poster-a__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 6mm;
+  font-family: var(--font-body);
+  font-size: 13pt;
+}
+
+.poster-a__brand {
+  font-weight: 800;
+}
+
+.poster-a__list {
+  display: grid;
+  flex: 1;
+  align-content: center;
+  gap: 5mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.poster-a__list[data-count="2"],
+.poster-a__list[data-count="3"],
+.poster-a__list[data-count="4"] {
+  gap: 9mm;
+}
+
+.pa {
+  padding: 3mm 5mm;
+  border-left: 3mm solid #F4C9D3;
+  break-inside: avoid;
+}
+
+.pa:nth-child(5n + 2) { border-color: #BFD8EE; }
+.pa:nth-child(5n + 3) { border-color: #CFE3C2; }
+.pa:nth-child(5n + 4) { border-color: #DCD3F0; }
+.pa:nth-child(5n + 5) { border-color: #F7DCC8; }
+
+.pa__lang {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11pt;
+  font-weight: 700;
+  color: #4A4753;
+}
+
+.pa__text {
+  font-family: var(--font-script);
+  font-size: 34pt;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.poster-a__list[data-count="5"] .pa__text,
+.poster-a__list[data-count="6"] .pa__text {
+  font-size: 28pt;
+}
+
+.poster-a__list[data-count="7"] .pa__text,
+.poster-a__list[data-count="8"] .pa__text {
+  font-size: 22pt;
+}
+
+.poster-a__list[data-count="9"] .pa__text,
+.poster-a__list[data-count="10"] .pa__text {
+  font-size: 18pt;
+}
+
+.poster-a__list[data-count="9"] .pa,
+.poster-a__list[data-count="10"] .pa {
+  padding-block: 1.5mm;
+}
+
+.pa__translit {
+  font-size: 11pt;
+  color: #4A4753;
+}
+
+.poster-a__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6mm;
+  font-family: var(--font-body);
+  font-size: 10pt;
+}
+
+.poster-a__qr {
+  display: grid;
+  justify-items: center;
+  gap: 1mm;
+  margin: 0;
+  font-size: 9pt;
+}
+
+.poster-a__qr svg {
+  width: 32mm;
+  height: 32mm;
+}
+
+/* Table (b): all phrases x group languages, readable type, header repeats on each page. */
+.poster-b {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-script);
+  font-size: 10pt;
+  color: #1c1b19;
+}
+
+.poster-b[data-count="7"],
+.poster-b[data-count="8"],
+.poster-b[data-count="9"],
+.poster-b[data-count="10"] {
+  font-size: 8.5pt;
+}
+
+.poster-b caption {
+  margin-bottom: 3mm;
+  font-family: var(--font-body);
+  font-size: 12pt;
+  font-weight: 800;
+  text-align: left;
+}
+
+.poster-b th,
+.poster-b td {
+  padding: 1.5mm 2mm;
+  text-align: left;
+  vertical-align: top;
+  border: 0.3mm solid #c9c4cc;
+}
+
+.poster-b thead {
+  display: table-header-group;
+}
+
+.poster-b thead th {
+  background: #F4F1FB;
+}
+
+.poster-b tr {
+  break-inside: avoid;
+}
+
+.poster-b__topic th {
+  font-family: var(--font-body);
+  background: #FDF0F3;
+}
+
+.poster-b__translit {
+  display: block;
+  font-size: 0.85em;
+  color: #4A4753;
+}
+
 /* ---------- Print ---------- */
 
 @media print {
@@ -1973,19 +2438,46 @@ html.is-review {
     color: #000;
   }
 
-  /* App: only the Sprachkarte, exactly one A4 page */
-  html:not(.is-review) body > *:not(main),
-  html:not(.is-review) main > *:not(#pair),
-  html:not(.is-review) #pair > *:not(#card),
-  html:not(.is-review) #card > *:not(.sheet-wrap) {
+  /* App: only the Sprachkarte, two A4 pages (66 phrases) */
+  html:not(.is-review):not([data-print="a"]):not([data-print="b"]) body > *:not(main),
+  html:not(.is-review):not([data-print="a"]):not([data-print="b"]) main > *:not(#pair),
+  html:not(.is-review):not([data-print="a"]):not([data-print="b"]) #pair > *:not(#card),
+  html:not(.is-review):not([data-print="a"]):not([data-print="b"]) #card > *:not(.sheet-wrap) {
     display: none;
   }
 
-  html:not(.is-review) #pair,
-  html:not(.is-review) #card {
+  html:not(.is-review):not([data-print="a"]):not([data-print="b"]) #pair,
+  html:not(.is-review):not([data-print="a"]):not([data-print="b"]) #card {
     display: block;
     width: auto;
     margin: 0;
+  }
+
+  .sheet-wrap {
+    display: block;
+  }
+
+  .sheet:not(:last-child) {
+    break-after: page;
+  }
+
+  /* Group poster (a): one phrase, one A4 page. Table (b): as many pages as needed. */
+  html[data-print="a"] body > *:not(main),
+  html[data-print="a"] main > *:not(#posters),
+  html[data-print="a"] #posters > *:not(#poster-a),
+  html[data-print="b"] body > *:not(main),
+  html[data-print="b"] main > *:not(#posters),
+  html[data-print="b"] #posters > *:not(#poster-b) {
+    display: none;
+  }
+
+  html[data-print="a"] #posters,
+  html[data-print="b"] #posters {
+    display: block;
+  }
+
+  .poster-b-wrap {
+    padding: 10mm;
   }
 
   .sheet-wrap {

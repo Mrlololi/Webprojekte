@@ -14,7 +14,7 @@
  *
  * If you add a file the app needs, add it to FILES as well.
  */
-var CACHE = 'langstarter-v3';
+var CACHE = 'langstarter-v4';
 var TIMEOUT_MS = 3000;
 var FILES = [
   './',
@@ -29,6 +29,8 @@ var FILES = [
   './data/en.json',
   './audio/manifest.json',
   './manifest.webmanifest',
+  './trainer/',
+  './trainer/trainer.css',
   '../assets/css/base.css',
   '../assets/js/theme.js',
   '../assets/fonts/bricolage-grotesque-latin.woff2',

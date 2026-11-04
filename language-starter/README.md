@@ -9,9 +9,14 @@ Live: <https://mrlololi.com/Webprojekte/language-starter/>
 - **Two languages:** "My language" (starts with the browser language) and "I am learning" (starts empty). A swap button switches them. The address keeps the pair, for example `?from=de&to=ka&ui=de`, so a group leader can send a direct link. The pair is also remembered in `localStorage`.
 - **Phrase cards per topic:** the phrase in the learned language, big and with its `lang` attribute, the Latin spelling for non-Latin scripts, the translation, both forms where the speaker's gender changes the words (labelled m / w in German, m / f in English), a Listen button and a "Report a mistake" e-mail link (`mailto:`, nothing is sent from the site).
 - **Quiz** per topic or for all: four answers from the same topic, keys 1-4 and Enter, both directions, a score, a result screen and "repeat mistakes". Progress is saved per language pair.
-- **Phrase card to print** (Sprachkarte): all 45 phrases on exactly one A4 page in two columns, with a QR code to the language pair. The QR code is made in the browser (no outside service). The card is also shown on the page as a preview.
-- **Listen:** a recorded mp3 if one exists, otherwise the browser's own speech voice. If there is neither, the button is not shown.
-- **Draft banner** for every language that no native speaker has checked yet.
+- **66 phrases in 9 topics** (since v2, 4.11.2026): getting to know each other, being polite, in the project, how I feel, help, numbers, games & energizers, food, saying goodbye. Numbers 1-45 never changed; 46-66 are new.
+- **Phrase card to print** (Sprachkarte): all 66 phrases on exactly two A4 pages in two columns, with a QR code to the language pair. The QR code is made in the browser (no outside service). The card is also shown on the page as a preview.
+- **Listen:** a recorded mp3 if one exists, otherwise the browser's own speech voice. If there is neither, a short note says so. In the language pickers, languages with a voice on this device come first («mit Stimme» / «with voice»), the others follow («ohne Ton auf diesem Gerät»); the list is sorted again when the browser's voices change.
+- **Group languages** for group leaders: `?group=de,fi,sk,es,bg` (2-10 known codes, others are ignored) shows the app with exactly these languages. On the page: «Sprachen der Gruppe wählen» (checkboxes) and «Link für die Gruppe kopieren». The last group is remembered in `localStorage`.
+- **Group poster** (print only): (a) one phrase large in all group languages on one A4 page, with a QR code to the group link; (b) a table of all phrases x group languages on as many pages as needed. Both are print CSS, no PDF library.
+- **Projector mode** («Beamer-Modus»): one phrase in all group languages, full screen, large type, Latin spelling small below. Buttons Weiter / Zufall / Anhören, keys arrows and space, Esc to leave. Calm with reduced motion.
+- **Trainer guide** at `trainer/` (German and English): three games for groups (Hallo-Kreis, Sprach-Speed-Dating, Quiz-Duell) and the dining-room tip.
+- **Draft banner** for every language that no native speaker has checked yet. A language checked only in part (for example 1-45) says which phrases are still open.
 - **Review mode** for native speakers, built for one link in a group chat on a phone (see below). `noindex`.
 - **Works offline** after the first visit, and can be added to the home screen. On a weak signal the page does not hang: after 3 seconds it shows the saved copy.
 - **Small downloads:** the app loads a small index and only the languages it shows (a few KB each), not all 42.
@@ -41,7 +46,7 @@ language-starter/
 
 ## Data format (`data/phrases.json`)
 
-One flat entry per phrase and language (45 x 42 = 1890), so the file can be exported to a table for reviewers.
+One flat entry per phrase and language (66 x 42 = 2772), so the file can be exported to a table for reviewers.
 
 ```json
 { "n": 26, "id": "mood.tired", "group": "mood", "lang": "ru", "text": null,
@@ -52,7 +57,7 @@ One flat entry per phrase and language (45 x 42 = 1890), so the file can be expo
 
 | Field | Meaning |
 |---|---|
-| `n` | Fixed phrase number 1-45, the same in every language. Reviewers write "12: ...". It never changes; new phrases get 46, 47 and so on. |
+| `n` | Fixed phrase number 1-66, the same in every language. Reviewers write "12: ...". It never changes; new phrases get 67, 68 and so on. |
 | `id`, `group` | Phrase id (`intro.hello`, `num.7`) and topic (`intro`, `polite`, `project`, `mood`, `help`, `numbers`). |
 | `text` | The phrase. `null` when there are two forms. |
 | `forms` | `{ "m": ..., "f": ... }` when the speaker's gender changes the words (only on the 6 phrases where the English entry has `"gender": true`). |
@@ -74,12 +79,17 @@ It stops with an error if an entry is missing or empty, then writes `data/index.
 ### Add a language
 
 1. Add it to `languages` with `endonym`, `tts`, `script`, `eu` and `"reviewers": []`.
-2. Add 45 entries (copy the English ones, keep `n`, `id`, `group`), with `"checked": false`. Add `translit` if the script is not Latin, and `forms` where needed.
+2. Add 66 entries (copy the English ones, keep `n`, `id`, `group`), with `"checked": false`. Add `translit` if the script is not Latin, and `forms` where needed.
 3. Run `node tools/build.mjs`.
 
 ### Mark a language as checked
 
-When a native speaker has sent their fixes (the text from the review page, in a group chat or by e-mail), fix the texts, set `"checked": true` on all 45 entries of that language and add the name to `reviewers` if the person agrees. Run `node tools/build.mjs`. The draft banner disappears for that language.
+When a native speaker has sent their fixes (the text from the review page, in a group chat or by e-mail), fix the texts, set `"checked": true` on all 66 entries of that language and add the name to `reviewers` if the person agrees. Run `node tools/build.mjs`. The draft banner disappears for that language.
+
+## Version 2 (4.11.2026)
+
+- Translation fixes from an AI pre-check (3.11.2026, not native speakers): every item marked error or improve was applied; the four marked doubt were left for native speakers. `checked` flags did not change, so all those languages stay «Entwurf».
+- Phrases 46-66 were translated by AI in the same way as 1-45 (informal, peer tone). They are `checked: false` in every language except English, so German, Russian, Ukrainian and Georgian are now «teilweise geprüft» until 46-66 are checked through `?review=`.
 
 ## Review mode
 
@@ -96,7 +106,7 @@ One link for everyone: `https://mrlololi.com/Webprojekte/language-starter/?revie
   All other phrases look correct.
   ```
 
-  It stays honest: phrases after the last one the person marked are listed as «Not checked: 30-45».
+  It stays honest: phrases after the last one the person marked are listed as «Not checked: 30-66».
 - In-app browsers (WhatsApp, Instagram, Facebook) often block the clipboard: then the text appears selected in a read-only box with «Long-press to copy», next to Share and e-mail.
 - Marks and fixes are kept in `localStorage` per language, so nothing is lost when the phone switches apps. Nothing is ever sent automatically.
 - The bar respects the safe area of phones and never covers the field you type in. Confirmations are read out by screen readers (`aria-live`).

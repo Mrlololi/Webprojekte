@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Iva Tsatskrialashvili, Portfolio">
   <meta property="og:title" content="Language Starter - first phrases for international youth exchanges">
-  <meta property="og:description" content="45 first phrases in 42 languages: cards to listen to, a quiz and a phrase card to print. Free for clubs and groups.">
+  <meta property="og:description" content="66 first phrases in 42 languages: cards to listen to, a quiz and a phrase card to print. Free for clubs and groups.">
   <meta property="og:url" content="https://mrlololi.com/Webprojekte/language-starter/">
   <meta property="og:image" content="https://mrlololi.com/Webprojekte/assets/og/og-language-starter.png">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
   <meta property="og:locale:alternate" content="de_AT">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Language Starter - first phrases for international youth exchanges">
-  <meta name="twitter:description" content="45 first phrases in 42 languages: cards, a quiz and a phrase card to print.">
+  <meta name="twitter:description" content="66 first phrases in 42 languages: cards, a quiz and a phrase card to print.">
   <meta name="twitter:image" content="https://mrlololi.com/Webprojekte/assets/og/og-language-starter.png">
   <meta name="twitter:image:alt" content="Language Starter: speech bubbles saying Hallo, Cześć, Hola and გამარჯობა">
 
@@ -103,6 +103,7 @@
 
     <section class="container chooser" id="chooser" aria-labelledby="chooser-title">
       <div class="chooser-card">
+        <p class="group-bar" id="group-bar" hidden><span id="group-bar-text"></span> <a id="group-all" href="?" data-i18n="group.all">Show all 42 languages</a></p>
         <h2 class="chooser__title" id="chooser-title" data-i18n="chooser.title">Pick your languages</h2>
         <p class="status" id="status" role="status" data-i18n="loading">Loading phrases...</p>
         <div class="chooser__row">
@@ -127,6 +128,37 @@
           <h3 class="pick-wrap__title" data-i18n="chooser.pick">Which language do you want to learn?</h3>
           <ul class="pick-grid" id="pick-grid"></ul>
         </div>
+      </div>
+    </section>
+
+    <section class="container group" id="group" aria-labelledby="group-title">
+      <div class="group-card">
+        <h2 id="group-title" data-i18n="group.title">For group leaders</h2>
+        <p class="section-text" data-i18n="group.text">Pick the languages of your group (2 to 10). You get one link for the group chat, a poster to print and the projector mode.</p>
+        <details class="group-pick" id="group-pick">
+          <summary data-i18n="group.pick">Choose your group's languages</summary>
+          <fieldset class="group-pick__set">
+            <legend class="visually-hidden" data-i18n="group.legend">Languages of the group</legend>
+            <ul class="group-list" id="group-list"></ul>
+          </fieldset>
+        </details>
+        <p class="group-count" id="group-count" role="status"></p>
+        <div class="group-tools" id="group-tools" hidden>
+          <p class="group-tools__row">
+            <button type="button" class="btn btn--primary" id="group-copy" data-i18n="group.copy">Copy group link</button>
+            <span class="group-msg" id="group-msg" role="status"></span>
+          </p>
+          <div class="group-tools__row">
+            <label class="field__label" for="poster-phrase" data-i18n="poster.phrase">Phrase for the poster and the projector</label>
+            <select class="field__select" id="poster-phrase"></select>
+          </div>
+          <p class="group-tools__row group-tools__buttons">
+            <button type="button" class="btn btn--outline" id="poster-a-btn" data-i18n="poster.a">Print poster (one phrase)</button>
+            <button type="button" class="btn btn--outline" id="poster-b-btn" data-i18n="poster.b">Print table (all phrases)</button>
+            <button type="button" class="btn btn--outline" id="projector-btn" data-i18n="projector.open">Projector mode</button>
+          </p>
+        </div>
+        <p class="group-guide"><a href="trainer/" id="trainer-link" data-i18n="group.guide">Trainer guide: 3 games with Language Starter</a></p>
       </div>
     </section>
 
@@ -274,6 +306,7 @@
         </p>
         <div class="sheet-wrap" role="region" data-i18n-attr="aria-label:print.preview" aria-label="Preview of the phrase card">
           <article class="sheet" id="sheet"></article>
+          <article class="sheet sheet--2" id="sheet-2"></article>
         </div>
       </section>
     </div>
@@ -334,6 +367,8 @@
           <tr><td>28</td><td lang="en">I'm hungry</td><td lang="de">Ich habe Hunger</td></tr>
           <tr><td>29</td><td lang="en">I like it</td><td lang="de">Das gefällt mir</td></tr>
           <tr><td>30</td><td lang="en">Good night</td><td lang="de">Gute Nacht</td></tr>
+          <tr><td>60</td><td lang="en">How are you?</td><td lang="de">Wie geht's dir?</td></tr>
+          <tr><td>61</td><td lang="en">I'm fine, thanks</td><td lang="de">Gut, danke</td></tr>
         </tbody>
       </table>
       <h3>Help</h3>
@@ -363,14 +398,56 @@
           <tr><td>45</td><td lang="en">ten</td><td lang="de">zehn</td></tr>
         </tbody>
       </table>
+      <h3>Games &amp; energizers</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>46</td><td lang="en">Your turn!</td><td lang="de">Du bist dran!</td></tr>
+          <tr><td>47</td><td lang="en">Who's next?</td><td lang="de">Wer ist als Nächstes dran?</td></tr>
+          <tr><td>48</td><td lang="en">Make a circle!</td><td lang="de">Bildet einen Kreis!</td></tr>
+          <tr><td>49</td><td lang="en">Find a partner!</td><td lang="de">Findet euch zu zweit zusammen!</td></tr>
+          <tr><td>50</td><td lang="en">Ready?</td><td lang="de">Seid ihr bereit?</td></tr>
+          <tr><td>51</td><td lang="en">One more time!</td><td lang="de">Noch einmal!</td></tr>
+          <tr><td>52</td><td lang="en">We did it!</td><td lang="de">Wir haben es geschafft!</td></tr>
+        </tbody>
+      </table>
+      <h3>Food</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>53</td><td lang="en">I'm vegetarian</td><td lang="de">m: Ich bin Vegetarier / f: Ich bin Vegetarierin</td></tr>
+          <tr><td>54</td><td lang="en">I'm allergic to …</td><td lang="de">Ich bin allergisch gegen …</td></tr>
+          <tr><td>55</td><td lang="en">Is there meat in it?</td><td lang="de">Ist da Fleisch drin?</td></tr>
+          <tr><td>56</td><td lang="en">It's delicious!</td><td lang="de">Das ist lecker!</td></tr>
+          <tr><td>57</td><td lang="en">Water, please</td><td lang="de">Wasser, bitte</td></tr>
+          <tr><td>58</td><td lang="en">I'm full</td><td lang="de">Ich bin satt</td></tr>
+          <tr><td>59</td><td lang="en">Enjoy your meal!</td><td lang="de">Guten Appetit!</td></tr>
+        </tbody>
+      </table>
+      <h3>Saying goodbye</h3>
+      <table>
+        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><td>62</td><td lang="en">Today was great!</td><td lang="de">Das war ein toller Tag!</td></tr>
+          <tr><td>63</td><td lang="en">I learned a lot</td><td lang="de">Ich habe viel gelernt</td></tr>
+          <tr><td>64</td><td lang="en">Thank you for everything</td><td lang="de">Danke für alles</td></tr>
+          <tr><td>65</td><td lang="en">I'll miss you all</td><td lang="de">Ich werde euch alle vermissen</td></tr>
+          <tr><td>66</td><td lang="en">Let's stay in touch!</td><td lang="de">Lasst uns in Kontakt bleiben!</td></tr>
+        </tbody>
+      </table>
     </section>
     <!-- static:end -->
+
+    <div class="posters" id="posters">
+      <section class="poster-a-wrap" id="poster-a" aria-label="Poster"></section>
+      <section class="poster-b-wrap" id="poster-b" aria-label="Table"></section>
+    </div>
 
     <section class="review" id="review" hidden></section>
 
     <section class="container about" id="about" aria-labelledby="about-title">
       <h2 id="about-title" data-i18n="about.title">How it works</h2>
-      <p data-i18n="about.p1">Choose your language and the one you want to learn. You get 45 short phrases in 6 topics, a quiz and a phrase card to print.</p>
+      <p data-i18n="about.p1">Choose your language and the one you want to learn. You get 66 short phrases in 9 topics, a quiz and a phrase card to print.</p>
       <p data-i18n="about.p2">No account, no tracking, nothing is sent anywhere. After the first visit it also works offline.</p>
       <p data-i18n="about.p3">Listen uses the voices of your device or browser.</p>
       <div class="thanks" id="thanks" hidden>
