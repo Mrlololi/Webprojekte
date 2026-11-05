@@ -343,7 +343,8 @@
     font-weight: 700;
     color: var(--c-text-muted);
     background: var(--c-surface-2);
-    border-radius: var(--radius-pill);
+    /* A label, not a control (Stage 3): small corners, also when the text wraps. */
+    border-radius: 6px;
   }
 
   .pick__badge.is-checked {

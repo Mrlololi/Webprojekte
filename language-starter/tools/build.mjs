@@ -76,7 +76,7 @@ const show = (p) => esc(p.forms ? `m: ${p.forms.m} / f: ${p.forms.f}` : p.text).
 const ordered = [...ids].sort((a, b) => ns.get(a) - ns.get(b));
 
 let html = '\n    <section class="container static-fallback" aria-labelledby="static-title">\n';
-html += '      <h2 id="static-title">English to German: all 45 phrases</h2>\n';
+html += `      <h2 id="static-title">English to German: all ${ids.length} phrases</h2>\n`;
 html += '      <p class="section-text">This list works without JavaScript. With JavaScript you can pick any of the 42 languages, listen, play the quiz and print a phrase card.</p>\n';
 for (const group of data.groups) {
   html += `      <h3>${esc(group.en)}</h3>\n      <table>\n        <thead><tr><th scope="col">Nr.</th><th scope="col">English</th><th scope="col" lang="de">Deutsch</th></tr></thead>\n        <tbody>\n`;

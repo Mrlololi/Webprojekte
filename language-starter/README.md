@@ -63,7 +63,7 @@ One flat entry per phrase and language (66 x 42 = 2772), so the file can be expo
 | `forms` | `{ "m": ..., "f": ... }` when the speaker's gender changes the words (only on the 6 phrases where the English entry has `"gender": true`). |
 | `translit` | Latin spelling, only for ka, hy, el, ru, uk, be, bg, mk, sr (Serbian: the Latin alphabet). A string, or `{ m, f }` with forms. |
 | `{X}` | Placeholder for a name or place, only in "My name is", "I am from" and "Where is". Shown as "…", never spoken. |
-| `checked` | `true` when a native speaker checked the entry. A language counts as checked when all its entries are. |
+| `checked` | `true` when the entry was checked by a person: so far the author (Iva) for de, en, ru, uk and ka (1-45), later native speakers. The page then says «Geprüft vom Autor» / «Checked by the author». It shows no count of native-speaker checks until native speakers have really checked. A language counts as checked when all its entries are. |
 | `note` | A short English note about a real doubt (register, regional variant, a case ending that changes). |
 
 The English entries also carry `meaning` (the note for translators, shown in review mode) and `gender: true` on the phrases where a speaker form can be needed. `languages` holds the endonym, the speech code (`tts`, for example `ka-GE`, Norwegian `nb-NO`), the script and `reviewers` (names; if there are any, a "Thank you" section appears).

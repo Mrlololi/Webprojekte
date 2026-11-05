@@ -59,7 +59,7 @@ window.LS_I18N = {
     'chooser.link': 'Copy link for your group',
     'chooser.copied': 'Link copied. Send it to your group.',
     'chooser.copyFailed': 'Copy did not work. The link is in the address bar.',
-    'chooser.checked': 'checked',
+    'chooser.checked': 'Checked by the author',
     'chooser.draft': 'draft',
 
     'draft.title': 'Draft - being checked by native speakers',
@@ -143,7 +143,6 @@ window.LS_I18N = {
     'thanks.text': 'These people checked the phrases:',
 
     'hero.help': 'Speak one of these languages? Help check it',
-    'hero.checked': '{n} of {total} languages checked by native speakers',
     'card.noAudio': 'No audio for this language on this device yet.',
 
     'review.pickTitle': 'Help check Language Starter',
@@ -175,10 +174,9 @@ window.LS_I18N = {
     'review.stored': 'Your marks stay on this device until you send them. Nothing is sent automatically.',
     'review.loadError': 'The phrases could not be loaded. Please reload the page.',
 
-    'chooser.partial': 'partly checked',
+    'chooser.partial': 'Partly checked by the author',
     'chooser.withVoice': 'with voice',
     'chooser.noVoice': 'no audio on this device',
-    'hero.partial': '{n} partly',
     'draft.phrases': 'phrases {range}',
 
     'group.title': 'For group leaders',
@@ -239,7 +237,7 @@ window.LS_I18N = {
     'chooser.link': 'Link für deine Gruppe kopieren',
     'chooser.copied': 'Link kopiert. Schick ihn deiner Gruppe.',
     'chooser.copyFailed': 'Kopieren hat nicht geklappt. Der Link steht in der Adresszeile.',
-    'chooser.checked': 'geprüft',
+    'chooser.checked': 'Geprüft vom Autor',
     'chooser.draft': 'Entwurf',
 
     'draft.title': 'Entwurf - wird von Muttersprachler:innen geprüft',
@@ -323,7 +321,6 @@ window.LS_I18N = {
     'thanks.text': 'Diese Menschen haben die Sätze geprüft:',
 
     'hero.help': 'Sprichst du eine dieser Sprachen? Hilf beim Prüfen',
-    'hero.checked': '{n} von {total} Sprachen von Muttersprachler:innen geprüft',
     'card.noAudio': 'Für diese Sprache gibt es auf diesem Gerät noch keinen Ton.',
 
     'review.pickTitle': 'Hilf mit, Language Starter zu prüfen',
@@ -355,10 +352,9 @@ window.LS_I18N = {
     'review.stored': 'Deine Markierungen bleiben auf diesem Gerät, bis du sie schickst. Nichts wird automatisch verschickt.',
     'review.loadError': 'Die Sätze konnten nicht geladen werden. Bitte lade die Seite neu.',
 
-    'chooser.partial': 'teilweise geprüft',
+    'chooser.partial': 'Teilweise geprüft vom Autor',
     'chooser.withVoice': 'mit Stimme',
     'chooser.noVoice': 'ohne Ton auf diesem Gerät',
-    'hero.partial': '{n} teilweise',
     'draft.phrases': 'Sätze {range}',
 
     'group.title': 'Für Gruppenleitungen',

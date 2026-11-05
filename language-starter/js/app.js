@@ -132,7 +132,6 @@
     posterA: $('poster-a'),
     posterB: $('poster-b'),
     sheet2: $('sheet-2'),
-    helpCount: $('help-count'),
     noAudio: $('no-audio')
   };
 
@@ -594,7 +593,7 @@
     }
   }
 
-  /** «geprüft», «teilweise geprüft» or «Entwurf». */
+  /** «Geprüft vom Autor», «Teilweise geprüft vom Autor» or «Entwurf». */
   function statusBadge(code) {
     var key = state.checkedLang[code] ? 'chooser.checked' : state.partialLang[code] ? 'chooser.partial' : 'chooser.draft';
     return span('pick__badge' + (state.checkedLang[code] ? ' is-checked' : state.partialLang[code] ? ' is-partial' : ''), t(key));
@@ -759,14 +758,11 @@
     });
   }
 
-  /** The help link under the hero: how many languages native speakers have checked. */
+  /** The help link under the hero. No count of checked languages: so far only the author
+      checked some of them (de, ru, uk, ka, en), no native-speaker review is finished yet. */
   function renderHelp() {
-    var total = state.codes.length;
-    var n = state.codes.filter(function (code) { return state.checkedLang[code]; }).length;
-    var p = state.codes.filter(function (code) { return state.partialLang[code]; }).length;
     el.helpLink.href = '?review&ui=' + state.ui;
     $('trainer-link').href = 'trainer/?lang=' + (state.ui === 'de' ? 'de' : 'en');
-    el.helpCount.textContent = t('hero.checked', { n: n, total: total }) + (p ? ', ' + t('hero.partial', { n: p }) : '');
   }
 
   function onListen(button) {
