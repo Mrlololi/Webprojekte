@@ -87,7 +87,8 @@ function mailText(text) {
     .replace(/(https?:\/\/[^\s]+)/g, '<mark class="mail__mark">$1</mark>');
 }
 
-const percent = (x) => Math.round(x * 100) + ' %';
+// A non-breaking space keeps "96 %" on one line.
+const percent = (x) => Math.round(x * 100) + ' %';
 
 /* ---------- 3. Render ---------- */
 
@@ -134,9 +135,9 @@ for (const m of mails) {
   const id = `mail-${m.id}`;
 
   let decision;
-  if (t === 'entwurf') decision = `<p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: ${percent(r.sicherheit)} sicher.</p>`;
-  else if (t === 'mensch') decision = `<p><strong>Grund:</strong> ${esc(r.grund)}</p>\n                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: ${percent(r.sicherheit)} sicher.</p>`;
-  else decision = `<p>Spam oder Phishing erkannt. Die KI schreibt keinen Entwurf. Einschätzung der KI: ${percent(r.sicherheit)} sicher.</p>`;
+  if (t === 'entwurf') decision = `<p>Die KI schreibt einen Entwurf, ein Mensch prüft ihn und gibt ihn frei. Einschätzung der KI: ${percent(r.sicherheit)} sicher (Selbsteinschätzung der KI, kein Messwert).</p>`;
+  else if (t === 'mensch') decision = `<p><strong>Grund:</strong> ${esc(r.grund)}</p>\n                <p>Der Entwurf geht trotzdem mit, als Vorschlag. Einschätzung der KI: ${percent(r.sicherheit)} sicher (Selbsteinschätzung der KI, kein Messwert).</p>`;
+  else decision = `<p>Spam oder Phishing erkannt. Die KI schreibt keinen Entwurf. Einschätzung der KI: ${percent(r.sicherheit)} sicher (Selbsteinschätzung der KI, kein Messwert).</p>`;
 
   const draft = r.entwurf
     ? `<p class="draft__subject"><span class="draft__label">Betreff:</span> <span${lang}>${esc(r.betreff)}</span></p>
