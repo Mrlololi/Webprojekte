@@ -119,9 +119,6 @@
     /* Project accents, kept only where they carry meaning */
     --c-geo: light-dark(#0F766E, #2DD4BF);
     --c-geo-soft: light-dark(#E1F2EF, #12302D);
-    --c-kitty: light-dark(#B4490C, #FB923C);
-    --c-kitty-soft: light-dark(#FBE9DC, #3A2414);
-    --c-kitty-deco: #DA6517; /* decoration only, never text */
     --c-lang: var(--c-text); /* Language Starter: the ink system, no own colour */
     --c-lang-soft: var(--blue-tint);
     --c-ki: var(--lav-ink);
@@ -899,7 +896,6 @@ html:not(:lang(de)) .tagline[lang="de"] {
 @media (hover: none) {
   .btn:hover,
   .project:hover,
-  .cat-card:hover,
   .option:hover {
     transform: none;
   }

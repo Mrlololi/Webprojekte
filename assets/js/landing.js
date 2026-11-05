@@ -15,10 +15,10 @@
   /* ---------- Title, meta and links for the chosen language ---------- */
   var META = {
     en: {
-      title: 'Web projects: learning apps, AI and animation | Iva Tsatskrialashvili',
-      description: 'Four web projects by Iva Tsatskrialashvili, Marketing Automation Engineer in Graz: a Georgian learning app, phrase cards for youth exchanges, an AI inbox and an animation page.',
+      title: 'Web projects: AI in customer service and learning apps | Iva Tsatskrialashvili',
+      description: 'Three web projects by Iva Tsatskrialashvili, Marketing Automation Engineer in Graz: an AI inbox where a person approves every reply, phrase cards for youth exchanges and a Georgian learning app.',
       ogTitle: 'Web projects by Iva Tsatskrialashvili',
-      ogDescription: 'A Georgian learning app, phrase cards for youth exchanges, an AI inbox and an animation page. Everything to try in your browser.',
+      ogDescription: 'An AI inbox with human approval, phrase cards for youth exchanges and a Georgian learning app. Everything to try in your browser.',
       url: 'https://mrlololi.com/Webprojekte/?lang=en',
       locale: 'en_GB',
       altLocale: 'de_AT'

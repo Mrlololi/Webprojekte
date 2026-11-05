@@ -149,6 +149,19 @@
     .projects__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    /* Three projects: the first one (KI im Kundenservice) runs across the whole row,
+       picture left and text right; the other two sit side by side below it. */
+    .projects__grid > .project:first-child {
+      grid-column: 1 / -1;
+      flex-direction: row;
+    }
+
+    .projects__grid > .project:first-child .project__visual {
+      flex: 0 0 42%;
+      height: auto;
+      min-height: 15rem;
+    }
   }
 
   .project {
@@ -197,11 +210,6 @@
   .project--ki {
     --tint: var(--lav-tint);
     --deep: var(--lav-ink);
-  }
-
-  .project--kitty {
-    --tint: var(--peach-tint);
-    --deep: var(--c-kitty);
   }
 
   .project__body {
@@ -425,35 +433,6 @@
   @keyframes pv-chip {
     0%, 6% { opacity: 0; transform: scale(0.6); }
     12%, 100% { opacity: 1; transform: none; }
-  }
-
-  /* KittyCats: the kitten blinks and wags its tail */
-  .pv-kitty {
-    width: 9.5rem;
-    height: auto;
-    margin-top: 1.5rem;
-  }
-
-  .pv-kitty__eyes {
-    transform-box: fill-box;
-    transform-origin: 50% 50%;
-    animation: pv-blink 5s ease-in-out infinite;
-  }
-
-  .pv-kitty__tail {
-    transform-box: fill-box;
-    transform-origin: 0% 100%;
-    animation: pv-tail 2.4s ease-in-out infinite;
-  }
-
-  @keyframes pv-blink {
-    0%, 44%, 52%, 100% { transform: none; }
-    48% { transform: scaleY(0.1); }
-  }
-
-  @keyframes pv-tail {
-    0%, 100% { transform: none; }
-    50% { transform: rotate(-9deg); }
   }
 
   /* ---------- Cards reveal calmly on scroll (and again on re-entry) ---------- */

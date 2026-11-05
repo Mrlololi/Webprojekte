@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Webprojekte: the landing page, the four projects and their language variants.
+<!-- Webprojekte: the landing page, the three projects and their language variants.
      Never list the review addresses of Language Starter (review mode is noindex).
      lastmod changes only when the text of that page really changes. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -47,10 +47,6 @@
   </url>
   <url>
     <loc>https://mrlololi.com/Webprojekte/ki-kundenservice/</loc>
-    <lastmod>2026-10-29</lastmod>
-  </url>
-  <url>
-    <loc>https://mrlololi.com/Webprojekte/kittycats/</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
 </urlset>

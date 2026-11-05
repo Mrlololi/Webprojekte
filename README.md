@@ -6,10 +6,9 @@ Live: <https://mrlololi.com/Webprojekte/> (German, or English with `?lang=en`)
 
 | Project | What it is | What it shows | Live |
 |---|---|---|---|
-| [GeoAPP](geoapp/) | A quiz for people from Ukraine in Georgia: the Georgian numbers 0-30, with an explanation of counting in twenties | A learning app without a framework, three interface languages, saved progress, offline | [Open](https://mrlololi.com/Webprojekte/geoapp/) |
-| [Language Starter](language-starter/) | First phrases for international youth exchanges: 66 phrases in 42 languages, cards to listen to, a quiz, a phrase card to print, group posters, a projector mode and a trainer guide | One JSON file for 2772 entries (loaded per language), Web Speech API with a fallback for recordings, print CSS that fits A4, review mode for native speakers | [Open](https://mrlololi.com/Webprojekte/language-starter/) |
 | [KI im Kundenservice](ki-kundenservice/) | The full inbox of a made-up photo school: 20 emails, sorted by AI, with draft replies and the hard cases handed to a person | AI with clear rules and human approval; an example run, nothing is sent, no API key in the browser | [Open](https://mrlololi.com/Webprojekte/ki-kundenservice/) |
-| [KittyCats](kittycats/) | A page of hand-drawn SVG kittens that move as you scroll | GSAP ScrollTrigger, CSS scroll-driven animation, SVG path morphing, plus the layout techniques Grid, Flexbox and sticky | [Open](https://mrlololi.com/Webprojekte/kittycats/) |
+| [Language Starter](language-starter/) | First phrases for international youth exchanges: 66 phrases in 42 languages, cards to listen to, a quiz, a phrase card to print, group posters, a projector mode and a trainer guide | One JSON file for 2772 entries (loaded per language), Web Speech API with a fallback for recordings, print CSS that fits A4, review mode for native speakers | [Open](https://mrlololi.com/Webprojekte/language-starter/) |
+| [GeoAPP](geoapp/) | A quiz for people from Ukraine in Georgia: the Georgian numbers 0-30, with an explanation of counting in twenties | A learning app without a framework, three interface languages, saved progress, offline | [Open](https://mrlololi.com/Webprojekte/geoapp/) |
 
 ## About me
 
@@ -33,21 +32,19 @@ Webprojekte/
 │   ├── js/balls3d.js       the 3D logo balls (built from tools/balls3d.src.js, includes parts of OGL)
 │   ├── fonts/              Bricolage Grotesque, Atkinson Hyperlegible Next, EB Garamond italic (SIL OFL)
 │   ├── img/                the photo on the landing page
-│   ├── vendor/             GSAP 3.15 core and ScrollTrigger (KittyCats only)
 │   ├── favicon.svg         the mrlololi icon «drei Kugeln»
 │   ├── icons/              favicons and touch icons of the projects
 │   └── og/                 1200x630 preview images for social media
 ├── tools/balls3d.src.js    source of the 3D balls
-├── geoapp/                 see geoapp/README.md
-├── language-starter/       see language-starter/README.md
 ├── ki-kundenservice/       see ki-kundenservice/README.md
-└── kittycats/              see kittycats/README.md
+├── language-starter/       see language-starter/README.md
+└── geoapp/                 see geoapp/README.md
 ```
 
 ## Shared design
 
 - **Look:** the header lockup of mrlololi.com on a light translucent bar, a small «Webprojekte» label, the project links, and the theme switch. The dark footer carries the lockup with the tagline «Logik, Lösung, Live.» (German pages) or «Logic, Loop, Live.» (all others); only the landing page has the three waving mascots.
-- **Colours** are CSS custom properties written with `light-dark()`: soft ink `#2B2A33` on warm paper, pastels pink, blue, pistachio, lavender and peach as surfaces. The dark values were made for Webprojekte. Every text pair passes WCAG AA (4.5:1) in both themes. GeoAPP keeps its teal and KittyCats its orange, because they carry meaning there.
+- **Colours** are CSS custom properties written with `light-dark()`: soft ink `#2B2A33` on warm paper, pastels pink, blue, pistachio, lavender and peach as surfaces. The dark values were made for Webprojekte. Every text pair passes WCAG AA (4.5:1) in both themes. GeoAPP keeps its teal, because it carries meaning there.
 - **Fonts** are self-hosted (no requests to other servers): Bricolage Grotesque for headings, Atkinson Hyperlegible Next for text, EB Garamond italic for one accent word. They cover Latin only, so Georgian, Armenian, Greek and Cyrillic use the fonts of the device.
 - **Motion:** small and calm. Cards reveal on scroll and again when you come back, loops run only while visible, hover effects only with a mouse. With "reduce motion" switched on, every animation shows its final state.
 - **3D:** the three logo balls on the landing page are soft 3D spheres (WebGL with [OGL](https://github.com/oframe/ogl), Unlicense). They load after the page is idle and only on devices with a mouse, WebGL and no reduced-motion setting; everyone else sees the flat logo. They pause off-screen and in hidden tabs.
@@ -66,8 +63,8 @@ and open <http://localhost:8000/>. (Opened from disk, the pages also work, but f
 
 ## Hosting
 
-The repository is published with GitHub Pages (branch `main`, folder `/`) under <https://mrlololi.com/Webprojekte/>. The old addresses `mrlololi.github.io/GeoAPP` and `mrlololi.github.io/KittyCats` redirect here; those redirects live in the repositories `Mrlololi/GeoAPP` and `Mrlololi/KittyCats`.
+The repository is published with GitHub Pages (branch `main`, folder `/`) under <https://mrlololi.com/Webprojekte/>. The old address `mrlololi.github.io/GeoAPP` redirects here; that redirect lives in the repository `Mrlololi/GeoAPP`.
 
 ## Images and rights
 
-Everything here was made for this project. The cats, mascots and icons are SVG drawn by hand, the social media images are rendered from HTML. The photo is Iva's own. Fonts: SIL Open Font License. GSAP: GreenSock standard "no charge" license. OGL: Unlicense.
+Everything here was made for this project. The mascots and icons are SVG drawn by hand, the social media images are rendered from HTML. The photo is Iva's own. Fonts: SIL Open Font License. OGL: Unlicense.
