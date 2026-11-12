@@ -1006,8 +1006,18 @@
   }
 
   /** The 30 = ოც + და + ათი demo plays once when it scrolls into view. */
+  // Stage 7a: «Bewegung pausieren» of mrlololi.com (html[data-motion="paused"], set before the first
+  // paint): no autoplay; a pause while it plays shows the finished frame at once.
+  function motionPaused() {
+    return document.documentElement.getAttribute('data-motion') === 'paused';
+  }
+
   function setupDemo() {
-    if (!el.demo || reducedMotion() || !('IntersectionObserver' in window)) return;
+    if (!el.demo) return;
+    document.addEventListener('motion:change', function () {
+      if (motionPaused()) el.demo.classList.remove('is-playing', 'is-waiting');
+    });
+    if (reducedMotion() || motionPaused() || !('IntersectionObserver' in window)) return;
     el.replay.hidden = false;
     el.demo.classList.add('is-waiting');
     var observer = new IntersectionObserver(function (entries) {

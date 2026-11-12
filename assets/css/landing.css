@@ -289,17 +289,22 @@
     }
   }
 
-  /* ---------- Card previews (decorative, aria-hidden). Each loop ends on its full state,
-     so reduced motion (one 0.01 ms run) shows the finished picture. ---------- */
+  /* ---------- Card previews (decorative, aria-hidden). Stage 7a (11.11.2026): they take turns
+     (assets/js/wp.js, the conductor of mrlololi.com). The base styles are the finished picture (no
+     JS, reduced motion, «Bewegung pausieren»); data-play="start" is the first frame, "run" plays it
+     once, then it rests at least 3 s and fades out (is-fading) before the next card plays. ---------- */
 
-  .project__visual * {
-    animation-fill-mode: both;
+  .project__visual > * {
+    transition: opacity 0.45s var(--ease);
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .js .project__visual:not(.is-live) * {
-      animation-play-state: paused;
-    }
+  .project__visual.is-fading > * {
+    opacity: 0;
+  }
+
+  html[data-motion="paused"] .project__visual *,
+  html[data-motion="paused"] .nf__scene * {
+    animation: none !important;
   }
 
   /* GeoAPP: 30 = ოც (20) + და (and) + ათი (10) */
@@ -329,32 +334,24 @@
     border-radius: 6px;
   }
 
-  .pv-geo__a {
-    animation: pv-geo-a 6s ease-in-out infinite;
-  }
-
-  .pv-geo__c {
-    animation: pv-geo-c 6s ease-in-out infinite;
-  }
-
+  .pv-geo__a { background: var(--pink); color: var(--ink); }
+  .pv-geo__c { background: var(--blue); color: var(--ink); }
   .pv-geo__b,
-  .pv-geo__d {
-    animation: pv-geo-d 6s ease-in-out infinite;
+  .pv-geo__d { background: var(--pist); color: var(--ink); }
+
+  [data-play="start"] .pv-geo__word span,
+  [data-play="start"] .pv-geo__sum span {
+    background: transparent;
+    color: var(--c-text);
   }
 
-  @keyframes pv-geo-a {
-    0%, 8% { background: transparent; color: var(--c-text); }
-    15%, 100% { background: var(--pink); color: var(--ink); }
-  }
+  [data-play="run"] .pv-geo__a { animation: pv-geo-in 0.45s ease-in-out 0.3s both; }
+  [data-play="run"] .pv-geo__c { animation: pv-geo-in 0.45s ease-in-out 1.6s both; }
+  [data-play="run"] .pv-geo__b,
+  [data-play="run"] .pv-geo__d { animation: pv-geo-in 0.45s ease-in-out 2.9s both; }
 
-  @keyframes pv-geo-c {
-    0%, 33% { background: transparent; color: var(--c-text); }
-    40%, 100% { background: var(--blue); color: var(--ink); }
-  }
-
-  @keyframes pv-geo-d {
-    0%, 58% { background: transparent; color: var(--c-text); }
-    66%, 100% { background: var(--pist); color: var(--ink); }
+  @keyframes pv-geo-in {
+    from { background: transparent; color: var(--c-text); }
   }
 
   /* Language Starter: greetings pop up one after the other */
@@ -375,20 +372,24 @@
     background: #FFFFFF;
     border: 2px solid var(--ink);
     border-radius: 1rem 1rem 1rem 0.25rem;
-    animation: pv-pop 7s var(--ease) infinite;
   }
 
   .pv-lang__b[lang="ka"] {
     font-family: var(--font-ka);
   }
 
-  .pv-lang__b--2 { animation-delay: 0.5s; background: var(--pink); }
-  .pv-lang__b--3 { animation-delay: 1s; background: var(--pist); }
-  .pv-lang__b--4 { animation-delay: 1.5s; background: var(--lav); }
+  .pv-lang__b--2 { background: var(--pink); }
+  .pv-lang__b--3 { background: var(--pist); }
+  .pv-lang__b--4 { background: var(--lav); }
+
+  [data-play="start"] .pv-lang__b { opacity: 0; }
+  [data-play="run"] .pv-lang__b { animation: pv-pop 0.55s var(--ease) 0.2s both; }
+  [data-play="run"] .pv-lang__b--2 { animation-delay: 0.7s; }
+  [data-play="run"] .pv-lang__b--3 { animation-delay: 1.2s; }
+  [data-play="run"] .pv-lang__b--4 { animation-delay: 1.7s; }
 
   @keyframes pv-pop {
-    0% { opacity: 0; transform: translateY(10px) scale(0.9); }
-    8%, 100% { opacity: 1; transform: none; }
+    from { opacity: 0; transform: translateY(10px) scale(0.9); }
   }
 
   /* KI: three mails get their decision chip */
@@ -423,16 +424,19 @@
     font-size: 0.8125rem;
     font-weight: 700;
     border-radius: 6px;
-    animation: pv-chip 7s var(--ease) infinite;
   }
 
   .pv-ki__chip--draft { background: var(--pist); }
-  .pv-ki__chip--human { background: var(--pink); animation-delay: 0.8s; }
-  .pv-ki__chip--spam { background: #E3DBE2; animation-delay: 1.6s; }
+  .pv-ki__chip--human { background: var(--pink); }
+  .pv-ki__chip--spam { background: #E3DBE2; }
+
+  [data-play="start"] .pv-ki__chip { opacity: 0; }
+  [data-play="run"] .pv-ki__chip { animation: pv-chip 0.5s var(--ease) 0.4s both; }
+  [data-play="run"] .pv-ki__chip--human { animation-delay: 1.2s; }
+  [data-play="run"] .pv-ki__chip--spam { animation-delay: 2s; }
 
   @keyframes pv-chip {
-    0%, 6% { opacity: 0; transform: scale(0.6); }
-    12%, 100% { opacity: 1; transform: none; }
+    from { opacity: 0; transform: scale(0.6); }
   }
 
   /* ---------- Cards reveal calmly on scroll (and again on re-entry) ---------- */
@@ -452,49 +456,6 @@
     .reveal-on .projects__grid > :nth-child(2n).is-in {
       transition-delay: 0.08s;
     }
-  }
-
-  /* ---------- Footer mascots (landing page only), wave when the footer comes into view ---------- */
-
-  .footer-mascots {
-    display: flex;
-    align-items: flex-end;
-    gap: var(--space-1);
-  }
-
-  .footer-mascots .mascot {
-    width: 3.25rem;
-    height: auto;
-    overflow: visible;
-  }
-
-  .footer-mascots .o {
-    stroke: var(--on-ink);
-  }
-
-  .footer-mascots .m-shadow {
-    fill: #FFFFFF;
-    opacity: 0.14;
-  }
-
-  .footer-mascots .m-wave {
-    transform-box: view-box;
-  }
-
-  .footer-mascots .mascot:nth-child(1) .m-wave { transform-origin: 83px 72px; }
-  .footer-mascots .mascot:nth-child(2) .m-wave { transform-origin: 86px 70px; animation-delay: 0.15s; }
-  .footer-mascots .mascot:nth-child(3) .m-wave { transform-origin: 81px 74px; animation-delay: 0.3s; }
-
-  .footer-mascots.is-waving .m-wave {
-    animation-name: wave;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 3;
-  }
-
-  @keyframes wave {
-    0%, 100% { transform: none; }
-    50% { transform: rotate(-16deg); }
   }
 
   /* ---------- 404 ---------- */
@@ -537,10 +498,32 @@
     border-radius: var(--radius-xl);
   }
 
-  .nf__lens {
+  /* Stage 7a: Logik searches in calm rounds (wp.js, the conductor: a round, a rest, stops when paused
+     or away). A click on the scene: Live finds the page (it floats over to Live). */
+  .nf__lens,
+  .nf__page {
     transform-box: view-box;
+  }
+
+  .nf__lens {
     transform-origin: 150px 120px;
-    animation: nf-search 4s ease-in-out infinite;
+  }
+
+  .nf__scene[data-play="run"]:not(.is-found) .nf__lens {
+    animation: nf-search 3s ease-in-out both;
+  }
+
+  .nf__page {
+    transform-origin: 127px 53px;
+    transition: transform 0.6s var(--ease);
+  }
+
+  .nf__scene.is-found .nf__page {
+    transform: translate(-58px, 26px) rotate(14deg);
+  }
+
+  html[data-motion="paused"] .nf__page {
+    transition: none;
   }
 
   @keyframes nf-search {

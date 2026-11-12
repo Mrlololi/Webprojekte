@@ -1,6 +1,7 @@
 /**
- * Landing page: language details, calm reveals, preview loops while visible,
- * footer mascots, and the 3D logo balls (loaded late, only where they can run well).
+ * Landing page: language details, calm reveals and the 3D logo balls (loaded late, only where
+ * they can run well). Stage 7a: the previews and the footer mascots moved to assets/js/wp.js
+ * (the shared conductor and mascot kit of mrlololi.com).
  *
  * The language itself is chosen by the inline script in <head> (before the first paint);
  * this file only updates what CSS cannot reach: title, meta tags, links.
@@ -67,24 +68,6 @@
   }, { rootMargin: '0px 0px -12% 0px' });
   document.querySelectorAll('[data-reveal]').forEach(function (el) { reveal.observe(el); });
   root.classList.add('reveal-on');
-
-  /* ---------- Preview loops run only while visible ---------- */
-  var live = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      entry.target.classList.toggle('is-live', entry.isIntersecting);
-    });
-  });
-  document.querySelectorAll('.project__visual').forEach(function (el) { live.observe(el); });
-
-  /* ---------- Footer mascots wave when the footer comes into view ---------- */
-  var mascots = document.querySelector('.footer-mascots');
-  if (mascots && !reduced) {
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        mascots.classList.toggle('is-waving', entry.isIntersecting);
-      });
-    }, { threshold: 0.6 }).observe(mascots);
-  }
 
   /* ---------- 3D logo balls: after the page is idle, only with a fine pointer,
      hover, no reduced motion. Everyone else keeps the flat SVG. ---------- */

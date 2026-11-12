@@ -14,7 +14,7 @@
  *
  * If you add a file the app needs, add it to FILES as well.
  */
-var CACHE = 'langstarter-v4';
+var CACHE = 'langstarter-v5';
 var TIMEOUT_MS = 3000;
 var FILES = [
   './',
@@ -33,6 +33,10 @@ var FILES = [
   './trainer/trainer.css',
   '../assets/css/base.css',
   '../assets/js/theme.js',
+  '../assets/js/wp.js',
+  '../assets/js/mrl-kit/motion.js',
+  '../assets/js/mrl-kit/mascot-react.js',
+  '../assets/js/mrl-kit/mascot-art.js',
   '../assets/fonts/bricolage-grotesque-latin.woff2',
   '../assets/fonts/atkinson-hyperlegible-next-latin.woff2',
   '../assets/icons/langstarter.svg',

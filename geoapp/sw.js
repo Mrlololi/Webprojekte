@@ -9,7 +9,7 @@
  * number in CACHE. Recordings in audio/ are not listed: each one is saved
  * the first time it is played, so it then plays offline too.
  */
-var CACHE = 'geoapp-v2';
+var CACHE = 'geoapp-v3';
 var FILES = [
   './',
   './index.html',
@@ -23,6 +23,10 @@ var FILES = [
   './manifest.webmanifest',
   '../assets/css/base.css',
   '../assets/js/theme.js',
+  '../assets/js/wp.js',
+  '../assets/js/mrl-kit/motion.js',
+  '../assets/js/mrl-kit/mascot-react.js',
+  '../assets/js/mrl-kit/mascot-art.js',
   '../assets/fonts/bricolage-grotesque-latin.woff2',
   '../assets/fonts/atkinson-hyperlegible-next-latin.woff2',
   '../assets/icons/geoapp.svg',

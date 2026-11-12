@@ -136,8 +136,11 @@ export function init(box) {
     if (!shown) { shown = true; box.classList.add('is-3d'); }
     loop();
   }
+  // Stage 7a: «Bewegung pausieren» (html[data-motion="paused"], shared with mrlololi.com) holds the
+  // balls still on their last frame; playing again lets them sway on.
+  const paused = () => document.documentElement.getAttribute('data-motion') === 'paused';
   function loop() {
-    if (visible && !document.hidden && !frame) frame = requestAnimationFrame(tick);
+    if (visible && !document.hidden && !paused() && !frame) frame = requestAnimationFrame(tick);
   }
   function stop() {
     if (frame) cancelAnimationFrame(frame);
@@ -148,4 +151,7 @@ export function init(box) {
     if (visible) loop(); else stop();
   }).observe(box);
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else loop(); });
+  document.addEventListener('motion:change', () => { if (paused()) stop(); else loop(); });
+  // Paused before they were ever drawn: one still frame, so the 3D picture shows anyway.
+  if (paused()) requestAnimationFrame((now) => { tick(now); stop(); });
 }

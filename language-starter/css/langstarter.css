@@ -189,6 +189,17 @@
     color: var(--c-text-muted);
   }
 
+  /* Stage 7a: the loading line lies over the still empty pickers, so nothing moves when it goes
+     (CLS 0). An error stays in the flow. */
+  .status:not(.is-error) {
+    position: absolute;
+    inset-inline: 0;
+    z-index: 1;
+    margin: 2.6rem 0 0;
+    text-align: center;
+    pointer-events: none;
+  }
+
   .status.is-error {
     font-weight: 600;
     color: var(--c-danger);
@@ -272,7 +283,13 @@
     opacity: 0.4;
   }
 
+  /* Stage 7a: see the head script in index.html (ls-pick). */
+  .ls-pick .chooser-card {
+    min-height: 100svh;
+  }
+
   .chooser__share {
+    min-height: 2.75rem; /* Stage 7a: the place of «Copy link», which appears once the phrases load */
     display: flex;
     flex-wrap: wrap;
     align-items: center;

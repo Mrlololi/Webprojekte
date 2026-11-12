@@ -2247,6 +2247,7 @@
       .then(function () {
         el.status.hidden = true;
         renderAll();
+        document.documentElement.classList.remove('ls-pick'); // Stage 7a: the grid is in, its kept place goes
       })
       .catch(showLoadError);
   }
