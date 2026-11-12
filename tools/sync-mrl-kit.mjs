@@ -18,10 +18,12 @@ const OUT = join(site, 'assets', 'js', 'mrl-kit');
 const FILES = ['mascot-art.js', 'mascot-react.js', 'motion.js'];
 
 if (!existsSync(SRC)) { console.error(`kit source not found: ${SRC}`); process.exit(2); }
-const src = Object.fromEntries(FILES.map((f) => [f, readFileSync(join(SRC, f), 'utf8')]));
+// Line endings do not count (Git may check the files out with CRLF on Windows).
+const lf = (s) => s.replace(/\r\n/g, '\n');
+const src = Object.fromEntries(FILES.map((f) => [f, lf(readFileSync(join(SRC, f), 'utf8'))]));
 const hash = createHash('sha256').update(FILES.map((f) => src[f]).join('\n')).digest('hex').slice(0, 12);
 const head = (f) => `// mrl-kit ${f} VERSION ${hash} (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)\n`;
-const strip = (s) => s.replace(/^\/\/ mrl-kit .* VERSION .*\n/, '');
+const strip = (s) => lf(s).replace(/^\/\/ mrl-kit .* VERSION .*\n/, '');
 
 if (process.argv.includes('--check')) {
   const bad = FILES.filter((f) => {
