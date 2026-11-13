@@ -15,7 +15,8 @@ const site = resolve(here, '..');
 // webprojekte/site/tools -> Projekte/mrlololi-site/site/assets/js/kit
 const SRC = process.env.MRL_KIT || resolve(site, '..', '..', 'mrlololi-site', 'site', 'assets', 'js', 'kit');
 const OUT = join(site, 'assets', 'js', 'mrl-kit');
-const FILES = ['mascot-art.js', 'mascot-react.js', 'motion.js'];
+// Stage 7b: icons.mjs (build time only) and enter.js are vendored too; nothing here loads them yet (7f).
+const FILES = ['mascot-art.js', 'mascot-react.js', 'motion.js', 'icons.mjs', 'enter.js'];
 
 if (!existsSync(SRC)) { console.error(`kit source not found: ${SRC}`); process.exit(2); }
 // Line endings do not count (Git may check the files out with CRLF on Windows).
