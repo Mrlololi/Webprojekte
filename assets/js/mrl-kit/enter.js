@@ -1,4 +1,4 @@
-// mrl-kit enter.js VERSION e84f519a7470 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit enter.js VERSION a4ff00db6be0 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Entrances (Stage 7b, design system 5.2): IntersectionObserver and Web Animations, no GSAP.
 // [data-enter="lines"] a heading (rises 16 px), [data-enter="stagger"] a list whose children arrive one
 // by one, [data-enter] a single block (24 px). 500 ms, --ease-soft, once per page view, never hidden

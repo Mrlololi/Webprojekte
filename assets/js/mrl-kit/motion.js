@@ -1,4 +1,4 @@
-// mrl-kit motion.js VERSION e84f519a7470 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit motion.js VERSION a4ff00db6be0 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Stage 6c: one controller for every demo (hero line, problem cards, price pictures, process steps,
 // tool row, KI demo, 404 scene). Iva's rule (29.10.2026): a demo loops calmly while it is visible.
 // - The HTML shows the end frame (solved), for no JS and reduced motion.
@@ -186,7 +186,9 @@ function turn(free) {
 function begin(d) {
   // Held (the visitor reads in it): no new round, no fade; it starts once the hold ends.
   if (held(d)) { d.timer = setTimeout(() => { if (d.looping) begin(d); }, 250); return; }
-  if (d.idle !== 'end' || d.phase !== 'end') { cycle(d); return; }
+  // Rule 7 (18.11.2026): any picture that shows its finished frame fades first, also one that played once
+  // on load (404, hero) and now starts its first loop; only a picture on its start frame begins at once.
+  if (d.phase !== 'end') { cycle(d); return; }
   d.el.classList.add('is-fading');
   d.timer = setTimeout(() => { if (d.looping) cycle(d); else d.el.classList.remove('is-fading'); }, FADE);
 }
@@ -316,7 +318,9 @@ export function demo(el, { reset = () => {}, play = () => {}, finish = () => {},
     mark();
     el.addEventListener('click', (e) => {
       const hit = targets.find((x) => x.contains(e.target));
-      if (!hit || e.target.closest('a, button, input, select, textarea, summary, label, [role="button"]')) return;
+      // Rule 7 (18.11.2026): a click on a mascot is the mascot's reaction, never a pause of the picture
+      // (the pause cut CSS animations of that picture off mid-move).
+      if (!hit || e.target.closest('a, button, input, select, textarea, summary, label, [role="button"], [data-poke]')) return;
       if (reduceMotion.matches || motion.paused) return;
       toggle();
       mark();
