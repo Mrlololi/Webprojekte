@@ -2183,8 +2183,9 @@
     if (fromUrl && I18N[fromUrl]) return fromUrl;
     var saved = store.get('ui', null);
     if (saved && uiReady(saved)) return saved;
-    // Stage 7b-S: no browser guess; the page stays in the language it declares (links pass ?ui=).
-    return I18N.defaultLang;
+    // Stage 7b-S (Iva 18.11.2026): no browser guess; the page is German, as its HTML declares. English
+    // only through ?ui=en or a stored choice.
+    return 'de';
   }
 
   function registerServiceWorker() {
