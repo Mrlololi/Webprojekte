@@ -4,7 +4,8 @@
  * (the shared conductor and mascot kit of mrlololi.com).
  *
  * The language itself is chosen by the inline script in <head> (before the first paint);
- * this file only updates what CSS cannot reach: title, meta tags, links.
+ * this file only updates what CSS cannot reach: the links. Stage 7b-S (13.11.2026): nothing in
+ * JavaScript sets canonical, title, description, og:url or hreflang (one URL, one set of signals).
  */
 (function () {
   'use strict';
@@ -13,36 +14,8 @@
   var lang = root.lang === 'en' ? 'en' : 'de';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Title, meta and links for the chosen language ---------- */
-  var META = {
-    en: {
-      title: 'Web projects: AI in customer service and learning apps | Iva Tsatskrialashvili',
-      description: 'Three web projects by Iva Tsatskrialashvili, Marketing Automation Engineer in Graz: an AI inbox where a person approves every reply, phrase cards for youth exchanges and a Georgian learning app.',
-      ogTitle: 'Web projects by Iva Tsatskrialashvili',
-      ogDescription: 'An AI inbox with human approval, phrase cards for youth exchanges and a Georgian learning app. Everything to try in your browser.',
-      url: 'https://mrlololi.com/Webprojekte/?lang=en',
-      locale: 'en_GB',
-      altLocale: 'de_AT'
-    }
-  };
-
-  function setMeta(selector, value) {
-    var el = document.querySelector(selector);
-    if (el) el.setAttribute(el.tagName === 'LINK' ? 'href' : 'content', value);
-  }
-
+  /* ---------- Links for the chosen language (visible text is switched by CSS) ---------- */
   if (lang === 'en') {
-    var m = META.en;
-    document.title = m.title;
-    setMeta('meta[name="description"]', m.description);
-    setMeta('meta[property="og:title"]', m.ogTitle);
-    setMeta('meta[name="twitter:title"]', m.ogTitle);
-    setMeta('meta[property="og:description"]', m.ogDescription);
-    setMeta('meta[name="twitter:description"]', m.ogDescription);
-    setMeta('meta[property="og:url"]', m.url);
-    setMeta('meta[property="og:locale"]', m.locale);
-    setMeta('meta[property="og:locale:alternate"]', m.altLocale);
-    setMeta('link[rel="canonical"]', m.url);
     document.querySelectorAll('[data-href-en]').forEach(function (a) {
       a.setAttribute('href', a.getAttribute('data-href-en'));
     });

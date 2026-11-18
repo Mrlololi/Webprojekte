@@ -167,9 +167,7 @@
   function applyStaticStrings() {
     var root = document.documentElement;
     root.lang = state.lang;
-    document.title = t('meta.title');
-    var description = document.querySelector('meta[name="description"]');
-    if (description) description.setAttribute('content', t('meta.description'));
+    // Stage 7b-S: title and description stay as the server sent them (no JavaScript signals).
 
     document.querySelectorAll('[data-i18n]').forEach(function (node) {
       node.textContent = t(node.getAttribute('data-i18n'));

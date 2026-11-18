@@ -9,7 +9,7 @@
  * number in CACHE. Recordings in audio/ are not listed: each one is saved
  * the first time it is played, so it then plays offline too.
  */
-var CACHE = 'geoapp-v3';
+var CACHE = 'geoapp-v4'; // 7b-S: js/app.js changed
 var FILES = [
   './',
   './index.html',

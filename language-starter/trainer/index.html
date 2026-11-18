@@ -14,12 +14,9 @@
         if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
       } catch (error) { /* storage blocked */ }
       try { lang = new URLSearchParams(location.search).get('lang'); } catch (error) { /* old browser */ }
-      if (lang !== 'de' && lang !== 'en') {
-        var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-        lang = /^de\b/i.test(first) ? 'de' : 'en';
-      }
+      // Stage 7b-S: without ?lang the page stays German (what the URL declares); no title from JavaScript.
+      if (lang !== 'de' && lang !== 'en') lang = 'de';
       root.lang = lang;
-      if (lang === 'en') document.title = 'Trainer guide: 3 games | Language Starter';
     })(document.documentElement);
   </script>
   <title>Trainer-Guide: 3 Spiele | Language Starter</title>

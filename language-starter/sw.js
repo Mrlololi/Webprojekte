@@ -14,7 +14,7 @@
  *
  * If you add a file the app needs, add it to FILES as well.
  */
-var CACHE = 'langstarter-v5';
+var CACHE = 'langstarter-v6'; // 7b-S: js/app.js changed
 var TIMEOUT_MS = 3000;
 var FILES = [
   './',

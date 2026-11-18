@@ -183,9 +183,7 @@
 
   function applyStaticStrings() {
     document.documentElement.lang = uiReady(state.ui) ? state.ui : 'en';
-    document.title = t('meta.title');
-    var description = document.querySelector('meta[name="description"]');
-    if (description) description.setAttribute('content', t('meta.description'));
+    // Stage 7b-S: title and description stay as the server sent them (no JavaScript signals).
     document.querySelectorAll('[data-i18n]').forEach(function (node) {
       node.textContent = t(node.getAttribute('data-i18n'));
     });
@@ -1445,7 +1443,6 @@
 
   /** All 42 languages: drafts first, each part sorted by name in the UI language. */
   function renderReviewPicker(note) {
-    document.title = 'Language Starter: ' + t('review.pickTitle');
     var codes = sortedCodes();
     var drafts = codes.filter(function (c) { return !state.checkedLang[c] && !state.partialLang[c]; });
     var done = codes.filter(function (c) { return state.partialLang[c]; }).concat(codes.filter(function (c) { return state.checkedLang[c]; }));
@@ -1574,7 +1571,6 @@
     review.fixes = saved.fixes && typeof saved.fixes === 'object' ? saved.fixes : {};
 
     var label = info.endonym + ' (' + code + ')';
-    document.title = 'Language Starter: ' + t('review.title', { lang: label });
     var head = reviewHead('', t('review.intro'));
     var title = head.querySelector('h1');
     title.append(document.createTextNode(t('review.title', { lang: '' }).replace(/\s*$/, ' ')), span('', info.endonym, code), document.createTextNode(' (' + code + ')'));
@@ -2187,8 +2183,8 @@
     if (fromUrl && I18N[fromUrl]) return fromUrl;
     var saved = store.get('ui', null);
     if (saved && uiReady(saved)) return saved;
-    var nav = String(navigator.language || 'en').toLowerCase().split('-')[0];
-    return uiReady(nav) ? nav : I18N.defaultLang;
+    // Stage 7b-S: no browser guess; the page stays in the language it declares (links pass ?ui=).
+    return I18N.defaultLang;
   }
 
   function registerServiceWorker() {

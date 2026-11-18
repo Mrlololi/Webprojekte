@@ -20,10 +20,8 @@
       } else {
         try { lang = localStorage.getItem(key); } catch (error) { lang = null; }
       }
-      if (lang !== 'de' && lang !== 'en') {
-        var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-        lang = /^de\b/i.test(first) ? 'de' : 'en';
-      }
+      // Stage 7b-S: without ?lang and without a stored choice the page stays German (what the URL declares).
+      if (lang !== 'de' && lang !== 'en') lang = 'de';
       root.lang = lang;
       root.classList.add('js');
     })(document.documentElement);
@@ -66,13 +64,17 @@
           "@type": "Person",
           "@id": "https://mrlololi.com/#iva",
           "name": "Iva Tsatskrialashvili",
-          "jobTitle": "Marketing Automation Engineer",
+          "alternateName": "mrlololi",
+          "gender": "Male",
+          "pronouns": "er/ihm",
+          "jobTitle": "Techniker für Marketing-Automation",
+          "description": "Iva Tsatskrialashvili (er/ihm), online als mrlololi, ist selbstständiger Techniker für Marketing-Automation in Graz. Er richtet für Anbieterinnen und Anbieter von Online-Kursen im DACH-Raum die Technik hinter dem Launch ein und testet sie, bevor die Kundschaft kommt.",
+          "knowsAbout": ["ActiveCampaign", "Zapier", "Make", "Leadpages", "Stripe", "E-Mail-Zustellbarkeit", "Marketing-Automation"],
           "address": { "@type": "PostalAddress", "addressLocality": "Graz", "addressCountry": "AT" },
+          "image": "https://mrlololi.com/assets/img/about-680.jpg",
           "url": "https://mrlololi.com/",
-          "image": "https://mrlololi.com/Webprojekte/assets/img/about-680.jpg",
-          "knowsAbout": ["ActiveCampaign", "Zapier", "Leadpages", "Wix", "Marketing automation", "HTML", "CSS", "JavaScript"],
           "sameAs": [
-            "https://www.linkedin.com/in/tsatskrialashvili-iva/",
+            "https://www.linkedin.com/in/tsatskrialashvili-iva",
             "https://www.malt.de/profile/ivatsatskrialashvili",
             "https://github.com/Mrlololi",
             "https://www.instagram.com/mrlololi/"
