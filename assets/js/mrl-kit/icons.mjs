@@ -1,4 +1,4 @@
-// mrl-kit icons.mjs VERSION a4ff00db6be0 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit icons.mjs VERSION 880e1ec7088c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Icon set «mrlololi line» (Stage 7b, design system v1 section 3). Build time only: templates import
 // this module the way they import mascot-art.js; no page loads it in the browser.
 // Drawing rules (3.1): 24 grid with 2 units of padding; circles, rounded rectangles, lines and arcs,
@@ -15,6 +15,9 @@ const STAR = 'M18.5 2.34L19.58 4.86 22.28 5.1 20.24 6.84 20.84 9.48 18.5 8.1 16.
 export const ICONS = {
   // Small glyph: done, included (a bare tick; a disc behind it is CSS).
   check: { tone: null, body: '<path d="M5 12.5l4.5 4.5L19 7.5"/>' },
+  // Small glyph: failed, broken (demo states only; Werkzeug «Ein Kauf», a step switched off). The m part
+  // draws once (pathLength), never alone: the word «fehlt» stands next to it.
+  cross: { tone: null, body: '<path class="m" pathLength="1" d="M7 7l10 10M17 7L7 17"/>' },
 
   // Run-log, one purchase in six steps.
   form: { tone: 'pink', body: `<rect x="4" y="2.5" width="16" height="19" rx="2.5" ${F}/><path d="M7.5 6.5h6"/><rect x="7.5" y="9.5" width="9" height="3" rx="1.5"/><rect class="m" x="7.5" y="15.5" width="5.5" height="3" rx="1.5"/>` },

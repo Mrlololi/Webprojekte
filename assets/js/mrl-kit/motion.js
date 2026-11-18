@@ -1,4 +1,4 @@
-// mrl-kit motion.js VERSION a4ff00db6be0 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit motion.js VERSION 880e1ec7088c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Stage 6c: one controller for every demo (hero line, problem cards, price pictures, process steps,
 // tool row, KI demo, 404 scene). Iva's rule (29.10.2026): a demo loops calmly while it is visible.
 // - The HTML shows the end frame (solved), for no JS and reduced motion.
