@@ -790,6 +790,9 @@
   }
 
   /* Impressum and privacy policy of mrlololi.com, reachable from every page (Austrian law). */
+  /* R3 (December release): the identity sentence of mrlololi.com, its own line above the legal links. */
+  .site-footer__who { flex-basis: 100%; max-width: 46rem; margin: 0; }
+
   .site-footer__legal {
     flex-basis: 100%;
     display: flex;

@@ -205,7 +205,7 @@ window.LS_I18N = {
     'projector.close': 'Close',
     'projector.keys': 'Keys: arrows and space to move, Esc to close.',
 
-    'footer.role': 'Marketing Automation Engineer in Graz, Austria',
+    'footer.role': 'Marketing automation technician in Graz, Austria',
     'footer.built': 'Language Starter: plain HTML, CSS and JavaScript, no tracking',
     'footer.portfolio': 'All web projects',
     'footer.source': 'Source on GitHub'
@@ -383,7 +383,7 @@ window.LS_I18N = {
     'projector.close': 'Schließen',
     'projector.keys': 'Tasten: Pfeile und Leertaste zum Blättern, Esc zum Schließen.',
 
-    'footer.role': 'Marketing Automation Engineer in Graz, Österreich',
+    'footer.role': 'Techniker für Marketing-Automation in Graz, Österreich',
     'footer.built': 'Language Starter: HTML, CSS und JavaScript, ohne Tracking',
     'footer.portfolio': 'Alle Webprojekte',
     'footer.source': 'Quellcode auf GitHub'

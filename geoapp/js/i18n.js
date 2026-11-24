@@ -161,7 +161,7 @@ window.GEOAPP_I18N = {
     'tw.note.twenty': 'Двадцять є головним числом: усі наступні рахують від нього.',
     'tw.note.after': 'Грузинське слово для 20 тут втрачає останню літеру.',
 
-    'footer.role': 'Marketing Automation Engineer, Грац (Австрія)',
+    'footer.role': 'Технік з автоматизації маркетингу, Грац (Австрія)',
     'footer.portfolio': 'Портфоліо',
     'footer.source': 'Код на GitHub',
     'footer.built': 'Без фреймворків, на чистому HTML, CSS і JavaScript.'
@@ -293,7 +293,7 @@ window.GEOAPP_I18N = {
     'tw.note.twenty': 'Zwanzig ist die wichtigste Zahl: Alles danach wird von ihr aus gezählt.',
     'tw.note.after': 'Das georgische Wort für 20 verliert hier seinen letzten Buchstaben.',
 
-    'footer.role': 'Marketing Automation Engineer in Graz',
+    'footer.role': 'Techniker für Marketing-Automation in Graz',
     'footer.portfolio': 'Portfolio',
     'footer.source': 'Code auf GitHub',
     'footer.built': 'Ohne Frameworks gebaut, mit HTML, CSS und JavaScript.'
@@ -425,7 +425,7 @@ window.GEOAPP_I18N = {
     'tw.note.twenty': 'Twenty is the key number: everything after it is counted from here.',
     'tw.note.after': 'The Georgian word for 20 loses its last letter here.',
 
-    'footer.role': 'Marketing Automation Engineer in Graz, Austria',
+    'footer.role': 'Marketing automation technician in Graz, Austria',
     'footer.portfolio': 'Portfolio',
     'footer.source': 'Code on GitHub',
     'footer.built': 'Built without frameworks, just HTML, CSS and JavaScript.'
