@@ -1,4 +1,4 @@
-// mrl-kit enter.js VERSION 07c014a67c7c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit enter.js VERSION d2757e6cb059 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Entrances (Stage 7b, design system 5.2): IntersectionObserver and Web Animations, no GSAP.
 // [data-enter="lines"] a heading (rises 16 px), [data-enter="stagger"] a list whose children arrive one
 // by one, [data-enter] a single block (24 px). 500 ms, --ease-soft, once per page view, never hidden
@@ -23,9 +23,15 @@ export function initEnter({ skip = () => false } = {}) {
   const waiting = new Set();
   const busy = new Map(); // section -> running entrances
   const parts = (el) => (el.dataset.enter === 'stagger' ? [...el.children] : [el]);
-  // Above 800 px elements below the first screen enter from a visible state (never hidden at opacity 0).
-  const hide = () => {};
-  const reveal = (el) => { waiting.delete(el); io.unobserve(el); safety.unobserve(el); };
+  // Above 800 px elements below the first screen start pre-shifted below the fold from a visible state
+  // (opacity 0.92, never 0) so the entrance rises smoothly with zero frame-to-frame jump (rule 7 / glatt).
+  const riseOf = (el) => (el.dataset.enter === 'lines' ? 14 : 18);
+  const hide = (el) => {
+    const rise = riseOf(el);
+    parts(el).forEach((p) => { p.style.opacity = '0.92'; p.style.transform = `translateY(${rise}px)`; });
+  };
+  const clear = (el) => parts(el).forEach((p) => { p.style.opacity = ''; p.style.transform = ''; });
+  const reveal = (el) => { waiting.delete(el); io.unobserve(el); safety.unobserve(el); clear(el); };
   const play = (el) => {
     if (!waiting.has(el)) return;
     waiting.delete(el);
@@ -35,9 +41,11 @@ export function initEnter({ skip = () => false } = {}) {
     const sec = el.closest('section');
     if (sec) { busy.set(sec, (busy.get(sec) || 0) + 1); sec.setAttribute('data-entering', ''); }
     el.dispatchEvent(new CustomEvent('enter:start', { bubbles: true }));
-    const rise = el.dataset.enter === 'lines' ? 14 : 18;
+    const rise = riseOf(el);
     const anims = parts(el).map((p, i) => {
       const delay = el.dataset.enter === 'stagger' ? (i < 4 ? i * 70 : 280) : 0;
+      p.style.opacity = '';
+      p.style.transform = '';
       return p.animate([{ opacity: 0.92, transform: `translateY(${rise}px)` }, { opacity: 1, transform: 'none' }], { duration: ENTER, delay, easing: EASE, fill: 'backwards' });
     });
     Promise.all(anims.map((a) => a.finished.catch(() => {}))).then(() => setTimeout(() => {

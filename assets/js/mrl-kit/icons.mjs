@@ -1,4 +1,4 @@
-// mrl-kit icons.mjs VERSION 07c014a67c7c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit icons.mjs VERSION d2757e6cb059 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Icon set «mrlololi line» (Stage 7b, design system v1 section 3). Build time only: templates import
 // this module the way they import mascot-art.js; no page loads it in the browser.
 // Drawing rules (3.1): 24 grid with 2 units of padding; circles, rounded rectangles, lines and arcs,

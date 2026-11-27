@@ -1,4 +1,4 @@
-// mrl-kit mascot-react.js VERSION 07c014a67c7c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit mascot-react.js VERSION d2757e6cb059 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Mascot kit (Stage 7a, 11.11.2026): how Logik, Lösung and Live react. One source for the main site
 // (assets/js/mascots.js builds the hero, the footer wave and the idles on top of it) and Webprojekte
 // (vendored copy in site/assets/js/mrl-kit/, kept equal by tools/sync-mrl-kit.mjs).

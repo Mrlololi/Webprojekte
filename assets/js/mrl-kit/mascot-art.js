@@ -1,4 +1,4 @@
-// mrl-kit mascot-art.js VERSION 07c014a67c7c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit mascot-art.js VERSION d2757e6cb059 (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // The three mascots Logik, Lösung, Live (v2, 28.10.2026) as inline SVG strings.
 // Used by the build (src/templates/mascots.mjs) and in the browser (mascots.js swaps a pose).
 // 100 grid, «leichtes Volumen»: flat pastel body with a lighter belly (clipped to the body), soft
