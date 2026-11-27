@@ -12,11 +12,11 @@ import { initPoke, setLines } from './mrl-kit/mascot-react.js';
 
 const root = document.documentElement;
 
-// The lines (at most five words, nothing promised). de for German pages, en for every other language.
+// Accessible names for mascot groups (R7: mascots stay silent; old speech lines archived under _altLines).
 const LINES = {
   de: {
     one: '{name} winkt', many: '{names} winken', and: 'und',
-    lines: {
+    _altLines: {
       logik: ['Erst denken, dann bauen.', 'Ich prüfe das kurz.', 'Klingt logisch, oder?'],
       loesung: ['Das kriegen wir hin.', 'Schraube fest, läuft.', 'Einmal testen, bitte.'],
       live: ['Hallo!', 'Alles läuft.', 'Schön, dass Sie da sind.'],
@@ -26,7 +26,7 @@ const LINES = {
   },
   en: {
     one: '{name} waves', many: '{names} wave', and: 'and',
-    lines: {
+    _altLines: {
       logik: ['Think first, then build.', 'Let me check that.', 'Sounds logical, right?'],
       loesung: ['We can fix that.', 'Bolt tight, it runs.', 'One more test, please.'],
       live: ['Hello!', 'All running.', 'Nice to see you.'],

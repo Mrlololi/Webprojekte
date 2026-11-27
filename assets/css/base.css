@@ -973,30 +973,6 @@ html:not(:lang(de)) .tagline[lang="de"] {
     outline-color: var(--on-ink);
   }
 
-  /* The short line of a mascot (decorative; one polite live region reads it). */
-  .mbubble {
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 0.35rem);
-    z-index: 6;
-    width: max-content;
-    max-width: min(14rem, 80vw);
-    transform: translateX(-50%);
-    padding: 0.35rem 0.7rem;
-    border-radius: 14px 14px 14px 4px;
-    background: #FFFFFF;
-    border: 1px solid rgb(43 42 51 / 0.16);
-    box-shadow: 0 8px 18px rgb(43 42 51 / 0.14);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: center;
-    white-space: normal;
-    pointer-events: none;
-  }
-
   /* «Bewegung pausieren»: one button in the footer, the same look and texts as on mrlololi.com.
      Both languages and both states are in the button; CSS shows one (no text swap, no shift). */
   .site-footer__motion {
@@ -1059,15 +1035,5 @@ html:not(:lang(de)) .tagline[lang="de"] {
 
   html[data-motion="paused"] .motion-toggle__play {
     display: inline;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .mbubble {
-    animation: bubble-in 0.25s ease-out both;
-  }
-
-  @keyframes bubble-in {
-    from { opacity: 0; transform: translate(-50%, 0.4rem); }
   }
 }

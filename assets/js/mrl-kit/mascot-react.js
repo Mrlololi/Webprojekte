@@ -1,4 +1,4 @@
-// mrl-kit mascot-react.js VERSION 880e1ec7088c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
+// mrl-kit mascot-react.js VERSION 07c014a67c7c (vendored from mrlololi-site/site/assets/js/kit/; do not edit here, run tools/sync-mrl-kit.mjs)
 // Mascot kit (Stage 7a, 11.11.2026): how Logik, Lösung and Live react. One source for the main site
 // (assets/js/mascots.js builds the hero, the footer wave and the idles on top of it) and Webprojekte
 // (vendored copy in site/assets/js/mrl-kit/, kept equal by tools/sync-mrl-kit.mjs).
@@ -6,10 +6,10 @@
 // - react: the shared hop plus one signature per mascot. Logik «Prüfblick» (tilts about 8°, thinks
 //   400 ms, then joy), Lösung «Schraubdreh» (the wrench turns once, 500 ms), Live «Sternfunkeln» (the
 //   star antenna wiggles three times, then a wave). No sound.
-// - Reduced motion or «Bewegung pausieren»: nothing moves, only the happy face for 1.2 s (and the bubble).
+// - Reduced motion or «Bewegung pausieren»: nothing moves, only the happy face for 1.2 s.
 // - initPoke: every group of mascots is ONE button (role="button", a name like «Logik, Lösung und Live
-//   winken», a visible focus ring from the page CSS, at least 44 px). Click, tap, Enter or Space: the
-//   reaction and a short bubble (aria-hidden) whose line one polite live region also reads out.
+//   winken», a visible focus ring from the page CSS, at least 44 px). Click, tap, Enter or Space:
+//   silent reaction only (R7, 25.11.2026: no speech bubble, no live-region text).
 import { parts, MASCOTS } from './mascot-art.js';
 import { reduceMotion, motion } from './motion.js';
 
@@ -168,51 +168,12 @@ export function react(svg, height = 26) {
   return f;
 }
 
-/* ---------- Bubble and live region ---------- */
-// say: { one: '{name} winkt', many: '{names} winken', and: 'und', lines: { logik: [...], live: [...],
-// footer: [...], legal: [...] } }. A group with data-say="footer" speaks those lines, else the lines of
-// the mascot that was clicked.
+/* ---------- Accessible names (R7: mascots stay silent, no bubbles or live region) ---------- */
+// say: { one: '{name} winkt', many: '{names} winken', and: 'und' }.
 let say = null;
-const last = new Map();
-let live = null;
 
-function liveRegion() {
-  if (live) return live;
-  live = document.createElement('p');
-  live.setAttribute('aria-live', 'polite');
-  live.dataset.mascotLive = '';
-  Object.assign(live.style, { position: 'absolute', width: '1px', height: '1px', margin: '-1px', padding: '0', overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: '0' });
-  document.body.append(live);
-  return live;
-}
-
-export function speak(host, svgs) {
-  if (!say) return;
-  const key = KEYS[Number(svgs[0]?.dataset.mascot)] || 'live';
-  const group = host.closest?.('[data-say]')?.dataset.say;
-  const set = (group && say.lines[group]) || say.lines[key] || [];
-  if (!set.length) return;
-  const id = group && say.lines[group] ? group : key;
-  let i = Math.floor(Math.random() * set.length);
-  if (set.length > 1 && i === last.get(id)) i = (i + 1) % set.length;
-  last.set(id, i);
-  const box = host instanceof SVGElement ? host.parentElement : host;
-  if (getComputedStyle(box).position === 'static') box.style.position = 'relative'; // no shift: no offsets
-  box.querySelector(':scope > .mbubble')?.remove();
-  const b = document.createElement('span');
-  b.className = 'mbubble';
-  b.setAttribute('aria-hidden', 'true');
-  b.textContent = set[i];
-  box.append(b);
-  // Near the edge of the window (a mascot at the right of a phone screen): moved inside, 8 px clear.
-  const edge = b.getBoundingClientRect();
-  const dx = Math.min(0, innerWidth - 8 - edge.right) + Math.max(0, 8 - edge.left);
-  if (dx) b.style.marginLeft = `${Math.round(dx)}px`;
-  setTimeout(() => b.remove(), 2400);
-  const r = liveRegion();
-  r.textContent = '';
-  setTimeout(() => { r.textContent = `${MASCOTS[KEYS.indexOf(key)].name}: ${set[i]}`; }, 50);
-}
+// Kept as a no-op export for callers that still import speak.
+export function speak() {}
 
 /* ---------- Groups ---------- */
 const labelOf = (svgs) => {
@@ -220,7 +181,7 @@ const labelOf = (svgs) => {
   return names.length === 1 ? say.one.replace('{name}', names[0]) : say.many.replace('{names}', `${names.slice(0, -1).join(', ')} ${say.and} ${names.at(-1)}`);
 };
 
-// A page that switches its language without a reload (Webprojekte apps): new lines and names.
+// A page that switches its language without a reload (Webprojekte apps): new accessible names.
 export function setLines(lines) {
   say = lines;
   if (!say) return;
@@ -247,7 +208,6 @@ export function hit(g, target) {
   const one = target?.closest?.('svg.mascot');
   const svgs = one ? [one] : [...g.querySelectorAll('svg.mascot')];
   svgs.forEach((s, i) => setTimeout(() => react(s, 22), i * 90));
-  speak(g, svgs);
 }
 
 // groups: a selector for the mascot groups. Groups added later are prepared when they appear.
